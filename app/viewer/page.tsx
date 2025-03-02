@@ -86,9 +86,6 @@ export default function ViewerPage() {
             <Link href="/viewer" className="text-sm font-medium text-blue-600">
               Viewer
             </Link>
-            <Link href="/editor" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Editor
-            </Link>
             <Link href="/optimizer" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Optimizer
             </Link>
@@ -204,12 +201,6 @@ export default function ViewerPage() {
               <Link href="/optimizer">
                 <ZapIcon className="h-4 w-4" />
                 Optimize SVG
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="gap-2">
-              <Link href="/editor">
-                <Code2Icon className="h-4 w-4" />
-                Edit SVG
               </Link>
             </Button>
             <Button asChild variant="outline" className="gap-2">
