@@ -356,10 +356,10 @@ export default function ConverterPage() {
               <Link href="/svg-converter" className="text-sm text-primary hover:text-primary transition-colors">
                 Converter
               </Link>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/privacy.html" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms.html" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terms
               </a>
             </div>
