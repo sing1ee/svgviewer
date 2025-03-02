@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css'; // 导入暗色主题
-import 'prismjs/components/prism-markup'; // SVG 是基于 XML 的，所以导入 markup 语法
+import { useEffect } from 'react';
+import CodeMirror from '@uiw/react-codemirror';
+import { xml } from '@codemirror/lang-xml';
+import { oneDark } from '@codemirror/theme-one-dark';
+import { EditorView } from '@codemirror/view';
 
 interface CodeEditorProps {
   value: string;
@@ -12,49 +13,71 @@ interface CodeEditorProps {
 }
 
 export default function CodeEditor({ value, onChange, readOnly = false }: CodeEditorProps) {
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const preRef = useRef<HTMLPreElement>(null);
+  // 使用CodeMirror的onChange事件处理程序
+  const handleChange = (val: string) => {
+    onChange(val);
+  };
 
-  // 更新高亮显示
-  useEffect(() => {
-    if (preRef.current) {
-      preRef.current.textContent = value;
-      Prism.highlightElement(preRef.current);
-    }
-  }, [value]);
-
-  // 处理滚动同步
-  useEffect(() => {
-    const textarea = textareaRef.current;
-    const pre = preRef.current;
-    
-    if (!textarea || !pre) return;
-    
-    const syncScroll = () => {
-      pre.scrollTop = textarea.scrollTop;
-      pre.scrollLeft = textarea.scrollLeft;
-    };
-    
-    textarea.addEventListener('scroll', syncScroll);
-    return () => textarea.removeEventListener('scroll', syncScroll);
-  }, []);
+  // 自定义样式
+  const customTheme = EditorView.theme({
+    '&': {
+      height: '100%',
+      fontSize: '14px',
+    },
+    '.cm-scroller': {
+      overflow: 'auto',
+      fontFamily: 'monospace',
+    },
+    '.cm-content': {
+      caretColor: readOnly ? 'transparent' : 'white',
+    },
+    '.cm-line': {
+      padding: '0 4px',
+      lineHeight: '1.6',
+    },
+    '.cm-activeLineGutter': {
+      backgroundColor: 'rgba(66, 133, 244, 0.1)',
+    },
+    '.cm-gutters': {
+      backgroundColor: '#0d1117',
+      color: '#636e7b',
+      border: 'none',
+    },
+  });
 
   return (
-    <div className="relative h-full w-full font-mono text-sm flex-1 min-h-0">
-      <pre 
-        ref={preRef}
-        className="absolute inset-0 p-4 m-0 whitespace-pre overflow-auto bg-[#0d1117] pointer-events-none h-full w-full"
-        aria-hidden="true"
-      ><code className="language-markup"></code></pre>
-      
-      <textarea
-        ref={textareaRef}
+    <div className="h-full w-full font-mono text-sm flex-1 min-h-0">
+      <CodeMirror
         value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="absolute inset-0 p-4 whitespace-pre overflow-auto bg-transparent text-transparent caret-white resize-none outline-none w-full h-full"
-        spellCheck="false"
+        height="100%"
+        width="100%"
+        theme={oneDark}
+        extensions={[
+          xml(), 
+          customTheme,
+          EditorView.lineWrapping,
+        ]}
+        onChange={handleChange}
         readOnly={readOnly}
-      ></textarea>
+        basicSetup={{
+          lineNumbers: true,
+          highlightActiveLine: true,
+          highlightSelectionMatches: true,
+          autocompletion: true,
+          foldGutter: true,
+          dropCursor: true,
+          allowMultipleSelections: true,
+          indentOnInput: true,
+          syntaxHighlighting: true,
+          bracketMatching: true,
+          closeBrackets: true,
+          rectangularSelection: true,
+          crosshairCursor: true,
+          highlightActiveLineGutter: true,
+        }}
+        placeholder="输入SVG代码..."
+        className="h-full w-full"
+      />
     </div>
   );
 }
