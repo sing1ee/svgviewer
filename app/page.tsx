@@ -14,6 +14,7 @@ import NextImage from 'next/image';
 import { GridBackground } from '@/components/grid-background';
 import Head from 'next/head';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
@@ -74,7 +75,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Head>
         <title>SVG Viewer - Free Online Tool to View and Edit SVG Files</title>
         <meta name="description" content="Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time." />
@@ -87,30 +88,60 @@ export default function Home() {
         <link rel="canonical" href="https://svgviewer.app" />
       </Head>
 
-      <header className="border-b">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+      <header className="border-b backdrop-blur-sm bg-background/80 sticky top-0 z-10">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
-              <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
-              <span className="font-bold text-xl">SVGViewer</span>
+              <NextImage src="/logo.png" alt="SVGViewer Logo" width={32} height={32} className="rounded-md" />
+              <span className="font-poppins font-bold text-2xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVGViewer</span>
             </Link>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/svg-optimizer" className="text-sm font-medium hover:text-blue-600 transition-colors">
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="/svg-optimizer" className="text-sm font-medium hover:text-primary transition-colors">
               Optimizer
             </Link>
-            <Link href="/svg-converter" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/svg-converter" className="text-sm font-medium hover:text-primary transition-colors">
               Converter
             </Link>
           </nav>
         </div>
       </header>
 
-      <main className="flex-1 container mx-auto px-4 py-2 flex flex-col h-[calc(100vh-8.5rem)]">
-        <div className="flex flex-col gap-2 h-full">
-          <div className="flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
-            <h1 className="text-2xl font-bold">SVG Viewer</h1>
-            <div className="flex items-center gap-2">
+      <main className="flex-1 container mx-auto px-4 py-8 flex flex-col h-[calc(100vh-8.5rem)]">
+        <div className="flex flex-col gap-6 h-full">
+          <div className="text-center max-w-3xl mx-auto mb-4">
+            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Viewer & Editor</h1>
+            <p className="text-muted-foreground text-lg">A powerful online tool to view, edit, and optimize your SVG files in real-time.</p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border">
+            <div className="flex items-center gap-4">
+              <Button
+                variant="outline"
+                className="gap-2 shadow-sm"
+                onClick={() => document.getElementById('file-upload')?.click()}
+              >
+                <UploadIcon className="h-4 w-4" />
+                Upload SVG
+                <input
+                  id="file-upload"
+                  type="file"
+                  accept=".svg"
+                  className="hidden"
+                  onChange={handleFileUpload}
+                />
+              </Button>
+              <Button
+                variant="outline"
+                className="gap-2 shadow-sm"
+                onClick={() => handleDownload(svgCode, 'download.svg')}
+              >
+                <DownloadIcon className="h-4 w-4" />
+                Download
+              </Button>
+            </div>
+            
+            <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">Canvas:</span>
                 <Input
@@ -127,7 +158,7 @@ export default function Home() {
                   className="w-20 h-8"
                 />
               </div>
-              <div className="flex items-center gap-2 ml-4">
+              <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">Zoom:</span>
                 <Slider
                   value={[zoom]}
@@ -142,31 +173,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1 min-h-0">
-            <div className="flex flex-col gap-2 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
+            <div className="flex flex-col gap-3 h-full">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold">SVG Code</h2>
+                <h2 className="text-xl font-semibold">SVG Code</h2>
                 <div className="flex items-center gap-2">
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
                     onClick={() => handleCopy(svgCode)}
+                    className="hover:bg-primary/10"
                   >
                     <CopyIcon className="h-4 w-4 mr-2" />
                     Copy
                   </Button>
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden flex-1 min-h-0">
+              <div className="border rounded-lg overflow-hidden flex-1 min-h-0 shadow-md gradient-border">
                 <CodeEditor value={svgCode} onChange={setSvgCode} />
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 h-full">
+            <div className="flex flex-col gap-3 h-full">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold">Preview</h2>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span>Size: {originalSize} bytes</span>
+                <h2 className="text-xl font-semibold">Preview</h2>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="text-muted-foreground">Size: {originalSize} bytes</span>
                   {optimizedSize !== originalSize && (
                     <span className={`ml-2 ${optimizedSize < originalSize ? 'text-green-500' : 'text-red-500'}`}>
                       ({optimizedSize < originalSize ? '-' : '+'}
@@ -175,7 +207,7 @@ export default function Home() {
                   )}
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden relative flex-1 min-h-0 flex items-center justify-center">
+              <div className="border rounded-lg overflow-hidden relative flex-1 min-h-0 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
                 <GridBackground />
                 <SvgPreview 
                   svgCode={svgCode} 
@@ -187,33 +219,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center my-2 mt-auto">
-            <Button variant="outline" className="gap-2" onClick={() => document.getElementById('file-upload')?.click()}>
-              <UploadIcon className="h-4 w-4" />
-              Upload SVG
-              <input
-                id="file-upload"
-                type="file"
-                accept=".svg"
-                className="hidden"
-                onChange={handleFileUpload}
-              />
-            </Button>
-            <Button variant="outline" className="gap-2" onClick={() => handleDownload(svgCode, 'download.svg')}>
+          <div className="flex flex-wrap gap-4 justify-center my-6">
+            <Button variant="default" className="gap-2 shadow-md" onClick={() => handleDownload(svgCode, 'download.svg')}>
               <DownloadIcon className="h-4 w-4" />
               Download SVG
             </Button>
-            <Button variant="outline" className="gap-2" onClick={() => handleCopy(svgCode)}>
+            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => handleCopy(svgCode)}>
               <CopyIcon className="h-4 w-4" />
               Copy SVG
             </Button>
-            <Button asChild variant="outline" className="gap-2">
+            <Button asChild variant="outline" className="gap-2 shadow-sm">
               <Link href="/svg-optimizer">
                 <ZapIcon className="h-4 w-4" />
                 Optimize SVG
               </Link>
             </Button>
-            <Button asChild variant="outline" className="gap-2">
+            <Button asChild variant="outline" className="gap-2 shadow-sm">
               <Link href="/svg-converter">
                 <ImageIcon className="h-4 w-4" />
                 Convert SVG
@@ -223,93 +244,115 @@ export default function Home() {
         </div>
         
         {/* SVG Viewer FAQ Section */}
-        <section className="my-8">
-          <h2 className="text-2xl font-bold mb-4">SVG Viewer FAQ</h2>
-          <p className="mb-4">Our SVG viewer tool is designed to help you work with SVG files efficiently. The SVG viewer allows you to visualize, edit, and optimize your SVG graphics in real-time.</p>
+        <section className="my-16 bg-card p-8 rounded-xl shadow-lg gradient-border">
+          <h2 className="text-3xl font-bold mb-6 text-center">SVG Viewer FAQ</h2>
+          <p className="mb-8 text-center text-lg max-w-3xl mx-auto text-muted-foreground">
+            Our SVG viewer tool is designed to help you work with SVG files efficiently. The SVG viewer allows you to visualize, edit, and optimize your SVG graphics in real-time.
+          </p>
           
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What is an SVG viewer?</AccordionTrigger>
-              <AccordionContent>
-                An SVG viewer is a tool that allows you to open, view, and interact with SVG (Scalable Vector Graphics) files. Our online SVG viewer provides a convenient way to visualize SVG code without installing any software. With our SVG viewer, you can see how your SVG looks, edit the code, and optimize it for better performance.
-              </AccordionContent>
-            </AccordionItem>
+          <Tabs defaultValue="faq" className="w-full max-w-4xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
+              <TabsTrigger value="faq">Frequently Asked Questions</TabsTrigger>
+              <TabsTrigger value="features">Key Features</TabsTrigger>
+            </TabsList>
             
-            <AccordionItem value="item-2">
-              <AccordionTrigger>How do I use this SVG viewer?</AccordionTrigger>
-              <AccordionContent>
-                Using our SVG viewer is simple: paste your SVG code into the editor or upload an SVG file. The SVG viewer will instantly render the graphic in the preview panel. You can edit the code in real-time and see the changes immediately in the SVG viewer preview. Adjust the canvas size and zoom level to get a better view of your SVG.
-              </AccordionContent>
-            </AccordionItem>
+            <TabsContent value="faq" className="p-4">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1" className="border-b">
+                  <AccordionTrigger className="text-lg font-medium">What is an SVG viewer?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    An SVG viewer is a tool that allows you to open, view, and interact with SVG (Scalable Vector Graphics) files. Our online SVG viewer provides a convenient way to visualize SVG code without installing any software. With our SVG viewer, you can see how your SVG looks, edit the code, and optimize it for better performance.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2" className="border-b">
+                  <AccordionTrigger className="text-lg font-medium">How do I use this SVG viewer?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Using our SVG viewer is simple: paste your SVG code into the editor or upload an SVG file. The SVG viewer will instantly render the graphic in the preview panel. You can edit the code in real-time and see the changes immediately in the SVG viewer preview. Adjust the canvas size and zoom level to get a better view of your SVG.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-3" className="border-b">
+                  <AccordionTrigger className="text-lg font-medium">Can I edit SVG files with this SVG viewer?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes, our SVG viewer includes a code editor that allows you to modify the SVG code directly. As you type, the SVG viewer updates the preview in real-time. This makes our SVG viewer perfect for quick edits and adjustments to your SVG files without needing specialized graphic design software.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-4" className="border-b">
+                  <AccordionTrigger className="text-lg font-medium">Is this SVG viewer free to use?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes, our SVG viewer is completely free to use. You can use the SVG viewer to open, view, edit, and download SVG files without any cost. The SVG viewer works directly in your browser, so there's no need to download or install any software.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-5" className="border-b">
+                  <AccordionTrigger className="text-lg font-medium">Can I optimize SVG files with this SVG viewer?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    While our main SVG viewer focuses on viewing and editing, we also offer an SVG optimizer tool that works alongside the SVG viewer. The optimizer can reduce the file size of your SVG while maintaining visual quality. The SVG viewer shows you both the original and optimized file sizes so you can see the difference.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-6" className="border-b">
+                  <AccordionTrigger className="text-lg font-medium">How does the SVG viewer handle large files?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Our SVG viewer is designed to handle SVG files of various sizes efficiently. However, very complex SVGs with thousands of elements might affect performance. The SVG viewer provides zoom and canvas size controls to help you work with SVGs of any dimension.
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-7">
+                  <AccordionTrigger className="text-lg font-medium">Can I convert SVGs to other formats with this SVG viewer?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    While the primary SVG viewer focuses on viewing and editing SVGs, we offer a companion SVG converter tool. From the SVG viewer, you can easily navigate to our converter to transform your SVG files into formats like PNG, JPG, or PDF after previewing them in the SVG viewer.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </TabsContent>
             
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Can I edit SVG files with this SVG viewer?</AccordionTrigger>
-              <AccordionContent>
-                Yes, our SVG viewer includes a code editor that allows you to modify the SVG code directly. As you type, the SVG viewer updates the preview in real-time. This makes our SVG viewer perfect for quick edits and adjustments to your SVG files without needing specialized graphic design software.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4">
-              <AccordionTrigger>Is this SVG viewer free to use?</AccordionTrigger>
-              <AccordionContent>
-                Yes, our SVG viewer is completely free to use. You can use the SVG viewer to open, view, edit, and download SVG files without any cost. The SVG viewer works directly in your browser, so there's no need to download or install any software.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5">
-              <AccordionTrigger>Can I optimize SVG files with this SVG viewer?</AccordionTrigger>
-              <AccordionContent>
-                While our main SVG viewer focuses on viewing and editing, we also offer an SVG optimizer tool that works alongside the SVG viewer. The optimizer can reduce the file size of your SVG while maintaining visual quality. The SVG viewer shows you both the original and optimized file sizes so you can see the difference.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-6">
-              <AccordionTrigger>How does the SVG viewer handle large files?</AccordionTrigger>
-              <AccordionContent>
-                Our SVG viewer is designed to handle SVG files of various sizes efficiently. However, very complex SVGs with thousands of elements might affect performance. The SVG viewer provides zoom and canvas size controls to help you work with SVGs of any dimension.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-7">
-              <AccordionTrigger>Can I convert SVGs to other formats with this SVG viewer?</AccordionTrigger>
-              <AccordionContent>
-                While the primary SVG viewer focuses on viewing and editing SVGs, we offer a companion SVG converter tool. From the SVG viewer, you can easily navigate to our converter to transform your SVG files into formats like PNG, JPG, or PDF after previewing them in the SVG viewer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-          
-          <div className="mt-6">
-            <h3 className="text-xl font-semibold mb-2">Why Choose Our SVG Viewer</h3>
-            <p className="mb-4">Our SVG viewer stands out from other SVG viewers with its combination of powerful features and user-friendly interface. The SVG viewer provides real-time preview, code editing, optimization insights, and easy export options all in one place.</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div className="border rounded-md p-4">
-                <h4 className="font-semibold mb-2">Real-time SVG Viewer</h4>
-                <p>See your SVG changes instantly with our responsive SVG viewer that updates as you type.</p>
+            <TabsContent value="features" className="p-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                  <h4 className="font-semibold text-xl mb-3 text-primary">Real-time SVG Viewer</h4>
+                  <p className="text-muted-foreground">See your SVG changes instantly with our responsive SVG viewer that updates as you type.</p>
+                </div>
+                <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                  <h4 className="font-semibold text-xl mb-3 text-primary">Code Highlighting</h4>
+                  <p className="text-muted-foreground">Our SVG viewer includes syntax highlighting to make editing SVG code easier and more intuitive.</p>
+                </div>
+                <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                  <h4 className="font-semibold text-xl mb-3 text-primary">Size Optimization</h4>
+                  <p className="text-muted-foreground">The SVG viewer shows you file size information and optimization potential for your SVGs.</p>
+                </div>
+                <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                  <h4 className="font-semibold text-xl mb-3 text-primary">Adjustable Canvas</h4>
+                  <p className="text-muted-foreground">Our SVG viewer lets you customize the canvas size and zoom level for perfect visualization.</p>
+                </div>
               </div>
-              <div className="border rounded-md p-4">
-                <h4 className="font-semibold mb-2">Code Highlighting</h4>
-                <p>Our SVG viewer includes syntax highlighting to make editing SVG code easier and more intuitive.</p>
-              </div>
-              <div className="border rounded-md p-4">
-                <h4 className="font-semibold mb-2">Size Optimization</h4>
-                <p>The SVG viewer shows you file size information and optimization potential for your SVGs.</p>
-              </div>
-              <div className="border rounded-md p-4">
-                <h4 className="font-semibold mb-2">Adjustable Canvas</h4>
-                <p>Our SVG viewer lets you customize the canvas size and zoom level for perfect visualization.</p>
-              </div>
-            </div>
-          </div>
+            </TabsContent>
+          </Tabs>
         </section>
       </main>
 
-      <footer className="border-t py-2">
+      <footer className="border-t py-6 bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-2 md:mb-0">
-              <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
-              <span className="font-bold">SVGViewer</span>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <NextImage src="/logo.png" alt="SVGViewer Logo" width={28} height={28} className="rounded-md" />
+              <span className="font-poppins font-bold text-xl">SVGViewer</span>
+            </div>
+            <div className="flex gap-8">
+              <Link href="/svg-optimizer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Optimizer
+              </Link>
+              <Link href="/svg-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Converter
+              </Link>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Privacy
+              </a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Terms
+              </a>
             </div>
             <div className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} SVGViewer. All rights reserved.

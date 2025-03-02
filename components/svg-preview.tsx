@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { AlertCircle } from 'lucide-react';
 
 interface SvgPreviewProps {
   svgCode: string;
@@ -11,12 +12,14 @@ interface SvgPreviewProps {
 
 export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
     
-    // Clear previous content
+    // Clear previous content and errors
     containerRef.current.innerHTML = '';
+    setError(null);
     
     try {
       // Parse SVG code
@@ -26,14 +29,7 @@ export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewP
       // Check for parsing errors
       const parserError = svgDoc.querySelector('parsererror');
       if (parserError) {
-        containerRef.current.innerHTML = `
-          <div class="text-red-500 p-4 w-full h-full flex items-center justify-center">
-            <div>
-              <p class="font-bold">SVG Parsing Error:</p>
-              <p>${parserError.textContent}</p>
-            </div>
-          </div>
-        `;
+        setError(parserError.textContent || 'SVG parsing error');
         return;
       }
       
@@ -44,25 +40,37 @@ export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewP
       if (width) svgElement.setAttribute('width', width.toString());
       if (height) svgElement.setAttribute('height', height.toString());
       
-      // Apply zoom
+      // Apply zoom and smooth transitions
       svgElement.style.transform = `scale(${zoom / 100})`;
       svgElement.style.transformOrigin = 'center';
+      svgElement.style.transition = 'transform 0.2s ease-out';
+      
+      // Add drop shadow for better visibility
+      svgElement.style.filter = 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))';
       
       // Append to container
       containerRef.current.appendChild(svgElement);
     } catch (error) {
-      containerRef.current.innerHTML = `
-        <div class="text-red-500 p-4 w-full h-full flex items-center justify-center">
-          <div>
-            <p class="font-bold">Error:</p>
-            <p>${error instanceof Error ? error.message : 'Unknown error'}</p>
-          </div>
-        </div>
-      `;
+      setError(error instanceof Error ? error.message : 'Unknown error');
     }
   }, [svgCode, width, height, zoom]);
 
   return (
-    <div ref={containerRef} className="flex items-center justify-center w-full h-full overflow-auto"></div>
+    <div className="relative w-full h-full flex items-center justify-center">
+      <div 
+        ref={containerRef} 
+        className="flex items-center justify-center w-full h-full overflow-auto p-4"
+      ></div>
+      
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-background/90 backdrop-blur-sm">
+          <div className="bg-destructive/10 border border-destructive text-destructive p-6 rounded-lg max-w-md text-center">
+            <AlertCircle className="h-8 w-8 mx-auto mb-2" />
+            <p className="font-bold text-lg mb-1">SVG Parsing Error</p>
+            <p className="text-sm">{error}</p>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

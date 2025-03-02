@@ -78,5 +78,45 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(
+      circle at top right,
+      hsl(var(--primary) / 0.05),
+      transparent 40%
+    );
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer components {
+  .gradient-border {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: var(--radius);
+    background: linear-gradient(
+      to right,
+      hsl(var(--primary) / 0.5),
+      hsl(var(--accent) / 0.2)
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .glass-panel {
+    @apply bg-white bg-opacity-70 dark:bg-black dark:bg-opacity-70 backdrop-blur-sm;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
