@@ -5,12 +5,10 @@ import { AlertCircle } from 'lucide-react';
 
 interface SvgPreviewProps {
   svgCode: string;
-  width: number;
-  height: number;
   zoom: number;
 }
 
-export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewProps) {
+export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,9 +34,6 @@ export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewP
       // Get the SVG element
       const svgElement = svgDoc.documentElement;
       
-      // Set width and height if specified
-      if (width) svgElement.setAttribute('width', width.toString());
-      if (height) svgElement.setAttribute('height', height.toString());
       
       // Apply zoom and smooth transitions
       svgElement.style.transform = `scale(${zoom / 100})`;
@@ -53,7 +48,7 @@ export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewP
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Unknown error');
     }
-  }, [svgCode, width, height, zoom]);
+  }, [svgCode, zoom]);
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">

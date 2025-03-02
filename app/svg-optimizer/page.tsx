@@ -144,22 +144,7 @@ export default function OptimizerPage() {
             </div>
             
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Canvas:</span>
-                <Input
-                  type="number"
-                  value={canvasSize.width}
-                  onChange={(e) => handleCanvasSizeChange('width', e.target.value)}
-                  className="w-20 h-8"
-                />
-                <span className="text-sm text-muted-foreground">×</span>
-                <Input
-                  type="number"
-                  value={canvasSize.height}
-                  onChange={(e) => handleCanvasSizeChange('height', e.target.value)}
-                  className="w-20 h-8"
-                />
-              </div>
+              
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">Zoom:</span>
                 <Slider
@@ -228,8 +213,6 @@ export default function OptimizerPage() {
                   <GridBackground />
                   <SvgPreview 
                     svgCode={svgCode} 
-                    width={canvasSize.width} 
-                    height={canvasSize.height} 
                     zoom={zoom} 
                   />
                 </div>
@@ -273,8 +256,6 @@ export default function OptimizerPage() {
                   <GridBackground />
                   <SvgPreview 
                     svgCode={optimizedCode} 
-                    width={canvasSize.width} 
-                    height={canvasSize.height} 
                     zoom={zoom} 
                   />
                 </div>
