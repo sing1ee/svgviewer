@@ -132,7 +132,7 @@ export default function ConverterPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
@@ -153,9 +153,9 @@ export default function ConverterPage() {
         </div>
       </header>
 
-      <main className="flex-1 container mx-auto px-4 py-6">
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+      <main className="flex-1 container mx-auto px-4 py-2 flex flex-col h-[calc(100vh-8rem)]">
+        <div className="flex flex-col gap-2 h-full">
+          <div className="flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
             <h1 className="text-2xl font-bold">SVG Converter</h1>
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2">
@@ -189,8 +189,8 @@ export default function ConverterPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1">
+            <div className="flex flex-col gap-2 h-full">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold">SVG Code</h2>
                 <div className="flex items-center gap-2">
@@ -204,19 +204,19 @@ export default function ConverterPage() {
                   </Button>
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden h-[500px]">
+              <div className="border rounded-md overflow-hidden flex-1">
                 <CodeEditor value={svgCode} onChange={setSvgCode} />
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2 h-full">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold">Preview</h2>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span>Size: {originalSize} bytes</span>
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden relative h-[500px] flex items-center justify-center">
+              <div className="border rounded-md overflow-hidden relative flex-1 flex items-center justify-center">
                 <GridBackground />
                 {format === 'svg' ? (
                   <SvgPreview 
@@ -242,7 +242,7 @@ export default function ConverterPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             <h2 className="text-lg font-semibold">Conversion Options</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
@@ -287,7 +287,7 @@ export default function ConverterPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center mt-4">
+          <div className="flex flex-wrap gap-4 justify-center my-2">
             <Button variant="outline" className="gap-2" onClick={() => document.getElementById('file-upload')?.click()}>
               <UploadIcon className="h-4 w-4" />
               Upload SVG
@@ -301,26 +301,20 @@ export default function ConverterPage() {
             </Button>
             <Button variant="outline" className="gap-2" onClick={() => handleDownload(svgCode, 'download.svg')}>
               <DownloadIcon className="h-4 w-4" />
-              Download Original SVG
+              Download SVG
             </Button>
             <Button variant="outline" className="gap-2" onClick={() => handleCopy(svgCode)}>
               <CopyIcon className="h-4 w-4" />
               Copy SVG
             </Button>
-            <Button asChild variant="outline" className="gap-2">
-              <Link href="/svg-optimizer">
-                <ZapIcon className="h-4 w-4" />
-                Optimize SVG
-              </Link>
-            </Button>
           </div>
         </div>
       </main>
 
-      <footer className="border-t py-6">
+      <footer className="border-t py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
+            <div className="flex items-center gap-2 mb-2 md:mb-0">
               <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
               <span className="font-bold">SVGViewer</span>
             </div>

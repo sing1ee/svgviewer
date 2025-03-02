@@ -40,10 +40,10 @@ export default function CodeEditor({ value, onChange, readOnly = false }: CodeEd
   }, []);
 
   return (
-    <div className="relative h-full font-mono text-sm">
+    <div className="relative h-full w-full font-mono text-sm flex-1 min-h-0">
       <pre 
         ref={preRef}
-        className="absolute inset-0 p-4 m-0 whitespace-pre overflow-auto bg-[#0d1117] pointer-events-none"
+        className="absolute inset-0 p-4 m-0 whitespace-pre overflow-auto bg-[#0d1117] pointer-events-none h-full w-full"
         aria-hidden="true"
       ><code className="language-markup"></code></pre>
       

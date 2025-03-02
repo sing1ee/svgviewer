@@ -27,9 +27,11 @@ export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewP
       const parserError = svgDoc.querySelector('parsererror');
       if (parserError) {
         containerRef.current.innerHTML = `
-          <div class="text-red-500 p-4">
-            <p class="font-bold">SVG Parsing Error:</p>
-            <p>${parserError.textContent}</p>
+          <div class="text-red-500 p-4 w-full h-full flex items-center justify-center">
+            <div>
+              <p class="font-bold">SVG Parsing Error:</p>
+              <p>${parserError.textContent}</p>
+            </div>
           </div>
         `;
         return;
@@ -50,15 +52,17 @@ export default function SvgPreview({ svgCode, width, height, zoom }: SvgPreviewP
       containerRef.current.appendChild(svgElement);
     } catch (error) {
       containerRef.current.innerHTML = `
-        <div class="text-red-500 p-4">
-          <p class="font-bold">Error:</p>
-          <p>${error instanceof Error ? error.message : 'Unknown error'}</p>
+        <div class="text-red-500 p-4 w-full h-full flex items-center justify-center">
+          <div>
+            <p class="font-bold">Error:</p>
+            <p>${error instanceof Error ? error.message : 'Unknown error'}</p>
+          </div>
         </div>
       `;
     }
   }, [svgCode, width, height, zoom]);
 
   return (
-    <div ref={containerRef} className="flex items-center justify-center w-full h-full"></div>
+    <div ref={containerRef} className="flex items-center justify-center w-full h-full overflow-auto"></div>
   );
 }

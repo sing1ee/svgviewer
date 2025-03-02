@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
@@ -95,9 +95,9 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1 container mx-auto px-4 py-6">
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+      <main className="flex-1 container mx-auto px-4 py-2 flex flex-col h-[calc(100vh-8.5rem)]">
+        <div className="flex flex-col gap-2 h-full">
+          <div className="flex flex-col md:flex-row gap-2 items-start md:items-center justify-between">
             <h1 className="text-2xl font-bold">SVG Viewer</h1>
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2">
@@ -131,8 +131,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1 min-h-0">
+            <div className="flex flex-col gap-2 h-full">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold">SVG Code</h2>
                 <div className="flex items-center gap-2">
@@ -146,12 +146,12 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden h-[500px]">
+              <div className="border rounded-md overflow-hidden flex-1 min-h-0">
                 <CodeEditor value={svgCode} onChange={setSvgCode} />
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2 h-full">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold">Preview</h2>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -164,7 +164,7 @@ export default function Home() {
                   )}
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden relative h-[500px] flex items-center justify-center">
+              <div className="border rounded-md overflow-hidden relative flex-1 min-h-0 flex items-center justify-center">
                 <GridBackground />
                 <SvgPreview 
                   svgCode={svgCode} 
@@ -176,7 +176,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center mt-4">
+          <div className="flex flex-wrap gap-4 justify-center my-2 mt-auto">
             <Button variant="outline" className="gap-2" onClick={() => document.getElementById('file-upload')?.click()}>
               <UploadIcon className="h-4 w-4" />
               Upload SVG
@@ -212,10 +212,10 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="border-t py-6">
+      <footer className="border-t py-2">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
+            <div className="flex items-center gap-2 mb-2 md:mb-0">
               <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
               <span className="font-bold">SVGViewer</span>
             </div>
