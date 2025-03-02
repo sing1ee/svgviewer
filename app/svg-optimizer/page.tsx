@@ -13,6 +13,7 @@ import SvgPreview from '@/components/svg-preview';
 import { optimizeSvg } from '@/lib/svg-optimizer';
 import { GridBackground } from '@/components/grid-background';
 import NextImage from 'next/image';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 
 export default function OptimizerPage() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
@@ -311,6 +312,100 @@ export default function OptimizerPage() {
             </Button>
           </div>
         </div>
+        
+        {/* SVG Optimizer FAQ Section */}
+        <section className="my-16 bg-card p-8 rounded-xl shadow-lg gradient-border">
+          <h2 className="text-3xl font-bold mb-6 text-center">SVG Optimizer FAQ</h2>
+          <p className="mb-8 text-center text-lg max-w-3xl mx-auto text-muted-foreground">
+            Our SVG optimizer tool helps you reduce the file size of your SVG files without compromising quality. The SVG optimizer removes unnecessary data and optimizes the code structure for better performance.
+          </p>
+          
+          <div className="w-full max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-6">SVG Optimizer Frequently Asked Questions</h3>
+            
+            <Accordion type="single" collapsible className="w-full mb-12">
+              <AccordionItem value="item-1" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">What is an SVG optimizer?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  An SVG optimizer is a tool that reduces the file size of SVG (Scalable Vector Graphics) files while maintaining visual quality. Our SVG optimizer works by removing unnecessary metadata, optimizing path data, and cleaning up the SVG code structure. The SVG optimizer is essential for web performance as it can significantly reduce load times for pages containing SVG graphics.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">How does this SVG optimizer work?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Our SVG optimizer uses advanced algorithms to analyze and optimize your SVG files. The SVG optimizer removes redundant information, simplifies path data, merges similar paths, and eliminates unnecessary attributes. The SVG optimizer also minifies the code by removing whitespace and comments. You can simply paste your SVG code or upload an SVG file, and our SVG optimizer will instantly process it to create a more efficient version.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">Will the SVG optimizer affect the quality of my SVG?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  No, our SVG optimizer is designed to maintain visual quality while reducing file size. The SVG optimizer only removes data that doesn't affect the appearance of your SVG. In some cases, the SVG optimizer might make minor adjustments to decimal precision or path data, but these changes are typically imperceptible to the human eye. You can always compare the original and optimized versions side by side in our preview panel.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">How much can the SVG optimizer reduce file size?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  The amount of optimization depends on the original SVG file. Our SVG optimizer typically achieves size reductions of 30-70% for most SVGs. SVGs created by graphic design software often contain a lot of unnecessary data that our SVG optimizer can safely remove. The SVG optimizer is particularly effective for complex illustrations and icons, where redundant information tends to accumulate.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">Is this SVG optimizer free to use?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes, our SVG optimizer is completely free to use. You can use the SVG optimizer to optimize as many SVG files as you need without any cost. The SVG optimizer works directly in your browser, so there's no need to download or install any software. Our SVG optimizer is designed to be accessible to everyone, from professional developers to casual users.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">Can I use the SVG optimizer for commercial projects?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Absolutely! Our SVG optimizer is available for both personal and commercial use. Whether you're optimizing SVGs for a personal website or a large commercial project, our SVG optimizer can help improve performance. Many professional web developers and designers use our SVG optimizer as part of their workflow to ensure optimal performance for their clients' websites.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-7">
+                <AccordionTrigger className="text-lg font-medium">How does the SVG optimizer handle complex SVGs?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Our SVG optimizer is designed to handle SVGs of varying complexity. For complex SVGs with thousands of paths or elements, the SVG optimizer might take a bit longer to process but will still provide significant optimization. The SVG optimizer is particularly valuable for complex SVGs, as they tend to have more opportunities for optimization and greater potential for file size reduction.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-8" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">Can the SVG optimizer batch process multiple files?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Currently, our online SVG optimizer processes one file at a time. However, for users who need to optimize multiple SVG files, we recommend using our SVG optimizer sequentially. The SVG optimizer is fast and efficient, making it practical to process files one after another. For developers needing to batch process many files, consider integrating SVG optimization into your build process using similar algorithms.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            
+            <h3 className="text-2xl font-semibold mb-6">SVG Optimizer Key Features</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+              <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                <h4 className="font-semibold text-xl mb-3 text-primary">Intelligent Optimization</h4>
+                <p className="text-muted-foreground">Our SVG optimizer uses smart algorithms to reduce file size while preserving visual quality.</p>
+              </div>
+              <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                <h4 className="font-semibold text-xl mb-3 text-primary">Real-time Comparison</h4>
+                <p className="text-muted-foreground">See before and after results instantly with our SVG optimizer's side-by-side preview.</p>
+              </div>
+              <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                <h4 className="font-semibold text-xl mb-3 text-primary">Size Reduction Metrics</h4>
+                <p className="text-muted-foreground">Our SVG optimizer shows you exactly how much file size you've saved with detailed metrics.</p>
+              </div>
+              <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                <h4 className="font-semibold text-xl mb-3 text-primary">Code Cleaning</h4>
+                <p className="text-muted-foreground">The SVG optimizer removes unnecessary attributes, metadata, and comments for cleaner code.</p>
+              </div>
+              <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                <h4 className="font-semibold text-xl mb-3 text-primary">Path Optimization</h4>
+                <p className="text-muted-foreground">Our SVG optimizer simplifies path data and merges similar paths for maximum efficiency.</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t py-6 bg-card/50 backdrop-blur-sm">
