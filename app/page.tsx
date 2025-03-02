@@ -302,6 +302,13 @@ export default function Home() {
                   While the primary SVG viewer focuses on viewing and editing SVGs, we offer a companion SVG converter tool. From the SVG viewer, you can easily navigate to our converter to transform your SVG files into formats like PNG, JPG, or PDF after previewing them in the SVG viewer.
                 </AccordionContent>
               </AccordionItem>
+              
+              <AccordionItem value="item-8" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">How can this SVG viewer help with AI-generated SVG code?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  With the rise of AI assistants like ChatGPT, Claude, and DeepSeek, more users are generating SVG code through AI. Our SVG viewer is the perfect companion tool for AI-generated SVGs, allowing you to instantly visualize, refine, and optimize code produced by AI. The SVG viewer helps bridge the gap between AI generation and production-ready graphics by providing real-time feedback on how the SVG actually renders, helping you spot and fix any issues in the AI-generated code. As AI continues to evolve in generating more complex vector graphics, our SVG viewer remains an essential tool for working with these AI outputs effectively.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
             
             <h3 className="text-2xl font-semibold mb-6">SVG Viewer Key Features</h3>
@@ -321,6 +328,10 @@ export default function Home() {
               <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
                 <h4 className="font-semibold text-xl mb-3 text-primary">Adjustable Canvas</h4>
                 <p className="text-muted-foreground">Our SVG viewer lets you customize the canvas size and zoom level for perfect visualization.</p>
+              </div>
+              <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
+                <h4 className="font-semibold text-xl mb-3 text-primary">AI SVG Support</h4>
+                <p className="text-muted-foreground">Specially optimized for working with AI-generated SVG code from tools like ChatGPT, Claude, and DeepSeek.</p>
               </div>
             </div>
           </div>
