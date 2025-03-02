@@ -2,7 +2,7 @@
 
 一个功能强大的SVG工具集，帮助开发者和设计师查看、优化和转换SVG文件。
 
-![SVG Viewer](public/screenshot.png)
+![SVG Viewer](public/og-image.png)
 
 ## 功能特点
 
