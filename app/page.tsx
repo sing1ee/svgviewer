@@ -82,13 +82,13 @@ export default function Home() {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/viewer" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/svg-viewer" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Viewer
             </Link>
-            <Link href="/optimizer" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/svg-optimizer" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Optimizer
             </Link>
-            <Link href="/converter" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/svg-converter" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Converter
             </Link>
           </nav>
@@ -197,13 +197,13 @@ export default function Home() {
               Copy SVG
             </Button>
             <Button asChild variant="outline" className="gap-2">
-              <Link href="/optimizer">
+              <Link href="/svg-optimizer">
                 <ZapIcon className="h-4 w-4" />
                 Optimize SVG
               </Link>
             </Button>
             <Button asChild variant="outline" className="gap-2">
-              <Link href="/converter">
+              <Link href="/svg-converter">
                 <ImageIcon className="h-4 w-4" />
                 Convert SVG
               </Link>

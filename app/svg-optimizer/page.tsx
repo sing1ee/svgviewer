@@ -98,13 +98,13 @@ export default function OptimizerPage() {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/viewer" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/svg-viewer" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Viewer
             </Link>
-            <Link href="/optimizer" className="text-sm font-medium text-blue-600">
+            <Link href="/svg-optimizer" className="text-sm font-medium text-blue-600">
               Optimizer
             </Link>
-            <Link href="/converter" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <Link href="/svg-converter" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Converter
             </Link>
           </nav>
