@@ -12,7 +12,8 @@ import SvgPreview from '@/components/svg-preview';
 import SvgToolbar from '@/components/svg-toolbar';
 import { optimizeSvg } from '@/lib/svg-optimizer';
 import { GridBackground } from '@/components/grid-background';
-import Image from 'next/image';
+import NextImage from 'next/image';
+
 export default function EditorPage() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
   const [originalSize, setOriginalSize] = useState<number>(0);
@@ -135,7 +136,7 @@ export default function EditorPage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
+              <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
               <span className="font-bold text-xl">SVGViewer</span>
             </Link>
           </div>
@@ -297,7 +298,7 @@ export default function EditorPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Image src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
+              <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
               <span className="font-bold">SVGViewer</span>
             </div>
             <div className="text-sm text-muted-foreground">

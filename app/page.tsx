@@ -10,7 +10,9 @@ import Link from 'next/link';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
 import { optimizeSvg } from '@/lib/svg-optimizer';
-import Image from 'next/image';
+import NextImage from 'next/image';
+import { GridBackground } from '@/components/grid-background';
+
 export default function Home() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
   const [originalSize, setOriginalSize] = useState<number>(0);
@@ -75,7 +77,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
+              <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
               <span className="font-bold text-xl">SVGViewer</span>
             </Link>
           </div>
@@ -165,7 +167,8 @@ export default function Home() {
                   )}
                 </div>
               </div>
-              <div className="border rounded-md overflow-hidden bg-[url('/grid-bg.png')] h-[500px] flex items-center justify-center">
+              <div className="border rounded-md overflow-hidden relative h-[500px] flex items-center justify-center">
+                <GridBackground />
                 <SvgPreview 
                   svgCode={svgCode} 
                   width={canvasSize.width} 
@@ -222,7 +225,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Image src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
+              <NextImage src="/logo.png" alt="SVGViewer Logo" width={24} height={24} />
               <span className="font-bold">SVGViewer</span>
             </div>
             <div className="text-sm text-muted-foreground">

@@ -94,7 +94,7 @@ export default function ConverterPage() {
     canvas.height = svgHeight * scale;
     
     // Create an image from the SVG
-    const img = new Image();
+    const img = document.createElement('img');
     const svgBlob = new Blob([svgCode], { type: 'image/svg+xml;charset=utf-8' });
     const url = URL.createObjectURL(svgBlob);
     
