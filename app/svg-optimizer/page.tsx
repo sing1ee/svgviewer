@@ -99,6 +99,9 @@ export default function OptimizerPage() {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-8">
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+              Viewer
+            </Link>
             <Link href="/svg-optimizer" className="text-sm font-medium text-primary">
               Optimizer
             </Link>
@@ -397,6 +400,9 @@ export default function OptimizerPage() {
               <span className="font-poppins font-bold text-xl">SVGViewer</span>
             </div>
             <div className="flex gap-8">
+              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Viewer
+              </Link>
               <Link href="/svg-optimizer" className="text-sm text-primary hover:text-primary transition-colors">
                 Optimizer
               </Link>
