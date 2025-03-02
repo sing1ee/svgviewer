@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, X, Maximize2 } from 'lucide-react';
 
 interface SvgPreviewProps {
   svgCode: string;
@@ -11,6 +11,7 @@ interface SvgPreviewProps {
 export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -53,6 +54,10 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
     }
   }, [svgCode, zoom]);
 
+  const handleToggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+  };
+
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       <div 
@@ -64,12 +69,58 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
         }}
       ></div>
       
+      {/* fullscreen button */}
+      <button
+        className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors z-10"
+        onClick={handleToggleFullscreen}
+        aria-label="Fullscreen"
+        title="Fullscreen"
+      >
+        <Maximize2 className="h-5 w-5" />
+      </button>
+      
       {error && (
         <div className="absolute inset-0 flex items-center justify-center bg-background/90 backdrop-blur-sm">
           <div className="bg-destructive/10 border border-destructive text-destructive p-6 rounded-lg max-w-md text-center">
             <AlertCircle className="h-8 w-8 mx-auto mb-2" />
             <p className="font-bold text-lg mb-1">SVG Parsing Error</p>
             <p className="text-sm">{error}</p>
+          </div>
+        </div>
+      )}
+
+      {isFullscreen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={handleToggleFullscreen}
+        >
+          <div 
+            className="relative bg-white dark:bg-gray-900 rounded-lg w-full h-full max-w-[90vw] max-h-[90vh] overflow-auto p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+              onClick={handleToggleFullscreen}
+              aria-label="关闭全屏预览"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            
+            <div className="w-full h-full flex items-center justify-center">
+              {svgCode && (
+                <div 
+                  dangerouslySetInnerHTML={{ 
+                    __html: svgCode 
+                  }} 
+                  style={{ 
+                    transform: `scale(${zoom / 100})`,
+                    transformOrigin: 'center',
+                    transition: 'transform 0.2s ease-out',
+                    filter: 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))'
+                  }}
+                />
+              )}
+            </div>
           </div>
         </div>
       )}
