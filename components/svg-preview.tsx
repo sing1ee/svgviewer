@@ -34,7 +34,6 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
       // Get the SVG element
       const svgElement = svgDoc.documentElement;
       
-      
       // Apply zoom and smooth transitions
       svgElement.style.transform = `scale(${zoom / 100})`;
       svgElement.style.transformOrigin = 'center';
@@ -42,6 +41,10 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
       
       // Add drop shadow for better visibility
       svgElement.style.filter = 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))';
+      
+      // 确保SVG元素可以正确显示，不会被容器限制
+      svgElement.style.maxWidth = 'none';
+      svgElement.style.maxHeight = 'none';
       
       // Append to container
       containerRef.current.appendChild(svgElement);
@@ -54,7 +57,11 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
     <div className="relative w-full h-full flex items-center justify-center">
       <div 
         ref={containerRef} 
-        className="flex items-center justify-center w-full h-full overflow-auto p-4"
+        className="w-full h-full overflow-auto p-4"
+        style={{ 
+          display: 'block', // 改为block布局，避免flex布局对滚动条的影响
+          position: 'relative'
+        }}
       ></div>
       
       {error && (
