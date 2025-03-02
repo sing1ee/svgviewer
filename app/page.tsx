@@ -96,9 +96,6 @@ export default function Home() {
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/svg-viewer" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Viewer
-            </Link>
             <Link href="/svg-optimizer" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Optimizer
             </Link>

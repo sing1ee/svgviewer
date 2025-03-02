@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://svgviewer.com/sitemap.xml 
+Sitemap: https://svgviewer.app/sitemap.xml 
