@@ -83,9 +83,28 @@
       hsl(var(--primary) / 0.05),
       transparent 40%
     );
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-poppins font-semibold;
+  }
+  
+  @media (max-width: 768px) {
+    button, a, [role="button"] {
+      @apply cursor-default;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    input, select, textarea {
+      font-size: 16px;
+    }
   }
 }
 
@@ -118,5 +137,54 @@
   .glass-panel {
     @apply bg-white bg-opacity-70 dark:bg-black dark:bg-opacity-70 backdrop-blur-sm;
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-container {
+    @apply px-4 py-3 md:px-6 md:py-4;
+  }
+  
+  .mobile-card {
+    @apply rounded-lg shadow-sm p-3 md:p-4;
+  }
+  
+  .touch-feedback {
+    @apply transition-transform active:scale-95;
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+  
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
   }
 }

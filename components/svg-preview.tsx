@@ -12,6 +12,9 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -36,7 +39,7 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
       const svgElement = svgDoc.documentElement;
       
       // Apply zoom and smooth transitions
-      svgElement.style.transform = `scale(${zoom / 100})`;
+      svgElement.style.transform = `scale(${zoom / 100}) translate(${position.x}px, ${position.y}px)`;
       svgElement.style.transformOrigin = 'center';
       svgElement.style.transition = 'transform 0.2s ease-out';
       
@@ -52,22 +55,83 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Unknown error');
     }
-  }, [svgCode, zoom]);
+  }, [svgCode, zoom, position]);
 
   const handleToggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
+  };
+
+  // Mouse event handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartPos({ x: e.clientX - position.x, y: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setPosition({
+      x: e.clientX - startPos.x,
+      y: e.clientY - startPos.y
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length === 1) {
+      setIsDragging(true);
+      setStartPos({ 
+        x: e.touches[0].clientX - position.x, 
+        y: e.touches[0].clientY - position.y 
+      });
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    e.preventDefault(); // Prevent scrolling while dragging
+    setPosition({
+      x: e.touches[0].clientX - startPos.x,
+      y: e.touches[0].clientY - startPos.y
+    });
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
+  // Double tap/click to reset position
+  const handleDoubleClick = () => {
+    setPosition({ x: 0, y: 0 });
   };
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       <div 
         ref={containerRef} 
-        className="w-full h-full overflow-auto p-4"
+        className={`w-full h-full overflow-auto p-4 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
         style={{ 
           display: 'block', // 改为block布局，避免flex布局对滚动条的影响
-          position: 'relative'
+          position: 'relative',
+          touchAction: 'none' // Disable browser handling of all panning and zooming gestures
         }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onDoubleClick={handleDoubleClick}
       ></div>
+      
+      {/* Mobile instructions tooltip */}
+      <div className="absolute bottom-4 left-4 right-4 md:hidden bg-black/70 text-white text-xs p-2 rounded-md backdrop-blur-sm text-center pointer-events-none opacity-70">
+        Drag to move • Double tap to reset position
+      </div>
       
       {/* fullscreen button */}
       <button
@@ -101,25 +165,41 @@ export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
             <button 
               className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
               onClick={handleToggleFullscreen}
-              aria-label="关闭全屏预览"
+              aria-label="Close fullscreen preview"
             >
               <X className="h-5 w-5" />
             </button>
             
-            <div className="w-full h-full flex items-center justify-center">
+            <div 
+              className={`w-full h-full flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onDoubleClick={handleDoubleClick}
+              style={{ touchAction: 'none' }}
+            >
               {svgCode && (
                 <div 
                   dangerouslySetInnerHTML={{ 
                     __html: svgCode 
                   }} 
                   style={{ 
-                    transform: `scale(${zoom / 100})`,
+                    transform: `scale(${zoom / 100}) translate(${position.x}px, ${position.y}px)`,
                     transformOrigin: 'center',
                     transition: 'transform 0.2s ease-out',
                     filter: 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))'
                   }}
                 />
               )}
+            </div>
+            
+            {/* Mobile instructions tooltip in fullscreen */}
+            <div className="absolute bottom-4 left-4 right-4 md:hidden bg-black/70 text-white text-xs p-2 rounded-md backdrop-blur-sm text-center pointer-events-none opacity-70">
+              Drag to move • Double tap to reset position
             </div>
           </div>
         </div>
