@@ -453,8 +453,11 @@ export default function OptimizerPage() {
               <Link href="/svg-optimizer" className="text-sm text-primary hover:text-primary transition-colors">
                 Optimizer
               </Link>
-              <Link href="/svg-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/svg-converter" className="text-sm text-primary hover:text-primary transition-colors">
                 Converter
+              </Link>
+              <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Blog
               </Link>
               <a href="/privacy.html" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy

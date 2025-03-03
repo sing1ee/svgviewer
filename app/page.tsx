@@ -414,6 +414,9 @@ export default function Home() {
               <Link href="/svg-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Converter
               </Link>
+              <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Blog
+              </Link>
               <a href="/privacy.html" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy
               </a>
