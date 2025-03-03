@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, XIcon } from 'lucide-react';
+import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, XIcon, ClipboardPasteIcon } from 'lucide-react';
 import Link from 'next/link';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
@@ -83,6 +83,23 @@ export default function OptimizerPage() {
       title: "Cleared",
       description: "SVG code has been cleared",
     });
+  };
+
+  const handlePaste = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      setSvgCode(text);
+      toast({
+        title: "Pasted from clipboard",
+        description: "SVG code has been pasted from your clipboard",
+      });
+    } catch (error) {
+      toast({
+        title: "Paste failed",
+        description: "Failed to read from clipboard",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleOptimize = () => {
@@ -200,14 +217,14 @@ export default function OptimizerPage() {
               <div className="flex flex-col gap-3 h-full">
                 <div className="flex items-center justify-between">
                   <h2 className="text-xl font-semibold">Original SVG Code</h2>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={handleClear}
                       className="hover:bg-primary/10"
                     >
-                      <XIcon className="h-4 w-4 mr-2" />
+                      <XIcon className="h-3.5 w-3.5 mr-1" />
                       Clear
                     </Button>
                     <Button
@@ -216,8 +233,17 @@ export default function OptimizerPage() {
                       onClick={() => handleCopy(svgCode)}
                       className="hover:bg-primary/10"
                     >
-                      <CopyIcon className="h-4 w-4 mr-2" />
+                      <CopyIcon className="h-3.5 w-3.5 mr-1" />
                       Copy
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handlePaste}
+                      className="hover:bg-primary/10"
+                    >
+                      <ClipboardPasteIcon className="h-3.5 w-3.5 mr-1" />
+                      Paste
                     </Button>
                   </div>
                 </div>
@@ -246,14 +272,14 @@ export default function OptimizerPage() {
               <div className="flex flex-col gap-3 h-full">
                 <div className="flex items-center justify-between">
                   <h2 className="text-xl font-semibold">Optimized SVG Code</h2>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <Button
                       variant="ghost"
                       size="sm"
                       onClick={() => handleCopy(optimizedCode)}
-                      className="hover:bg-primary/10"
+                      className="hover:bg-primary/10 h-7 px-2"
                     >
-                      <CopyIcon className="h-4 w-4 mr-2" />
+                      <CopyIcon className="h-3.5 w-3.5 mr-1" />
                       Copy
                     </Button>
                   </div>
