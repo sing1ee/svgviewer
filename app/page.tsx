@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/hooks/use-toast';
-import { FileIcon, CopyIcon, DownloadIcon, UploadIcon, ZapIcon, Code2Icon, ImageIcon, MenuIcon, XIcon, ClipboardPasteIcon } from 'lucide-react';
+import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, ImageIcon, XIcon, ClipboardPasteIcon } from 'lucide-react';
 import Link from 'next/link';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
@@ -14,8 +13,6 @@ import NextImage from 'next/image';
 import { GridBackground } from '@/components/grid-background';
 import Head from 'next/head';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { MobileNav } from '@/components/mobile-nav';
 
 export default function Home() {
@@ -23,7 +20,6 @@ export default function Home() {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [optimizedSize, setOptimizedSize] = useState<number>(0);
   const [optimizedCode, setOptimizedCode] = useState<string>('');
-  const [canvasSize, setCanvasSize] = useState<{ width: number; height: number }>({ width: 400, height: 400 });
   const [zoom, setZoom] = useState<number>(100);
   const [mobileView, setMobileView] = useState<'code' | 'preview'>('preview');
   
@@ -89,12 +85,6 @@ export default function Home() {
     URL.revokeObjectURL(url);
   };
 
-  const handleCanvasSizeChange = (dimension: 'width' | 'height', value: string) => {
-    const numValue = parseInt(value);
-    if (!isNaN(numValue)) {
-      setCanvasSize(prev => ({ ...prev, [dimension]: numValue }));
-    }
-  };
 
   const handleClear = () => {
     setSvgCode('');
