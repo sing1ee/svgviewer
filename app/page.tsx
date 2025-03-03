@@ -16,6 +16,7 @@ import Head from 'next/head';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { MobileNav } from '@/components/mobile-nav';
 
 export default function Home() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
@@ -95,6 +96,14 @@ export default function Home() {
     }
   };
 
+  const handleClear = () => {
+    setSvgCode('');
+    toast({
+      title: "Cleared",
+      description: "SVG code has been cleared",
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Head>
@@ -133,27 +142,7 @@ export default function Home() {
           </nav>
           
           {/* Mobile Navigation */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <MenuIcon className="h-5 w-5" />
-                <span className="sr-only">Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[250px] sm:w-[300px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="text-base font-medium hover:text-primary transition-colors py-2">
-                  Viewer
-                </Link>
-                <Link href="/svg-optimizer" className="text-base font-medium hover:text-primary transition-colors py-2">
-                  Optimizer
-                </Link>
-                <Link href="/svg-converter" className="text-base font-medium hover:text-primary transition-colors py-2">
-                  Converter
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <MobileNav />
         </div>
       </header>
 
@@ -208,21 +197,31 @@ export default function Home() {
           </div>
 
           {/* Mobile View Switcher */}
-          <div className="md:hidden mb-2">
+          {/* <div className="md:hidden mb-2">
             <Tabs defaultValue={mobileView} onValueChange={(value) => setMobileView(value as 'code' | 'preview')} className="w-full">
               <TabsList className="grid grid-cols-2 w-full">
                 <TabsTrigger value="code">Code</TabsTrigger>
                 <TabsTrigger value="preview">Preview</TabsTrigger>
               </TabsList>
             </Tabs>
-          </div>
+          </div> */}
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
-            {/* Code Editor - Hidden on mobile when preview is selected */}
-            <div className={`flex flex-col gap-3 h-full ${mobileView === 'preview' ? 'hidden md:flex' : 'flex'}`}>
+          {/* 使用响应式布局 */}
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-6 flex-1 min-h-0">
+            {/* Code Editor */}
+            <div className="flex flex-col gap-3 h-full">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">SVG Code</h2>
                 <div className="flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleClear}
+                    className="hover:bg-primary/10"
+                  >
+                    <XIcon className="h-4 w-4 mr-2" />
+                    Clear
+                  </Button>
                   <Button
                     variant="ghost"
                     size="sm"
@@ -239,8 +238,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Preview - Hidden on mobile when code is selected */}
-            <div className={`flex flex-col gap-3 h-full ${mobileView === 'code' ? 'hidden md:flex' : 'flex'}`}>
+            {/* Preview */}
+            <div className="flex flex-col gap-3 h-full">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">Preview</h2>
                 <div className="flex items-center gap-2 text-sm">

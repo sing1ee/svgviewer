@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon } from 'lucide-react';
+import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
@@ -14,6 +14,7 @@ import { optimizeSvg } from '@/lib/svg-optimizer';
 import { GridBackground } from '@/components/grid-background';
 import NextImage from 'next/image';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { MobileNav } from '@/components/mobile-nav';
 
 export default function OptimizerPage() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
@@ -74,6 +75,16 @@ export default function OptimizerPage() {
     }
   };
 
+  const handleClear = () => {
+    setSvgCode('');
+    setOptimizedCode('');
+    setOptimizedSize(0);
+    toast({
+      title: "Cleared",
+      description: "SVG code has been cleared",
+    });
+  };
+
   const handleOptimize = () => {
     const optimized = optimizeSvg(svgCode);
     setOptimizedCode(optimized);
@@ -109,6 +120,7 @@ export default function OptimizerPage() {
               Converter
             </Link>
           </nav>
+          <MobileNav />
         </div>
       </header>
 
@@ -189,6 +201,15 @@ export default function OptimizerPage() {
                 <div className="flex items-center justify-between">
                   <h2 className="text-xl font-semibold">Original SVG Code</h2>
                   <div className="flex items-center gap-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleClear}
+                      className="hover:bg-primary/10"
+                    >
+                      <XIcon className="h-4 w-4 mr-2" />
+                      Clear
+                    </Button>
                     <Button
                       variant="ghost"
                       size="sm"
