@@ -9,7 +9,7 @@ Claude 3.7 is Anthropic's latest AI model, featuring superior code generation ca
 
 We can leverage these capabilities for many purposes. Here's an example of interior floor plan design.
 
-# Prompt
+## Prompt
 
 For Claude 3.7, there's no need for carefully crafted prompts. You can simply state your requirements directly:
 
@@ -17,7 +17,10 @@ For Claude 3.7, there's no need for carefully crafted prompts. You can simply st
 Help me create a floor plan design for a house using SVG code, with attention to aesthetics.
 ```
 
-# SVG Code
+## Show
+![AI Powered Floor Plan Design](/AI-Powered-Floor-Plan-Design.png "AI Powered Floor Plan Design")
+
+## SVG Code
 
 ```svg
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
@@ -149,5 +152,5 @@ Help me create a floor plan design for a house using SVG code, with attention to
 
 ```
 
-# Summary
+## Summary
 If you have additional requirements, you can simply continue the dialogue with Claude. If you want to save the SVG as an image, you can use our [svg to image](https://svgviewer.app/svg-converter) tool, which allows you to save in PNG, JPEG, or WEBP formats.
