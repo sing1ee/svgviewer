@@ -253,28 +253,12 @@ export default function ConverterPage() {
                   <span className="text-muted-foreground">Size: {originalSize} bytes</span>
                 </div>
               </div>
-              <div className="border rounded-lg overflow-hidden relative flex-1 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
+              <div className="border rounded-lg overflow-hidden relative flex-1 min-h-0 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
                 <GridBackground />
-                {format === 'svg' ? (
-                  <SvgPreview 
-                    svgCode={svgCode} 
-                    zoom={zoom} 
-                  />
-                ) : (
-                  dataUrl && (
-                    <img 
-                      src={dataUrl} 
-                      alt="Converted SVG" 
-                      style={{ 
-                        maxWidth: '100%', 
-                        maxHeight: '100%',
-                        transform: `scale(${zoom / 100})`,
-                        transition: 'transform 0.2s ease-out',
-                        filter: 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))'
-                      }} 
-                    />
-                  )
-                )}
+                <SvgPreview 
+                  svgCode={svgCode} 
+                  zoom={zoom} 
+                />
               </div>
             </div>
           </div>
