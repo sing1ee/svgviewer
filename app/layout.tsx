@@ -67,6 +67,16 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+        <style>
+          {`
+            .cm-editor {
+              min-height: 200px;
+            }
+            .preview-container {
+              min-height: 200px;
+            }
+          `}
+        </style>
       </head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-DVMP8MGHFZ" />
       <Script id="google-analytics">
