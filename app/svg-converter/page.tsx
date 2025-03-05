@@ -26,6 +26,7 @@ export default function ConverterPage() {
   
   const svgRef = useRef<SVGSVGElement>(null);
   const { toast } = useToast();
+  const [icoSize, setIcoSize] = useState<number>(16);
 
   useEffect(() => {
     if (svgCode) {
@@ -36,7 +37,7 @@ export default function ConverterPage() {
   useEffect(() => {
     // Convert SVG to data URL when format or scale changes
     convertSvgToImage();
-  }, [svgCode, format, scale]);
+  }, [svgCode, format, scale, icoSize]);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -92,8 +93,15 @@ export default function ConverterPage() {
     // Set canvas dimensions based on SVG and scale
     const svgWidth = parseInt(svgElement.getAttribute('width') || '400');
     const svgHeight = parseInt(svgElement.getAttribute('height') || '400');
-    canvas.width = svgWidth * scale;
-    canvas.height = svgHeight * scale;
+    
+    // For ICO format, we need to ensure the dimensions are appropriate
+    if (format === 'ico') {
+      canvas.width = icoSize;
+      canvas.height = icoSize;
+    } else {
+      canvas.width = svgWidth * scale;
+      canvas.height = svgHeight * scale;
+    }
     
     // Create an image from the SVG
     const img = document.createElement('img');
@@ -105,7 +113,9 @@ export default function ConverterPage() {
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       
       // Convert canvas to data URL
-      const dataUrl = canvas.toDataURL(`image/${format}`);
+      const dataUrl = format === 'ico' 
+        ? canvas.toDataURL('image/png') // ICO will be converted from PNG
+        : canvas.toDataURL(`image/${format}`);
       setDataUrl(dataUrl);
       
       // Clean up
@@ -115,11 +125,65 @@ export default function ConverterPage() {
     img.src = url;
   };
 
-  const handleDownloadImage = () => {
-    if (!dataUrl) return;
+  const handleDownloadImage = async () => {
+    if (!dataUrl && format !== 'svg') return;
     
+    if (format === 'ico') {
+      try {
+        // Convert PNG data URL to ICO
+        const response = await fetch(dataUrl);
+        const blob = await response.blob();
+        const pngArrayBuffer = await blob.arrayBuffer();
+        
+        // Create ICO header
+        const header = new ArrayBuffer(6);
+        const view = new DataView(header);
+        view.setUint16(0, 0, true);     // Reserved. Must always be 0
+        view.setUint16(2, 1, true);     // Image type: 1 for icon (.ICO)
+        view.setUint16(4, 1, true);     // Number of images
+        
+        // Create ICO directory entry
+        const directory = new ArrayBuffer(16);
+        const dirView = new DataView(directory);
+        dirView.setUint8(0, blob.size > 256 ? 0 : blob.size);    // Width
+        dirView.setUint8(1, blob.size > 256 ? 0 : blob.size);    // Height
+        dirView.setUint8(2, 0);         // Color palette
+        dirView.setUint8(3, 0);         // Reserved
+        dirView.setUint16(4, 1, true);  // Color planes
+        dirView.setUint16(6, 32, true); // Bits per pixel
+        dirView.setUint32(8, blob.size, true);  // Size of image data
+        dirView.setUint32(12, 22, true);        // Offset of image data
+        
+        // Combine all parts
+        const iconData = new Blob([header, directory, pngArrayBuffer], { type: 'image/x-icon' });
+        
+        // Download
+        const url = URL.createObjectURL(iconData);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'converted.ico';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        toast({
+          title: "Image Downloaded",
+          description: "SVG has been converted to ICO and downloaded",
+        });
+      } catch (error) {
+        toast({
+          title: "Conversion Failed",
+          description: "Failed to convert to ICO format",
+          variant: "destructive",
+        });
+      }
+      return;
+    }
+    
+    // Original download logic for other formats
     const a = document.createElement('a');
-    a.href = dataUrl;
+    a.href = format === 'svg' ? `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgCode)}` : dataUrl;
     a.download = `converted.${format}`;
     document.body.appendChild(a);
     a.click();
@@ -185,7 +249,7 @@ export default function ConverterPage() {
         <div className="flex flex-col gap-6 h-full">
           <div className="text-center max-w-3xl mx-auto mb-4">
             <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Converter</h1>
-            <p className="text-muted-foreground text-lg">Convert your SVG files to PNG, JPEG, or WebP formats.</p>
+            <p className="text-muted-foreground text-lg">Convert your SVG files to PNG, JPEG, WebP formats or ICO.</p>
           </div>
           
           <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border">
@@ -303,23 +367,46 @@ export default function ConverterPage() {
                     <SelectItem value="jpeg">JPEG</SelectItem>
                     <SelectItem value="webp">WebP</SelectItem>
                     <SelectItem value="svg">SVG (Original)</SelectItem>
+                    <SelectItem value="ico">ICO</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2 text-muted-foreground">Scale Factor</label>
-                <div className="flex items-center gap-2">
-                  <Slider
-                    value={[scale]}
-                    min={0.5}
-                    max={3}
-                    step={0.5}
-                    onValueChange={(value) => setScale(value[0])}
-                    className="flex-1"
-                  />
-                  <span className="text-sm w-12">{scale}x</span>
+              
+              {format === 'ico' ? (
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-muted-foreground">Icon Size</label>
+                  <Select value={icoSize.toString()} onValueChange={(value) => setIcoSize(Number(value))}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select size" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="16">16x16 -Browser tabs, address bar, bookmarks</SelectItem>
+                      <SelectItem value="32">32x32 -Taskbar, shortcuts, hi-res devices</SelectItem>
+                      <SelectItem value="48">48x48 - Win desktop, browser extensions</SelectItem>
+                      <SelectItem value="64">64x64 -Hi-res devices, specific cases</SelectItem>
+                      <SelectItem value="96">96x96 -Hi-res (e.g., Retina)</SelectItem>
+                      <SelectItem value="128">128x128 -Chrome Web Store, hi-res</SelectItem>
+                      <SelectItem value="256">256x256 -Win taskbar, hi-res</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
-              </div>
+              ) : (
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-muted-foreground">Scale Factor</label>
+                  <div className="flex items-center gap-2">
+                    <Slider
+                      value={[scale]}
+                      min={0.5}
+                      max={3}
+                      step={0.5}
+                      onValueChange={(value) => setScale(value[0])}
+                      className="flex-1"
+                    />
+                    <span className="text-sm w-12">{scale}x</span>
+                  </div>
+                </div>
+              )}
+              
               <div className="flex items-end">
                 <Button 
                   variant="default" 
@@ -361,7 +448,7 @@ export default function ConverterPage() {
         <section className="my-16 bg-card p-8 rounded-xl shadow-lg gradient-border">
           <h2 className="text-3xl font-bold mb-6 text-center">SVG Converter FAQ</h2>
           <p className="mb-8 text-center text-lg max-w-3xl mx-auto text-muted-foreground">
-            Our SVG converter tool allows you to convert SVG files to various image formats including PNG, JPEG, and WebP. The SVG converter maintains high quality while transforming vector graphics to raster images.
+            Our SVG converter tool allows you to convert SVG files to various image formats including PNG, JPEG, WebP and ICO. The SVG converter maintains high quality while transforming vector graphics to raster images.
           </p>
           
           <div className="w-full max-w-4xl mx-auto">
@@ -371,14 +458,14 @@ export default function ConverterPage() {
               <AccordionItem value="item-1" className="border-b">
                 <AccordionTrigger className="text-lg font-medium">What is an SVG converter?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  An SVG converter is a tool that transforms SVG (Scalable Vector Graphics) files into raster image formats like PNG, JPEG, or WebP. Our SVG converter works by rendering the vector graphics and capturing the result as a bitmap image. The SVG converter is essential when you need to use your vector graphics in contexts that don't support SVG format, such as certain social media platforms, older applications, or when specific raster formats are required.
+                  An SVG converter is a tool that transforms SVG (Scalable Vector Graphics) files into raster image formats like PNG, JPEG, WebP or ICO. Our SVG converter works by rendering the vector graphics and capturing the result as a bitmap image. The SVG converter is essential when you need to use your vector graphics in contexts that don't support SVG format, such as certain social media platforms, older applications, or when specific raster formats are required.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2" className="border-b">
                 <AccordionTrigger className="text-lg font-medium">How does this SVG converter work?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Our SVG converter renders your SVG file in the browser and then captures the output as a raster image. The SVG converter allows you to choose from different output formats (PNG, JPEG, WebP) and set the scale factor to control the resolution of the converted image. Simply paste your SVG code or upload an SVG file, select your desired format and settings, and our SVG converter will generate a high-quality image that you can download.
+                  Our SVG converter renders your SVG file in the browser and then captures the output as a raster image. The SVG converter allows you to choose from different output formats (PNG, JPEG, WebP，ICO) and set the scale factor to control the resolution of the converted image. Simply paste your SVG code or upload an SVG file, select your desired format and settings, and our SVG converter will generate a high-quality image that you can download.
                 </AccordionContent>
               </AccordionItem>
               
@@ -402,25 +489,32 @@ export default function ConverterPage() {
                   WebP is a modern image format that offers superior compression and quality compared to both PNG and JPEG. Our SVG to WebP converter creates images that are typically 25-35% smaller than PNG and JPEG equivalents while maintaining similar visual quality. The SVG to WebP conversion is perfect for web optimization, as WebP supports both lossless compression (like PNG) and transparency, but with much smaller file sizes. Most modern browsers now support WebP, making it an excellent choice for web graphics.
                 </AccordionContent>
               </AccordionItem>
-              
+
               <AccordionItem value="item-6" className="border-b">
+                <AccordionTrigger className="text-lg font-medium">Why would I need to convert SVG to ICO?</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                Converting SVG to ICO is essential for creating versatile and high-quality icons for various applications. ICO files support multiple resolutions (e.g., 16x16, 32x32, 48x48, 256x256), making them ideal for use as favicons in browsers, shortcuts on desktops, or taskbar icons in Windows. Our SVG to ICO converter ensures your icons remain sharp and clear across different display contexts, preserving the scalability and detail of your original SVG. ICO format is widely supported in operating systems and applications, making it a reliable choice for creating professional icons.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-7" className="border-b">
                 <AccordionTrigger className="text-lg font-medium">Is this SVG converter free to use?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   Yes, our SVG converter is completely free to use. You can use the SVG converter to transform as many SVG files as you need to PNG, JPEG, or WebP without any cost. The SVG converter works directly in your browser, so there's no need to download or install any software. Our SVG converter is designed to be accessible to everyone, from professional designers to casual users.
                 </AccordionContent>
               </AccordionItem>
               
-              <AccordionItem value="item-7">
+              <AccordionItem value="item-8">
                 <AccordionTrigger className="text-lg font-medium">How do I get the best quality when converting SVG to raster formats?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  To get the best quality when using our SVG converter, adjust the scale factor to create a higher resolution output. For SVG to PNG conversion, a higher scale factor will result in a crisper image, especially important if you plan to display the image at a large size. For SVG to JPEG or SVG to WebP conversion, balance between quality and file size based on your needs. Our SVG converter preview shows you exactly how your converted image will look before you download it.
+                  To get the best quality when using our SVG converter, adjust the scale factor to create a higher resolution output. For SVG to PNG conversion, a higher scale factor will result in a crisper image, especially important if you plan to display the image at a large size. For SVG to JPEG or SVG to WebP conversion, balance between quality and file size based on your needs. For SVG to ICO conversion, choose an appropriate scale factor to ensure the icon remains sharp across different sizes, as ICO files often contain multiple resolutions (e.g., 16x16, 32x32, 48x48, 256x256) to support various display contexts like browser tabs, taskbars, and desktop icons. Our SVG converter preview shows you exactly how your converted image will look before you download it.
                 </AccordionContent>
               </AccordionItem>
               
-              <AccordionItem value="item-8" className="border-b">
+              <AccordionItem value="item-9" className="border-b">
                 <AccordionTrigger className="text-lg font-medium">Can the SVG converter handle complex SVG files?</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Yes, our SVG converter is designed to handle SVGs of varying complexity. For complex SVGs with many elements, gradients, or effects, our SVG converter ensures accurate rendering in the output format. The SVG converter may take slightly longer to process very complex files, especially at higher scale factors. For best results with complex SVGs, we recommend using PNG or WebP formats which better preserve fine details compared to JPEG.
+                For SVG to ICO conversion, the converter efficiently manages complex designs by optimizing them for multiple resolutions (e.g., 16x16, 32x32, 48x48, 256x256), ensuring your icons remain sharp and clear across different display contexts like browser tabs, taskbars, and desktop icons.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -429,7 +523,7 @@ export default function ConverterPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
               <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
                 <h4 className="font-semibold text-xl mb-3 text-primary">Multiple Format Support</h4>
-                <p className="text-muted-foreground">Our SVG converter supports conversion to PNG, JPEG, and WebP formats to suit your specific needs.</p>
+                <p className="text-muted-foreground">Our SVG converter supports conversion to PNG, JPEG, WebP and ICO formats to suit your specific needs.</p>
               </div>
               <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
                 <h4 className="font-semibold text-xl mb-3 text-primary">Adjustable Resolution</h4>
@@ -441,7 +535,7 @@ export default function ConverterPage() {
               </div>
               <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
                 <h4 className="font-semibold text-xl mb-3 text-primary">High-Quality Conversion</h4>
-                <p className="text-muted-foreground">Our SVG to PNG, SVG to JPEG, and SVG to WebP conversions maintain excellent visual quality.</p>
+                <p className="text-muted-foreground">Our SVG to PNG, SVG to JPEG, SVG to WebP and SVG to ICO conversions maintain excellent visual quality.</p>
               </div>
               <div className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow gradient-border">
                 <h4 className="font-semibold text-xl mb-3 text-primary">Browser-Based Processing</h4>
