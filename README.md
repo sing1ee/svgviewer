@@ -1,127 +1,127 @@
 # SVG Viewer
 
-一个功能强大的SVG工具集，帮助开发者和设计师查看、优化和转换SVG文件。
+A powerful SVG toolkit that helps developers and designers view, optimize, and convert SVG files.
 
 ![SVG Viewer](public/og-image.png)
 
-## 功能特点
+## Features
 
-- **SVG查看器**：实时预览和编辑SVG代码
-- **SVG优化器**：减小SVG文件大小，提高性能
-- **SVG转换器**：将SVG转换为其他格式（如PNG、JPG等）
-- **代码编辑器**：内置语法高亮的SVG代码编辑器
-- **实时预览**：即时查看SVG编辑效果
-- **缩放控制**：调整SVG预览大小
-- **文件导入/导出**：上传SVG文件并下载优化后的结果
-- **响应式设计**：适配各种设备屏幕
+- **SVG Viewer**: Real-time preview and edit SVG code
+- **SVG Optimizer**: Reduce SVG file size, improve performance
+- **SVG Converter**: Convert SVG to other formats (such as PNG, JPG, etc.)
+- **Code Editor**: Built-in syntax highlighting SVG code editor
+- **Real-time Preview**: Instantly view SVG editing effects
+- **Zoom Control**: Adjust SVG preview size
+- **File Import/Export**: Upload SVG files and download optimized results
+- **Responsive Design**: Adapts to various device screens
 
-## 技术栈
+## Tech Stack
 
-- [Next.js](https://nextjs.org/) - React框架
-- [TypeScript](https://www.typescriptlang.org/) - 类型安全的JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) - 实用优先的CSS框架
-- [Radix UI](https://www.radix-ui.com/) - 无障碍UI组件
-- [Prism.js](https://prismjs.com/) - 代码语法高亮
-- [Lucide React](https://lucide.dev/) - 图标库
+- [Next.js](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Radix UI](https://www.radix-ui.com/) - Accessible UI components
+- [Prism.js](https://prismjs.com/) - Code syntax highlighting
+- [Lucide React](https://lucide.dev/) - Icon library
 
-## 快速开始
+## Quick Start
 
-### 前提条件
+### Prerequisites
 
-- Node.js 18.x 或更高版本
-- npm 或 yarn 或 pnpm
+- Node.js 18.x or higher
+- npm or yarn or pnpm
 
-### 安装
+### Installation
 
-1. 克隆仓库
+1. Clone the repository
 
 ```bash
 git clone https://github.com/yourusername/svg-viewer.git
 cd svg-viewer
 ```
 
-2. 安装依赖
+2. Install dependencies
 
 ```bash
 npm install
-# 或
+# or
 yarn install
-# 或
+# or
 pnpm install
 ```
 
-3. 启动开发服务器
+3. Start the development server
 
 ```bash
 npm run dev
-# 或
+# or
 yarn dev
-# 或
+# or
 pnpm dev
 ```
 
-4. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
+4. Open your browser and visit [http://localhost:3000](http://localhost:3000)
 
-## 使用指南
+## Usage Guide
 
-### SVG查看器
+### SVG Viewer
 
-1. 在代码编辑器中输入或粘贴SVG代码
-2. 实时查看右侧预览窗口中的SVG
-3. 使用缩放滑块调整预览大小
-4. 调整画布尺寸以适应不同的SVG
+1. Enter or paste SVG code in the code editor
+2. View the SVG in real-time in the preview window on the right
+3. Use the zoom slider to adjust the preview size
+4. Adjust the canvas size to accommodate different SVGs
 
-### SVG优化器
+### SVG Optimizer
 
-1. 上传SVG文件或在编辑器中输入SVG代码
-2. 点击"优化"按钮
-3. 查看优化前后的文件大小对比
-4. 下载优化后的SVG文件
+1. Upload an SVG file or enter SVG code in the editor
+2. Click the "Optimize" button
+3. View the file size comparison before and after optimization
+4. Download the optimized SVG file
 
-### SVG转换器
+### SVG Converter
 
-1. 上传SVG文件或在编辑器中输入SVG代码
-2. 选择目标格式（PNG、JPG等）
-3. 设置输出选项（尺寸、质量等）
-4. 点击"转换"按钮
-5. 下载转换后的文件
+1. Upload an SVG file or enter SVG code in the editor
+2. Select the target format (PNG, JPG, etc.)
+3. Set output options (size, quality, etc.)
+4. Click the "Convert" button
+5. Download the converted file
 
-## 部署
+## Deployment
 
-项目可以轻松部署到Vercel、Netlify或其他支持Next.js的平台：
+The project can be easily deployed to Vercel, Netlify, or other platforms that support Next.js:
 
 ```bash
-# 构建生产版本
+# Build for production
 npm run build
-# 或
+# or
 yarn build
-# 或
+# or
 pnpm build
 
-# 启动生产服务器
+# Start production server
 npm start
-# 或
+# or
 yarn start
-# 或
+# or
 pnpm start
 ```
 
-## 贡献指南
+## Contribution Guidelines
 
-欢迎贡献！请随时提交问题或拉取请求。
+Contributions are welcome! Feel free to submit issues or pull requests.
 
-1. Fork 项目
-2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开拉取请求
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 许可证
+## License
 
-本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## 联系方式
+## Contact
 
-项目维护者 - [@yourusername](https://github.com/yourusername)
+Project Maintainer - [@yourusername](https://github.com/yourusername)
 
-项目链接: [https://github.com/yourusername/svg-viewer](https://github.com/yourusername/svg-viewer) 
+Project Link: [https://github.com/yourusername/svg-viewer](https://github.com/yourusername/svg-viewer) 
