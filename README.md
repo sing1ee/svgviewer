@@ -122,6 +122,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Project Maintainer - [@yourusername](https://github.com/yourusername)
+Project Maintainer - [@sing1ee](https://github.com/sing1ee)
 
-Project Link: [https://github.com/yourusername/svg-viewer](https://github.com/yourusername/svg-viewer) 
+Project Link: [https://github.com/sing1ee/svg-viewer](https://github.com/sing1ee/svg-viewer) 
