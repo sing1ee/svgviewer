@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
@@ -24,8 +25,7 @@ export default function ConverterPage() {
   
   const { toast } = useToast();
   const [icoSize, setIcoSize] = useState<number>(16);
-  const [multiSizeIco, setMultiSizeIco] = useState<boolean>(false);
-  const [icoSizes, setIcoSizes] = useState<number[]>([16, 32, 48]);
+  const [fileName, setFileName] = useState<string>('');
 
   useEffect(() => {
     if (svgCode) {
@@ -37,7 +37,24 @@ export default function ConverterPage() {
     // Convert SVG to data URL when format or scale changes
     convertSvgToImage();
   }, [svgCode, format, scale, icoSize]);
+  
+  useEffect(() => {
+    setFileName(getDefaultFileName(format, format === 'ico' ? icoSize : undefined));
+  }, [format, icoSize]);
 
+  const getDefaultFileName = (format: string, size?: number) => {
+    if (format === 'ico') {
+      return size === 16 ? 'favicon' : `favicon-${size}x${size}`;
+    }
+    const formatMap: Record<string, string> = {
+      'png': 'svgtopng',
+      'jpeg': 'svgtojpeg',
+      'webp': 'svgtowebp',
+      'svg': 'svgoriginal'
+    };
+    return formatMap[format] || '';
+  };
+  
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -119,132 +136,46 @@ export default function ConverterPage() {
 
   const handleDownloadImage = async () => {
     if (!dataUrl && format !== 'svg') return;
+
+    const downloadFileName = fileName || getDefaultFileName(format, format === 'ico' ? icoSize : undefined);
     
     if (format === 'ico') {
       try {
-        if (multiSizeIco) {
-          // Multi-size ICO conversion
-          const pngDataArray: { size: number; data: ArrayBuffer }[] = [];
-          
-          // Create PNG data for each size
-          for (const size of icoSizes) {
-            // Create canvas with specific size
-            const canvas = document.createElement('canvas');
-            canvas.width = size;
-            canvas.height = size;
-            const ctx = canvas.getContext('2d');
-            if (!ctx) continue;
-            
-            // Create SVG image
-            const img = document.createElement('img');
-            const svgBlob = new Blob([svgCode], { type: 'image/svg+xml;charset=utf-8' });
-            const url = URL.createObjectURL(svgBlob);
-            
-            // Wait for image to load
-            await new Promise<void>((resolve) => {
-              img.onload = () => {
-                ctx.drawImage(img, 0, 0, size, size);
-                resolve();
-              };
-              img.src = url;
-            });
-            
-            // Get PNG data
-            const pngDataUrl = canvas.toDataURL('image/png');
-            const response = await fetch(pngDataUrl);
-            const blob = await response.blob();
-            const pngArrayBuffer = await blob.arrayBuffer();
-            
-            pngDataArray.push({ size, data: pngArrayBuffer });
-            URL.revokeObjectURL(url);
-          }
-          
-          // Create ICO file header
-          const header = new ArrayBuffer(6);
-          const view = new DataView(header);
-          view.setUint16(0, 0, true);     // Reserved. Must always be 0
-          view.setUint16(2, 1, true);     // Image type: 1 for icon (.ICO)
-          view.setUint16(4, pngDataArray.length, true);  // Number of images
-          
-          // Create directory entries and image data
-          const directorySize = 16 * pngDataArray.length;
-          const directory = new ArrayBuffer(directorySize);
-          const dirView = new DataView(directory);
-          
-          let offset = 6 + directorySize; // Header + directory size
-          const blobs: BlobPart[] = [header, directory];
-          
-          // Fill directory entries and collect image data
-          for (let i = 0; i < pngDataArray.length; i++) {
-            const { size, data } = pngDataArray[i];
-            const entryOffset = i * 16;
-            
-            // Fill directory entry
-            dirView.setUint8(entryOffset + 0, size >= 256 ? 0 : size);  // Width
-            dirView.setUint8(entryOffset + 1, size >= 256 ? 0 : size);  // Height
-            dirView.setUint8(entryOffset + 2, 0);  // Color palette
-            dirView.setUint8(entryOffset + 3, 0);  // Reserved
-            dirView.setUint16(entryOffset + 4, 1, true);  // Color planes
-            dirView.setUint16(entryOffset + 6, 32, true); // Bits per pixel
-            dirView.setUint32(entryOffset + 8, data.byteLength, true);  // Size of image data
-            dirView.setUint32(entryOffset + 12, offset, true);  // Offset of image data
-            
-            // Add image data
-            blobs.push(data);
-            offset += data.byteLength;
-          }
-          
-          // Combine all parts
-          const iconData = new Blob(blobs, { type: 'image/x-icon' });
-          
-          // Download
-          const url = URL.createObjectURL(iconData);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'converted.ico';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          
-        } else {
-          // Single-size ICO conversion (original logic)
-          const response = await fetch(dataUrl);
-          const blob = await response.blob();
-          const pngArrayBuffer = await blob.arrayBuffer();
-          
-          // Create ICO header
-          const header = new ArrayBuffer(6);
-          const view = new DataView(header);
-          view.setUint16(0, 0, true);     // Reserved. Must always be 0
-          view.setUint16(2, 1, true);     // Image type: 1 for icon (.ICO)
-          view.setUint16(4, 1, true);     // Number of images
-          
-          // Create ICO directory entry
-          const directory = new ArrayBuffer(16);
-          const dirView = new DataView(directory);
-          dirView.setUint8(0, icoSize >= 256 ? 0 : icoSize);    // Width
-          dirView.setUint8(1, icoSize >= 256 ? 0 : icoSize);    // Height
-          dirView.setUint8(2, 0);         // Color palette
-          dirView.setUint8(3, 0);         // Reserved
-          dirView.setUint16(4, 1, true);  // Color planes
-          dirView.setUint16(6, 32, true); // Bits per pixel
-          dirView.setUint32(8, pngArrayBuffer.byteLength, true);  // Size of image data
-          dirView.setUint32(12, 22, true);        // Offset of image data
-          
-          // Combine all parts
-          const iconData = new Blob([header, directory, pngArrayBuffer], { type: 'image/x-icon' });
-          
-          // Download
-          const url = URL.createObjectURL(iconData);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'converted.ico';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        }
+        const response = await fetch(dataUrl);
+        const blob = await response.blob();
+        const pngArrayBuffer = await blob.arrayBuffer();
+        
+        // Create ICO header
+        const header = new ArrayBuffer(6);
+        const view = new DataView(header);
+        view.setUint16(0, 0, true);     // Reserved. Must always be 0
+        view.setUint16(2, 1, true);     // Image type: 1 for icon (.ICO)
+        view.setUint16(4, 1, true);     // Number of images
+        
+        // Create ICO directory entry
+        const directory = new ArrayBuffer(16);
+        const dirView = new DataView(directory);
+        dirView.setUint8(0, icoSize >= 256 ? 0 : icoSize);    // Width
+        dirView.setUint8(1, icoSize >= 256 ? 0 : icoSize);    // Height
+        dirView.setUint8(2, 0);         // Color palette
+        dirView.setUint8(3, 0);         // Reserved
+        dirView.setUint16(4, 1, true);  // Color planes
+        dirView.setUint16(6, 32, true); // Bits per pixel
+        dirView.setUint32(8, pngArrayBuffer.byteLength, true);  // Size of image data
+        dirView.setUint32(12, 22, true);        // Offset of image data
+        
+        // Combine all parts
+        const iconData = new Blob([header, directory, pngArrayBuffer], { type: 'image/x-icon' });
+        
+        // Download
+        const url = URL.createObjectURL(iconData);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${downloadFileName}.ico`; 
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
         
         toast({
           title: "Image Downloaded",
@@ -264,7 +195,7 @@ export default function ConverterPage() {
     // Original download logic for other formats
     const a = document.createElement('a');
     a.href = format === 'svg' ? `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgCode)}` : dataUrl;
-    a.download = `converted.${format}`;
+    a.download = `${downloadFileName}.${format}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -435,8 +366,8 @@ export default function ConverterPage() {
 
           <div className="bg-card p-6 rounded-lg shadow-sm gradient-border">
             <h2 className="text-xl font-semibold mb-4">Conversion Options</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="flex flex-col gap-2">
                 <label className="block text-sm font-medium mb-2 text-muted-foreground">Output Format</label>
                 <Select value={format} onValueChange={setFormat}>
                   <SelectTrigger className="w-full">
@@ -453,39 +384,24 @@ export default function ConverterPage() {
               </div>
               
               {format === 'ico' ? (
-                <div className="grid grid-cols-1 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-muted-foreground">Icon Size</label>
-                    <Select value={icoSize.toString()} onValueChange={(value) => setIcoSize(Number(value))}>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select size" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="16">16x16 - Browser tabs, address bar</SelectItem>
-                        <SelectItem value="32">32x32 - Taskbar, shortcuts</SelectItem>
-                        <SelectItem value="48">48x48 - Desktop icons</SelectItem>
-                        <SelectItem value="64">64x64 - High-resolution displays</SelectItem>
-                        <SelectItem value="128">128x128 - App icons</SelectItem>
-                        <SelectItem value="256">256x256 - Modern Windows icons</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="multiSizeIco"
-                      checked={multiSizeIco}
-                      onChange={(e) => setMultiSizeIco(e.target.checked)}
-                      className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-                    />
-                    <label htmlFor="multiSizeIco" className="text-sm font-medium">
-                      Create multi-size ICO (includes 16x16, 32x32, 48x48)
-                    </label>
-                  </div>
+                <div className="flex flex-col gap-2">
+                  <label className="block text-sm font-medium mb-2 text-muted-foreground">Icon Size</label>
+                  <Select value={icoSize.toString()} onValueChange={(value) => setIcoSize(Number(value))}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Select size" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="16">16x16 - Browser tabs, address bar</SelectItem>
+                      <SelectItem value="32">32x32 - Taskbar, shortcuts</SelectItem>
+                      <SelectItem value="48">48x48 - Desktop icons</SelectItem>
+                      <SelectItem value="64">64x64 - High-resolution displays</SelectItem>
+                      <SelectItem value="128">128x128 - App icons</SelectItem>
+                      <SelectItem value="256">256x256 - Modern Windows icons</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               ) : (
-                <div>
+                <div className="flex flex-col gap-2">
                   <label className="block text-sm font-medium mb-2 text-muted-foreground">Scale Factor</label>
                   <div className="flex items-center gap-2">
                     <Slider
@@ -501,6 +417,18 @@ export default function ConverterPage() {
                 </div>
               )}
               
+              <div className="flex flex-col gap-2">
+                <label className="block text-sm font-medium mb-2 text-muted-foreground">File Name</label>
+                <div className="flex items-center gap-2">
+                  <Input
+                    value={fileName}
+                    onChange={(e) => setFileName(e.target.value)}
+                    placeholder={getDefaultFileName(format, format === 'ico' ? icoSize : undefined)}
+                    className="flex-1"
+                  />
+                  <span className="text-sm text-muted-foreground">.{format}</span>
+                </div>
+              </div>
               <div className="flex items-end">
                 <Button 
                   variant="default" 
