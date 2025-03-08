@@ -17,13 +17,11 @@ import ConverterFaq from '@/components/faq/converter-faq';
 export default function ConverterPage() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
   const [originalSize, setOriginalSize] = useState<number>(0);
-  const [canvasSize, setCanvasSize] = useState<{ width: number; height: number }>({ width: 400, height: 400 });
   const [zoom, setZoom] = useState<number>(100);
   const [format, setFormat] = useState<string>("png");
   const [scale, setScale] = useState<number>(1);
   const [dataUrl, setDataUrl] = useState<string>("");
   
-  const svgRef = useRef<SVGSVGElement>(null);
   const { toast } = useToast();
   const [icoSize, setIcoSize] = useState<number>(16);
 
@@ -68,13 +66,6 @@ export default function ConverterPage() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  };
-
-  const handleCanvasSizeChange = (dimension: 'width' | 'height', value: string) => {
-    const numValue = parseInt(value);
-    if (!isNaN(numValue)) {
-      setCanvasSize(prev => ({ ...prev, [dimension]: numValue }));
-    }
   };
 
   const convertSvgToImage = () => {
