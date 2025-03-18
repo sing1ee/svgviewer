@@ -14,6 +14,7 @@ import { GridBackground } from '@/components/grid-background';
 import NextImage from 'next/image';
 import { MobileNav } from '@/components/mobile-nav';
 import ConverterFaq from '@/components/faq/converter-faq';
+import html2canvas from 'html2canvas';
 
 export default function ConverterPage() {
   const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
@@ -87,51 +88,64 @@ export default function ConverterPage() {
     URL.revokeObjectURL(url);
   };
 
-  const convertSvgToImage = () => {
+  const convertSvgToImage = async () => {
     if (!svgCode) return;
 
-    const parser = new DOMParser();
-    const svgDoc = parser.parseFromString(svgCode, 'image/svg+xml');
-    const svgElement = svgDoc.documentElement;
-    
-    // Create a canvas element
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    
-    // Set canvas dimensions based on SVG and scale
-    const svgWidth = parseInt(svgElement.getAttribute('width') || '400');
-    const svgHeight = parseInt(svgElement.getAttribute('height') || '400');
-    
-    // For ICO format, we need to ensure the dimensions are appropriate
-    if (format === 'ico') {
-      canvas.width = icoSize;
-      canvas.height = icoSize;
-    } else {
-      canvas.width = svgWidth * scale;
-      canvas.height = svgHeight * scale;
-    }
-    
-    // Create an image from the SVG
-    const img = document.createElement('img');
-    const svgBlob = new Blob([svgCode], { type: 'image/svg+xml;charset=utf-8' });
-    const url = URL.createObjectURL(svgBlob);
-    
-    img.onload = () => {
-      // Draw the image on the canvas
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    try {
+      // 创建一个临时的 div 来放置 SVG
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = svgCode;
+      tempDiv.style.position = 'absolute';
+      tempDiv.style.left = '-9999px';
+      document.body.appendChild(tempDiv);
+
+      // 获取 SVG 元素
+      const svgElement = tempDiv.querySelector('svg');
+      if (!svgElement) {
+        throw new Error('No SVG element found');
+      }
+
+      // 设置 SVG 尺寸
+      const svgWidth = parseInt(svgElement.getAttribute('width') || '400');
+      const svgHeight = parseInt(svgElement.getAttribute('height') || '400');
       
-      // Convert canvas to data URL
+      // 根据格式设置输出尺寸
+      let outputWidth = svgWidth * scale;
+      let outputHeight = svgHeight * scale;
+      
+      if (format === 'ico') {
+        outputWidth = icoSize;
+        outputHeight = icoSize;
+      }
+
+      // 使用 html2canvas 转换
+      const canvas = await html2canvas(tempDiv, {
+        width: outputWidth,
+        height: outputHeight,
+        scale: 2, // 提高输出质量
+        useCORS: true,
+        backgroundColor: null,
+        logging: false,
+      });
+
+      // 转换为 data URL
       const dataUrl = format === 'ico' 
-        ? canvas.toDataURL('image/png') // ICO will be converted from PNG
+        ? canvas.toDataURL('image/png')
         : canvas.toDataURL(`image/${format}`);
-      setDataUrl(dataUrl);
       
-      // Clean up
-      URL.revokeObjectURL(url);
-    };
-    
-    img.src = url;
+      setDataUrl(dataUrl);
+
+      // 清理临时元素
+      document.body.removeChild(tempDiv);
+
+    } catch (error) {
+      console.error('Error converting SVG:', error);
+      toast({
+        title: "转换失败",
+        description: "无法将 SVG 转换为目标格式",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleDownloadImage = async () => {
