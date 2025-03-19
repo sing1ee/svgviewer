@@ -108,7 +108,6 @@ export default function ConverterPage() {
       // 设置 SVG 尺寸
       let svgWidth = parseInt(svgElement.getAttribute('width') || '0');
       let svgHeight = parseInt(svgElement.getAttribute('height') || '0');
-      console.log(svgWidth, svgHeight);
 
       // 如果 width 和 height 没有设置，则从 viewBox 中读取
       if (!svgWidth || !svgHeight) {
@@ -119,7 +118,6 @@ export default function ConverterPage() {
           svgHeight = height; 
         }
       }
-      console.log(svgWidth, svgHeight);
       svgElement.setAttribute('width', svgWidth.toString());
       svgElement.setAttribute('height', svgHeight.toString());
       
@@ -130,6 +128,11 @@ export default function ConverterPage() {
       if (format === 'ico') {
         outputWidth = icoSize;
         outputHeight = icoSize;
+      }
+      // 如果是 ico，并且 icoSize 小于 svgWidth 和 svgHeight，则等比例缩放 svg，以适合 icoSize
+      if (format === 'ico' && icoSize < svgWidth && icoSize < svgHeight) {
+        svgElement.setAttribute('width', icoSize.toString());
+        svgElement.setAttribute('height', icoSize.toString());
       }
 
       // 使用 html2canvas 转换
