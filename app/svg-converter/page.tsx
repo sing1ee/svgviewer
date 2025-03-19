@@ -176,29 +176,33 @@ export default function ConverterPage() {
         const blob = await response.blob();
         const pngArrayBuffer = await blob.arrayBuffer();
         
-        // Create ICO header
+        // 创建 ICO 头部 (6 字节)
         const header = new ArrayBuffer(6);
         const view = new DataView(header);
-        view.setUint16(0, 0, true);     // Reserved. Must always be 0
-        view.setUint16(2, 1, true);     // Image type: 1 for icon (.ICO)
-        view.setUint16(4, 1, true);     // Number of images
+        view.setUint16(0, 0, true);     // 保留字段，必须为 0
+        view.setUint16(2, 1, true);     // 图像类型: 1 表示图标 (.ICO)
+        view.setUint16(4, 1, true);     // 图像数量
         
-        // Create ICO directory entry
+        // 计算目录大小和数据偏移量
+        const directorySize = 16;
+        const dataOffset = 6 + directorySize; // 头部(6) + 目录条目(16)
+        
+        // 创建 ICO 目录条目 (16 字节)
         const directory = new ArrayBuffer(16);
         const dirView = new DataView(directory);
-        dirView.setUint8(0, icoSize >= 256 ? 0 : icoSize);    // Width
-        dirView.setUint8(1, icoSize >= 256 ? 0 : icoSize);    // Height
-        dirView.setUint8(2, 0);         // Color palette
-        dirView.setUint8(3, 0);         // Reserved
-        dirView.setUint16(4, 1, true);  // Color planes
-        dirView.setUint16(6, 32, true); // Bits per pixel
-        dirView.setUint32(8, pngArrayBuffer.byteLength, true);  // Size of image data
-        dirView.setUint32(12, 22, true);        // Offset of image data
+        dirView.setUint8(0, icoSize >= 256 ? 0 : icoSize);    // 宽度 (0 表示 256)
+        dirView.setUint8(1, icoSize >= 256 ? 0 : icoSize);    // 高度 (0 表示 256)
+        dirView.setUint8(2, 0);         // 颜色数 (0 表示 >=8bpp)
+        dirView.setUint8(3, 0);         // 保留字段，必须为 0
+        dirView.setUint16(4, 1, true);  // 色彩平面数
+        dirView.setUint16(6, 32, true); // 每像素位数
+        dirView.setUint32(8, pngArrayBuffer.byteLength, true);  // 图像数据大小
+        dirView.setUint32(12, dataOffset, true);  // 图像数据偏移量，应为22而不是固定值
         
-        // Combine all parts
+        // 将所有部分组合起来
         const iconData = new Blob([header, directory, pngArrayBuffer], { type: 'image/x-icon' });
         
-        // Download
+        // 下载文件
         const url = URL.createObjectURL(iconData);
         const a = document.createElement('a');
         a.href = url;
@@ -209,13 +213,13 @@ export default function ConverterPage() {
         URL.revokeObjectURL(url);
         
         toast({
-          title: "Image Downloaded",
-          description: "SVG has been converted to ICO and downloaded",
+          title: "Image downloaded",
+          description: "SVG has been converted to ICO format and downloaded",
         });
       } catch (error) {
-        console.error("ICO conversion error:", error);
+        console.error("ICO format conversion failed:", error);
         toast({
-          title: "Conversion Failed",
+          title: "Conversion failed",
           description: "Failed to convert to ICO format",
           variant: "destructive",
         });
@@ -409,7 +413,7 @@ export default function ConverterPage() {
                     <SelectItem value="jpeg">JPEG</SelectItem>
                     <SelectItem value="webp">WebP</SelectItem>
                     <SelectItem value="svg">SVG (Original)</SelectItem>
-                    <SelectItem value="ico">ICO</SelectItem>
+                    {/* <SelectItem value="ico">ICO</SelectItem> */}
                   </SelectContent>
                 </Select>
               </div>
