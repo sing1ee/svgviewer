@@ -106,8 +106,22 @@ export default function ConverterPage() {
       }
 
       // 设置 SVG 尺寸
-      const svgWidth = parseInt(svgElement.getAttribute('width') || '400');
-      const svgHeight = parseInt(svgElement.getAttribute('height') || '400');
+      let svgWidth = parseInt(svgElement.getAttribute('width') || '0');
+      let svgHeight = parseInt(svgElement.getAttribute('height') || '0');
+      console.log(svgWidth, svgHeight);
+
+      // 如果 width 和 height 没有设置，则从 viewBox 中读取
+      if (!svgWidth || !svgHeight) {
+        const viewBox = svgElement.getAttribute('viewBox');
+        if (viewBox) {
+          const [minX, minY, width, height] = viewBox.split(' ').map(Number);
+          svgWidth = width;
+          svgHeight = height; 
+        }
+      }
+      console.log(svgWidth, svgHeight);
+      svgElement.setAttribute('width', svgWidth.toString());
+      svgElement.setAttribute('height', svgHeight.toString());
       
       // 根据格式设置输出尺寸
       let outputWidth = svgWidth * scale;
