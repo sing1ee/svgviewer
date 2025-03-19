@@ -158,8 +158,8 @@ export default function ConverterPage() {
     } catch (error) {
       console.error('Error converting SVG:', error);
       toast({
-        title: "转换失败",
-        description: "无法将 SVG 转换为目标格式",
+        title: "Conversion failed",
+        description: "Failed to convert to target format",
         variant: "destructive",
       });
     }
@@ -172,48 +172,126 @@ export default function ConverterPage() {
     
     if (format === 'ico') {
       try {
-        const response = await fetch(dataUrl);
-        const blob = await response.blob();
-        const pngArrayBuffer = await blob.arrayBuffer();
+        // 使用更可靠的方法创建ico文件
+        const canvas = document.createElement('canvas');
+        canvas.width = icoSize;
+        canvas.height = icoSize;
         
-        // 创建 ICO 头部 (6 字节)
-        const header = new ArrayBuffer(6);
-        const view = new DataView(header);
-        view.setUint16(0, 0, true);     // 保留字段，必须为 0
-        view.setUint16(2, 1, true);     // 图像类型: 1 表示图标 (.ICO)
-        view.setUint16(4, 1, true);     // 图像数量
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          throw new Error('Failed to get canvas context');
+        }
         
-        // 计算目录大小和数据偏移量
-        const directorySize = 16;
-        const dataOffset = 6 + directorySize; // 头部(6) + 目录条目(16)
+        // 获取PNG图像数据
+        const img = new Image();
+        img.src = dataUrl;
         
-        // 创建 ICO 目录条目 (16 字节)
-        const directory = new ArrayBuffer(16);
-        const dirView = new DataView(directory);
-        dirView.setUint8(0, icoSize >= 256 ? 0 : icoSize);    // 宽度 (0 表示 256)
-        dirView.setUint8(1, icoSize >= 256 ? 0 : icoSize);    // 高度 (0 表示 256)
-        dirView.setUint8(2, 0);         // 颜色数 (0 表示 >=8bpp)
-        dirView.setUint8(3, 0);         // 保留字段，必须为 0
-        dirView.setUint16(4, 1, true);  // 色彩平面数
-        dirView.setUint16(6, 32, true); // 每像素位数
-        dirView.setUint32(8, pngArrayBuffer.byteLength, true);  // 图像数据大小
-        dirView.setUint32(12, dataOffset, true);  // 图像数据偏移量，应为22而不是固定值
+        await new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = reject;
+        });
         
-        // 将所有部分组合起来
-        const iconData = new Blob([header, directory, pngArrayBuffer], { type: 'image/x-icon' });
+        // 在canvas上绘制图像
+        ctx.drawImage(img, 0, 0, icoSize, icoSize);
         
-        // 下载文件
-        const url = URL.createObjectURL(iconData);
+        // 获取像素数据
+        const imageData = ctx.getImageData(0, 0, icoSize, icoSize);
+        
+        // 创建ICO文件
+        // ICO文件格式: 头部(6字节) + 目录条目(16字节) + BMP数据
+        
+        // 1. 创建BMP数据 (不含BMP文件头)
+        // 我们需要的是BITMAPINFOHEADER + 图像数据 + AND掩码
+        const bmpInfoHeaderSize = 40;
+        const bitsPerPixel = 32;
+        const bytesPerPixel = bitsPerPixel / 8;
+        
+        // BMP数据在ICO中是上下颠倒的，所以我们需要翻转图像数据
+        const pixelDataSize = icoSize * icoSize * bytesPerPixel;
+        const bmpDataSize = bmpInfoHeaderSize + pixelDataSize + (icoSize * icoSize / 8); // 加上1位的AND掩码
+        
+        // 创建BMP数据的ArrayBuffer
+        const bmpData = new ArrayBuffer(bmpDataSize);
+        const bmpView = new DataView(bmpData);
+        
+        // 写入BITMAPINFOHEADER
+        bmpView.setUint32(0, bmpInfoHeaderSize, true); // BITMAPINFOHEADER size: 40 bytes
+        bmpView.setInt32(4, icoSize, true); // Width
+        bmpView.setInt32(8, icoSize * 2, true); // Height (ICO格式中高度是实际高度的两倍，包含了XOR和AND掩码)
+        bmpView.setUint16(12, 1, true); // Planes: 必须为1
+        bmpView.setUint16(14, bitsPerPixel, true); // Bits per pixel: 32
+        bmpView.setUint32(16, 0, true); // Compression: 0 (BI_RGB, 无压缩)
+        bmpView.setUint32(20, pixelDataSize, true); // Image size
+        bmpView.setInt32(24, 0, true); // X pixels per meter
+        bmpView.setInt32(28, 0, true); // Y pixels per meter
+        bmpView.setUint32(32, 0, true); // Colors used (全部颜色)
+        bmpView.setUint32(36, 0, true); // Important colors (全部重要)
+        
+        // 复制像素数据，注意BMP在ICO中是上下颠倒的
+        for (let y = 0; y < icoSize; y++) {
+          for (let x = 0; x < icoSize; x++) {
+            // 原始数据的位置
+            const srcIdx = (y * icoSize + x) * 4;
+            
+            // BMP在ICO中是上下颠倒的，所以要从底部开始写
+            const destIdx = bmpInfoHeaderSize + ((icoSize - y - 1) * icoSize + x) * bytesPerPixel;
+            
+            // BGRA格式
+            bmpView.setUint8(destIdx, imageData.data[srcIdx + 2]); // B
+            bmpView.setUint8(destIdx + 1, imageData.data[srcIdx + 1]); // G
+            bmpView.setUint8(destIdx + 2, imageData.data[srcIdx]); // R
+            bmpView.setUint8(destIdx + 3, imageData.data[srcIdx + 3]); // A
+          }
+        }
+        
+        // 填充AND掩码 (全部为0，表示完全不透明)
+        const andMaskOffset = bmpInfoHeaderSize + pixelDataSize;
+        const andMaskSize = icoSize * icoSize / 8;
+        for (let i = 0; i < andMaskSize; i++) {
+          bmpView.setUint8(andMaskOffset + i, 0);
+        }
+        
+        // 2. 创建ICO头部和目录
+        const iconHeaderSize = 6;
+        const iconDirEntrySize = 16;
+        const iconDirSize = iconHeaderSize + iconDirEntrySize;
+        
+        // 创建最终的ICO文件数据
+        const iconData = new ArrayBuffer(iconDirSize + bmpDataSize);
+        const iconView = new DataView(iconData);
+        
+        // 写入ICO头部
+        iconView.setUint16(0, 0, true); // 保留，必须为0
+        iconView.setUint16(2, 1, true); // 图像类型：1 = ICO
+        iconView.setUint16(4, 1, true); // 图像数量
+        
+        // 写入目录条目
+        iconView.setUint8(6, icoSize >= 256 ? 0 : icoSize); // Width (0表示256)
+        iconView.setUint8(7, icoSize >= 256 ? 0 : icoSize); // Height (0表示256)
+        iconView.setUint8(8, 0); // 颜色数 (0 = 32bpp)
+        iconView.setUint8(9, 0); // 保留，必须为0
+        iconView.setUint16(10, 1, true); // Color planes
+        iconView.setUint16(12, bitsPerPixel, true); // Bits per pixel
+        iconView.setUint32(14, bmpDataSize, true); // 数据大小
+        iconView.setUint32(18, iconDirSize, true); // 数据偏移量
+        
+        // 复制BMP数据到ICO文件
+        new Uint8Array(iconData, iconDirSize).set(new Uint8Array(bmpData));
+        
+        // 下载ICO文件
+        const blob = new Blob([iconData], { type: 'image/x-icon' });
+        const url = URL.createObjectURL(blob);
+        
         const a = document.createElement('a');
         a.href = url;
-        a.download = `${downloadFileName}.ico`; 
+        a.download = `${downloadFileName}.ico`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
         
         toast({
-          title: "Image downloaded",
+          title: "ico downloaded",
           description: "SVG has been converted to ICO format and downloaded",
         });
       } catch (error) {
@@ -413,7 +491,7 @@ export default function ConverterPage() {
                     <SelectItem value="jpeg">JPEG</SelectItem>
                     <SelectItem value="webp">WebP</SelectItem>
                     <SelectItem value="svg">SVG (Original)</SelectItem>
-                    {/* <SelectItem value="ico">ICO</SelectItem> */}
+                    <SelectItem value="ico">ICO</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
