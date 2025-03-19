@@ -15,6 +15,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'SVG Viewer - Free Online Tool to View and Convert SVG Files',
   description: 'Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time.',
+  metadataBase: new URL('https://svgviewer.app'),
   keywords: 'svg viewer, svg editor, svg optimizer, svg converter, svg code, svg online tool',
   viewport: {
     width: 'device-width',
