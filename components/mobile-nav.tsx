@@ -24,18 +24,21 @@ export function MobileNav() {
         <nav className="flex flex-col gap-4">
           <Link 
             href="/" 
+            title='SVGViewer'
             className={`text-sm font-medium transition-colors ${pathname === '/' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
             Viewer
           </Link>
           <Link 
             href="/svg-optimizer" 
+            title='SVG Optimizer'
             className={`text-sm font-medium transition-colors ${pathname === '/svg-optimizer' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
             Optimizer
           </Link>
           <Link 
             href="/svg-converter" 
+            title='SVG Converter'
             className={`text-sm font-medium transition-colors ${pathname === '/svg-converter' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
             Converter

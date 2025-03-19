@@ -250,19 +250,19 @@ export default function ConverterPage() {
       <header className="border-b backdrop-blur-sm bg-background/80 sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" title='SVGViewer' className="flex items-center gap-2">
               <NextImage src="/logo.png" alt="SVGViewer Logo" width={32} height={32} className="rounded-md" />
               <span className="font-poppins font-bold text-2xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVGViewer</span>
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/" title='SVGViewer' className="text-sm font-medium hover:text-primary transition-colors">
               Viewer
             </Link>
-            <Link href="/svg-optimizer" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/svg-optimizer" title='SVG Optimizer' className="text-sm font-medium hover:text-primary transition-colors">
               Optimizer
             </Link>
-            <Link href="/svg-converter" className="text-sm font-medium text-primary">
+            <Link href="/svg-converter" title='SVG Converter' className="text-sm font-medium text-primary">
               Converter
             </Link>
           </nav>
@@ -491,22 +491,22 @@ export default function ConverterPage() {
               <span className="font-poppins font-bold text-xl">SVGViewer</span>
             </div>
             <div className="flex gap-8">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/" title='SVGViewer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Viewer
               </Link>
-              <Link href="/svg-optimizer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/svg-optimizer" title='SVG Optimizer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Optimizer
               </Link>
-              <Link href="/svg-converter" className="text-sm text-primary hover:text-primary transition-colors">
+              <Link href="/svg-converter" title='SVG Converter' className="text-sm text-primary hover:text-primary transition-colors">
                 Converter
               </Link>
-              <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/blog" title='Blog' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
-              <a href="/privacy.html" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/privacy.html" title='Privacy Policy' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy
               </a>
-              <a href="/terms.html" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms.html" title='Terms of Service' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terms
               </a>
             </div>
