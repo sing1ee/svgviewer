@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, ImageIcon, XIcon, ClipboardPasteIcon } from 'lucide-react';
+import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, ImageIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon } from 'lucide-react';
 import Link from 'next/link';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
@@ -14,9 +14,18 @@ import { GridBackground } from '@/components/grid-background';
 import Head from 'next/head';
 import { MobileNav } from '@/components/mobile-nav';
 import ViewerFaq from '@/components/faq/viewer-faq';
+import { beautifySVG } from '@/lib/utils';
 
 export default function Home() {
-  const [svgCode, setSvgCode] = useState<string>('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" fill="none">\n  <rect width="400" height="400" rx="200" fill="#2563eb"/>\n  <circle cx="200" cy="200" r="80" fill="black"/>\n  <rect x="240" y="240" width="120" height="120" rx="20" fill="white" transform="rotate(-45 240 240)"/>\n</svg>');
+  const [svgCode, setSvgCode] = useState<string>(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1a1a2e"/><circle cx="500" cy="80" r="40" fill="#e94560" opacity="0.7"/><text x="300" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    WELCOME TO
+  </text><text x="300" y="210" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle" fill="#e94560">
+    SVGViewer.app
+  </text><rect x="200" y="250" width="200" height="50" rx="25" fill="#e94560"/><text x="300" y="285" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    VISIT NOW
+  </text><text x="300" y="350" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#ffffff">
+    https://svgviewer.app
+  </text></svg>`);
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [optimizedSize, setOptimizedSize] = useState<number>(0);
   const [optimizedCode, setOptimizedCode] = useState<string>('');
@@ -92,6 +101,10 @@ export default function Home() {
       title: "Cleared",
       description: "SVG code has been cleared",
     });
+  };
+
+  const handleFormat = () => {
+    setSvgCode(beautifySVG(svgCode));
   };
 
   const handlePaste = async () => {
@@ -220,6 +233,15 @@ export default function Home() {
               <div className="flex items-center justify-between">
                 <h2 className="text-xl font-semibold">SVG Code</h2>
                 <div className="flex items-center gap-1">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={handleFormat}
+                    className="hover:bg-primary/10 h-7 px-2"
+                  >
+                    <AlignJustifyIcon className="h-3.5 w-3.5 mr-1" />
+                    Format
+                  </Button>
                   <Button
                     variant="ghost"
                     size="sm"
