@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 interface Props {
   params: {
@@ -35,6 +36,22 @@ async function getPost(slug: string) {
     date: data.date,
     description: data.description,
     contentHtml,
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPost(params.slug);
+  
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://svgviewer.app/blog/${params.slug}`,
+      type: 'article',
+      publishedTime: post.date,
+    },
   };
 }
 
