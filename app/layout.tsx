@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'SVG Viewer - Free Online Tool to View and Edit SVG Files',
+    title: 'SVG Viewer - Free Online Tool to View and Convert SVG',
     description: 'Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time.',
     type: 'website',
     url: 'https://svgviewer.app',
