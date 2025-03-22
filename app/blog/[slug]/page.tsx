@@ -96,13 +96,13 @@ export default async function BlogPost({ params }: Props) {
               <span className="font-poppins font-bold text-xl">SVGViewer</span>
             </div>
             <div className="flex gap-8">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/" title='SVGViewer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Viewer
               </Link>
-              <Link href="/svg-optimizer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/svg-optimizer" title='SVG Optimizer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Optimizer
               </Link>
-              <Link href="/svg-converter" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/svg-converter" title='SVG Converter' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Converter
               </Link>
               <Link href="/blog" title='Blog' className="text-sm text-primary hover:text-primary transition-colors">
