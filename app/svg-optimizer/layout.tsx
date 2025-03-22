@@ -17,6 +17,9 @@ export const metadata: Metadata = {
       }
     ],
   },
+  alternates: {
+    canonical: 'https://svgviewer.app/svg-optimizer',
+  },
 };
 
 export default function OptimizerLayout({

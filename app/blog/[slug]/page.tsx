@@ -54,6 +54,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.date,
     },
+    alternates: {
+      canonical: `https://svgviewer.app/blog/${params.slug}`,
+    },
   };
 }
 

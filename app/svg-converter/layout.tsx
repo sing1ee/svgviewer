@@ -17,6 +17,9 @@ export const metadata: Metadata = {
       }
     ],
   },
+  alternates: {
+    canonical: 'https://svgviewer.app/svg-converter',
+  },
 };
 
 export default function ConverterLayout({
