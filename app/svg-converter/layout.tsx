@@ -8,5 +8,25 @@ export const metadata: Metadata = {
     title: 'SVG Converter - Free Online Tool to Convert SVG Files',
     description: 'Convert SVG files to PNG, JPEG, and other formats online for free. Our SVG converter tool makes it easy to transform vector graphics into raster images.',
     url: 'https://svgviewer.app/svg-converter',
+    images: [
+      {
+        url: 'https://svgviewer.app/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'SVG Converter',
+      }
+    ],
   },
-}; 
+};
+
+export default function ConverterLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      {children}
+    </>
+  );
+} 

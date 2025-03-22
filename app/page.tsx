@@ -9,12 +9,11 @@ import Link from 'next/link';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
 import { optimizeSvg } from '@/lib/svg-optimizer';
-import NextImage from 'next/image';
 import { GridBackground } from '@/components/grid-background';
-import Head from 'next/head';
-import { MobileNav } from '@/components/mobile-nav';
 import ViewerFaq from '@/components/faq/viewer-faq';
 import { beautifySVG } from '@/lib/utils';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 export default function Home() {
   const [svgCode, setSvgCode] = useState<string>(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1a1a2e"/><circle cx="500" cy="80" r="40" fill="#e94560" opacity="0.7"/><text x="300" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#ffffff">
@@ -126,45 +125,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
-      <Head>
-        <title>SVG Viewer - Free Online Tool to View and Edit SVG Files</title>
-        <meta name="description" content="Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time." />
-        <meta name="keywords" content="svg viewer, svg editor, svg optimizer, svg converter, svg code, svg online tool" />
-        <meta property="og:title" content="SVG Viewer - Free Online Tool to View and Edit SVG Files" />
-        <meta property="og:description" content="Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://svgviewer.app" />
-        <meta property="og:image" content="https://svgviewer.app/og-image.png" />
-        <link rel="canonical" href="https://svgviewer.app" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      </Head>
 
-      <header className="border-b backdrop-blur-sm bg-background/80 sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/" title='SVGViewer' className="flex items-center gap-2">
-              <NextImage src="/logo.png" alt="SVGViewer Logo" width={32} height={32} className="rounded-md" />
-              <span className="font-poppins font-bold text-2xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVGViewer</span>
-            </Link>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" title='SVGViewer' className="text-sm font-medium hover:text-primary transition-colors">
-              Viewer
-            </Link>
-            <Link href="/svg-optimizer" title='SVG Optimizer' className="text-sm font-medium hover:text-primary transition-colors">
-              Optimizer
-            </Link>
-            <Link href="/svg-converter" title='SVG Converter' className="text-sm font-medium hover:text-primary transition-colors">
-              Converter
-            </Link>
-          </nav>
-          
-          {/* Mobile Navigation */}
-          <MobileNav />
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-1 container mx-auto px-4 py-6 flex flex-col h-[calc(100vh-8.5rem)]">
         <div className="flex flex-col gap-6 h-full">
@@ -327,39 +289,7 @@ export default function Home() {
         <ViewerFaq />
       </main>
 
-      <footer className="border-t py-4 md:py-6 bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <NextImage src="/logo.png" alt="SVGViewer Logo" width={28} height={28} className="rounded-md" />
-              <span className="font-poppins font-bold text-xl">SVGViewer</span>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-              <Link href="/" title='SVGViewer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Viewer
-              </Link>
-              <Link href="/svg-optimizer" title='SVG Optimizer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Optimizer
-              </Link>
-              <Link href="/svg-converter" title='SVG Converter' className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Converter
-              </Link>
-              <Link href="/blog" title='Blog' className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Blog
-              </Link>
-              <a href="/privacy.html" title='Privacy Policy' className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacy
-              </a>
-              <a href="/terms.html" title='Terms of Service' className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms
-              </a>
-            </div>
-            <div className="text-sm text-muted-foreground mt-4 md:mt-0">
-              © {new Date().getFullYear()} SVGViewer. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
