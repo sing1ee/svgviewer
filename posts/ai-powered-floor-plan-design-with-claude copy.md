@@ -18,7 +18,7 @@ Help me create a floor plan design for a house using SVG code, with attention to
 ```
 
 ## Show
-![AI Powered Floor Plan Design](/AI-Powered-Floor-Plan-Design.png "AI Powered Floor Plan Design")
+![AI Powered Floor Plan Design](/ai-powered-floor-plan-design.png "AI Powered Floor Plan Design")
 
 ## SVG Code
 
