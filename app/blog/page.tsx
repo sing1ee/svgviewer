@@ -42,7 +42,7 @@ function getPosts(): Post[] {
   const posts = fileNames
     .filter(fileName => fileName.endsWith('.md'))
     .map(fileName => {
-      const slug = fileName.replace(/\.md$/, '');
+      const slug = fileName.replace(/\.md$/, '').toLowerCase();
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
