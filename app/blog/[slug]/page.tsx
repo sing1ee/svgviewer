@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 }
 
 async function getPost(slug: string) {
-  const fullPath = path.join(process.cwd(), 'posts', `${slug}.md`);
+  const fullPath = path.join(process.cwd(), 'posts', `${slug.toLowerCase()}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
