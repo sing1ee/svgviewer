@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
 import SvgList from '@/components/svg-list';
-import { GridBackground } from '@/components/grid-background';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
@@ -106,7 +105,6 @@ export default async function SvgCategoryPage({ params }: Props) {
             {/* SVG 预览区域 */}
             <div className="md:col-span-3">
               <div className="relative rounded-lg border bg-card">
-                <GridBackground />
                 {defaultSvgContent ? (
                   <SvgConverter svgCode={defaultSvgContent} />
                 ) : (
