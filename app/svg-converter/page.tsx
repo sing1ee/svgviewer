@@ -15,7 +15,7 @@ import html2canvas from 'html2canvas';
 import { beautifySVG } from '@/lib/utils';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
-import SvgConverter from '../components/svg-converter';
+import SvgConverter from '@/components/svg-converter';
 
 export default function ConverterPage() {
   const [svgCode, setSvgCode] = useState<string>(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1a1a2e"/><circle cx="500" cy="80" r="40" fill="#e94560" opacity="0.7"/><text x="300" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#ffffff">
@@ -357,54 +357,60 @@ export default function ConverterPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Header />
 
-      <main className="flex-1 container mx-auto px-4 py-8 flex flex-col">
-        <div className="text-center max-w-3xl mx-auto mb-4">
-          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Converter</h1>
-          <p className="text-muted-foreground text-lg">Convert your SVG files to PNG, JPEG, WebP formats or ICO.</p>
-        </div>
-        
-        <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border mb-6">
-          <div className="flex items-center gap-4">
-            <Button
-              variant="outline"
-              className="gap-2 shadow-sm"
-              onClick={() => document.getElementById('file-upload')?.click()}
-            >
-              <UploadIcon className="h-4 w-4" />
-              Upload SVG
-              <input
-                id="file-upload"
-                type="file"
-                accept=".svg"
-                className="hidden"
-                onChange={handleFileUpload}
-              />
-            </Button>
-            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => handleDownload(svgCode, 'download.svg')}>
-              <DownloadIcon className="h-4 w-4" />
-              Download SVG
-            </Button>
-            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => {
-              navigator.clipboard.writeText(svgCode);
-              toast({
-                title: "Copied to clipboard",
-                description: "SVG code has been copied to your clipboard",
-              });
-            }}>
-              <CopyIcon className="h-4 w-4" />
-              Copy SVG
-            </Button>
+      <main className="flex-1 flex flex-col overflow-hidden">
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-center max-w-3xl mx-auto mb-4">
+            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Converter</h1>
+            <p className="text-muted-foreground text-lg">Convert your SVG files to PNG, JPEG, WebP formats or ICO.</p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border mb-6">
+            <div className="flex items-center gap-4">
+              <Button
+                variant="outline"
+                className="gap-2 shadow-sm"
+                onClick={() => document.getElementById('file-upload')?.click()}
+              >
+                <UploadIcon className="h-4 w-4" />
+                Upload SVG
+                <input
+                  id="file-upload"
+                  type="file"
+                  accept=".svg"
+                  className="hidden"
+                  onChange={handleFileUpload}
+                />
+              </Button>
+              <Button variant="outline" className="gap-2 shadow-sm" onClick={() => handleDownload(svgCode, 'download.svg')}>
+                <DownloadIcon className="h-4 w-4" />
+                Download SVG
+              </Button>
+              <Button variant="outline" className="gap-2 shadow-sm" onClick={() => {
+                navigator.clipboard.writeText(svgCode);
+                toast({
+                  title: "Copied to clipboard",
+                  description: "SVG code has been copied to your clipboard",
+                });
+              }}>
+                <CopyIcon className="h-4 w-4" />
+                Copy SVG
+              </Button>
+            </div>
           </div>
         </div>
 
-        <div className="flex-1 mb-8">
-          <SvgConverter svgCode={svgCode} onSvgCodeChange={setSvgCode} />
+        <div className="flex-1 min-h-0 container mx-auto px-4">
+          <div className="h-full">
+            <SvgConverter svgCode={svgCode} onSvgCodeChange={setSvgCode} />
+          </div>
         </div>
         
-        <ConverterFaq />
+        <div className="container mx-auto px-4 py-6">
+          <ConverterFaq />
+        </div>
       </main>
 
       <Footer />

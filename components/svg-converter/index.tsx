@@ -291,10 +291,10 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
   };
 
   return (
-    <div className="flex flex-col gap-6 h-full">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1">
-        <div className="flex flex-col gap-3 h-full">
-          <div className="flex items-center justify-between">
+    <div className="h-full flex flex-col">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-semibold">SVG Code</h2>
             <div className="flex items-center gap-1">
               <Button
@@ -334,19 +334,22 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
               </Button>
             </div>
           </div>
-          <div className="border rounded-lg overflow-hidden flex-1 shadow-md gradient-border">
-            <CodeEditor value={svgCode} onChange={onSvgCodeChange || (() => {})} />
+          <div className="flex-1 min-h-0 border rounded-lg overflow-hidden shadow-md gradient-border">
+            <CodeEditor 
+              value={svgCode} 
+              onChange={onSvgCodeChange || (() => {})} 
+            />
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 h-full">
-          <div className="flex items-center justify-between">
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-semibold">Preview</h2>
             <div className="flex items-center gap-2 text-sm">
               <span className="text-muted-foreground">Size: {originalSize} bytes</span>
             </div>
           </div>
-          <div className="border rounded-lg overflow-hidden relative flex-1 min-h-0 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
+          <div className="flex-1 min-h-0 border rounded-lg overflow-hidden relative flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
             <GridBackground />
             <SvgPreview 
               svgCode={svgCode} 
@@ -356,7 +359,7 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
         </div>
       </div>
 
-      <div className="bg-card p-6 rounded-lg shadow-sm gradient-border">
+      <div className="bg-card p-6 rounded-lg shadow-sm gradient-border mt-6">
         <h2 className="text-xl font-semibold mb-4">Conversion Options</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="flex flex-col gap-2">
