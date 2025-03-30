@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+  
+  <!-- 渐变装饰 -->
+  <circle cx="1000" cy="100" r="200" fill="#e94560" opacity="0.1"/>
+  <circle cx="200" cy="500" r="150" fill="#4a90e2" opacity="0.1"/>
+  
+  <!-- Logo -->
+  <image href="/logo.png" x="50" y="50" width="80" height="80"/>
+  
+  <!-- 标题 -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    SVGViewer.app
+  </text>
+  
+  <!-- 分类名称 -->
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#e94560">
+    {{category}}
+  </text>
+  
+  <!-- 描述 -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#ffffff">
+    Browse and preview our collection of {{category}} SVGs
+  </text>
+  
+  <!-- 底部装饰 -->
+  <rect x="400" y="500" width="400" height="4" rx="2" fill="#e94560" opacity="0.5"/>
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#ffffff">
+    https://svgviewer.app/category/{{category}}
+  </text>
+</svg> 

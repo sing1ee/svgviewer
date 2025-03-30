@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- 背景方形 -->
+  <rect x="50" y="50" width="300" height="300" rx="30" ry="30" fill="#4169E1" />
+  
+  <!-- 工具图标 -->
+  <g fill="white" transform="translate(100, 100) scale(2)">
+    <!-- 工具头部 -->
+    <path d="M75,25 L65,35 L45,35 L35,25 L75,25 Z" />
+    
+    <!-- 工具手柄 -->
+    <rect x="52" y="35" width="6" height="40" />
+    
+    <!-- 工具底部 -->
+    <path d="M46,75 L64,75 L64,65 L46,65 Z" />
+  </g>
+  
+  <!-- SVG标记（右下角） -->
+  <g transform="translate(260, 260)">
+    <path d="M0,0 L30,0 L30,30 L0,30 Z" fill="none" stroke="white" stroke-width="3" opacity="0.5" />
+    <text x="5" y="20" font-family="Arial" font-size="16" font-weight="bold" fill="white" opacity="0.7">SVG</text>
+  </g>
+  
+  <!-- 装饰性SVG路径元素 -->
+  <path d="M50,50 C100,30 150,30 200,50 S300,70 350,50" stroke="white" stroke-width="3" fill="none" opacity="0.2" />
+  <path d="M50,350 C100,370 150,370 200,350 S300,330 350,350" stroke="white" stroke-width="3" fill="none" opacity="0.2" />
+</svg>
