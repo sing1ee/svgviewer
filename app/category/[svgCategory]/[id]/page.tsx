@@ -74,10 +74,10 @@ export default async function SvgPreviewPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <main className="flex-1 flex flex-col overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* SVG 列表 */}
           <div className="md:col-span-1">
             <SvgList 
