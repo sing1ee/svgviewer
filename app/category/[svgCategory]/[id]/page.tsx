@@ -7,6 +7,7 @@ import SvgPreview from '@/components/svg-preview';
 import { GridBackground } from '@/components/grid-background';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import SvgConverter from '@/components/svg-converter';
 
 interface Props {
   params: {
@@ -88,9 +89,9 @@ export default async function SvgPreviewPage({ params }: Props) {
           
           {/* SVG 预览区域 */}
           <div className="md:col-span-3">
-            <div className="relative h-[600px] rounded-lg border bg-card">
+            <div className="relative rounded-lg border bg-card">
               <GridBackground />
-              <SvgPreview svgCode={svgContent} zoom={100} />
+              <SvgConverter svgCode={svgContent}/>
             </div>
           </div>
         </div>

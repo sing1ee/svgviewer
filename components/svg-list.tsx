@@ -26,7 +26,7 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
           {category.charAt(0).toUpperCase() + category.slice(1)} SVGs
         </h2>
       </div>
-      <ScrollArea className="h-[600px]">
+      <ScrollArea className="h-[1000px]">
         <div className="p-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {svgFiles.map((file) => {

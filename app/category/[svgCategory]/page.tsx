@@ -89,7 +89,7 @@ export default async function SvgCategoryPage({ params }: Props) {
           {/* SVG 预览区域 */}
           <div className="md:col-span-3">
             <div className="relative rounded-lg border bg-card">
-              {/* <GridBackground /> */}
+              <GridBackground />
               {defaultSvgContent ? (
                 <SvgConverter svgCode={defaultSvgContent} />
               ) : (
