@@ -60,6 +60,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: `Browse and preview our collection of ${category} SVGs. Download and use them in your projects.`,
       type: 'website',
     },
+    alternates: {
+      canonical: `/category/${category}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: `Browse and preview our collection of ${category} SVGs. Download and use them in your projects.`,
+      images: [
+        { url: `https://svgviewer.app/category/${category}` },
+      ],
+    }
   };
 }
 

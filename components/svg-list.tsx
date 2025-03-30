@@ -41,14 +41,15 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
                     isActive && "border-primary bg-accent"
                   )}
                 >
-                  <Link href={href} className="w-full">
+                  <Link href={href} className="w-full" title={`${category} SVG: ${file.name}`}>
                     <div className="aspect-square w-full rounded-md bg-muted flex items-center justify-center p-1">
                       <img
                         src={file.path}
-                        alt={file.name}
+                        alt={`${category} SVG`}
                         className="max-w-full max-h-full object-contain"
                       />
                     </div>
+                    <p className="text-sm text-center mt-2">{`${category} SVG: ${file.name}`}</p>
                   </Link>
                 </div>
               );
