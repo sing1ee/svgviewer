@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, DownloadIcon, UploadIcon, ZapIcon, ImageIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon } from 'lucide-react';
-import Link from 'next/link';
+import { CopyIcon, DownloadIcon, UploadIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon } from 'lucide-react';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
 import { optimizeSvg } from '@/lib/svg-optimizer';
@@ -261,29 +260,6 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-wrap gap-3 justify-center my-6">
-              <Button variant="default" className="gap-2 shadow-md text-sm h-9" onClick={() => handleDownload(svgCode, 'download.svg')}>
-                <DownloadIcon className="h-4 w-4" />
-                Download SVG
-              </Button>
-              <Button variant="outline" className="gap-2 shadow-sm text-sm h-9" onClick={() => handleCopy(svgCode)}>
-                <CopyIcon className="h-4 w-4" />
-                Copy SVG
-              </Button>
-              <Button asChild variant="outline" className="gap-2 shadow-sm text-sm h-9">
-                <Link href="/svg-optimizer" title='SVG Optimizer'>
-                  <ZapIcon className="h-4 w-4" />
-                  Optimize SVG
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="gap-2 shadow-sm text-sm h-9">
-                <Link href="/svg-converter" title='SVG Converter'>
-                  <ImageIcon className="h-4 w-4" />
-                  Convert SVG
-                </Link>
-              </Button>
             </div>
           </div>
           

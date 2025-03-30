@@ -292,11 +292,91 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
 
   return (
     <div className="h-full flex flex-col">
+      <div className="bg-card p-4 rounded-lg shadow-sm gradient-border mb-4">
+        <h2 className="text-lg font-semibold mb-3">Conversion Options</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="flex flex-col gap-1">
+            <label className="block text-sm font-medium text-muted-foreground">Output Format</label>
+            <Select value={format} onValueChange={setFormat}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select format" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="png">PNG</SelectItem>
+                <SelectItem value="jpeg">JPEG</SelectItem>
+                <SelectItem value="webp">WebP</SelectItem>
+                <SelectItem value="svg">SVG (Original)</SelectItem>
+                <SelectItem value="ico">ICO</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          {format === 'ico' ? (
+            <div className="flex flex-col gap-1">
+              <label className="block text-sm font-medium text-muted-foreground">Icon Size</label>
+              <Select value={icoSize.toString()} onValueChange={(value) => setIcoSize(Number(value))}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select size" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="16">16x16 - Browser tabs, address bar</SelectItem>
+                  <SelectItem value="32">32x32 - Taskbar, shortcuts</SelectItem>
+                  <SelectItem value="48">48x48 - Desktop icons</SelectItem>
+                  <SelectItem value="64">64x64 - High-resolution displays</SelectItem>
+                  <SelectItem value="128">128x128 - App icons</SelectItem>
+                  <SelectItem value="256">256x256 - Modern Windows icons</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-1">
+              <label className="block text-sm font-medium text-muted-foreground">Scale Factor</label>
+              <div className="flex items-center gap-2">
+                <Slider
+                  value={[scale]}
+                  min={0.5}
+                  max={3}
+                  step={0.5}
+                  onValueChange={(value) => setScale(value[0])}
+                  className="flex-1"
+                />
+                <span className="text-sm w-12">{scale}x</span>
+              </div>
+            </div>
+          )}
+          
+          <div className="flex flex-col gap-1">
+            <label className="block text-sm font-medium text-muted-foreground">File Name</label>
+            <div className="flex items-center gap-2">
+              <Input
+                value={fileName}
+                onChange={(e) => setFileName(e.target.value)}
+                placeholder={getDefaultFileName(format, format === 'ico' ? icoSize : undefined)}
+                className="flex-1"
+              />
+              <span className="text-sm text-muted-foreground">.{format}</span>
+            </div>
+          </div>
+          <div className="flex items-end">
+            <Button 
+              variant="default" 
+              className="w-full gap-2 shadow-md"
+              onClick={handleDownloadImage}
+              disabled={!dataUrl && format !== 'svg'}
+            >
+              <DownloadIcon className="h-4 w-4" />
+              Download as {format.toUpperCase()}
+            </Button>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-semibold">SVG Code</h2>
             <div className="flex items-center gap-1">
+              
               <Button
                 variant="ghost"
                 size="sm"
@@ -355,85 +435,6 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
               svgCode={svgCode} 
               zoom={zoom} 
             />
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-card p-6 rounded-lg shadow-sm gradient-border mt-6">
-        <h2 className="text-xl font-semibold mb-4">Conversion Options</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="flex flex-col gap-2">
-            <label className="block text-sm font-medium mb-2 text-muted-foreground">Output Format</label>
-            <Select value={format} onValueChange={setFormat}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select format" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="png">PNG</SelectItem>
-                <SelectItem value="jpeg">JPEG</SelectItem>
-                <SelectItem value="webp">WebP</SelectItem>
-                <SelectItem value="svg">SVG (Original)</SelectItem>
-                <SelectItem value="ico">ICO</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          
-          {format === 'ico' ? (
-            <div className="flex flex-col gap-2">
-              <label className="block text-sm font-medium mb-2 text-muted-foreground">Icon Size</label>
-              <Select value={icoSize.toString()} onValueChange={(value) => setIcoSize(Number(value))}>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select size" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="16">16x16 - Browser tabs, address bar</SelectItem>
-                  <SelectItem value="32">32x32 - Taskbar, shortcuts</SelectItem>
-                  <SelectItem value="48">48x48 - Desktop icons</SelectItem>
-                  <SelectItem value="64">64x64 - High-resolution displays</SelectItem>
-                  <SelectItem value="128">128x128 - App icons</SelectItem>
-                  <SelectItem value="256">256x256 - Modern Windows icons</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-2">
-              <label className="block text-sm font-medium mb-2 text-muted-foreground">Scale Factor</label>
-              <div className="flex items-center gap-2">
-                <Slider
-                  value={[scale]}
-                  min={0.5}
-                  max={3}
-                  step={0.5}
-                  onValueChange={(value) => setScale(value[0])}
-                  className="flex-1"
-                />
-                <span className="text-sm w-12">{scale}x</span>
-              </div>
-            </div>
-          )}
-          
-          <div className="flex flex-col gap-2">
-            <label className="block text-sm font-medium mb-2 text-muted-foreground">File Name</label>
-            <div className="flex items-center gap-2">
-              <Input
-                value={fileName}
-                onChange={(e) => setFileName(e.target.value)}
-                placeholder={getDefaultFileName(format, format === 'ico' ? icoSize : undefined)}
-                className="flex-1"
-              />
-              <span className="text-sm text-muted-foreground">.{format}</span>
-            </div>
-          </div>
-          <div className="flex items-end">
-            <Button 
-              variant="default" 
-              className="w-full gap-2 shadow-md"
-              onClick={handleDownloadImage}
-              disabled={!dataUrl && format !== 'svg'}
-            >
-              <DownloadIcon className="h-4 w-4" />
-              Download as {format.toUpperCase()}
-            </Button>
           </div>
         </div>
       </div>

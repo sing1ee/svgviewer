@@ -27,7 +27,6 @@ export default function OptimizerPage() {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [optimizedSize, setOptimizedSize] = useState<number>(0);
   const [optimizedCode, setOptimizedCode] = useState<string>('');
-  const [canvasSize, setCanvasSize] = useState<{ width: number; height: number }>({ width: 400, height: 400 });
   const [zoom, setZoom] = useState<number>(100);
   const [activeTab, setActiveTab] = useState<string>('original');
   
@@ -72,13 +71,6 @@ export default function OptimizerPage() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  };
-
-  const handleCanvasSizeChange = (dimension: 'width' | 'height', value: string) => {
-    const numValue = parseInt(value);
-    if (!isNaN(numValue)) {
-      setCanvasSize(prev => ({ ...prev, [dimension]: numValue }));
-    }
   };
 
   const handleClear = () => {
@@ -154,6 +146,14 @@ export default function OptimizerPage() {
                     onChange={handleFileUpload}
                   />
                 </Button>
+              <Button 
+                variant="outline" 
+                className="gap-2 shadow-sm" 
+                onClick={() => handleDownload(activeTab === 'original' ? svgCode : optimizedCode, 'optimized.svg')}
+              >
+                <DownloadIcon className="h-4 w-4" />
+                Download SVG
+              </Button>
                 <Button
                   variant="default"
                   className="gap-2 shadow-md"
@@ -311,35 +311,7 @@ export default function OptimizerPage() {
               </TabsContent>
             </Tabs>
 
-            <div className="flex flex-wrap gap-4 justify-center my-6">
-              <Button variant="outline" className="gap-2 shadow-sm" onClick={() => document.getElementById('file-upload')?.click()}>
-                <UploadIcon className="h-4 w-4" />
-                Upload SVG
-                <input
-                  id="file-upload"
-                  type="file"
-                  accept=".svg"
-                  className="hidden"
-                  onChange={handleFileUpload}
-                />
-              </Button>
-              <Button 
-                variant="outline" 
-                className="gap-2 shadow-sm" 
-                onClick={() => handleDownload(activeTab === 'original' ? svgCode : optimizedCode, 'optimized.svg')}
-              >
-                <DownloadIcon className="h-4 w-4" />
-                Download SVG
-              </Button>
-              <Button 
-                variant="outline" 
-                className="gap-2 shadow-sm" 
-                onClick={() => handleCopy(activeTab === 'original' ? svgCode : optimizedCode)}
-              >
-                <CopyIcon className="h-4 w-4" />
-                Copy SVG
-              </Button>
-            </div>
+
           </div>
           
           <OptimizerFaq />
