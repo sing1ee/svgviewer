@@ -293,7 +293,6 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
   return (
     <div className="h-full flex flex-col">
       <div className="bg-card p-4 rounded-lg shadow-sm gradient-border mb-4">
-        <h2 className="text-lg font-semibold mb-3">Conversion Options</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="flex flex-col gap-1">
             <label className="block text-sm font-medium text-muted-foreground">Output Format</label>

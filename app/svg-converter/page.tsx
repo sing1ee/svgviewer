@@ -389,16 +389,6 @@ export default function ConverterPage() {
                   <DownloadIcon className="h-4 w-4" />
                   Download SVG
                 </Button>
-                <Button variant="outline" className="gap-2 shadow-sm" onClick={() => {
-                  navigator.clipboard.writeText(svgCode);
-                  toast({
-                    title: "Copied to clipboard",
-                    description: "SVG code has been copied to your clipboard",
-                  });
-                }}>
-                  <CopyIcon className="h-4 w-4" />
-                  Copy SVG
-                </Button>
               </div>
             </div>
           </div>
