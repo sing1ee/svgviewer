@@ -130,19 +130,189 @@ export default function OptimizerPage() {
       <Header />
 
       <main className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex flex-col gap-6 h-full">
-          <div className="text-center max-w-3xl mx-auto mb-4">
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Optimizer</h1>
-            <p className="text-muted-foreground text-lg">Reduce your SVG file size while maintaining quality.</p>
-          </div>
-          
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border">
-            <div className="flex items-center gap-4">
-              <Button
-                variant="outline"
-                className="gap-2 shadow-sm"
-                onClick={() => document.getElementById('file-upload')?.click()}
-              >
+        <div className="w-[90%] mx-auto">
+          <div className="flex flex-col gap-6 h-full">
+            <div className="text-center max-w-3xl mx-auto mb-4">
+              <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Optimizer</h1>
+              <p className="text-muted-foreground text-lg">Reduce your SVG file size while maintaining quality.</p>
+            </div>
+            
+            <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border">
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  className="gap-2 shadow-sm"
+                  onClick={() => document.getElementById('file-upload')?.click()}
+                >
+                  <UploadIcon className="h-4 w-4" />
+                  Upload SVG
+                  <input
+                    id="file-upload"
+                    type="file"
+                    accept=".svg"
+                    className="hidden"
+                    onChange={handleFileUpload}
+                  />
+                </Button>
+                <Button
+                  variant="default"
+                  className="gap-2 shadow-md"
+                  onClick={handleOptimize}
+                >
+                  <ZapIcon className="h-4 w-4" />
+                  Optimize
+                </Button>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-muted-foreground">Zoom:</span>
+                  <Slider
+                    value={[zoom]}
+                    min={10}
+                    max={200}
+                    step={10}
+                    onValueChange={(value) => setZoom(value[0])}
+                    className="w-32"
+                  />
+                  <span className="text-sm w-12">{zoom}%</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between bg-card/50 p-3 rounded-lg shadow-sm">
+              <div className="flex items-center gap-4">
+                <div className="text-sm">
+                  <span className="font-medium">Original:</span> {originalSize} bytes
+                </div>
+                <div className="text-sm">
+                  <span className="font-medium">Optimized:</span> {optimizedSize} bytes
+                </div>
+                {optimizedSize !== originalSize && (
+                  <div className={`text-sm ${optimizedSize < originalSize ? 'text-green-500' : 'text-red-500'} font-medium`}>
+                    {optimizedSize < originalSize ? 'Saved:' : 'Increased:'} {Math.abs(Math.round((1 - optimizedSize / originalSize) * 100))}%
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <Tabs defaultValue="original" value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col">
+              <TabsList className="grid w-full grid-cols-2 mb-4">
+                <TabsTrigger value="original">Original</TabsTrigger>
+                <TabsTrigger value="optimized">Optimized</TabsTrigger>
+              </TabsList>
+              <TabsContent value="original" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2 flex-1">
+                <div className="flex flex-col gap-3 h-full">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-semibold">Original SVG Code</h2>
+                    <div className="flex items-center gap-1">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleFormat}
+                      className="hover:bg-primary/10 h-7 px-2"
+                    >
+                      <AlignJustifyIcon className="h-3.5 w-3.5 mr-1" />
+                      Format
+                    </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleClear}
+                        className="hover:bg-primary/10"
+                      >
+                        <XIcon className="h-3.5 w-3.5 mr-1" />
+                        Clear
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleCopy(svgCode)}
+                        className="hover:bg-primary/10"
+                      >
+                        <CopyIcon className="h-3.5 w-3.5 mr-1" />
+                        Copy
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handlePaste}
+                        className="hover:bg-primary/10"
+                      >
+                        <ClipboardPasteIcon className="h-3.5 w-3.5 mr-1" />
+                        Paste
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="border rounded-lg overflow-hidden flex-1 shadow-md gradient-border">
+                    <CodeEditor value={svgCode} onChange={setSvgCode} />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 h-full">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-semibold">Original Preview</h2>
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="text-muted-foreground">Size: {originalSize} bytes</span>
+                    </div>
+                  </div>
+                  <div className="border rounded-lg overflow-hidden relative flex-1 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
+                    <GridBackground />
+                    <SvgPreview 
+                      svgCode={svgCode} 
+                      zoom={zoom} 
+                    />
+                  </div>
+                </div>
+              </TabsContent>
+              <TabsContent value="optimized" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2 flex-1">
+                <div className="flex flex-col gap-3 h-full">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-semibold">Optimized SVG Code</h2>
+                    <div className="flex items-center gap-1">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleCopy(optimizedCode)}
+                        className="hover:bg-primary/10 h-7 px-2"
+                      >
+                        <CopyIcon className="h-3.5 w-3.5 mr-1" />
+                        Copy
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="border rounded-lg overflow-hidden flex-1 shadow-md gradient-border">
+                    <CodeEditor value={optimizedCode} onChange={setOptimizedCode} readOnly />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-3 h-full">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-semibold">Optimized Preview</h2>
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="text-muted-foreground">Size: {optimizedSize} bytes</span>
+                      {optimizedSize !== originalSize && (
+                        <span className={`ml-2 ${optimizedSize < originalSize ? 'text-green-500' : 'text-red-500'}`}>
+                          ({optimizedSize < originalSize ? '-' : '+'}
+                          {Math.abs(Math.round((1 - optimizedSize / originalSize) * 100))}%)
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="border rounded-lg overflow-hidden relative flex-1 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
+                    <GridBackground />
+                    <SvgPreview 
+                      svgCode={optimizedCode} 
+                      zoom={zoom} 
+                    />
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
+
+            <div className="flex flex-wrap gap-4 justify-center my-6">
+              <Button variant="outline" className="gap-2 shadow-sm" onClick={() => document.getElementById('file-upload')?.click()}>
                 <UploadIcon className="h-4 w-4" />
                 Upload SVG
                 <input
@@ -153,195 +323,27 @@ export default function OptimizerPage() {
                   onChange={handleFileUpload}
                 />
               </Button>
-              <Button
-                variant="default"
-                className="gap-2 shadow-md"
-                onClick={handleOptimize}
+              <Button 
+                variant="outline" 
+                className="gap-2 shadow-sm" 
+                onClick={() => handleDownload(activeTab === 'original' ? svgCode : optimizedCode, 'optimized.svg')}
               >
-                <ZapIcon className="h-4 w-4" />
-                Optimize
+                <DownloadIcon className="h-4 w-4" />
+                Download SVG
+              </Button>
+              <Button 
+                variant="outline" 
+                className="gap-2 shadow-sm" 
+                onClick={() => handleCopy(activeTab === 'original' ? svgCode : optimizedCode)}
+              >
+                <CopyIcon className="h-4 w-4" />
+                Copy SVG
               </Button>
             </div>
-            
-            <div className="flex items-center gap-4">
-              
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Zoom:</span>
-                <Slider
-                  value={[zoom]}
-                  min={10}
-                  max={200}
-                  step={10}
-                  onValueChange={(value) => setZoom(value[0])}
-                  className="w-32"
-                />
-                <span className="text-sm w-12">{zoom}%</span>
-              </div>
-            </div>
           </div>
-
-          <div className="flex items-center justify-between bg-card/50 p-3 rounded-lg shadow-sm">
-            <div className="flex items-center gap-4">
-              <div className="text-sm">
-                <span className="font-medium">Original:</span> {originalSize} bytes
-              </div>
-              <div className="text-sm">
-                <span className="font-medium">Optimized:</span> {optimizedSize} bytes
-              </div>
-              {optimizedSize !== originalSize && (
-                <div className={`text-sm ${optimizedSize < originalSize ? 'text-green-500' : 'text-red-500'} font-medium`}>
-                  {optimizedSize < originalSize ? 'Saved:' : 'Increased:'} {Math.abs(Math.round((1 - optimizedSize / originalSize) * 100))}%
-                </div>
-              )}
-            </div>
-          </div>
-
-          <Tabs defaultValue="original" value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col">
-            <TabsList className="grid w-full grid-cols-2 mb-4">
-              <TabsTrigger value="original">Original</TabsTrigger>
-              <TabsTrigger value="optimized">Optimized</TabsTrigger>
-            </TabsList>
-            <TabsContent value="original" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2 flex-1">
-              <div className="flex flex-col gap-3 h-full">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold">Original SVG Code</h2>
-                  <div className="flex items-center gap-1">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleFormat}
-                    className="hover:bg-primary/10 h-7 px-2"
-                  >
-                    <AlignJustifyIcon className="h-3.5 w-3.5 mr-1" />
-                    Format
-                  </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={handleClear}
-                      className="hover:bg-primary/10"
-                    >
-                      <XIcon className="h-3.5 w-3.5 mr-1" />
-                      Clear
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleCopy(svgCode)}
-                      className="hover:bg-primary/10"
-                    >
-                      <CopyIcon className="h-3.5 w-3.5 mr-1" />
-                      Copy
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={handlePaste}
-                      className="hover:bg-primary/10"
-                    >
-                      <ClipboardPasteIcon className="h-3.5 w-3.5 mr-1" />
-                      Paste
-                    </Button>
-                  </div>
-                </div>
-                <div className="border rounded-lg overflow-hidden flex-1 shadow-md gradient-border">
-                  <CodeEditor value={svgCode} onChange={setSvgCode} />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3 h-full">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold">Original Preview</h2>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="text-muted-foreground">Size: {originalSize} bytes</span>
-                  </div>
-                </div>
-                <div className="border rounded-lg overflow-hidden relative flex-1 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
-                  <GridBackground />
-                  <SvgPreview 
-                    svgCode={svgCode} 
-                    zoom={zoom} 
-                  />
-                </div>
-              </div>
-            </TabsContent>
-            <TabsContent value="optimized" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-2 flex-1">
-              <div className="flex flex-col gap-3 h-full">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold">Optimized SVG Code</h2>
-                  <div className="flex items-center gap-1">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleCopy(optimizedCode)}
-                      className="hover:bg-primary/10 h-7 px-2"
-                    >
-                      <CopyIcon className="h-3.5 w-3.5 mr-1" />
-                      Copy
-                    </Button>
-                  </div>
-                </div>
-                <div className="border rounded-lg overflow-hidden flex-1 shadow-md gradient-border">
-                  <CodeEditor value={optimizedCode} onChange={setOptimizedCode} readOnly />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3 h-full">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold">Optimized Preview</h2>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="text-muted-foreground">Size: {optimizedSize} bytes</span>
-                    {optimizedSize !== originalSize && (
-                      <span className={`ml-2 ${optimizedSize < originalSize ? 'text-green-500' : 'text-red-500'}`}>
-                        ({optimizedSize < originalSize ? '-' : '+'}
-                        {Math.abs(Math.round((1 - optimizedSize / originalSize) * 100))}%)
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="border rounded-lg overflow-hidden relative flex-1 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
-                  <GridBackground />
-                  <SvgPreview 
-                    svgCode={optimizedCode} 
-                    zoom={zoom} 
-                  />
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
-
-          <div className="flex flex-wrap gap-4 justify-center my-6">
-            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => document.getElementById('file-upload')?.click()}>
-              <UploadIcon className="h-4 w-4" />
-              Upload SVG
-              <input
-                id="file-upload"
-                type="file"
-                accept=".svg"
-                className="hidden"
-                onChange={handleFileUpload}
-              />
-            </Button>
-            <Button 
-              variant="outline" 
-              className="gap-2 shadow-sm" 
-              onClick={() => handleDownload(activeTab === 'original' ? svgCode : optimizedCode, 'optimized.svg')}
-            >
-              <DownloadIcon className="h-4 w-4" />
-              Download SVG
-            </Button>
-            <Button 
-              variant="outline" 
-              className="gap-2 shadow-sm" 
-              onClick={() => handleCopy(activeTab === 'original' ? svgCode : optimizedCode)}
-            >
-              <CopyIcon className="h-4 w-4" />
-              Copy SVG
-            </Button>
-          </div>
+          
+          <OptimizerFaq />
         </div>
-        
-        <OptimizerFaq />
       </main>
 
       <Footer />

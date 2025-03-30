@@ -76,29 +76,31 @@ export default async function SvgCategoryPage({ params }: Props) {
       <Header />
 
       <main className="flex-1 flex flex-col overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {/* SVG 列表 */}
-          <div className="md:col-span-1">
-            <SvgList 
-              category={category}
-              svgFiles={svgFiles}
-              currentId={null}
-            />
-          </div>
-          
-          {/* SVG 预览区域 */}
-          <div className="md:col-span-3">
-            <div className="relative rounded-lg border bg-card">
-              <GridBackground />
-              {defaultSvgContent ? (
-                <SvgConverter svgCode={defaultSvgContent} />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-muted-foreground">
-                    Select an SVG from the list to preview
-                  </p>
-                </div>
-              )}
+        <div className="w-[90%] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {/* SVG 列表 */}
+            <div className="md:col-span-1">
+              <SvgList 
+                category={category}
+                svgFiles={svgFiles}
+                currentId={null}
+              />
+            </div>
+            
+            {/* SVG 预览区域 */}
+            <div className="md:col-span-3">
+              <div className="relative rounded-lg border bg-card">
+                <GridBackground />
+                {defaultSvgContent ? (
+                  <SvgConverter svgCode={defaultSvgContent} />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-muted-foreground">
+                      Select an SVG from the list to preview
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
