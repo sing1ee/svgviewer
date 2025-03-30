@@ -15,6 +15,7 @@ import html2canvas from 'html2canvas';
 import { beautifySVG } from '@/lib/utils';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import SvgConverter from '../components/svg-converter';
 
 export default function ConverterPage() {
   const [svgCode, setSvgCode] = useState<string>(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1a1a2e"/><circle cx="500" cy="80" r="40" fill="#e94560" opacity="0.7"/><text x="300" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#ffffff">
@@ -356,206 +357,22 @@ export default function ConverterPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-1 container mx-auto px-4 py-8 flex flex-col h-[calc(100vh-8.5rem)]">
-        <div className="flex flex-col gap-6 h-full">
-          <div className="text-center max-w-3xl mx-auto mb-4">
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Converter</h1>
-            <p className="text-muted-foreground text-lg">Convert your SVG files to PNG, JPEG, WebP formats or ICO.</p>
-          </div>
-          
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border">
-            <div className="flex items-center gap-4">
-              <Button
-                variant="outline"
-                className="gap-2 shadow-sm"
-                onClick={() => document.getElementById('file-upload')?.click()}
-              >
-                <UploadIcon className="h-4 w-4" />
-                Upload SVG
-                <input
-                  id="file-upload"
-                  type="file"
-                  accept=".svg"
-                  className="hidden"
-                  onChange={handleFileUpload}
-                />
-              </Button>
-              <Button
-                variant="default"
-                className="gap-2 shadow-md"
-                onClick={handleDownloadImage}
-                disabled={!dataUrl && format !== 'svg'}
-              >
-                <DownloadIcon className="h-4 w-4" />
-                Download as {format.toUpperCase()}
-              </Button>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Zoom:</span>
-                <Slider
-                  value={[zoom]}
-                  min={10}
-                  max={200}
-                  step={10}
-                  onValueChange={(value) => setZoom(value[0])}
-                  className="w-32"
-                />
-                <span className="text-sm w-12">{zoom}%</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1">
-            <div className="flex flex-col gap-3 h-full">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold">SVG Code</h2>
-                <div className="flex items-center gap-1">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleFormat}
-                    className="hover:bg-primary/10 h-7 px-2"
-                  >
-                    <AlignJustifyIcon className="h-3.5 w-3.5 mr-1" />
-                    Format
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleClear}
-                  >
-                    <XIcon className="h-3.5 w-3.5 mr-1" />
-                    Clear
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => handleCopy(svgCode)}
-                    className="hover:bg-primary/10 h-7 px-2"
-                  >
-                    <CopyIcon className="h-3.5 w-3.5 mr-1" />
-                    Copy
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handlePaste}
-                    className="hover:bg-primary/10 h-7 px-2"
-                  >
-                    <ClipboardPasteIcon className="h-3.5 w-3.5 mr-1" />
-                    Paste
-                  </Button>
-                </div>
-              </div>
-              <div className="border rounded-lg overflow-hidden flex-1 shadow-md gradient-border">
-                <CodeEditor value={svgCode} onChange={setSvgCode} />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3 h-full">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold">Preview</h2>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-muted-foreground">Size: {originalSize} bytes</span>
-                </div>
-              </div>
-              <div className="border rounded-lg overflow-hidden relative flex-1 min-h-0 flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">
-                <GridBackground />
-                <SvgPreview 
-                  svgCode={svgCode} 
-                  zoom={zoom} 
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-card p-6 rounded-lg shadow-sm gradient-border">
-            <h2 className="text-xl font-semibold mb-4">Conversion Options</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="block text-sm font-medium mb-2 text-muted-foreground">Output Format</label>
-                <Select value={format} onValueChange={setFormat}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select format" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="png">PNG</SelectItem>
-                    <SelectItem value="jpeg">JPEG</SelectItem>
-                    <SelectItem value="webp">WebP</SelectItem>
-                    <SelectItem value="svg">SVG (Original)</SelectItem>
-                    <SelectItem value="ico">ICO</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              
-              {format === 'ico' ? (
-                <div className="flex flex-col gap-2">
-                  <label className="block text-sm font-medium mb-2 text-muted-foreground">Icon Size</label>
-                  <Select value={icoSize.toString()} onValueChange={(value) => setIcoSize(Number(value))}>
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select size" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="16">16x16 - Browser tabs, address bar</SelectItem>
-                      <SelectItem value="32">32x32 - Taskbar, shortcuts</SelectItem>
-                      <SelectItem value="48">48x48 - Desktop icons</SelectItem>
-                      <SelectItem value="64">64x64 - High-resolution displays</SelectItem>
-                      <SelectItem value="128">128x128 - App icons</SelectItem>
-                      <SelectItem value="256">256x256 - Modern Windows icons</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              ) : (
-                <div className="flex flex-col gap-2">
-                  <label className="block text-sm font-medium mb-2 text-muted-foreground">Scale Factor</label>
-                  <div className="flex items-center gap-2">
-                    <Slider
-                      value={[scale]}
-                      min={0.5}
-                      max={3}
-                      step={0.5}
-                      onValueChange={(value) => setScale(value[0])}
-                      className="flex-1"
-                    />
-                    <span className="text-sm w-12">{scale}x</span>
-                  </div>
-                </div>
-              )}
-              
-              <div className="flex flex-col gap-2">
-                <label className="block text-sm font-medium mb-2 text-muted-foreground">File Name</label>
-                <div className="flex items-center gap-2">
-                  <Input
-                    value={fileName}
-                    onChange={(e) => setFileName(e.target.value)}
-                    placeholder={getDefaultFileName(format, format === 'ico' ? icoSize : undefined)}
-                    className="flex-1"
-                  />
-                  <span className="text-sm text-muted-foreground">.{format}</span>
-                </div>
-              </div>
-              <div className="flex items-end">
-                <Button 
-                  variant="default" 
-                  className="w-full gap-2 shadow-md"
-                  onClick={handleDownloadImage}
-                  disabled={!dataUrl && format !== 'svg'}
-                >
-                  <DownloadIcon className="h-4 w-4" />
-                  Download as {format.toUpperCase()}
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center my-6">
-            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => document.getElementById('file-upload')?.click()}>
+      <main className="flex-1 container mx-auto px-4 py-8 flex flex-col">
+        <div className="text-center max-w-3xl mx-auto mb-4">
+          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Converter</h1>
+          <p className="text-muted-foreground text-lg">Convert your SVG files to PNG, JPEG, WebP formats or ICO.</p>
+        </div>
+        
+        <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between bg-card p-4 rounded-lg shadow-sm gradient-border mb-6">
+          <div className="flex items-center gap-4">
+            <Button
+              variant="outline"
+              className="gap-2 shadow-sm"
+              onClick={() => document.getElementById('file-upload')?.click()}
+            >
               <UploadIcon className="h-4 w-4" />
               Upload SVG
               <input
@@ -570,11 +387,21 @@ export default function ConverterPage() {
               <DownloadIcon className="h-4 w-4" />
               Download SVG
             </Button>
-            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => handleCopy(svgCode)}>
+            <Button variant="outline" className="gap-2 shadow-sm" onClick={() => {
+              navigator.clipboard.writeText(svgCode);
+              toast({
+                title: "Copied to clipboard",
+                description: "SVG code has been copied to your clipboard",
+              });
+            }}>
               <CopyIcon className="h-4 w-4" />
               Copy SVG
             </Button>
           </div>
+        </div>
+
+        <div className="flex-1 mb-8">
+          <SvgConverter svgCode={svgCode} onSvgCodeChange={setSvgCode} />
         </div>
         
         <ConverterFaq />

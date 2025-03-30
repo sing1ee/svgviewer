@@ -3,10 +3,10 @@ import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
 import SvgList from '@/components/svg-list';
-import SvgPreview from '@/components/svg-preview';
 import { GridBackground } from '@/components/grid-background';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import SvgConverter from '@/app/components/svg-converter';
 
 interface Props {
   params: {
@@ -90,7 +90,7 @@ export default async function SvgCategoryPage({ params }: Props) {
             <div className="relative h-[600px] rounded-lg border bg-card">
               <GridBackground />
               {defaultSvgContent ? (
-                <SvgPreview svgCode={defaultSvgContent} zoom={100} />
+                <SvgConverter svgCode={defaultSvgContent} />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-muted-foreground">
