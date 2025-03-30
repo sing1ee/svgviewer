@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       url: `https://svgviewer.app/category/${category}`,
       images: [
-        { url: `/api/og/${category}` },
+        { url: `https://svgviewer.app/${category}-og-image.png` },
       ],
     },
     alternates: {
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: '@czsinglestar',
       description: `Browse and preview our collection of ${category} SVGs. Download and use them in your projects.`,
       images: [
-        { url: `/api/og/${category}` },
+        { url: `https://svgviewer.app/${category}-og-image.png` },
       ],
     }
   };
