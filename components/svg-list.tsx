@@ -49,7 +49,6 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
                         className="max-w-full max-h-full object-contain"
                       />
                     </div>
-                    <p className="hidden">{`${category} SVG: ${file.name}`}</p>
                   </Link>
                 </div>
               );
