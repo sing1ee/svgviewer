@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Button } from '@/components/ui/button';
-import { DownloadIcon } from 'lucide-react';
 
 interface SvgFile {
   id: string;
@@ -20,26 +18,6 @@ interface SvgListProps {
 }
 
 export default function SvgList({ category, svgFiles, currentId }: SvgListProps) {
-  const pathname = usePathname();
-
-  const handleDownload = async (svgPath: string, fileName: string) => {
-    try {
-      const response = await fetch(svgPath);
-      const svgContent = await response.text();
-      
-      const blob = new Blob([svgContent], { type: 'image/svg+xml' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Error downloading SVG:', error);
-    }
-  };
 
   return (
     <div className="rounded-lg border bg-card">
@@ -49,39 +27,33 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
         </h2>
       </div>
       <ScrollArea className="h-[600px]">
-        <div className="p-4 space-y-2">
-          {svgFiles.map((file) => {
-            const isActive = currentId === file.id;
-            const href = `/category/${category}/${file.id}`;
+        <div className="p-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {svgFiles.map((file) => {
+              const isActive = currentId === file.id;
+              const href = `/category/${category}/${file.id}`;
 
-            return (
-              <div
-                key={file.id}
-                className={cn(
-                  "group flex items-center justify-between p-2 rounded-lg hover:bg-accent",
-                  isActive && "bg-accent"
-                )}
-              >
-                <Link
-                  href={href}
+              return (
+                <div
+                  key={file.id}
                   className={cn(
-                    "flex-1 truncate text-sm",
-                    isActive ? "font-medium" : "text-muted-foreground"
+                    "group relative flex flex-col items-center p-2 rounded-lg border hover:border-primary transition-colors",
+                    isActive && "border-primary bg-accent"
                   )}
                 >
-                  {file.name}
-                </Link>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-8 w-8 opacity-0 group-hover:opacity-100"
-                  onClick={() => handleDownload(file.path, file.name)}
-                >
-                  <DownloadIcon className="h-4 w-4" />
-                </Button>
-              </div>
-            );
-          })}
+                  <Link href={href} className="w-full">
+                    <div className="aspect-square w-full rounded-md bg-muted flex items-center justify-center p-1">
+                      <img
+                        src={file.path}
+                        alt={file.name}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </ScrollArea>
     </div>
