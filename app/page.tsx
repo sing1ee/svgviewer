@@ -128,7 +128,7 @@ export default function Home() {
 
       <Header />
 
-      <main className="flex-1 container mx-auto px-4 py-6 flex flex-col h-[calc(100vh-8.5rem)]">
+      <main className="flex-1 flex flex-col overflow-hidden">
         <div className="flex flex-col gap-6 h-full">
           <div className="text-center max-w-3xl mx-auto mb-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVG Viewer & Editor</h1>
