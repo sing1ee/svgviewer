@@ -74,7 +74,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         { url: `https://svgviewer.app/${svgCategory}-og-image.png` },
       ],
-    }
+    },
+    // robots: {
+    //   index: true,
+    //   follow: true,
+    //   noimageindex: true,
+    //   noarchive: true,
+    //   nosnippet: true,
+    // },
   };
 }
 
