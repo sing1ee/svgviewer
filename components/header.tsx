@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
 import Image from "next/image";
+
 export default function Header() {
   return (
     <header className="border-b backdrop-blur-sm bg-background/80 sticky top-0 z-10">
@@ -21,6 +22,16 @@ export default function Header() {
             <Link href="/svg-converter" title='SVG Converter' className="text-sm font-medium transition-colors">
               Converter
             </Link>
+            <div className="relative group">
+              <button className="text-sm font-medium transition-colors">
+                SVG Collection
+              </button>
+              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link href="/category/heart" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Heart
+                </Link>
+              </div>
+            </div>
           </nav>
           <MobileNav />
         </div>
