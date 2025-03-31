@@ -2,7 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Header from '@/components/header';
@@ -29,7 +31,9 @@ async function getPost(slug: string) {
   const { data, content } = matter(fileContents);
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeStringify)
     .process(content);
   const contentHtml = processedContent.toString();
 

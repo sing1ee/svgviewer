@@ -13,34 +13,34 @@ Welcome to our beautiful collection of heart SVG icons and illustrations! These 
 Here are 10 stunning heart SVG designs from our collection:
 
 1. **Heart Design 1**
-   ![Heart Design 1](/svgs/heart/heart-IcvqS.svg)
+   <img src="/svgs/heart/heart-IcvqS.svg" alt="Heart Design 1" width="48" height="48" />
 
 2. **Heart Design 2**
-   ![Heart Design 2](/svgs/heart/heart-gKQVY.svg)
+   <img src="/svgs/heart/heart-gKQVY.svg" alt="Heart Design 2" width="48" height="48" />
 
 3. **Heart Design 3**
-   ![Heart Design 3](/svgs/heart/heart-PEcnY.svg)
+   <img src="/svgs/heart/heart-PEcnY.svg" alt="Heart Design 3" width="48" height="48" />
 
 4. **Heart Design 4**
-   ![Heart Design 4](/svgs/heart/heart-elawY.svg)
+   <img src="/svgs/heart/heart-elawY.svg" alt="Heart Design 4" width="48" height="48" />
 
 5. **Heart Design 5**
-   ![Heart Design 5](/svgs/heart/heart-NdZxT.svg)
+   <img src="/svgs/heart/heart-NdZxT.svg" alt="Heart Design 5" width="48" height="48" />
 
 6. **Heart Design 6**
-   ![Heart Design 6](/svgs/heart/heart-pBMpO.svg)
+   <img src="/svgs/heart/heart-pBMpO.svg" alt="Heart Design 6" width="48" height="48" />
 
 7. **Heart Design 7**
-   ![Heart Design 7](/svgs/heart/heart-SSQer.svg)
+   <img src="/svgs/heart/heart-SSQer.svg" alt="Heart Design 7" width="48" height="48" />
 
 8. **Heart Design 8**
-   ![Heart Design 8](/svgs/heart/heart-VULIY.svg)
+   <img src="/svgs/heart/heart-VULIY.svg" alt="Heart Design 8" width="48" height="48" />
 
 9. **Heart Design 9**
-   ![Heart Design 9](/svgs/heart/heart-JNpcg.svg)
+   <img src="/svgs/heart/heart-JNpcg.svg" alt="Heart Design 9" width="48" height="48" />
 
 10. **Heart Design 10**
-    ![Heart Design 10](/svgs/heart/heart-JdCpv.svg)
+    <img src="/svgs/heart/heart-JdCpv.svg" alt="Heart Design 10" width="48" height="48" />
 
 ## Browse All Heart SVGs
 
