@@ -22,7 +22,7 @@ interface SvgConverterProps {
 export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterProps) {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [zoom, setZoom] = useState<number>(100);
-  const [format, setFormat] = useState<string>("png");
+  const [format, setFormat] = useState<string>("svg");
   const [scale, setScale] = useState<number>(1);
   const [dataUrl, setDataUrl] = useState<string>("");
   const [icoSize, setIcoSize] = useState<number>(16);
@@ -295,17 +295,17 @@ export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterP
     <div className="h-full flex flex-col">
       <div className="bg-card p-4 rounded-lg shadow-sm gradient-border mb-4">
       <ConversionControls
-  format={format}
-  scale={scale}
-  icoSize={icoSize}
-  fileName={fileName}
-  onFormatChange={setFormat}
-  onScaleChange={setScale}
-  onIcoSizeChange={setIcoSize}
-  onFileNameChange={setFileName}
-  onDownload={handleDownloadImage}
-  disabled={!svgCode}
-/>
+        format={format}
+        scale={scale}
+        icoSize={icoSize}
+        fileName={fileName}
+        onFormatChange={setFormat}
+        onScaleChange={setScale}
+        onIcoSizeChange={setIcoSize}
+        onFileNameChange={setFileName}
+        onDownload={handleDownloadImage}
+        disabled={!svgCode}
+      />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
