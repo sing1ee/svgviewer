@@ -1,9 +1,6 @@
-"use client";
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 interface SvgFile {
   id: string;
@@ -18,36 +15,12 @@ interface SvgListProps {
 }
 
 export default function SvgList({ category, svgFiles, currentId }: SvgListProps) {
-  const currentSvg = svgFiles.find(file => file.id === currentId);
-
-  const handleDownload = () => {
-    if (!currentSvg) return;
-    
-    const link = document.createElement('a');
-    link.href = currentSvg.path;
-    link.download = `${currentSvg.name}.svg`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <div className="rounded-lg border bg-card">
       <div className="p-4 border-b flex justify-between items-center">
         <h2 className="text-lg font-semibold">
           {category.charAt(0).toUpperCase() + category.slice(1)} SVGs
         </h2>
-        {currentSvg && (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handleDownload}
-            className="h-8 w-8"
-            title="Download SVG"
-          >
-            <Download className="h-4 w-4" />
-          </Button>
-        )}
       </div>
       <ScrollArea className="h-[1000px]">
         <div className="p-4">
