@@ -72,7 +72,7 @@ export default function ConversionControls({
         {/* Scale/Size Control */}
         {format === 'ico' ? (
           <Select value={icoSize.toString()} onValueChange={(value) => onIcoSizeChange(Number(value))}>
-            <SelectTrigger className="h-8">
+            <SelectTrigger className="h-8 w-[200px]">
               <SelectValue placeholder="Select size" />
             </SelectTrigger>
             <SelectContent>
@@ -84,7 +84,7 @@ export default function ConversionControls({
             </SelectContent>
           </Select>
         ) : (
-          <div className="flex items-center gap-2 min-w-[180px]">
+          <div className="flex items-center gap-2">
             <Slider
               value={[scale]}
               min={0.5}
@@ -98,7 +98,7 @@ export default function ConversionControls({
         )}
 
         {/* Filename Input */}
-        <div className="flex items-center gap-2 flex-1">
+        <div className="flex items-center gap-2 flex-1 min-w-0">
           <Input
             value={fileName}
             onChange={(e) => onFileNameChange(e.target.value)}
