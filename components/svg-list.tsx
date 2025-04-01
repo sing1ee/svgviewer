@@ -18,9 +18,9 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
   return (
     <div className="rounded-lg border bg-card">
       <div className="p-4 border-b flex justify-between items-center">
-        <h2 className="text-lg font-semibold">
+        <h1 className="text-lg font-semibold">
           {category.charAt(0).toUpperCase() + category.slice(1)} SVGs
-        </h2>
+        </h1>
       </div>
       <ScrollArea className="h-[1000px]">
         <div className="p-4">

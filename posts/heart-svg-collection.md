@@ -4,7 +4,7 @@ date: 2024-03-25
 description: Explore our beautiful collection of heart SVG icons and illustrations. Perfect for Valentine's Day, love-themed designs, and romantic projects.
 ---
 
-# Heart SVG Collection
+## Heart SVG Collection
 
 Welcome to our beautiful collection of heart SVG icons and illustrations! These heart designs are perfect for Valentine's Day cards, love-themed websites, romantic projects, and any design that needs a touch of love.
 

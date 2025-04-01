@@ -4,7 +4,7 @@ date: 2024-03-25
 description: Discover our adorable collection of Hello Kitty SVG illustrations. Perfect for kawaii-style designs, children's projects, and Sanrio fans.
 ---
 
-# Hello Kitty SVG Collection
+## Hello Kitty SVG Collection
 
 Welcome to our delightful collection of Hello Kitty SVG illustrations! These cute and kawaii designs feature everyone's favorite Sanrio character, perfect for creating adorable designs, children's projects, and anything that needs a touch of sweetness.
 

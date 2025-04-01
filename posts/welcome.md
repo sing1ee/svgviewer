@@ -4,7 +4,7 @@ date: '2024-03-03'
 description: 'SVGViewer is a powerful online SVG editing and optimization tool'
 ---
 
-# Welcome to SVGViewer
+## Welcome to SVGViewer
 
 SVGViewer is a powerful online SVG editing and optimization tool. It offers the following main features:
 
