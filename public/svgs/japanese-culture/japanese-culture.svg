@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#f8f8f8"/>
+  
+  <!-- タイトル -->
+  <text x="400" y="50" font-family="'Noto Sans JP', sans-serif" font-size="24" text-anchor="middle" fill="#333">日本の伝統的なシンボル</text>
+  <text x="400" y="80" font-family="'Noto Sans JP', sans-serif" font-size="16" text-anchor="middle" fill="#666">Traditional Japanese Symbols</text>
+  
+  <!-- 富士山 - mount-fuji -->
+  <g id="mount-fuji" transform="translate(150, 200)">
+    <!-- 山体 -->
+    <path d="M0,120 L100,0 L200,120 Z" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
+    <!-- 雪頂 -->
+    <path d="M75,40 L100,0 L125,40 L120,45 L115,42 L105,47 L100,42 L95,47 L85,42 L80,45 Z" fill="white" stroke="#333" stroke-width="0.5"/>
+    <!-- 注釈 -->
+    <text x="100" y="140" font-family="'Noto Sans JP', sans-serif" font-size="14" text-anchor="middle" fill="#333">富士山</text>
+    <text x="100" y="160" font-family="'Noto Sans JP', sans-serif" font-size="10" text-anchor="middle" fill="#666">mount-fuji</text>
+  </g>
+  
+  <!-- 桜 - cherry-blossom -->
+  <g id="cherry-blossom" transform="translate(400, 200)">
+    <!-- 花弁 -->
+    <path d="M0,0 Q15,-15 30,0 Q15,15 0,0 Z" fill="#ffd7e0" stroke="#ffb7c5" stroke-width="0.5" transform="rotate(0)"/>
+    <path d="M0,0 Q15,-15 30,0 Q15,15 0,0 Z" fill="#ffd7e0" stroke="#ffb7c5" stroke-width="0.5" transform="rotate(72)"/>
+    <path d="M0,0 Q15,-15 30,0 Q15,15 0,0 Z" fill="#ffd7e0" stroke="#ffb7c5" stroke-width="0.5" transform="rotate(144)"/>
+    <path d="M0,0 Q15,-15 30,0 Q15,15 0,0 Z" fill="#ffd7e0" stroke="#ffb7c5" stroke-width="0.5" transform="rotate(216)"/>
+    <path d="M0,0 Q15,-15 30,0 Q15,15 0,0 Z" fill="#ffd7e0" stroke="#ffb7c5" stroke-width="0.5" transform="rotate(288)"/>
+    <!-- 花蕊 -->
+    <circle cx="0" cy="0" r="5" fill="#ffdf7e"/>
+    <!-- 注釈 -->
+    <text x="0" y="50" font-family="'Noto Sans JP', sans-serif" font-size="14" text-anchor="middle" fill="#333">桜</text>
+    <text x="0" y="70" font-family="'Noto Sans JP', sans-serif" font-size="10" text-anchor="middle" fill="#666">cherry-blossom</text>
+  </g>
+  
+  <!-- 鳥居 - torii-gate -->
+  <g id="torii-gate" transform="translate(650, 200)">
+    <!-- 主フレーム -->
+    <path d="M20,120 L20,50 L80,50 L80,120" stroke="#e63946" stroke-width="8" fill="none"/>
+    <!-- 上部横梁 -->
+    <path d="M10,50 L90,50" stroke="#e63946" stroke-width="8" fill="none"/>
+    <path d="M0,40 L100,40" stroke="#e63946" stroke-width="8" fill="none"/>
+    <!-- 注釈 -->
+    <text x="50" y="140" font-family="'Noto Sans JP', sans-serif" font-size="14" text-anchor="middle" fill="#333">鳥居</text>
+    <text x="50" y="160" font-family="'Noto Sans JP', sans-serif" font-size="10" text-anchor="middle" fill="#666">torii-gate</text>
+  </g>
+  
+  <!-- 折り鶴 - origami-crane -->
+  <g id="origami-crane" transform="translate(150, 400)">
+    <!-- 本体 -->
+    <path d="M50,0 L80,30 L50,60 L20,30 Z" fill="white" stroke="#333" stroke-width="1"/>
+    <!-- 翼 -->
+    <path d="M50,30 L100,30" stroke="#333" stroke-width="1"/>
+    <path d="M50,30 L0,30" stroke="#333" stroke-width="1"/>
+    <path d="M50,30 L80,10" stroke="#333" stroke-width="1"/>
+    <path d="M50,30 L20,10" stroke="#333" stroke-width="1"/>
+    <!-- 注釈 -->
+    <text x="50" y="80" font-family="'Noto Sans JP', sans-serif" font-size="14" text-anchor="middle" fill="#333">折り鶴</text>
+    <text x="50" y="100" font-family="'Noto Sans JP', sans-serif" font-size="10" text-anchor="middle" fill="#666">origami-crane</text>
+  </g>
+  
+  <!-- 和風の波 - japanese-wave -->
+  <g id="japanese-wave" transform="translate(400, 400)">
+    <!-- 波 -->
+    <path d="M0,20 Q12.5,0 25,20 Q37.5,40 50,20 Q62.5,0 75,20 Q87.5,40 100,20" fill="none" stroke="#2a6fdb" stroke-width="3"/>
+    <path d="M0,35 Q12.5,15 25,35 Q37.5,55 50,35 Q62.5,15 75,35 Q87.5,55 100,35" fill="none" stroke="#2a6fdb" stroke-width="3"/>
+    <!-- 注釈 -->
+    <text x="50" y="70" font-family="'Noto Sans JP', sans-serif" font-size="14" text-anchor="middle" fill="#333">和風の波</text>
+    <text x="50" y="90" font-family="'Noto Sans JP', sans-serif" font-size="10" text-anchor="middle" fill="#666">japanese-wave</text>
+  </g>
+  
+  <!-- 寿司 - sushi-roll -->
+  <g id="sushi-roll" transform="translate(650, 400)">
+    <!-- 寿司 -->
+    <ellipse cx="50" cy="30" rx="40" ry="20" fill="#f8f0dc" stroke="#333" stroke-width="1"/>
+    <path d="M10,30 L90,30" stroke="#333" stroke-width="1"/>
+    <rect x="30" y="10" width="40" height="20" fill="#fa8072"/>
+    <rect x="35" y="15" width="30" height="10" fill="#f8f0dc"/>
+    <path d="M10,30 C10,40 90,40 90,30" fill="#2e856e" stroke="#333" stroke-width="0.5"/>
+    <!-- 注釈 -->
+    <text x="50" y="70" font-family="'Noto Sans JP', sans-serif" font-size="14" text-anchor="middle" fill="#333">寿司</text>
+    <text x="50" y="90" font-family="'Noto Sans JP', sans-serif" font-size="10" text-anchor="middle" fill="#666">sushi-roll</text>
+  </g>
+</svg>

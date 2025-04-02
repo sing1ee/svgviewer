@@ -36,6 +36,9 @@ export default function Header() {
                 <Link href="/category/btc-logo" title="BTC Logo SVGs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   BTC Logo
                 </Link>
+                <Link href="/category/japanese-culture" title="Japanese Culture SVGs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Japanese Culture
+                </Link>
               </div>
             </div>
           </nav>
