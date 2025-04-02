@@ -49,12 +49,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://svgviewer.app/blog/svg-to-png</loc>
-    <lastmod>2025-03-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://svgviewer.app/blog/heart-svg-collection</loc>
     <lastmod>2025-03-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -62,6 +56,12 @@
   </url>
   <url>
     <loc>https://svgviewer.app/blog/hello-kitty-svg-collection</loc>
+    <lastmod>2025-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svgviewer.app/blog/japanese-culture-svg-collection</loc>
     <lastmod>2025-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -86,6 +86,12 @@
   </url>
   <url>
     <loc>https://svgviewer.app/category/btc-logo</loc>
+    <lastmod>2025-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svgviewer.app/category/japanese-culture</loc>
     <lastmod>2025-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

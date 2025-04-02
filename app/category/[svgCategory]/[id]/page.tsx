@@ -49,7 +49,7 @@ async function getSvgContent(category: string, id: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { svgCategory, id } = params;
 
-  const title = `${svgCategory} SVG | SVGViewer.app`;
+  const title = `${svgCategory} SVG: ${id}`;
 
   return {
     title,
