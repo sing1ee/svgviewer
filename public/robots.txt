@@ -11,5 +11,5 @@ User-agent: PerplexityBot
 User-agent: GoogleOther
 User-agent: DuckAssistBot
 
-LLM-Content: https://svgviewer.app/llms.txt
-LLM-Full-Content: https://svgviewer.app/llms-full.txt
+Allow: /llms.txt
+Allow: /llms-full.txt
