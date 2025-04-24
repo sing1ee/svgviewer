@@ -19,6 +19,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://svgviewer.app/svg-to-png</loc>
+    <lastmod>2025-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://svgviewer.app/blog</loc>
     <lastmod>2025-03-03</lastmod>
     <changefreq>daily</changefreq>
