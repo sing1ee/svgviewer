@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Footer() {
   return (
-    <footer className="border-t py-6 bg-card/50 backdrop-blur-sm">
+    <footer className="border-t py-8 bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <Image src="/logo.png" alt="SVGViewer Logo" width={28} height={28} className="rounded-md" />
-              <span className="font-poppins font-bold text-xl">SVGViewer</span>
+              <span className="font-poppins font-bold text-xl bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">SVGViewer</span>
             </div>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap justify-center gap-6">
               <Link href="/" title='SVGViewer' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Viewer
               </Link>
