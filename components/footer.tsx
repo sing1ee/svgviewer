@@ -42,6 +42,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/free-svg" title='Free SVG Collections' className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Free SVG Collections
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog" title='Blog' className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     Blog
                   </Link>
