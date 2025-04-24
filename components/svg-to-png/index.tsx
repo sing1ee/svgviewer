@@ -12,15 +12,15 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 
 const SvgToPNG: React.FC = () => {
-  const [svgCode, setSvgCode] = useState<string>(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1a1a2e"/><circle cx="500" cy="80" r="40" fill="#e94560" opacity="0.7"/><text x="300" y="150" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#ffffff">
-    WELCOME TO
-  </text><text x="300" y="210" font-family="Arial, sans-serif" font-size="50" font-weight="bold" text-anchor="middle" fill="#e94560">
-    SVGViewer.app
-  </text><rect x="200" y="250" width="200" height="50" rx="25" fill="#e94560"/><text x="300" y="285" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">
-    VISIT NOW
-  </text><text x="300" y="350" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#ffffff">
-    https://svgviewer.app
-  </text></svg>`);
+  const [svgCode, setSvgCode] = useState<string>(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1a1a2e"/><g transform="translate(150, 100) scale(0.8)"><text font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">.svg</text><rect x="-10" y="-35" width="80" height="45" rx="5" fill="#4CAF50" opacity="0.7"/></g><path d="M300 120 L350 120 L340 110 M350 120 L340 130" stroke="#ffffff" stroke-width="4" fill="none"/><g transform="translate(400, 100) scale(0.8)"><text font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">.png</text><rect x="-10" y="-35" width="85" height="45" rx="5" fill="#2196F3" opacity="0.7"/></g><text x="300" y="190" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    SVG to PNG
+  </text><text x="300" y="230" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#e94560">
+    Conversion Module
+  </text><text x="300" y="280" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">
+    High Quality • Batch Processing • Adjustable Output
+  </text><rect x="200" y="310" width="200" height="50" rx="25" fill="#e94560"/><text x="300" y="342" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff">
+    CONVERT NOW
+  </text><circle cx="500" cy="80" r="40" fill="#e94560" opacity="0.5"/><circle cx="100" cy="330" r="30" fill="#4CAF50" opacity="0.5"/></svg>`);
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [scale, setScale] = useState<number>(1);
   const [dataUrl, setDataUrl] = useState<string>("");

@@ -19,9 +19,19 @@ export default function Header() {
             <Link href="/svg-optimizer" title='SVG Optimizer' className="text-sm font-medium transition-colors">
               Optimizer
             </Link>
-            <Link href="/svg-converter" title='SVG Converter' className="text-sm font-medium transition-colors">
-              Converter
-            </Link>
+            <div className="relative group">
+              <button className="text-sm font-medium transition-colors">
+                Converter
+              </button>
+              <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link href="/svg-converter" title="SVG Converter" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  SVG Converter
+                </Link>
+                <Link href="/svg-to-png" title="SVG to PNG" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  SVG to PNG
+                </Link>
+              </div>
+            </div>
             <div className="relative group">
               <button className="text-sm font-medium transition-colors">
                 SVG Collection
