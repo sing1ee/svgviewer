@@ -7,6 +7,7 @@ import { DownloadIcon, UploadIcon } from 'lucide-react';
 import html2canvas from 'html2canvas';
 import SvgConverter from '../svg-converter';
 import SvgToPNGFAQ from './SvgToPNGFAQ';
+import SvgToPNGUseCases from './SvgToPNGUseCases';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 
@@ -158,6 +159,8 @@ const SvgToPNG: React.FC = () => {
               <SvgConverter svgCode={svgCode} onSvgCodeChange={setSvgCode} defaultFormat="png" />
             </div>
           </div>
+          
+          <SvgToPNGUseCases />
           
           <div className="py-6">
             <SvgToPNGFAQ />
