@@ -2,11 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Slider } from '@/components/ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, DownloadIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon } from 'lucide-react';
+import { CopyIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon } from 'lucide-react';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
 import { GridBackground } from '@/components/grid-background';
@@ -17,12 +14,13 @@ import ConversionControls from './ConversionControls';
 interface SvgConverterProps {
   svgCode: string;
   onSvgCodeChange?: (code: string) => void;
+  defaultFormat?: string;
 }
 
-export default function SvgConverter({ svgCode, onSvgCodeChange }: SvgConverterProps) {
+export default function SvgConverter({ svgCode, onSvgCodeChange, defaultFormat = 'svg' }: SvgConverterProps) {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [zoom, setZoom] = useState<number>(100);
-  const [format, setFormat] = useState<string>("svg");
+  const [format, setFormat] = useState<string>(defaultFormat);
   const [scale, setScale] = useState<number>(1);
   const [dataUrl, setDataUrl] = useState<string>("");
   const [icoSize, setIcoSize] = useState<number>(16);
