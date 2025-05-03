@@ -49,6 +49,7 @@ const faqData: FaqData = {
   'btc-logo': generateFaqData('btc-logo'),
   'japanese-culture': generateFaqData('japanese-culture'),
   'flower': generateFaqData('flower'),
+  'butterfly': generateFaqData('butterfly'),
   // Add other categories here if needed
 };
 

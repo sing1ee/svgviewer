@@ -28,6 +28,11 @@ export default function FreeSVGPage() {
       name: 'Flower',
       path: '/category/flower',
       description: 'A collection of free SVG flower designs in different styles and colors.'
+    },
+    {
+      name: 'Butterfly',
+      path: '/category/butterfly',
+      description: 'A collection of free SVG butterfly designs in different styles and colors.'
     }
   ]
 

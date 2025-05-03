@@ -55,6 +55,9 @@ export default function Header() {
                 <Link href="/category/flower" title="Flower SVGs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
                   Flower
                 </Link>
+                <Link href="/category/butterfly" title="Butterfly SVGs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                  Butterfly
+                </Link>
               </div>
             </div>
           </nav>
