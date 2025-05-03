@@ -23,6 +23,11 @@ export default function FreeSVGPage() {
       name: 'Heart',
       path: '/category/heart',
       description: 'A collection of free SVG heart designs in different styles and colors.'
+    },
+    {
+      name: 'Flower',
+      path: '/category/flower',
+      description: 'A collection of free SVG flower designs in different styles and colors.'
     }
   ]
 

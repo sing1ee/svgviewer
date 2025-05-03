@@ -48,6 +48,7 @@ const faqData: FaqData = {
   'hello-kitty': generateFaqData('hello-kitty'),
   'btc-logo': generateFaqData('btc-logo'),
   'japanese-culture': generateFaqData('japanese-culture'),
+  'flower': generateFaqData('flower'),
   // Add other categories here if needed
 };
 

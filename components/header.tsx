@@ -52,6 +52,9 @@ export default function Header() {
                 <Link href="/category/japanese-culture" title="Japanese Culture SVGs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
                   Japanese Culture
                 </Link>
+                <Link href="/category/flower" title="Flower SVGs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
+                  Flower
+                </Link>
               </div>
             </div>
           </nav>
