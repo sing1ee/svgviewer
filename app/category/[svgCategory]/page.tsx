@@ -6,6 +6,7 @@ import SvgList from '@/components/svg-list';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
+import FaqSection from '@/components/faq-section';
 
 interface Props {
   params: {
@@ -91,7 +92,7 @@ export default async function SvgCategoryPage({ params }: Props) {
       <Header />
 
       <main className="flex-1 flex flex-col overflow-hidden">
-        <div className="w-[90%] mx-auto">
+        <div className="w-[90%] mx-auto py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* SVG 列表 */}
             <div className="md:col-span-1">
@@ -117,6 +118,8 @@ export default async function SvgCategoryPage({ params }: Props) {
               </div>
             </div>
           </div>
+          {/* FAQ Section */}
+          <FaqSection category={category} />
         </div>
       </main>
       <Footer />
