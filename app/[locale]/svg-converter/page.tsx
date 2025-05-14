@@ -1,9 +1,77 @@
-import ConverterFaq from '@/components/faq/converter-faq';
+import FAQ from '@/components/faq';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import SvgConverter from '@/components/svg-converter';
+import { siteConfig } from '@/config/site';
 import { homeDefaultSvg } from '@/lib/default-svgs';
+import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'Metadata-svg-converter' });
 
+
+  const title = t('title');
+  const description = t('description');
+  const ogTitle = t('ogTitle') || title;
+  const ogDescription = t('ogDescription') || description;
+  const twitterTitle = t('twitterTitle') || title;
+  const twitterDescription = t('twitterDescription') || description;
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title,
+    description,
+    icons: {
+      icon: siteConfig.favicon,
+    },
+    alternates: {
+      canonical: locale === 'en' ? '/svg-converter' : `/${locale}/svg-converter`,
+      languages: {
+        'en': '/svg-converter',
+        'zh': '/zh/svg-converter',
+        'zh-TW': '/zh-TW/svg-converter',
+        'ja': '/ja/svg-converter',
+        'ru': '/ru/svg-converter',
+        'pt': '/pt/svg-converter',
+        'es': '/es/svg-converter',
+        'ko': '/ko/svg-converter',
+        'ar': '/ar/svg-converter',
+        'hi': '/hi/svg-converter',
+        'fr': '/fr/svg-converter',
+        'de': '/de/svg-converter',
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+  };
+}
 export default function ConverterPage() {
 
   return (
@@ -12,7 +80,7 @@ export default function ConverterPage() {
 
       <main className="flex-1 flex flex-col overflow-hidden">
         <SvgConverter svgCodeParam={homeDefaultSvg} defaultFormat="svg" />
-        <ConverterFaq />
+        <FAQ page="converter" />
       </main>
 
       <Footer />

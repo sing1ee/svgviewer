@@ -1,4 +1,4 @@
-import FAQ from '@/components/faq/faq';
+import FAQ from '@/components/faq';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';

@@ -4,7 +4,7 @@ import SvgConverter from '@/components/svg-converter';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
-import FAQ from '@/components/faq/faq';
+import FAQ from '@/components/faq';
 export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'Metadata-svg-optimizer' });
 

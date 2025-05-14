@@ -3,7 +3,7 @@ import SvgConverter from '@/components/svg-converter';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { setRequestLocale } from 'next-intl/server';
-import FAQ from '@/components/faq/faq';
+import FAQ from '@/components/faq';
 
 export default async function Home({params: {locale}}: {params: {locale: string}}) {
   setRequestLocale(locale);

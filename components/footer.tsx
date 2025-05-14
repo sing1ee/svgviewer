@@ -7,7 +7,7 @@ export default async function Footer() {
   return (
     <footer className="border-t border-border/40 py-12 bg-card/50 backdrop-blur-md">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Logo and Copyright */}
             <div className="flex flex-col items-center md:items-start gap-4">
               <div className="flex items-center gap-2">
@@ -53,6 +53,13 @@ export default async function Footer() {
                     {t('blog')}
                   </Link>
                 </li>
+              </ul>
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <h3 className="font-medium text-sm text-foreground/90">{t('legal')}</h3>
+              <ul className="flex flex-col gap-2">
                 <li>
                   <a href="/privacy.html" title='Privacy Policy' className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     {t('privacy')}
@@ -63,85 +70,90 @@ export default async function Footer() {
                     {t('terms')}
                   </a>
                 </li>
-                <li className="pt-2 border-t border-border/40">
-                  <h4 className="text-sm font-medium text-foreground/90 mb-2">{t('languages')}</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    <Link href="/en" locale="en" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      English
-                    </Link>
-                    <Link href="/zh" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      中文
-                    </Link>
-                    <Link href="/zh-TW" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      繁體中文
-                    </Link>
-                    <Link href="/ja" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      日本語
-                    </Link>
-                    <Link href="/ru" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      русский
-                    </Link>
-                    <Link href="/pt" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      português
-                    </Link>
-                    <Link href="/es" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      español
-                    </Link>
-                    <Link href="/ko" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      한국어
-                    </Link>
-                    <Link href="/ar" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      العربية
-                    </Link>
-                    <Link href="/hi" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      हिंदी
-                    </Link>
-                    <Link href="/fr" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      français
-                    </Link>
-                    <Link href="/de" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      deutsch
-                    </Link>
-                  </div>
-                </li>
               </ul>
             </div>
 
-            {/* Friends Links */}
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <h3 className="font-medium text-sm text-foreground/90">{t('friends')}</h3>
-              <ul className="flex flex-col gap-2">
-                <li>
-                  <a 
-                    href="https://qwq32.com/" 
-                    target="_blank" 
-                    rel="dofollow" 
-                    className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                  >
-                    QwQ AI
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://deepbolt.xyz" 
-                    target="_blank" 
-                    rel="dofollow" 
-                    className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                  >
-                    DeepBolt
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://a2aprotocol.ai" 
-                    target="_blank" 
-                    rel="dofollow" 
-                    className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                  >
-                    A2AProtocol.ai
-                  </a>
-                </li>
-              </ul>
+            {/* Languages and Friends Links */}
+            <div className="flex flex-col items-center md:items-start gap-6">
+              {/* Languages */}
+              <div className="w-full">
+                <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('languages')}</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  <Link href="/en" locale="en" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    English
+                  </Link>
+                  <Link href="/zh" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    中文
+                  </Link>
+                  <Link href="/zh-TW" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    繁體中文
+                  </Link>
+                  <Link href="/ja" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    日本語
+                  </Link>
+                  <Link href="/ru" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    русский
+                  </Link>
+                  <Link href="/pt" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    português
+                  </Link>
+                  <Link href="/es" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    español
+                  </Link>
+                  <Link href="/ko" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    한국어
+                  </Link>
+                  <Link href="/ar" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    العربية
+                  </Link>
+                  <Link href="/hi" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    हिंदी
+                  </Link>
+                  <Link href="/fr" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    français
+                  </Link>
+                  <Link href="/de" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                    deutsch
+                  </Link>
+                </div>
+              </div>
+
+              {/* Friends Links */}
+              <div className="w-full">
+                <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('friends')}</h3>
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <a 
+                      href="https://qwq32.com/" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      QwQ AI
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://deepbolt.xyz" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      DeepBolt
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://a2aprotocol.ai" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      A2AProtocol.ai
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
