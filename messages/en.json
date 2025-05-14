@@ -440,5 +440,8 @@
       "licenseNote": "Remember to check the license terms for each free SVG collection. While most of our free SVG files are available for commercial use, some may have specific requirements."
     },
     "viewCollection": "View Free SVG Collection"
+  },
+  "svgCategory": {
+    "selectSvg": "Select an SVG from the list to preview"
   }
 }

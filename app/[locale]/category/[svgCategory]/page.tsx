@@ -7,9 +7,12 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 import FaqSection from '@/components/faq-section';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { siteConfig } from '@/config/site';
 
 interface Props {
   params: {
+    locale: string;
     svgCategory: string;
   };
 }
@@ -47,42 +50,77 @@ async function getDefaultSvgContent(category: string) {
   }
 }
 
-// 生成元数据
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const category = params.svgCategory;
-  const title = category.charAt(0).toUpperCase() + category.slice(1) + ' SVG List | SVGViewer';
+export async function generateMetadata({ params: { locale, svgCategory } }: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'Metadata-svg-category' });
+
+  const title = t('title');
+  const description = t('description');
+  const ogTitle = t('ogTitle') || title;
+  const ogDescription = t('ogDescription') || description;
+  const twitterTitle = t('twitterTitle') || title;
+  const twitterDescription = t('twitterDescription') || description;
 
   return {
+    metadataBase: new URL(siteConfig.url),
     title,
-    description: `Browse and preview our collection of ${category} SVGs. Download and use them in your projects.`,
-    openGraph: {
-      title,
-      description: `Browse and preview our collection of ${category} SVGs. Download and use them in your projects.`,
-      type: 'website',
-      url: `https://svgviewer.app/category/${category}`,
-      images: [
-        { url: `https://svgviewer.app/${category}-og-image.png` },
-      ],
+    description,
+    icons: {
+      icon: siteConfig.favicon,
     },
     alternates: {
-      canonical: `/category/${category}`,
+      canonical: locale === 'en' ? `/category/${svgCategory}` : `/${locale}/category/${svgCategory}`,
+      languages: {
+        'en': `/category/${svgCategory}`,
+        'zh': `/zh/category/${svgCategory}`,
+        'zh-TW': `/zh-TW/category/${svgCategory}`,
+        'ja': `/ja/category/${svgCategory}`,
+        'ru': `/ru/category/${svgCategory}`,
+        'pt': `/pt/category/${svgCategory}`,
+        'es': `/es/category/${svgCategory}`,
+        'ko': `/ko/category/${svgCategory}`,
+        'ar': `/ar/category/${svgCategory}`,
+        'hi': `/hi/category/${svgCategory}`,
+        'fr': `/fr/category/${svgCategory}`,
+        'de': `/de/category/${svgCategory}`,
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      site: '@czsinglestar',
-      description: `Browse and preview our collection of ${category} SVGs. Download and use them in your projects.`,
+      title: twitterTitle,
+      description: twitterDescription,
       images: [
-        { url: `https://svgviewer.app/${category}-og-image.png` },
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
       ],
-    }
+    },
   };
 }
 
-export default async function SvgCategoryPage({ params }: Props) {
-  const category = params.svgCategory;
-  const svgFiles = await getSvgFiles(category);
-  const defaultSvgContent = await getDefaultSvgContent(category);
+export default async function SvgCategoryPage({ params: { locale, svgCategory } }: Props) {
+  setRequestLocale(locale);
+  const t = await getTranslations("svgCategory");
+  const svgFiles = await getSvgFiles(svgCategory);
+  const defaultSvgContent = await getDefaultSvgContent(svgCategory);
   if (svgFiles.length === 0) {
     notFound();
   }
@@ -97,7 +135,7 @@ export default async function SvgCategoryPage({ params }: Props) {
             <div className="md:col-span-1">
               <div className="sticky top-8">
                 <SvgList 
-                  category={category}
+                  category={svgCategory}
                   svgFiles={svgFiles}
                   currentId={null}
                 />
@@ -112,14 +150,14 @@ export default async function SvgCategoryPage({ params }: Props) {
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center p-8">
                     <p className="text-foreground/70 text-lg">
-                      Select an SVG from the list to preview
+                      {t('selectSvg')}
                     </p>
                   </div>
                 )}
               </div>
             </div>
           </div>
-            <FaqSection category={category} />
+          <FaqSection category={svgCategory} />
       </main>
       <Footer />
     </div>
