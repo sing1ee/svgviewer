@@ -1,5 +1,10 @@
-import SvgToPNG from '@/components/svg-to-png';
+import FAQ from '@/components/faq/faq';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import SvgConverter from '@/components/svg-converter';
+import UseCases from '@/components/UseCases';
 import { siteConfig } from '@/config/site';
+import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
@@ -72,5 +77,15 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default function SvgToPNGPage({params: {locale}}: {params: {locale: string}}) {
   setRequestLocale(locale);
-  return <SvgToPNG />;
+  return (
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
+      <Header />
+      <main className="flex-1 flex flex-col overflow-hidden">
+        <SvgConverter svgCodeParam={homeDefaultSvg}/>
+        <UseCases page="svgToPngUseCases" />
+        <FAQ page="svgToPng" />
+      </main>
+      <Footer />
+    </div>
+  );
 } 
