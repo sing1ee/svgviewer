@@ -9,7 +9,6 @@ import { getTranslations } from 'next-intl/server';
 export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'Metadata-svg-converter' });
 
-
   const title = t('title');
   const description = t('description');
   const ogTitle = t('ogTitle') || title;
