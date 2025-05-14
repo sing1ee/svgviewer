@@ -18,8 +18,7 @@ Help me create a floor plan design for a house using SVG code, with attention to
 ```
 
 ## Show
-![AI Powered Floor Plan Design](/ai-powered-floor-plan-design.png "AI Powered Floor Plan Design")
-
+<img src="/ai-powered-floor-plan-design.png" alt="I Powered Floor Plan Design" width="1024" height="1024" />
 ## SVG Code
 
 ```svg

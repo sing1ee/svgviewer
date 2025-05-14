@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://svgviewer.app/sitemap.xml 
+Sitemap: https://svgviewer.app/sitemap.xml
+
+
+User-agent: GPTBot
+User-agent: Claude-Web
+User-agent: Anthropic-AI
+User-agent: PerplexityBot
+User-agent: GoogleOther
+User-agent: DuckAssistBot
+
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /

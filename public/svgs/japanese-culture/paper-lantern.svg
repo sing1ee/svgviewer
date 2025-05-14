@@ -1,0 +1,17 @@
+<svg width="100" height="150" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- 提灯の上部 -->
+  <rect x="45" y="10" width="10" height="5" fill="#8B4513" />
+  
+  <!-- 提灯の本体 -->
+  <path d="M30,20 C30,15 70,15 70,20 L70,100 C70,105 30,105 30,100 Z" fill="#FF6347" opacity="0.8" />
+  
+  <!-- 装飾線 -->
+  <path d="M30,20 L70,20" stroke="#000" stroke-width="1" />
+  <path d="M30,40 L70,40" stroke="#000" stroke-width="1" />
+  <path d="M30,60 L70,60" stroke="#000" stroke-width="1" />
+  <path d="M30,80 L70,80" stroke="#000" stroke-width="1" />
+  <path d="M30,100 L70,100" stroke="#000" stroke-width="1" />
+  
+  <!-- 提灯の下部 -->
+  <rect x="45" y="105" width="10" height="15" fill="#8B4513" />
+</svg>

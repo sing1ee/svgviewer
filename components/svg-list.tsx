@@ -1,7 +1,4 @@
-"use client";
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -18,13 +15,12 @@ interface SvgListProps {
 }
 
 export default function SvgList({ category, svgFiles, currentId }: SvgListProps) {
-
   return (
     <div className="rounded-lg border bg-card">
-      <div className="p-4 border-b">
-        <h2 className="text-lg font-semibold">
+      <div className="p-4 border-b flex justify-between items-center">
+        <h1 className="text-lg font-semibold">
           {category.charAt(0).toUpperCase() + category.slice(1)} SVGs
-        </h2>
+        </h1>
       </div>
       <ScrollArea className="h-[1000px]">
         <div className="p-4">

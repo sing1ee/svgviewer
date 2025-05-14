@@ -1,18 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Slider } from '@/components/ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, DownloadIcon, UploadIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon } from 'lucide-react';
-import CodeEditor from '@/components/code-editor';
-import SvgPreview from '@/components/svg-preview';
-import { GridBackground } from '@/components/grid-background';
+import { DownloadIcon, UploadIcon } from 'lucide-react';
 import ConverterFaq from '@/components/faq/converter-faq';
 import html2canvas from 'html2canvas';
-import { beautifySVG } from '@/lib/utils';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import SvgConverter from '@/components/svg-converter';
@@ -28,7 +21,6 @@ export default function ConverterPage() {
     https://svgviewer.app
   </text></svg>`);
   const [originalSize, setOriginalSize] = useState<number>(0);
-  const [zoom, setZoom] = useState<number>(100);
   const [format, setFormat] = useState<string>("png");
   const [scale, setScale] = useState<number>(1);
   const [dataUrl, setDataUrl] = useState<string>("");
@@ -75,17 +67,6 @@ export default function ConverterPage() {
       };
       reader.readAsText(file);
     }
-  };
-
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text);
-    toast({
-      title: "Copied to clipboard",
-      description: "SVG code has been copied to your clipboard",
-    });
-  };
-  const handleFormat = () => {
-    setSvgCode(beautifySVG(svgCode));
   };
 
   const handleDownload = (text: string, filename: string) => {
@@ -177,184 +158,6 @@ export default function ConverterPage() {
     }
   };
 
-  const handleDownloadImage = async () => {
-    if (!dataUrl && format !== 'svg') return;
-
-    const downloadFileName = fileName || getDefaultFileName(format, format === 'ico' ? icoSize : undefined);
-    
-    if (format === 'ico') {
-      try {
-        // 使用更可靠的方法创建ico文件
-        const canvas = document.createElement('canvas');
-        canvas.width = icoSize;
-        canvas.height = icoSize;
-        
-        const ctx = canvas.getContext('2d');
-        if (!ctx) {
-          throw new Error('Failed to get canvas context');
-        }
-        
-        // 获取PNG图像数据
-        const img = new Image();
-        img.src = dataUrl;
-        
-        await new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-        
-        // 在canvas上绘制图像
-        ctx.drawImage(img, 0, 0, icoSize, icoSize);
-        
-        // 获取像素数据
-        const imageData = ctx.getImageData(0, 0, icoSize, icoSize);
-        
-        // 创建ICO文件
-        // ICO文件格式: 头部(6字节) + 目录条目(16字节) + BMP数据
-        
-        // 1. 创建BMP数据 (不含BMP文件头)
-        // 我们需要的是BITMAPINFOHEADER + 图像数据 + AND掩码
-        const bmpInfoHeaderSize = 40;
-        const bitsPerPixel = 32;
-        const bytesPerPixel = bitsPerPixel / 8;
-        
-        // BMP数据在ICO中是上下颠倒的，所以我们需要翻转图像数据
-        const pixelDataSize = icoSize * icoSize * bytesPerPixel;
-        const bmpDataSize = bmpInfoHeaderSize + pixelDataSize + (icoSize * icoSize / 8); // 加上1位的AND掩码
-        
-        // 创建BMP数据的ArrayBuffer
-        const bmpData = new ArrayBuffer(bmpDataSize);
-        const bmpView = new DataView(bmpData);
-        
-        // 写入BITMAPINFOHEADER
-        bmpView.setUint32(0, bmpInfoHeaderSize, true); // BITMAPINFOHEADER size: 40 bytes
-        bmpView.setInt32(4, icoSize, true); // Width
-        bmpView.setInt32(8, icoSize * 2, true); // Height (ICO格式中高度是实际高度的两倍，包含了XOR和AND掩码)
-        bmpView.setUint16(12, 1, true); // Planes: 必须为1
-        bmpView.setUint16(14, bitsPerPixel, true); // Bits per pixel: 32
-        bmpView.setUint32(16, 0, true); // Compression: 0 (BI_RGB, 无压缩)
-        bmpView.setUint32(20, pixelDataSize, true); // Image size
-        bmpView.setInt32(24, 0, true); // X pixels per meter
-        bmpView.setInt32(28, 0, true); // Y pixels per meter
-        bmpView.setUint32(32, 0, true); // Colors used (全部颜色)
-        bmpView.setUint32(36, 0, true); // Important colors (全部重要)
-        
-        // 复制像素数据，注意BMP在ICO中是上下颠倒的
-        for (let y = 0; y < icoSize; y++) {
-          for (let x = 0; x < icoSize; x++) {
-            // 原始数据的位置
-            const srcIdx = (y * icoSize + x) * 4;
-            
-            // BMP在ICO中是上下颠倒的，所以要从底部开始写
-            const destIdx = bmpInfoHeaderSize + ((icoSize - y - 1) * icoSize + x) * bytesPerPixel;
-            
-            // BGRA格式
-            bmpView.setUint8(destIdx, imageData.data[srcIdx + 2]); // B
-            bmpView.setUint8(destIdx + 1, imageData.data[srcIdx + 1]); // G
-            bmpView.setUint8(destIdx + 2, imageData.data[srcIdx]); // R
-            bmpView.setUint8(destIdx + 3, imageData.data[srcIdx + 3]); // A
-          }
-        }
-        
-        // 填充AND掩码 (全部为0，表示完全不透明)
-        const andMaskOffset = bmpInfoHeaderSize + pixelDataSize;
-        const andMaskSize = icoSize * icoSize / 8;
-        for (let i = 0; i < andMaskSize; i++) {
-          bmpView.setUint8(andMaskOffset + i, 0);
-        }
-        
-        // 2. 创建ICO头部和目录
-        const iconHeaderSize = 6;
-        const iconDirEntrySize = 16;
-        const iconDirSize = iconHeaderSize + iconDirEntrySize;
-        
-        // 创建最终的ICO文件数据
-        const iconData = new ArrayBuffer(iconDirSize + bmpDataSize);
-        const iconView = new DataView(iconData);
-        
-        // 写入ICO头部
-        iconView.setUint16(0, 0, true); // 保留，必须为0
-        iconView.setUint16(2, 1, true); // 图像类型：1 = ICO
-        iconView.setUint16(4, 1, true); // 图像数量
-        
-        // 写入目录条目
-        iconView.setUint8(6, icoSize >= 256 ? 0 : icoSize); // Width (0表示256)
-        iconView.setUint8(7, icoSize >= 256 ? 0 : icoSize); // Height (0表示256)
-        iconView.setUint8(8, 0); // 颜色数 (0 = 32bpp)
-        iconView.setUint8(9, 0); // 保留，必须为0
-        iconView.setUint16(10, 1, true); // Color planes
-        iconView.setUint16(12, bitsPerPixel, true); // Bits per pixel
-        iconView.setUint32(14, bmpDataSize, true); // 数据大小
-        iconView.setUint32(18, iconDirSize, true); // 数据偏移量
-        
-        // 复制BMP数据到ICO文件
-        new Uint8Array(iconData, iconDirSize).set(new Uint8Array(bmpData));
-        
-        // 下载ICO文件
-        const blob = new Blob([iconData], { type: 'image/x-icon' });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${downloadFileName}.ico`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        
-        toast({
-          title: "ico downloaded",
-          description: "SVG has been converted to ICO format and downloaded",
-        });
-      } catch (error) {
-        console.error("ICO format conversion failed:", error);
-        toast({
-          title: "Conversion failed",
-          description: "Failed to convert to ICO format",
-          variant: "destructive",
-        });
-      }
-      return;
-    }
-    
-    // Original download logic for other formats
-    const a = document.createElement('a');
-    a.href = format === 'svg' ? `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgCode)}` : dataUrl;
-    a.download = `${downloadFileName}.${format}`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    
-    toast({
-      title: "Image Downloaded",
-      description: `SVG has been converted to ${format.toUpperCase()} and downloaded`,
-    });
-  };
-
-  const handleClear = () => {
-    setSvgCode('');
-    toast({
-      title: "Cleared",
-      description: "SVG code has been cleared",
-    });
-  };
-
-  const handlePaste = async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      setSvgCode(text);
-      toast({
-        title: "Pasted from clipboard",
-        description: "SVG code has been pasted from your clipboard",
-      });
-    } catch (error) {
-      toast({
-        title: "Paste failed",
-        description: "Failed to read from clipboard",
-        variant: "destructive",
-      });
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
@@ -395,7 +198,7 @@ export default function ConverterPage() {
 
           <div className="flex-1 min-h-0">
             <div className="h-full">
-              <SvgConverter svgCode={svgCode} onSvgCodeChange={setSvgCode} />
+              <SvgConverter svgCode={svgCode} onSvgCodeChange={setSvgCode} defaultFormat="svg" />
             </div>
           </div>
           

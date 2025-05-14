@@ -1,0 +1,99 @@
+# SVGViewer.app - Complete SVG Toolkit
+
+> Free online tool suite to view, edit, optimize, and convert SVG files with real-time preview and no installation required.
+
+## Overview
+
+SVGViewer.app is a comprehensive web-based platform for working with SVG (Scalable Vector Graphics) files directly in your browser. Our tools help designers, developers, and digital content creators handle SVG files without requiring specialized software installations.
+
+All processing happens client-side in your browser, ensuring your files remain private and secure. No SVG data is transferred to our servers during the editing, optimization, or conversion process.
+
+## Practical Applications
+
+- If you need to create a favicon.ico for your website, you can use [SVG Converter](https://svgviewer.app/svg-converter) to convert SVG to ICO format with customizable sizes (16x16, 32x32, 48x48).
+- If you need to create og-image.png for social media sharing, you can use [SVG Converter](https://svgviewer.app/svg-converter) to convert SVG to PNG format with proper dimensions.
+- When your SVG files are too large, use [SVG Optimizer](https://svgviewer.app/svg-optimizer) to reduce file size while maintaining visual quality.
+- To examine and modify SVG code with instant visual feedback, use our [SVG Viewer](https://svgviewer.app) with side-by-side code editor and preview.
+
+## Core Features in Detail
+
+### [SVG Viewer & Editor](https://svgviewer.app)
+- Real-time code editor with syntax highlighting
+- Simultaneous SVG preview with adjustable zoom
+- Code formatting and beautification
+- Copy, paste, and download functionality
+- Upload SVG files from your device
+- Responsive design that works on desktop and mobile devices
+
+### [SVG Converter](https://svgviewer.app/svg-converter)
+- Convert SVG to PNG with transparent background
+- Convert SVG to JPEG with adjustable quality
+- Convert SVG to WebP for modern web usage
+- Convert SVG to ICO for website favicons
+- Custom scaling options for output size control
+- Batch processing capability for multiple SVGs
+
+### [SVG Optimizer](https://svgviewer.app/svg-optimizer)
+- Reduce SVG file size with smart compression
+- Remove unnecessary metadata and comments
+- Optimize path data without visual degradation
+- Compare original and optimized versions side-by-side
+- View percentage of size reduction achieved
+- One-click download of optimized SVG
+
+## SVG Collections
+
+We offer curated collections of ready-to-use SVG files for various purposes:
+
+### [Heart SVG Collection](https://svgviewer.app/category/heart)
+A collection of heart-themed SVG designs perfect for Valentine's Day, wedding projects, greeting cards, and more. Includes various heart styles from simple outlines to decorative designs.
+
+### [Hello Kitty SVG Collection](https://svgviewer.app/category/hello-kitty)
+Cute Hello Kitty SVG designs for crafts, t-shirts, stickers, and decorations. These SVGs are great for children's projects and character-themed celebrations.
+
+### [Bitcoin (BTC) Logo SVG Collection](https://svgviewer.app/category/btc-logo)
+Bitcoin and cryptocurrency-related SVG logos in various styles and formats. Ideal for fintech websites, crypto blogs, and blockchain-related projects.
+
+### [Japanese Culture SVG Collection](https://svgviewer.app/category/japanese-culture)
+Traditional Japanese art and cultural motifs in SVG format, including cherry blossoms, waves, patterns, and symbols. Perfect for Japan-inspired designs and projects.
+
+## Educational Resources
+
+### [Blog](https://svgviewer.app/blog)
+Our blog features tutorials, tips, and resources for working with SVG files:
+- Technical guides on SVG creation and manipulation
+- Best practices for optimizing SVG performance
+- Case studies and examples of effective SVG usage
+- Updates on new SVG-related technologies and standards
+
+Recent articles include:
+- [SVG to PNG Conversion Guide](https://svgviewer.app/blog/svg-to-png)
+- [Heart SVG Collection Overview](https://svgviewer.app/blog/heart-svg-collection)
+- [Hello Kitty SVG Collection](https://svgviewer.app/blog/hello-kitty-svg-collection)
+- [Japanese Culture SVG Collection](https://svgviewer.app/blog/japanese-culture-svg-collection)
+- [Bitcoin BTC Logo SVG](https://svgviewer.app/blog/bitcoin-btc-logo-svg)
+
+### [FAQ](https://svgviewer.app/#faq)
+Comprehensive answers to frequently asked questions about SVG files and our tools:
+- What are SVG files and when should they be used?
+- How to optimize SVGs for web performance?
+- Best practices for embedding SVGs in websites
+- Troubleshooting common SVG issues
+- Tips for editing and creating SVG content
+
+## Technical Details
+
+- SVGViewer.app uses modern web technologies including Next.js for the framework
+- All SVG processing is done client-side using JavaScript
+- The site features a responsive design that works on devices of all sizes
+- Dark mode support for comfortable editing in low-light environments
+- Accessibility features to ensure usability for all users
+
+## Why Choose SVGViewer.app
+
+- 100% free to use with no account required
+- No watermarks added to processed files
+- Private and secure - your files never leave your browser
+- Constantly updated with new features and improvements
+- Works across all modern browsers and devices
+- Simple, intuitive interface with no learning curve

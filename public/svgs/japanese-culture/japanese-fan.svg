@@ -1,0 +1,23 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- グラデーション定義 -->
+    <linearGradient id="fanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9AA2" />
+      <stop offset="50%" stop-color="#FFB7B2" />
+      <stop offset="100%" stop-color="#FFDAC1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 扇子本体 -->
+  <path d="M75,120 A60,60 0 0,1 15,60 A60,60 0 0,1 135,60 Z" fill="url(#fanGradient)" />
+  
+  <!-- 扇子の骨 -->
+  <path d="M75,120 L75,60" stroke="#333" stroke-width="1.5" />
+  <path d="M75,120 L45,65" stroke="#333" stroke-width="1" />
+  <path d="M75,120 L30,75" stroke="#333" stroke-width="1" />
+  <path d="M75,120 L105,65" stroke="#333" stroke-width="1" />
+  <path d="M75,120 L120,75" stroke="#333" stroke-width="1" />
+  
+  <!-- 持ち手 -->
+  <rect x="73" y="120" width="4" height="20" fill="#8B4513" />
+</svg>

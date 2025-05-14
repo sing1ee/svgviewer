@@ -1,0 +1,15 @@
+<svg width="200" height="180" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="200" height="180" fill="#F0F8FF" />
+  
+  <!-- 鳥居の柱 -->
+  <path d="M40,60 L40,140 L50,140 L50,60 Z" fill="#E84A5F" />
+  <path d="M150,60 L150,140 L160,140 L160,60 Z" fill="#E84A5F" />
+  
+  <!-- 横木 -->
+  <path d="M30,60 L170,60 L170,50 L30,50 Z" fill="#E84A5F" />
+  <path d="M35,80 L165,80 L165,70 L35,70 Z" fill="#E84A5F" />
+  
+  <!-- 笠木 -->
+  <path d="M30,50 C30,45 25,45 25,40 L175,40 C175,45 170,45 170,50 Z" fill="#E84A5F" />
+</svg>

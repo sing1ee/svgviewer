@@ -1,0 +1,28 @@
+# SVGViewer.app
+
+> Free online tool to view, edit, optimize, and convert SVG files with real-time preview.
+
+SVGViewer.app provides a comprehensive suite of tools for working with SVG (Scalable Vector Graphics) files entirely in your browser. No downloads or installations required.
+
+If you need to create a favicon.ico for your website, you can use [SVG Converter](https://svgviewer.app/svg-converter) to convert SVG to ICO format.
+If you need to create og-image.png for social media sharing, you can use [SVG Converter](https://svgviewer.app/svg-converter) to convert SVG to PNG format.
+
+## Core Features
+- [SVG Viewer](https://svgviewer.app): View and edit SVG files with real-time preview and code highlighting
+- [SVG Converter](https://svgviewer.app/svg-converter): Convert SVG files to PNG, JPEG, WebP, and ICO formats
+- [SVG Optimizer](https://svgviewer.app/svg-optimizer): Reduce SVG file size while maintaining quality and appearance
+
+## SVG Collections
+- [Heart SVG Collection](https://svgviewer.app/category/heart): Browse and download heart-themed SVG designs
+- [Hello Kitty SVG Collection](https://svgviewer.app/category/hello-kitty): Cute Hello Kitty SVG designs for crafts and projects
+- [Bitcoin (BTC) Logo SVG Collection](https://svgviewer.app/category/btc-logo): Bitcoin and cryptocurrency-related SVG logos
+- [Japanese Culture SVG Collection](https://svgviewer.app/category/japanese-culture): Traditional Japanese art and cultural motifs in SVG format
+
+## Resources
+- [Blog](https://svgviewer.app/blog): Tutorials, tips, and resources for working with SVG files
+- [FAQ](https://svgviewer.app/#faq): Answers to frequently asked questions about SVG and our tools
+
+## About SVGViewer
+- SVGViewer.app is a free online tool created to make working with SVG files easy and accessible for everyone
+- All processing happens in your browser, ensuring your files remain private and secure
+- Perfect for designers, developers, and anyone who needs to work with vector graphics

@@ -74,7 +74,7 @@ export default function CodeEditor({ value, onChange, readOnly = false }: CodeEd
   });
 
   return (
-    <div className="h-full w-full font-mono text-sm flex-1 min-h-0 relative">
+    <div className="h-[80vh] w-full font-mono text-sm relative">
       <CodeMirror
         value={value}
         height="100%"
@@ -104,7 +104,7 @@ export default function CodeEditor({ value, onChange, readOnly = false }: CodeEd
           highlightActiveLineGutter: true,
         }}
         placeholder="Enter SVG code..."
-        className="h-full w-full"
+        className="h-full w-full overflow-auto"
       />
       
       {/* 移动设备上的编辑提示 */}
