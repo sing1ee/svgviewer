@@ -5,10 +5,10 @@ import { AlertCircle, X, Maximize2 } from 'lucide-react';
 
 interface SvgPreviewProps {
   svgCode: string;
-  zoom: number;
+  zoom?: number;
 }
 
-export default function SvgPreview({ svgCode, zoom }: SvgPreviewProps) {
+export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
