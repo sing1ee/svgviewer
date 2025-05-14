@@ -136,7 +136,45 @@
             "answer": "With the rise of AI assistants like ChatGPT, Claude, and DeepSeek, more users are generating SVG code through AI. Our SVG viewer is the perfect companion tool for AI-generated SVGs, allowing you to instantly visualize, refine, and optimize code produced by AI. The SVG viewer helps bridge the gap between AI generation and production-ready graphics by providing real-time feedback on how the SVG actually renders, helping you spot and fix any issues in the AI-generated code. As AI continues to evolve in generating more complex vector graphics, our SVG viewer remains an essential tool for working with these AI outputs effectively."
           }
         ]
-      }
+      },
+    "svgToPng": {
+      "title": "SVG to PNG Converter FAQ",
+      "description": "Our SVG to PNG converter tool allows you to transform SVG files into high-quality PNG images. The SVG to PNG converter maintains the highest possible quality while converting vector graphics to raster format.",
+      "questions": [
+        {
+          "question": "What is SVG to PNG conversion?",
+          "answer": "SVG to PNG conversion is the process of transforming Scalable Vector Graphics (SVG) files into Portable Network Graphics (PNG) format. Our SVG to PNG converter works by rendering the vector graphics and capturing the result as a high-quality PNG image. The SVG to PNG converter is essential when you need to use your vector graphics in contexts that don't support SVG format, such as certain social media platforms, older applications, or when specific raster formats are required."
+        },
+        {
+          "question": "How does this SVG to PNG converter work?",
+          "answer": "Our SVG to PNG converter renders your SVG file in the browser and then captures the output as a PNG image. The SVG to PNG converter allows you to set the scale factor to control the resolution of the converted image. Simply paste your SVG code or upload an SVG file, and our SVG to PNG converter will generate a high-quality PNG that you can download."
+        },
+        {
+          "question": "Why would I need to convert SVG to PNG?",
+          "answer": "Converting SVG to PNG is useful in many scenarios. PNG supports transparency like SVG but works in environments where SVG isn't supported. Our SVG to PNG converter creates high-quality transparent PNG images that maintain the crispness of your original SVG. The SVG to PNG conversion is perfect for using vector graphics in applications, websites, or platforms that don't support SVG format but do support PNG. Additionally, PNG is widely compatible across all devices and browsers."
+        },
+        {
+          "question": "Will I lose quality when converting SVG to PNG?",
+          "answer": "Unlike SVG, PNG has a fixed resolution. Our SVG to PNG converter allows you to set a scale factor to ensure your converted image has sufficient resolution for your needs. For web graphics, our default settings produce excellent results. For print or large-format displays, you can increase the scale factor to create higher-resolution outputs. While vector SVGs can scale infinitely without quality loss, our SVG to PNG converter produces the highest quality PNG versions possible."
+        },
+        {
+          "question": "Can I customize the PNG output?",
+          "answer": "Yes, our SVG to PNG converter allows you to customize various aspects of the output. You can adjust the resolution, set the background color, and control transparency settings. The SVG to PNG converter gives you full control over the final PNG image to ensure it meets your specific requirements."
+        },
+        {
+          "question": "Is SVG to PNG conversion lossless?",
+          "answer": "While PNG is a lossless format, converting from SVG to PNG involves rasterization, which means the vector information is converted to pixels. The quality of the SVG to PNG conversion depends on the resolution you choose. Our SVG to PNG converter uses high-quality rendering to ensure the best possible results."
+        },
+        {
+          "question": "What are the best practices for SVG to PNG conversion?",
+          "answer": "For optimal SVG to PNG conversion results, ensure your SVG files are well-formed, choose an appropriate resolution for your needs, and consider the target display size when setting the output dimensions. Our SVG to PNG converter provides guidance and tools to help you achieve the best results."
+        },
+        {
+          "question": "Is this SVG to PNG converter free to use?",
+          "answer": "Yes, our SVG to PNG converter is completely free to use with no limitations. You can convert as many SVG files to PNG as you need without any cost. The SVG to PNG converter processes your files directly in your browser, ensuring your data remains private and secure. There's no need to create an account or provide any personal information to use our SVG to PNG converter."
+        }
+      ]
+    }
   },
   "features": {
     "viewer": {
@@ -157,6 +195,27 @@
         {
           "title": "Zoom Controls",
           "description": "Zoom in and out to examine details or get a broader view of your SVG graphics."
+        }
+      ]
+    },
+    "svgToPng": {
+      "title": "SVG to PNG Converter Key Features",
+      "features": [
+        {
+          "title": "High-Quality Output",
+          "description": "Our SVG to PNG converter produces high-quality PNG images that maintain the clarity and detail of your original SVG files."
+        },
+        {
+          "title": "Adjustable Resolution",
+          "description": "Control the quality and size of your converted PNG images with customizable scale factors in our SVG to PNG converter."
+        },
+        {
+          "title": "Transparency Support",
+          "description": "Maintain transparency in your PNG conversions for versatile use in various contexts with our SVG to PNG converter."
+        },
+        {
+          "title": "Browser-based Processing",
+          "description": "Convert your SVG files to PNG directly in your browser with no need to upload them to external servers."
         }
       ]
     }

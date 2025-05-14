@@ -1,11 +1,10 @@
 
+import FAQ from '../faq/faq';
 import SvgConverter from '../svg-converter';
-import SvgToPNGFAQ from './SvgToPNGFAQ';
-import SvgToPNGUseCases from './SvgToPNGUseCases';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { homeDefaultSvg } from '@/lib/default-svgs';
-
+import UseCases from '../UseCases';
 const SvgToPNG: React.FC = () => {
 
   return (
@@ -13,8 +12,8 @@ const SvgToPNG: React.FC = () => {
       <Header />
       <main className="flex-1 flex flex-col overflow-hidden">
         <SvgConverter svgCodeParam={homeDefaultSvg}/>
-        <SvgToPNGUseCases />
-        <SvgToPNGFAQ />
+        <UseCases page="svgToPngUseCases" />
+        <FAQ page="svgToPng" />
       </main>
       <Footer />
     </div>
