@@ -22,7 +22,6 @@ const OUTPUT_FORMATS = [
   { value: 'png', label: 'PNG' },
   { value: 'jpeg', label: 'JPEG' },
   { value: 'webp', label: 'WebP' },
-  { value: 'svg', label: 'SVG' },
   { value: 'ico', label: 'ICO' }
 ] as const;
 
