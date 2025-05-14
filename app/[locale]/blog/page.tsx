@@ -68,8 +68,10 @@ export default function BlogPage() {
 
       <main className="flex-1 container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Blog</h1>
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+              Blog
+            </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Learn about SVG files, optimization techniques, best practices, and more with our comprehensive blog articles and tutorials.
             </p>
@@ -78,21 +80,27 @@ export default function BlogPage() {
           <div className="grid gap-8">
             {posts.map(post => (
               <Link key={post.slug} href={`/blog/${post.slug}`} title={post.title}>
-                <Card className="group hover:shadow-md transition-all duration-300 border border-border/40 bg-card/50 backdrop-blur-sm">
-                  <CardHeader className="space-y-2">
+                <Card className="group hover:shadow-md transition-all duration-300 border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
+                  <CardHeader className="space-y-2 p-6">
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-xl md:text-2xl font-semibold text-foreground/90 group-hover:text-primary transition-colors duration-300">
                         {post.title}
                       </CardTitle>
-                      <CardDescription className="text-sm text-foreground/60">
+                      <CardDescription className="text-sm text-foreground/60 whitespace-nowrap ml-4">
                         {new Date(post.date).toLocaleDateString('zh-CN')}
                       </CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-6 pt-0">
                     <p className="text-foreground/70 leading-relaxed">
                       {post.description}
                     </p>
+                    <div className="mt-4 flex items-center text-sm text-primary/80 group-hover:text-primary transition-colors duration-300">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
