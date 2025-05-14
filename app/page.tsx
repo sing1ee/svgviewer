@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
 import { UploadIcon } from 'lucide-react';
 import SvgConverter from '@/components/svg-converter';
 import ViewerFaq from '@/components/faq/viewer-faq';
@@ -20,8 +19,6 @@ export default function Home() {
     https://svgviewer.app
   </text></svg>`);
   
-  const { toast } = useToast();
-
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {

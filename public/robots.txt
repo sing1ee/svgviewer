@@ -13,3 +13,4 @@ User-agent: DuckAssistBot
 
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /
