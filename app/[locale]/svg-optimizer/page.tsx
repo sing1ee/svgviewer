@@ -1,9 +1,7 @@
-
 import OptimizerFaq from '@/components/faq/optimizer-faq';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
-
 export default function OptimizerPage() {
 
   return (
