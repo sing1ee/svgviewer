@@ -15,6 +15,19 @@
     "flowerSvg": "Flower SVGs",
     "butterflySvg": "Butterfly SVGs"
   },
+  "footer": {
+    "siteName": "SVG Viewer",
+    "copyright": "SVG Viewer. All rights reserved.",
+    "viewer": "Viewer",
+    "converter": "Converter",
+    "optimizer": "Optimizer",
+    "freeSvgCollections": "Free SVG Collections",
+    "blog": "Blog",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "friends": "Friends",
+    "navigation": "Navigation"
+  },
   "Metadata": {
     "title": "SVG Viewer - Free Online SVG Viewer and Converter",
     "description": "Free online SVG viewer and converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
