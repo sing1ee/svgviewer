@@ -17,7 +17,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
+import { useTranslations } from 'next-intl';
 interface SvgConverterProps {
   svgCodeParam?: string;
   defaultFormat?: string;
@@ -26,7 +26,7 @@ interface SvgConverterProps {
 export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: SvgConverterProps) {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [svgCode, setSvgCode] = useState<string>(svgCodeParam || homeDefaultSvg);
-  
+  const t = useTranslations('svgConverter');
   const { toast } = useToast();
 
   useEffect(() => {
@@ -38,8 +38,8 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
     toast({
-      title: "Copied to clipboard",
-      description: "SVG code has been copied to your clipboard",
+      title: t('copiedToClipboard'),
+      description: t('copiedToClipboardDescription'),
     });
   };
 
@@ -47,8 +47,8 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
     const formattedSvg = beautifySVG(svgCode);
     setSvgCode(formattedSvg);
     toast({
-      title: "SVG Formatted",
-      description: "SVG code has been formatted",
+      title: t('formattedSvg'),
+      description: t('formattedSvgDescription'),
     });
   };
 
@@ -56,16 +56,16 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
     const optimizedSvg = optimizeSvg(svgCode);
     setSvgCode(optimizedSvg);
     toast({
-      title: "SVG Optimized",
-      description: "SVG code has been optimized",
+      title: t('optimizedSvg'),
+      description: t('optimizedSvgDescription'),
     });
   };
 
   const handleClear = () => {
     setSvgCode('');
     toast({
-      title: "Cleared",
-      description: "SVG code has been cleared",
+      title: t('cleared'),
+      description: t('clearedDescription'),
     });
   };
 
@@ -74,13 +74,13 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
       const text = await navigator.clipboard.readText();
       setSvgCode(text);
       toast({
-        title: "Pasted from clipboard",
-        description: "SVG code has been pasted from your clipboard",
+        title: t('pastedFromClipboard'),
+        description: t('pastedFromClipboardDescription'),
       });
     } catch (error) {
       toast({
-        title: "Paste failed",
-        description: "Failed to read from clipboard",
+        title: t('pasteFailed'),
+        description: t('pasteFailedDescription'),
         variant: "destructive",
       });
     }
@@ -94,8 +94,8 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
         const content = e.target?.result as string;
         setSvgCode(content);
         toast({
-          title: "SVG uploaded",
-          description: "SVG file has been uploaded successfully",
+          title: t('uploaded'),
+          description: t('uploadedDescription'),
         });
       };
       reader.readAsText(file);
@@ -113,8 +113,8 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
     document.body.removeChild(a);
     
     toast({
-      title: "SVG Downloaded",
-      description: "SVG has been downloaded successfully",
+      title: t('downloaded'),
+      description: t('downloadedDescription'),
     });
   };
 
@@ -139,7 +139,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Format SVG</p>
+                    <p>{t('formatSvg')}</p>
                   </TooltipContent>
                 </Tooltip>
 
@@ -155,7 +155,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Optimize SVG</p>
+                    <p>{t('optimizeSvg')}</p>
                   </TooltipContent>
                 </Tooltip>
 
@@ -171,7 +171,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Clear</p>
+                    <p>{t('clear')}</p>
                   </TooltipContent>
                 </Tooltip>
 
@@ -187,7 +187,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Copy</p>
+                    <p>{t('copy')}</p>
                   </TooltipContent>
                 </Tooltip>
 
@@ -203,7 +203,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Paste</p>
+                    <p>{t('paste')}</p>
                   </TooltipContent>
                 </Tooltip>
 
@@ -219,7 +219,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Download SVG</p>
+                    <p>{t('downloadSvg')}</p>
                   </TooltipContent>
                 </Tooltip>
 
@@ -243,7 +243,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Upload SVG</p>
+                    <p>{t('uploadSvg')}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -261,7 +261,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-xl font-semibold">Preview</h2>
             <div className="flex items-center gap-2 text-sm">
-              <span className="text-muted-foreground">Size: {originalSize} bytes</span>
+              <span className="text-muted-foreground">{t('size')}: {originalSize} bytes</span>
             </div>
           </div>
           <div className="flex-1 min-h-0 border rounded-lg overflow-hidden relative flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">

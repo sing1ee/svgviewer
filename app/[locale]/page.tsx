@@ -5,7 +5,7 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { setRequestLocale } from 'next-intl/server';
 
-export default function Home({params: {locale}}: {params: {locale: string}}) {
+export default async function Home({params: {locale}}: {params: {locale: string}}) {
   setRequestLocale(locale);
 
   return (
