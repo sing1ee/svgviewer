@@ -37,6 +37,67 @@
     "downloadSvg": "Download SVG",
     "uploadSvg": "Upload SVG"
   },
+  "svgToPngUseCases": {
+    "title": "SVG to PNG Converter Use Cases",
+    "description": "Our SVG to PNG converter is a versatile tool that helps you transform vector graphics into high-quality PNG images for various applications. Here are some common use cases where SVG to PNG conversion proves invaluable.",
+    "cases": [
+      {
+        "title": "Social Media Graphics",
+        "description": "Convert your SVG logos and graphics to PNG for use on social media platforms. Our SVG to PNG converter ensures your brand assets look crisp and professional across all social networks.",
+        "items": [
+          "Profile pictures and cover images",
+          "Post graphics and banners",
+          "Story and reel content"
+        ]
+      },
+      {
+        "title": "Website Assets",
+        "description": "Use our SVG to PNG converter to create website elements that maintain quality across all devices. Perfect for creating favicons, hero images, and other web graphics.",
+        "items": [
+          "Favicons and site icons",
+          "Hero section images",
+          "Background patterns"
+        ]
+      },
+      {
+        "title": "Open Graph Images",
+        "description": "Create perfect Open Graph images for social sharing using our SVG to PNG converter. Ensure your content looks great when shared on platforms like Twitter, Facebook, and LinkedIn.",
+        "items": [
+          "Blog post previews",
+          "Product share cards",
+          "Article thumbnails"
+        ]
+      },
+      {
+        "title": "Print Materials",
+        "description": "Convert your SVG designs to high-resolution PNG files for print materials. Our SVG to PNG converter maintains quality for business cards, brochures, and other printed materials.",
+        "items": [
+          "Business cards and letterheads",
+          "Brochures and flyers",
+          "Posters and banners"
+        ]
+      },
+      {
+        "title": "App Development",
+        "description": "Use our SVG to PNG converter to create app icons and UI elements. Perfect for mobile and desktop applications that require high-quality graphics.",
+        "items": [
+          "App icons and splash screens",
+          "UI elements and buttons",
+          "In-app graphics"
+        ]
+      },
+      {
+        "title": "Email Marketing",
+        "description": "Convert your SVG graphics to PNG for email campaigns. Our SVG to PNG converter ensures your emails look great across all email clients and devices.",
+        "items": [
+          "Email headers and footers",
+          "Newsletter graphics",
+          "Product showcase images"
+        ]
+      }
+    ],
+    "footerDescription": "Our SVG to PNG converter is your go-to tool for all these use cases and more. Whether you're a designer, developer, or marketer, converting SVG to PNG has never been easier."
+  },
   "faq": {
     "viewer": {
         "title": "SVG Viewer FAQ",
