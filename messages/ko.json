@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "home": "홈",
+    "examples": "예시",
+    "faq": "자주 묻는 질문",
+    "changeLanguage": "언어 변경"
+  },
+  "hero": {
+    "papyrus": {
+      "title": "Papyrus 폰트 디자이너",
+      "subtitle": "상징적인 Papyrus 폰트로 아름다운 텍스트 디자인 만들기"
+    },
+    "comic-sans": {
+      "title": "Comic Sans 폰트 디자이너",
+      "subtitle": "상징적인 Comic Sans 폰트로 아름다운 텍스트 디자인 만들기"
+    }
+  },
+  "designer": {
+    "inputPlaceholder": "여기에 텍스트를 입력하세요...",
+    "fontColor": "글꼴 색상",
+    "fontSize": "글꼴 크기",
+    "backgroundColor": "배경 색상",
+    "advancedOptions": "고급 옵션",
+    "shadowColor": "그림자 색상",
+    "shadowBlur": "그림자 흐림 효과",
+    "outlineColor": "외곽선 색상",
+    "outlineWidth": "외곽선 두께",
+    "saveAsPng": "PNG로 저장",
+    "transparentBackground": "투명 배경",
+    "textAlign": "텍스트 정렬",
+    "left": "왼쪽",
+    "center": "가운데",
+    "right": "오른쪽"
+  },
+  "examples": {
+    "title": "영감을 주는 예시",
+    "subtitle": {
+      "papyrus": "Papyrus 폰트로 만들 수 있는 것들을 확인하세요",
+      "comic-sans": "Comic Sans 폰트로 만들 수 있는 것들을 확인하세요"
+    },
+    "examples": {
+      "papyrus": [
+        {
+          "lable": "Elegant Invitations",
+          "title": "우아한 초대장",
+          "description": "특별한 행사를 위한 우아한 초대장 제작에 완벽"
+        },
+        {
+          "lable": "Artistic Quotes",
+          "title": "예술적인 인용구",
+          "description": "예술적인 터치로 좋아하는 인용구 표현하기"
+        },
+        {
+          "lable": "Creative Headers",
+          "title": "창의적인 헤더",
+          "description": "웹사이트나 블로그를 위한 멋진 헤더 디자인"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Educational Settings",
+          "title": "교육 환경",
+          "description": "높은 가독성과 친근한 외관으로 초등 교육 및 특수 교육에서 특히 널리 사용되며, 초보자와 난독증이 있는 학생들이 텍스트와 더 쉽게 상호작용할 수 있도록 도와줍니다."
+        },
+        {
+          "lable": "Informal Communications",
+          "title": "비공식 커뮤니케이션",
+          "description": "어린이 책, 가족 공지, 캐주얼 이벤트 포스터, 커뮤니티 공지에 적합하며, 편안하고 접근하기 쉬운 분위기를 조성하고 커뮤니케이션의 형식성을 줄입니다."
+        },
+        {
+          "lable": "Accessibility Applications",
+          "title": "접근성 애플리케이션",
+          "description": "독특한 글리프 디자인과 명확한 글자 구분으로 읽기 이해력 향상에 도움을 주어 난독증이 있는 사람들을 돕는 도구로 사용되며, 일부 교육 전문가들은 특수 교육 자료에 권장합니다."
+        },
+        {
+          "lable": "Creative and Humorous Expression",
+          "title": "창의적이고 유머러스한 표현",
+          "description": "아이러니나 유머를 표현하는 시각적 요소로 인터넷 문화에서 기능하며, 밈, 캐주얼 블로그, 특정 감정을 전달하기 위해 논란이 되는 상태를 활용하는 자의식 있는 디자인에서 흔히 발견됩니다."
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": {
+      "papyrus": "Papyrus 폰트 자주 묻는 질문",  
+      "comic-sans": "Comic Sans 폰트 자주 묻는 질문"
+    },
+    "subtitle": {
+      "papyrus": "Papyrus 폰트 디자이너 사용에 관해 알아야 할 모든 것",
+      "comic-sans": "Comic Sans 폰트 디자이너 사용에 관해 알아야 할 모든 것"
+    },
+    "questions": {
+      "papyrus": [
+        {
+          "question": "Papyrus 폰트란 무엇인가요?",
+          "answer": "Papyrus는 1982년 Chris Costello가 디자인한 독특한 장식용 서체입니다. 파피루스 두루마리에서 볼 수 있는 고대 필체를 모방한 거친 손글씨 모양이 특징입니다."
+        },
+        {
+          "question": "누가 Papyrus 폰트를 만들었나요?",
+          "answer": "Papyrus는 그래픽 디자이너, 일러스트레이터, 웹 디자이너인 Chris Costello가 23세에 대학을 막 졸업했을 때 만들었습니다. 그는 캘리그래피 펜과 질감이 있는 종이를 사용하여 6개월 동안 손으로 이 폰트를 그렸습니다."
+        },
+        {
+          "question": "Papyrus 폰트의 영감은 어디서 왔나요?",
+          "answer": "Costello는 성경 연구에서 영감을 받아 2,000년 전 중동에서 파피루스에 쓰여졌다면 영어 텍스트가 어떻게 보였을지를 나타내는 폰트를 만들고 싶었습니다."
+        },
+        {
+          "question": "이 디자인을 상업적으로 사용할 수 있나요?",
+          "answer": "저희 도구로 만든 디자인은 귀하가 자유롭게 사용할 수 있습니다. 그러나 Papyrus 폰트 자체는 상업적 사용에 대한 라이선스 제한이 있을 수 있습니다. 상업 프로젝트에 사용하기 전에 항상 폰트 라이선스를 확인하세요."
+        },
+        {
+          "question": "내보내기 기능은 어떤 이미지 형식을 사용하나요?",
+          "answer": "저희 도구는 디자인을 PNG(Portable Network Graphics) 파일로 내보냅니다. 이는 투명도를 지원하는 고품질 이미지를 제공합니다."
+        },
+        {
+          "question": "디자인할 수 있는 텍스트 양에 제한이 있나요?",
+          "answer": "엄격한 글자 수 제한은 없지만, 매우 긴 텍스트는 디자이너의 성능에 영향을 미칠 수 있고 내보내기에 잘 맞지 않을 수 있습니다. 최상의 결과를 위해 짧은 텍스트 세그먼트를 디자인하세요."
+        },
+        {
+          "question": "Papyrus 폰트의 독특한 특징은 무엇인가요?",
+          "answer": "Papyrus는 거친 가장자리, 불규칙한 곡선, 대문자의 높은 수평 획 등 여러 독특한 특징을 가지고 있습니다. 이는 전통적인 로마자 글자 형태의 우아함과 수공예적인 캘리그래피 느낌을 효과적으로 결합합니다."
+        },
+        {
+          "question": "제 컴퓨터에 Papyrus 폰트가 있나요?",
+          "answer": "네, Papyrus는 Microsoft Office를 포함한 많은 Windows용 Microsoft 프로그램에 포함되어 있습니다. 또한 macOS 버전 10.3 Panther(2003년 출시) 이후로 macOS에도 포함되어 있습니다."
+        },
+        {
+          "question": "Papyrus 폰트의 일반적인 용도는 무엇인가요?",
+          "answer": "Papyrus는 주로 우아한 초대장, 예술적인 인용구, 창의적인 헤더 및 장식용 텍스트에 사용됩니다. 그러나 그래픽 디자인에서 과도하게 사용된다는 비판을 받기도 한다는 점을 알아두는 것이 중요합니다."
+        },
+        {
+          "question": "Papyrus 폰트 사용의 모범 사례는 무엇인가요?",
+          "answer": "최상의 결과를 위해, Papyrus를 절제하고 목적에 맞게 사용하세요. 장식 요소, 짧은 텍스트 세그먼트, 고대적이거나 신비로운 느낌을 주고 싶을 때 효과적입니다. 긴 단락이나 본문 텍스트에는 사용을 피하세요."
+        },
+        {
+          "question": "이 디자이너에서 Papyrus 폰트를 수정할 수 있나요?",
+          "answer": "네, 저희 디자이너를 통해 글꼴 색상, 크기, 배경 색상, 그림자 효과, 외곽선 속성 등 텍스트의 다양한 측면을 사용자 정의할 수 있습니다. 그러나 Papyrus의 기본 글자 모양은 변경되지 않습니다."
+        },
+        {
+          "question": "다른 장식 폰트와 비교했을 때 Papyrus 폰트의 독특함은 무엇인가요?",
+          "answer": "Papyrus는 고대 필체와 현대적 가독성의 독특한 조합으로 돋보입니다. 거친 가장자리와 불규칙한 곡선이 가독성을 유지하면서도 독특한 수공예적 외관을 부여하여, 순수하게 장식적인 다른 폰트들과 차별화됩니다."
+        }
+      ],
+      "comic-sans": [
+        {
+          "question": "Comic Sans 폰트란 무엇인가요?",
+          "answer": "Comic Sans MS(일반적으로 Comic Sans라고 함)는 Vincent Connare가 만들고 디자인하여 1994년 Microsoft Corporation에서 출시한 산세리프 서체입니다. 만화책 글자에서 영감을 받아 말풍선의 비공식적이고 만화적인 톤을 모방하는 비연결 스크립트로 설계되었습니다."
+        },
+        {
+          "question": "누가 Comic Sans 폰트를 만들었나요?",
+          "answer": "Comic Sans는 1994년 Microsoft의 디자이너 Vincent Connare가 만들었습니다. 그는 특별히 Microsoft Bob을 위해 이 폰트를 디자인했는데, Microsoft Bob은 말풍선이 있는 만화 캐릭터를 사용하는 소프트웨어 프로그램으로, 처음에는 Times New Roman으로 설정되어 있었으나 Connare는 이 맥락에 너무 격식있다고 느꼈습니다."
+        },
+        {
+          "question": "Comic Sans 폰트의 영감은 어디서 왔나요?",
+          "answer": "Comic Sans의 영감은 Vincent Connare의 사무실에 있던 만화책, 특히 'The Dark Knight Returns'(John Costanza가 글자 작업)와 'Watchmen'(Dave Gibbons가 글자 작업)에서 왔습니다. 그는 만화 말풍선의 캐주얼하고 친근한 톤에 맞는 서체를 만들고 싶었습니다."
+        },
+        {
+          "question": "왜 Comic Sans 폰트는 그렇게 논란이 많은가요?",
+          "answer": "Comic Sans는 부적절한 맥락에서의 광범위한 사용으로 인해 논란이 되었습니다. 캐주얼하고 아이들에게 친숙한 용도로 디자인되었지만, 공식적이거나 심각한 환경(전문 이메일, 경고 표지판, 공식 문서 등)에 등장하기 시작했고, 많은 디자이너와 타이포그래퍼들은 이를 폰트의 원래 목적 오용으로 간주했습니다."
+        },
+        {
+          "question": "Comic Sans 폰트는 난독증이 있는 사람들에게 좋은가요?",
+          "answer": "많은 교육자와 전문가들은 Comic Sans 폰트가 높은 가독성으로 인해 난독증이 있는 사람들에게 유익하다고 생각합니다. 독특한 글자 모양, 넓은 자간, 그리고 감소된 거울 이미지 글리프('b', 'd', 'p', 'q'와 같은)는 난독증이 있는 사람들이 문자를 구별하기 쉽게 만듭니다."
+        },
+        {
+          "question": "Comic Sans 폰트는 언제 처음 출시되었나요?",
+          "answer": "Comic Sans 폰트는 1994년 10월에 만들어졌지만, 원래 의도했던 애플리케이션인 Microsoft Bob에 포함되기에는 너무 늦었습니다. 처음에는 Microsoft 3D Movie Maker와 함께 출시되었고, 나중에 Windows 95 Plus! Pack과 함께 제공되었습니다."
+        },
+        {
+          "question": "Comic Sans 폰트의 독특한 특징은 무엇인가요?",
+          "answer": "Comic Sans 폰트는 둥근 가장자리, 불규칙한 형태, 단층 소문자('a'와 'g'와 같은), 소문자 'l'과 구별하기 위한 대문자 'I'의 세리프, 살짝 떠 있는 기준선, 그리고 전통적인 서체보다 넓은 자간을 특징으로 하며, 이 모든 것이 캐주얼하고 손글씨 같은 외관에 기여합니다."
+        },
+        {
+          "question": "Comic Sans 폰트는 컴퓨터에 기본 설치되어 있나요?",
+          "answer": "네, Comic Sans 폰트는 Windows와 macOS 운영 체제에 기본 설치되어 있어 전 세계에서 가장 접근하기 쉬운 폰트 중 하나입니다. 그러나 Android, iOS 또는 Linux에는 기본 설치되어 있지 않지만, 이러한 플랫폼에 수동으로 다운로드할 수 있습니다."
+        },
+        {
+          "question": "Comic Sans Pro란 무엇인가요?",
+          "answer": "Comic Sans Pro는 2011년 Monotype Imaging의 Terrance Weinzierl이 만든 Comic Sans 폰트의 업데이트 버전입니다. 기본 문자 디자인을 유지하면서 이탤릭 변형, 스워시, 작은 대문자, 장식, 말풍선, 의성어, 딩뱃, 그리고 다른 스타일리스틱 대안을 추가하여 원래 디자인을 확장합니다."
+        },
+        {
+          "question": "Comic Sans 폰트의 적절한 사용처는 어디인가요?",
+          "answer": "Comic Sans 폰트는 캐주얼하고, 친근하며, 비공식적인 맥락, 특히 어린이나 초보자를 대상으로 하는 경우에 가장 적합합니다. 어린 학습자를 위한 교육 자료, 어린이 책, 캐주얼한 의사소통, 비공식 메모, 그리고 난독증이 있는 사람들을 위해 설계된 자료에 잘 작동합니다."
+        },
+        {
+          "question": "Comic Sans 폰트의 창작자는 논란에 대해 어떻게 생각하나요?",
+          "answer": "Vincent Connare는 Comic Sans 폰트에 대한 반발에 의해 기분이 상하지 않는다고 표현했습니다. 그는 자신의 창작물을 자랑스러워하며, 'Comic Sans 폰트는 의뢰받은 일을 수행한다'고 말하고 이를 '내가 한 최고의 농담'이라고 언급했습니다. 또한 '당신이 그것을 좋아한다면, 타이포그래피에 대해 많이 알지 못하는 것이지만, 당신이 그것을 싫어한다면, 당신은 정말로 타이포그래피에 대해 많이 알지 못하는 것이다'라고 말했습니다."
+        },
+        {
+          "question": "Comic Sans 폰트의 대안이 있나요?",
+          "answer": "네, Comic Sans 폰트의 여러 대안이 만들어졌습니다. 여기에는 Comic Neue(Craig Rozynski의 현대화된 버전), Comic Parchment(이전에는 Comic Papyrus, Comic Sans 폰트와 Papyrus의 요소를 결합), 그리고 Comic Code(Tabular Type Foundry의 고정폭 버전)가 포함됩니다."
+        },
+        {
+          "question": "Comic Sans 폰트가 대중 문화에 등장했나요?",
+          "answer": "네, Comic Sans 폰트는 문화 현상이자 인터넷 밈이 되었습니다. 비디오 게임 Undertale에서 Sans라는 캐릭터의 대화 폰트로 등장하고, CERN이 힉스 보손 발견을 발표할 때 사용했으며(나중에는 만우절 농담으로), Doge 밈에도 등장합니다. Google은 또한 'Comic Sans' 검색 결과를 Comic Sans 서체로 표시합니다."
+        },
+        {
+          "question": "왜 교사들은 자주 Comic Sans 폰트를 사용하나요?",
+          "answer": "2020년 설문조사에 따르면, 약 44%의 교사들이 교육 자료에 Comic Sans 폰트를 사용합니다. 그 이유로는 높은 가독성, 난독증 학생들에게 적합함, 필기 모델과의 유사성(단층 'a'와 'g'가 있는), 유사한 글자 간의 명확한 구별, 그리고 아이들에 대한 매력 등이 있습니다."
+        },
+        {
+          "question": "'Comic Sans의 날'이 있나요?",
+          "answer": "네, 네덜란드에서는 라디오 DJ인 Coen Swijnenberg와 Sander Lantinga가 Comic Sans Day를 제정했으며, 2009년부터 7월 첫째 금요일에 기념합니다. 이날 일부 네덜란드 회사들은 이 서체를 기념하기 위해 웹사이트를 Comic Sans를 사용하도록 변경합니다."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Papyrus 폰트 디자이너. 모든 권리 보유.",
+    "languages": "언어",
+    "quickLinks": "빠른 링크",
+    "home": "홈",
+    "examples": "예시",
+    "faq": "자주 묻는 질문",
+    "description": "상징적인 Papyrus 폰트로 아름다운 텍스트 디자인을 만들고 창의적인 비전에 맞게 모든 측면을 맞춤 설정하세요.",
+    "terms": "서비스 이용약관",
+    "privacy": "개인정보 처리방침",
+    "comic-sans-font": "Comic Sans 폰트 디자이너",
+    "papyrus-font": "Papyrus 폰트 디자이너"
+  },
+  "Metadata": {
+    "papyrus": {
+      "title": "Papyrus 폰트 디자이너 - 아름다운 텍스트 디자인 만들기",
+      "description": "상징적인 Papyrus 폰트로 멋진 텍스트 디자인을 만드세요. 초대장, 인용구, 창의적인 헤더에 완벽합니다.",
+      "ogTitle": "Papyrus 폰트 디자이너 - 아름다운 텍스트 디자인 만들기",
+      "ogDescription": "상징적인 Papyrus 폰트로 멋진 텍스트 디자인을 만드세요. 초대장, 인용구, 창의적인 헤더에 완벽합니다.",
+      "twitterTitle": "Papyrus 폰트 디자이너 - 아름다운 텍스트 디자인 만들기",
+      "twitterDescription": "상징적인 Papyrus 폰트로 멋진 텍스트 디자인을 만드세요. 초대장, 인용구, 창의적인 헤더에 완벽합니다."
+    },
+    "comic-sans": {
+      "title": "Comic Sans 폰트 디자이너 - 아름다운 텍스트 디자인 만들기",
+      "description": "상징적인 Comic Sans 폰트로 멋진 텍스트 디자인을 만드세요. 초대장, 인용구, 창의적인 헤더에 완벽합니다.",
+      "ogTitle": "Comic Sans 폰트 디자이너 - 아름다운 텍스트 디자인 만들기",
+      "ogDescription": "상징적인 Comic Sans 폰트로 멋진 텍스트 디자인을 만드세요. 초대장, 인용구, 창의적인 헤더에 완벽합니다.",
+      "twitterTitle": "Comic Sans 폰트 디자이너 - 아름다운 텍스트 디자인 만들기",
+      "twitterDescription": "상징적인 Comic Sans 폰트로 멋진 텍스트 디자인을 만드세요. 초대장, 인용구, 창의적인 헤더에 완벽합니다."
+    }
+  },
+  "designPrinciples": {
+    "title": "디자인 원칙",
+    "subtitle": {
+      "papyrus": "Papyrus 폰트 뒤에 숨겨진 독특한 디자인 철학 탐색하기",
+      "comic-sans": "Comic Sans 폰트 뒤에 숨겨진 독특한 디자인 철학 탐색하기"
+    },
+    "principles": {
+      "papyrus": [
+        {
+          "lable": "Biblical Era Inspiration",
+          "title": "성서 시대의 영감",
+          "description": "성서 시대 중동의 필체 스타일을 모방하여 2,000년 전 파피루스에 쓰여진 영어 텍스트의 모습을 보여줌"
+        },
+        {
+          "lable": "Timeless Elegance",
+          "title": "시대를 초월한 우아함",
+          "description": "전통적인 로마 글자 형태의 우아함과 고급 서예의 수공예적 외관을 결합"
+        },
+        {
+          "lable": "Art Meets Function",
+          "title": "예술과 기능의 만남",
+          "description": "독특한 수공예 질감을 선보이면서도 뛰어난 가독성 유지"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Contextual Informality",
+          "title": "맥락적 비형식성",
+          "description": "원래 Microsoft Bob의 만화 캐릭터 말풍선에 더 적합한 서체를 제공하기 위해 디자인되었으며, 너무 형식적인 Times New Roman을 소프트웨어의 캐주얼하고 친근한 분위기에 맞게 대체했습니다."
+        },
+        {
+          "lable": "Comic-Inspired Visual Expression",
+          "title": "만화에서 영감을 받은 시각적 표현",
+          "description": "\"다크 나이트 리턴즈\"와 \"왓치맨\"과 같은 유명한 만화의 글자 스타일에서 직접 영감을 받아, 만화책에서 손으로 쓴 텍스트의 자연스럽고 캐주얼한 품질을 재현하는 것을 목표로 합니다."
+        },
+        {
+          "lable": "Legibility and Approachability",
+          "title": "가독성과 접근성",
+          "description": "특히 어린 사용자와 초보자를 위해 가독성을 염두에 두고 특별히 디자인되어, 읽기 장벽을 낮추는 위협적이지 않고 심각하지 않은 시각적 언어를 만듭니다."
+        },
+        {
+          "lable": "Functionality Over Aesthetics",
+          "title": "미학보다 기능성",
+          "description": "디자이너 Vincent Connare는 순수한 타이포그래피 미학보다 유용성을 강조하며, 이 폰트가 특정 맥락에 적합한 친근하고 이해하기 쉬운 커뮤니케이션 스타일을 만드는 의도된 작업을 성공적으로 수행했다고 믿었습니다."
+        }
+      ]
+    }
+  },
+  "visualFeatures": {
+    "title": "시각적 특징",
+    "subtitle": {
+      "papyrus": "Papyrus 폰트의 독특한 시각적 특성 탐색하기",
+      "comic-sans": "Comic Sans 폰트의 독특한 시각적 특성 탐색하기"
+    },
+    "features": {
+      "papyrus": [
+        {
+          "lable": "Rough Edges",
+          "title": "거친 가장자리",
+          "description": "폰트 가장자리가 고르지 않은 효과를 보여주며, 파피루스에 손으로 쓴 글씨의 질감을 시뮬레이션합니다"
+        },
+        {
+          "lable": "Irregular Curves",
+          "title": "불규칙한 곡선",
+          "description": "글자의 곡선 부분이 완전히 대칭적이거나 매끄럽지 않아 손글씨 느낌을 강화합니다"
+        },
+        {
+          "lable": "High Horizontal Strokes",
+          "title": "높은 수평 획",
+          "description": "대문자에서 두드러진 높은 수평 획"
+        },
+        {
+          "lable": "Handcrafted Look",
+          "title": "수공예적 외관",
+          "description": "수공예적 느낌이 있는 고급 서예의 전체적인 외관"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Handwritten Sans-serif Style",
+          "title": "손글씨 산세리프 스타일",
+          "description": "만화책 글자를 모방한 전체적인 산세리프 서체로, 둥근 윤곽과 불규칙한 형태가 특징이며 비공식적이고 친근한 시각적 인상을 줍니다."
+        },
+        {
+          "lable": "Distinctive Letter Structure",
+          "title": "특징적인 글자 구조",
+          "description": "단층 소문자(\"a\"와 \"g\" 같은)를 사용하고, 소문자 \"l\"과 구별하기 위해 대문자 \"I\"에 세리프를 포함하며, 손글씨 느낌을 강화하기 위해 약간 떠 있는 기준선을 특징으로 합니다."
+        },
+        {
+          "lable": "Generous Letter Spacing",
+          "title": "넉넉한 글자 간격",
+          "description": "전통적인 서체보다 더 넓은 글자 간격을 특징으로 하여 전체적인 가독성을 향상시키며, 특히 어린이 독서 자료에 적합합니다."
+        },
+        {
+          "lable": "Highly Distinguishable Letter Forms",
+          "title": "높은 구별성의 글자 형태",
+          "description": "거울상 글자(\"b\", \"d\", \"p\", \"q\" 같은) 간의 혼동을 줄이며, 독특하게 디자인된 글리프로 난독증이 있는 독자들에게 특히 효과적입니다."
+        }
+      ]
+    }
+  },
+  "terms": {
+    "title": "서비스 이용약관",
+    "subtitle": "서비스 이용 전 약관을 주의 깊게 읽어주세요",
+    "description": "Papyrus 폰트 디자이너 서비스 이용약관",
+    "ogTitle": "서비스 이용약관 - Papyrus 폰트 디자이너",
+    "ogDescription": "Papyrus 폰트 디자이너 서비스 이용약관",
+    "twitterTitle": "서비스 이용약관 - Papyrus 폰트 디자이너",
+    "twitterDescription": "Papyrus 폰트 디자이너 서비스 이용약관",
+    "sections": {
+      "acceptance": {
+        "title": "1. 약관 동의",
+        "content": "Papyrus 폰트 디자이너에 접근하고 사용함으로써, 귀하는 이 서비스 이용약관에 동의하게 됩니다."
+      },
+      "license": {
+        "title": "2. 사용 라이선스",
+        "content": "Papyrus 폰트의 한 사본을 개인적이고 비상업적인 일시적 보기 용도로만 일시적으로 다운로드할 수 있는 권한이 부여됩니다."
+      },
+      "disclaimer": {
+        "title": "3. 면책 조항",
+        "content": "Papyrus 폰트 디자이너의 자료는 '있는 그대로' 제공됩니다. 당사는 명시적이든 묵시적이든 어떠한 보증도 하지 않으며, 상품성, 특정 목적에의 적합성, 지적 재산권 비침해 또는 기타 권리 침해에 대한 묵시적 보증이나 조건을 포함하되 이에 국한되지 않는 모든 다른 보증을 부인하고 부정합니다."
+      },
+      "limitations": {
+        "title": "4. 제한 사항",
+        "content": "어떠한 경우에도 Papyrus 폰트 디자이너 또는 그 공급업체는 당사 웹사이트의 자료 사용 또는 사용 불능으로 인해 발생하는 어떠한 손해(데이터 또는 이익 손실, 또는 사업 중단으로 인한 손해를 포함하되 이에 국한되지 않음)에 대해서도 책임을 지지 않습니다."
+      },
+      "revisions": {
+        "title": "5. 수정 및 오류",
+        "content": "Papyrus 폰트 디자이너에 표시되는 자료에는 기술적, 인쇄상, 또는 사진상의 오류가 포함될 수 있습니다. 당사는 웹사이트의 자료가 정확하거나 완전하거나 최신이라는 것을 보증하지 않습니다."
+      },
+      "links": {
+        "title": "6. 링크",
+        "content": "당사는 웹사이트에 연결된 모든 사이트를 검토하지 않았으며, 그러한 연결 사이트의 내용에 대해 책임을 지지 않습니다."
+      },
+      "modifications": {
+        "title": "7. 수정",
+        "content": "당사는 언제든지 통지 없이 이 서비스 이용약관을 수정할 수 있습니다. 이 웹사이트를 사용함으로써 귀하는 당시 최신 버전의 서비스 이용약관에 동의하게 됩니다."
+      },
+      "governing": {
+        "title": "8. 준거법",
+        "content": "이 이용약관은 법률에 따라 규제되고 해석되며, 귀하는 해당 지역 법원의 전속 관할권에 취소 불가능하게 따릅니다."
+      }
+    }
+  },
+  "privacy": {
+    "title": "개인정보 처리방침",
+    "subtitle": "당사가 귀하의 정보를 수집, 사용 및 보호하는 방법 알아보기",
+    "description": "Papyrus 폰트 디자이너 개인정보 처리방침",
+    "ogTitle": "개인정보 처리방침 - Papyrus 폰트 디자이너",
+    "ogDescription": "Papyrus 폰트 디자이너 개인정보 처리방침",
+    "twitterTitle": "개인정보 처리방침 - Papyrus 폰트 디자이너",
+    "twitterDescription": "Papyrus 폰트 디자이너 개인정보 처리방침",
+    "sections": {
+      "collection": {
+        "title": "1. 수집하는 정보",
+        "description": "당사는 귀하가 직접 제공하는 정보를 수집합니다. 이는 다음과 같은 경우를 포함합니다:",
+        "items": [
+          "계정 생성",
+          "폰트 다운로드",
+          "지원 문의",
+          "뉴스레터 구독"
+        ]
+      },
+      "usage": {
+        "title": "2. 정보 사용 방법",
+        "description": "당사는 수집한 정보를 다음과 같은 목적으로 사용합니다:",
+        "items": [
+          "서비스 제공 및 유지",
+          "거래 처리",
+          "기술적 공지 및 지원 메시지 발송",
+          "제품, 서비스 및 이벤트에 관한 소통",
+          "트렌드 및 사용량 모니터링 및 분석"
+        ]
+      },
+      "sharing": {
+        "title": "3. 정보 공유",
+        "description": "당사는 이 개인정보 처리방침에 설명된 경우를 제외하고 귀하의 개인정보를 제3자와 공유하지 않습니다. 다음과 같은 대상과 정보를 공유할 수 있습니다:",
+        "items": [
+          "당사를 대신하여 서비스를 수행하는 서비스 제공업체",
+          "전문 고문",
+          "법률에 의해 요구될 때 법 집행 기관"
+        ]
+      },
+      "security": {
+        "title": "4. 데이터 보안",
+        "content": "당사는 귀하의 개인정보를 무단 또는 불법 처리, 우발적 손실, 파괴 또는 손상으로부터 보호하기 위해 적절한 기술적 및 조직적 조치를 구현합니다."
+      },
+      "rights": {
+        "title": "5. 귀하의 권리",
+        "description": "귀하는 다음과 같은 권리가 있습니다:",
+        "items": [
+          "개인정보 접근",
+          "부정확한 정보 수정",
+          "정보 삭제 요청",
+          "정보 처리에 대한 이의 제기",
+          "동의 철회"
+        ]
+      },
+      "cookies": {
+        "title": "6. 쿠키",
+        "content": "당사는 웹사이트 활동을 추적하고 특정 정보를 보관하기 위해 쿠키 및 유사한 추적 기술을 사용합니다. 귀하는 브라우저에 모든 쿠키를 거부하거나 쿠키가 전송될 때 알림을 표시하도록 지시할 수 있습니다."
+      },
+      "changes": {
+        "title": "7. 정책 변경",
+        "content": "당사는 때때로 개인정보 처리방침을 업데이트할 수 있습니다. 변경사항이 있을 경우, 이 페이지에 새 개인정보 처리방침을 게시하고 '최종 업데이트' 날짜를 갱신하여 알려드립니다."
+      },
+      "contact": {
+        "title": "8. 문의하기",
+        "content": "이 개인정보 처리방침에 관한 질문이 있으시면, contact@papyrusfont.com으로 문의해 주십시오."
+      }
+    }
+  }
+}

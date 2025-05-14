@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "home": "Início",
+    "examples": "Exemplos",
+    "faq": "Perguntas Frequentes",
+    "changeLanguage": "Mudar Idioma"
+  },
+  "hero": {
+    "papyrus": {
+      "title": "Designer de Fonte Papyrus",
+      "subtitle": "Crie designs de texto bonitos com a icônica fonte Papyrus"
+    },
+    "comic-sans": {
+      "title": "Designer de Fonte Comic Sans",
+      "subtitle": "Crie designs de texto bonitos com a icônica fonte Comic Sans"
+    }
+  },
+  "designer": {
+    "inputPlaceholder": "Digite seu texto aqui...",
+    "fontColor": "Cor da Fonte",
+    "fontSize": "Tamanho da Fonte",
+    "backgroundColor": "Cor de Fundo",
+    "advancedOptions": "Opções Avançadas",
+    "shadowColor": "Cor da Sombra",
+    "shadowBlur": "Desfoque da Sombra",
+    "outlineColor": "Cor do Contorno",
+    "outlineWidth": "Largura do Contorno",
+    "saveAsPng": "Salvar como PNG",
+    "transparentBackground": "Fundo Transparente",
+    "textAlign": "Alinhamento de Texto",
+    "left": "Esquerda",
+    "center": "Centro",
+    "right": "Direita"
+  },
+  "examples": {
+    "title": "Exemplos Inspiradores",
+    "subtitle": {
+      "papyrus": "Veja o que você pode criar com a fonte Papyrus",
+      "comic-sans": "Veja o que você pode criar com a fonte Comic Sans"
+    },
+    "examples": {
+      "papyrus": [
+        {
+          "lable": "Elegant Invitations",
+          "title": "Convites Elegantes",
+          "description": "Perfeito para criar convites elegantes para ocasiões especiais"
+        },
+        {
+          "lable": "Artistic Quotes",
+          "title": "Citações Artísticas",
+          "description": "Exiba suas citações favoritas com um toque artístico"
+        },
+        {
+          "lable": "Creative Headers",
+          "title": "Cabeçalhos Criativos",
+          "description": "Projete cabeçalhos impressionantes para seu site ou blog"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Educational Settings",
+          "title": "Ambientes Educacionais",
+          "description": "Amplamente utilizada em escolas e recursos educacionais, principalmente na educação primária e educação especial, devido à sua alta legibilidade e aparência amigável, ajudando iniciantes e estudantes com dislexia a se envolverem mais facilmente com o texto."
+        },
+        {
+          "lable": "Informal Communications",
+          "title": "Comunicações Informais",
+          "description": "Adequada para livros infantis, avisos familiares, cartazes de eventos casuais e anúncios comunitários, criando uma atmosfera relaxada e acessível, reduzindo a formalidade das comunicações."
+        },
+        {
+          "lable": "Accessibility Applications",
+          "title": "Aplicações de Acessibilidade",
+          "description": "Serve como uma ferramenta para auxiliar pessoas com dislexia, pois seu design único de glifos e clara diferenciação de letras ajudam a melhorar a compreensão da leitura, sendo recomendada por alguns especialistas em educação para materiais de educação especial."
+        },
+        {
+          "lable": "Creative and Humorous Expression",
+          "title": "Expressão Criativa e Humorística",
+          "description": "Funciona na cultura da internet como um elemento visual que expressa ironia ou humor, comumente encontrado em memes, blogs casuais e designs autoconscientes que aproveitam seu status controverso para transmitir emoções específicas."
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": {
+      "papyrus": "Perguntas Frequentes sobre a Fonte Papyrus",
+      "comic-sans": "Perguntas Frequentes sobre a Fonte Comic Sans"
+    },
+    "subtitle": {
+      "papyrus": "Tudo o que você precisa saber sobre o uso do nosso Designer de Fonte Papyrus",
+      "comic-sans": "Tudo o que você precisa saber sobre o uso do nosso Designer de Fonte Comic Sans"
+    },
+    "questions": {
+      "papyrus": [
+        {
+          "question": "O que é a fonte Papyrus?",
+          "answer": "Papyrus é uma tipografia decorativa distintiva projetada por Chris Costello em 1982. Ela apresenta uma aparência áspera, desenhada à mão, que imita o estilo de escrita antiga encontrado em rolos de papiro."
+        },
+        {
+          "question": "Quem criou a fonte Papyrus?",
+          "answer": "Papyrus foi criada por Chris Costello, um designer gráfico, ilustrador e designer web, quando ele tinha 23 anos e acabava de sair da faculdade. Ele passou seis meses desenhando a fonte à mão usando uma caneta de caligrafia e papel texturizado."
+        },
+        {
+          "question": "Qual foi a inspiração por trás da fonte Papyrus?",
+          "answer": "Costello foi inspirado pelo estudo da Bíblia e queria criar uma fonte que representasse como os textos em inglês teriam aparecido se escritos em papiro há 2.000 anos no Oriente Médio."
+        },
+        {
+          "question": "Posso usar esses designs comercialmente?",
+          "answer": "Os designs que você cria com nossa ferramenta são seus para usar. No entanto, observe que a própria fonte Papyrus pode ter restrições de licença para uso comercial. Sempre verifique a licença da fonte antes de usá-la em projetos comerciais."
+        },
+        {
+          "question": "Qual formato de imagem a função de exportação usa?",
+          "answer": "Nossa ferramenta exporta seus designs como arquivos PNG (Portable Network Graphics), que fornecem imagens de alta qualidade com suporte a transparência."
+        },
+        {
+          "question": "Existe um limite para a quantidade de texto que posso desenhar?",
+          "answer": "Não há um limite rigoroso de caracteres, mas textos muito longos podem afetar o desempenho do designer e podem não se encaixar bem na exportação. Para melhores resultados, projete segmentos de texto mais curtos."
+        },
+        {
+          "question": "Quais são as características distintivas da fonte Papyrus?",
+          "answer": "Papyrus tem várias características distintivas, incluindo bordas ásperas, curvas irregulares e traços horizontais elevados nas maiúsculas. Ela mescla efetivamente a elegância das formas de letras romanas tradicionais com um visual caligráfico artesanal."
+        },
+        {
+          "question": "A fonte Papyrus está disponível no meu computador?",
+          "answer": "Sim, Papyrus foi incluída em muitos programas da Microsoft para Windows, incluindo o Microsoft Office. Ela também está incluída no macOS desde a versão 10.3 Panther (lançada em 2003)."
+        },
+        {
+          "question": "Quais são alguns usos comuns da fonte Papyrus?",
+          "answer": "Papyrus é frequentemente usada para convites elegantes, citações artísticas, cabeçalhos criativos e texto decorativo. No entanto, é importante notar que a fonte recebeu algumas críticas por ser excessivamente utilizada em design gráfico."
+        },
+        {
+          "question": "Quais são as melhores práticas para usar a fonte Papyrus?",
+          "answer": "Para melhores resultados, use Papyrus com moderação e propósito. Ela funciona bem para elementos decorativos, segmentos curtos de texto e quando você deseja evocar uma sensação antiga ou mística. Evite usá-la para parágrafos longos ou texto principal."
+        },
+        {
+          "question": "Posso modificar a fonte Papyrus neste designer?",
+          "answer": "Sim, nosso designer permite que você personalize vários aspectos do texto, incluindo cor da fonte, tamanho, cor de fundo, efeitos de sombra e propriedades de contorno. No entanto, as formas básicas dos caracteres de Papyrus permanecem inalteradas."
+        },
+        {
+          "question": "O que torna a fonte Papyrus única em comparação com outras fontes decorativas?",
+          "answer": "Papyrus se destaca por sua combinação única de estilo de escrita antiga com legibilidade moderna. Suas bordas ásperas e curvas irregulares lhe conferem uma aparência artesanal distintiva, mantendo a legibilidade, o que a diferencia de outras fontes puramente decorativas."
+        }
+      ],
+      "comic-sans": [
+        {
+          "question": "O que é a fonte Comic Sans?",
+          "answer": "Comic Sans MS (comumente referida como Comic Sans) é uma tipografia sem serifa criada e projetada por Vincent Connare e lançada pela Microsoft Corporation em 1994. Foi projetada como uma escrita não conectada que se inspira nas letras de histórias em quadrinhos para emular o tom informal e caricato dos balões de fala."
+        },
+        {
+          "question": "Quem criou a fonte Comic Sans?",
+          "answer": "Comic Sans foi criada por Vincent Connare, um designer da Microsoft, em 1994. Ele a projetou especificamente para o Microsoft Bob, um programa de software que usava personagens de desenho animado com balões de fala que inicialmente estavam em Times New Roman, que Connare sentiu ser muito formal para o contexto."
+        },
+        {
+          "question": "Qual foi a inspiração por trás da fonte Comic Sans?",
+          "answer": "A inspiração para a Comic Sans veio de histórias em quadrinhos que Vincent Connare tinha em seu escritório, especificamente 'O Cavaleiro das Trevas' (com letras de John Costanza) e 'Watchmen' (com letras de Dave Gibbons). Ele queria criar uma tipografia que combinasse com o tom casual e amigável dos balões de fala dos desenhos animados."
+        },
+        {
+          "question": "Por que a fonte Comic Sans é tão controversa?",
+          "answer": "Comic Sans se tornou controversa devido ao seu uso generalizado em contextos inapropriados. Embora projetada para aplicações casuais e amigáveis para crianças, ela começou a aparecer em ambientes formais ou sérios (como e-mails profissionais, sinais de alerta e documentos oficiais), o que muitos designers e tipógrafos consideraram um uso indevido do propósito pretendido da fonte."
+        },
+        {
+          "question": "A fonte Comic Sans é boa para pessoas com dislexia?",
+          "answer": "Muitos educadores e especialistas acreditam que a fonte Comic Sans é benéfica para pessoas com dislexia devido à sua alta legibilidade. Suas formas de letras distintivas, espaçamento mais amplo entre letras e glifos de imagem espelhada reduzidos (como 'b', 'd', 'p', 'q') tornam mais fácil para pessoas com dislexia distinguir entre caracteres."
+        },
+        {
+          "question": "Quando a fonte Comic Sans foi lançada pela primeira vez?",
+          "answer": "A fonte Comic Sans foi criada em outubro de 1994, embora fosse tarde demais para inclusão no Microsoft Bob, seu aplicativo originalmente pretendido. Foi lançada pela primeira vez com o Microsoft 3D Movie Maker e posteriormente incluída no Windows 95 Plus! Pack."
+        },
+        {
+          "question": "Quais são as características distintivas da fonte Comic Sans?",
+          "answer": "A fonte Comic Sans apresenta bordas arredondadas, formas irregulares, letras minúsculas de único andar (como 'a' e 'g'), serifas no 'I' maiúsculo para distingui-lo do 'l' minúsculo, linhas de base ligeiramente flutuantes e espaçamento entre letras mais amplo que tipografias tradicionais, tudo contribuindo para sua aparência casual e manuscrita."
+        },
+        {
+          "question": "A fonte Comic Sans vem pré-instalada nos computadores?",
+          "answer": "Sim, a fonte Comic Sans vem pré-instalada nos sistemas operacionais Windows e macOS, tornando-a uma das fontes mais acessíveis em todo o mundo. No entanto, ela não vem pré-instalada no Android, iOS ou Linux, embora possa ser baixada manualmente para essas plataformas."
+        },
+        {
+          "question": "O que é Comic Sans Pro?",
+          "answer": "Comic Sans Pro é uma versão atualizada da fonte Comic Sans criada por Terrance Weinzierl da Monotype Imaging em 2011. Ela expande o design original adicionando variantes em itálico, floreios, versaletes, ornamentos, balões de fala, onomatopeias, dingbats e outras alternativas estilísticas, mantendo os designs principais dos caracteres."
+        },
+        {
+          "question": "Quais são os usos apropriados para a fonte Comic Sans?",
+          "answer": "A fonte Comic Sans é mais apropriada para contextos casuais, amigáveis e informais, particularmente aqueles voltados para crianças ou iniciantes. Ela funciona bem em materiais educacionais para jovens aprendizes, livros infantis, comunicações casuais, notas informais e materiais projetados para pessoas com dislexia."
+        },
+        {
+          "question": "O que o criador da fonte Comic Sans pensa sobre a controvérsia?",
+          "answer": "Vincent Connare expressou que não se sente ofendido pela reação negativa contra a fonte Comic Sans. Ele se orgulha de sua criação, afirmando que 'a fonte Comic Sans faz o que foi encomendada para fazer' e referiu-se a ela como 'a melhor piada que já contei'. Ele também disse: 'Se você a ama, não sabe muito sobre tipografia, mas se você a odeia, realmente também não sabe muito sobre tipografia'."
+        },
+        {
+          "question": "Existem alternativas à fonte Comic Sans?",
+          "answer": "Sim, várias alternativas à fonte Comic Sans foram criadas, incluindo Comic Neue (uma versão modernizada por Craig Rozynski), Comic Parchment (anteriormente Comic Papyrus, combinando elementos da fonte Comic Sans e Papyrus) e Comic Code (uma versão monoespacada pela Tabular Type Foundry)."
+        },
+        {
+          "question": "A fonte Comic Sans apareceu na cultura popular?",
+          "answer": "Sim, a fonte Comic Sans se tornou um fenômeno cultural e um meme da internet. Ela aparece no videogame Undertale como a fonte de fala para um personagem chamado Sans, foi usada pelo CERN para anunciar a descoberta do bóson de Higgs (e mais tarde como uma piada de 1º de abril), e é destacada no meme Doge. O Google também exibe resultados de pesquisa para 'Comic Sans' na tipografia Comic Sans."
+        },
+        {
+          "question": "Por que os professores frequentemente usam a fonte Comic Sans?",
+          "answer": "De acordo com uma pesquisa de 2020, cerca de 44% dos professores usam a fonte Comic Sans em seus recursos de ensino. Os motivos incluem sua alta legibilidade, adequação para estudantes com dislexia, semelhança com modelos de escrita à mão (com 'a' e 'g' de único andar), distinção clara entre letras semelhantes e apelo às crianças."
+        },
+        {
+          "question": "Existe um 'Dia do Comic Sans'?",
+          "answer": "Sim, na Holanda, os DJs de rádio Coen Swijnenberg e Sander Lantinga estabeleceram o Dia do Comic Sans, celebrado na primeira sexta-feira de julho desde 2009. Neste dia, algumas empresas holandesas alteram seus sites para usar Comic Sans em celebração à tipografia."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Designer de Fonte Papyrus. Todos os direitos reservados.",
+    "languages": "Idiomas",
+    "quickLinks": "Links Rápidos",
+    "home": "Início",
+    "examples": "Exemplos",
+    "faq": "Perguntas Frequentes",
+    "description": "Crie designs de texto bonitos com a icônica fonte Papyrus e personalize todos os aspectos para combinar com sua visão criativa.",
+    "terms": "Termos de Serviço",
+    "privacy": "Política de Privacidade",
+    "comic-sans-font": "Designer de Fonte Comic Sans",
+    "papyrus-font": "Designer de Fonte Papyrus"
+  },
+  "Metadata": {
+    "papyrus": {
+      "title": "Designer de Fonte Papyrus - Crie Designs de Texto Bonitos",
+      "description": "Crie designs de texto impressionantes com a icônica fonte Papyrus. Perfeito para convites, citações e cabeçalhos criativos.",
+      "ogTitle": "Designer de Fonte Papyrus - Crie Designs de Texto Bonitos",
+      "ogDescription": "Crie designs de texto impressionantes com a icônica fonte Papyrus. Perfeito para convites, citações e cabeçalhos criativos.",
+      "twitterTitle": "Designer de Fonte Papyrus - Crie Designs de Texto Bonitos",
+      "twitterDescription": "Crie designs de texto impressionantes com a icônica fonte Papyrus. Perfeito para convites, citações e cabeçalhos criativos."
+    },
+    "comic-sans": {
+      "title": "Designer de Fonte Comic Sans - Crie Designs de Texto Bonitos",
+      "description": "Crie designs de texto impressionantes com a icônica fonte Comic Sans. Perfeito para convites, citações e cabeçalhos criativos.",
+      "ogTitle": "Designer de Fonte Comic Sans - Crie Designs de Texto Bonitos",
+      "ogDescription": "Crie designs de texto impressionantes com a icônica fonte Comic Sans. Perfeito para convites, citações e cabeçalhos criativos.",
+      "twitterTitle": "Designer de Fonte Comic Sans - Crie Designs de Texto Bonitos",
+      "twitterDescription": "Crie designs de texto impressionantes com a icônica fonte Comic Sans. Perfeito para convites, citações e cabeçalhos criativos."
+    }
+  },
+  "designPrinciples": {
+    "title": "Princípios de Design",
+    "subtitle": {
+      "papyrus": "Explore a filosofia única de design por trás da fonte Papyrus",
+      "comic-sans": "Explore a filosofia única de design por trás da fonte Comic Sans"
+    },
+    "principles": {
+      "papyrus": [
+        {
+          "lable": "Biblical Era Inspiration",
+          "title": "Inspiração da Era Bíblica",
+          "description": "Imitando o estilo de escrita do Oriente Médio durante os tempos bíblicos, mostrando como o texto em inglês teria aparecido se escrito em papiro há 2.000 anos"
+        },
+        {
+          "lable": "Timeless Elegance",
+          "title": "Elegância Atemporal",
+          "description": "Combinando a elegância das formas tradicionais de letras romanas com a aparência artesanal da caligrafia de alta habilidade"
+        },
+        {
+          "lable": "Art Meets Function",
+          "title": "Arte Encontra Função",
+          "description": "Mantendo excelente legibilidade enquanto exibe uma textura artesanal distintiva"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Contextual Informality",
+          "title": "Informalidade Contextual",
+          "description": "Originalmente projetada para fornecer uma tipografia mais apropriada para balões de fala de personagens de desenho animado no Microsoft Bob, substituindo o Times New Roman excessivamente formal para combinar com a atmosfera casual e amigável do software."
+        },
+        {
+          "lable": "Comic-Inspired Visual Expression",
+          "title": "Expressão Visual Inspirada em Quadrinhos",
+          "description": "Diretamente inspirada pelos estilos de letras de quadrinhos notáveis como \"O Cavaleiro das Trevas\" e \"Watchmen\", visando recriar a qualidade natural e casual do texto manuscrito em histórias em quadrinhos."
+        },
+        {
+          "lable": "Legibility and Approachability",
+          "title": "Legibilidade e Acessibilidade",
+          "description": "Especificamente projetada com a legibilidade em mente, particularmente para usuários mais jovens e iniciantes, criando uma linguagem visual não-ameaçadora e descontraída que reduz a barreira para a leitura."
+        },
+        {
+          "lable": "Functionality Over Aesthetics",
+          "title": "Funcionalidade Acima da Estética",
+          "description": "O designer Vincent Connare enfatizou a utilidade sobre a estética tipográfica pura, acreditando que a fonte cumpriu com sucesso sua tarefa pretendida – criar um estilo de comunicação amigável e compreensível, apropriado para contextos específicos."
+        }
+      ]
+    }
+  },
+  "visualFeatures": {
+    "title": "Características Visuais",
+    "subtitle": {
+      "papyrus": "Explore as características visuais únicas da fonte Papyrus",
+      "comic-sans": "Explore as características visuais únicas da fonte Comic Sans"
+    },
+    "features": {
+      "papyrus": [
+        {
+          "lable": "Rough Edges",
+          "title": "Bordas Ásperas",
+          "description": "As bordas da fonte mostram um efeito irregular, simulando a textura da escrita à mão em papiro"
+        },
+        {
+          "lable": "Irregular Curves",
+          "title": "Curvas Irregulares",
+          "description": "As partes curvas das letras não são completamente simétricas ou suaves, realçando a sensação de manuscrito"
+        },
+        {
+          "lable": "High Horizontal Strokes",
+          "title": "Traços Horizontais Elevados",
+          "description": "Traços horizontais distintivos e elevados nas letras maiúsculas"
+        },
+        {
+          "lable": "Handcrafted Look",
+          "title": "Aparência Artesanal",
+          "description": "Aparência geral de caligrafia de alta habilidade com sensação artesanal"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Handwritten Sans-serif Style",
+          "title": "Estilo Sans-serif Manuscrito",
+          "description": "Uma tipografia sans-serif que imita a letra de histórias em quadrinhos, apresentando contornos arredondados e formas irregulares que criam uma impressão visual informal e amigável."
+        },
+        {
+          "lable": "Distinctive Letter Structure",
+          "title": "Estrutura Distintiva de Letras",
+          "description": "Usa letras minúsculas de único andar (como \"a\" e \"g\"), inclui serifas no \"I\" maiúsculo para distinguir do \"l\" minúsculo, e apresenta linhas de base ligeiramente flutuantes para realçar a sensação de escrita à mão."
+        },
+        {
+          "lable": "Generous Letter Spacing",
+          "title": "Espaçamento Generoso entre Letras",
+          "description": "Apresenta espaçamento entre letras mais amplo que tipografias tradicionais, melhorando a legibilidade geral, particularmente adequado para materiais de leitura infantil."
+        },
+        {
+          "lable": "Highly Distinguishable Letter Forms",
+          "title": "Formas de Letras Altamente Distinguíveis",
+          "description": "Reduz a confusão entre letras espelhadas (como \"b\", \"d\", \"p\", \"q\"), com glifos exclusivamente projetados que funcionam excepcionalmente bem para leitores com dislexia."
+        }
+      ]
+    }
+  },
+  "terms": {
+    "title": "Termos de Serviço",
+    "subtitle": "Por favor, leia estes termos atentamente antes de usar nosso serviço",
+    "description": "Termos de Serviço para o Designer de Fonte Papyrus",
+    "ogTitle": "Termos de Serviço - Designer de Fonte Papyrus",
+    "ogDescription": "Termos de Serviço para o Designer de Fonte Papyrus",
+    "twitterTitle": "Termos de Serviço - Designer de Fonte Papyrus",
+    "twitterDescription": "Termos de Serviço para o Designer de Fonte Papyrus",
+    "sections": {
+      "acceptance": {
+        "title": "1. Aceitação dos Termos",
+        "content": "Ao acessar e usar o Designer de Fonte Papyrus, você concorda em estar vinculado a estes Termos de Serviço."
+      },
+      "license": {
+        "title": "2. Licença de Uso",
+        "content": "É concedida permissão para baixar temporariamente uma cópia da Fonte Papyrus apenas para visualização pessoal e não comercial temporária."
+      },
+      "disclaimer": {
+        "title": "3. Isenção de Responsabilidade",
+        "content": "Os materiais no Designer de Fonte Papyrus são fornecidos 'como estão'. Não oferecemos garantias, expressas ou implícitas, e por meio deste renunciamos e negamos todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um propósito específico ou não violação de propriedade intelectual ou outra violação de direitos."
+      },
+      "limitations": {
+        "title": "4. Limitações",
+        "content": "Em nenhum caso o Designer de Fonte Papyrus ou seus fornecedores serão responsáveis por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucros, ou devido à interrupção de negócios) decorrentes do uso ou incapacidade de usar os materiais em nosso site."
+      },
+      "revisions": {
+        "title": "5. Revisões e Errata",
+        "content": "Os materiais que aparecem no Designer de Fonte Papyrus podem incluir erros técnicos, tipográficos ou fotográficos. Não garantimos que quaisquer materiais em nosso site sejam precisos, completos ou atuais."
+      },
+      "links": {
+        "title": "6. Links",
+        "content": "Não revisamos todos os sites vinculados ao nosso site e não somos responsáveis pelo conteúdo de qualquer site vinculado."
+      },
+      "modifications": {
+        "title": "7. Modificações",
+        "content": "Podemos revisar estes termos de serviço a qualquer momento sem aviso prévio. Ao usar este site, você concorda em estar vinculado à versão atual destes termos de serviço."
+      },
+      "governing": {
+        "title": "8. Lei Aplicável",
+        "content": "Estes termos e condições são regidos e interpretados de acordo com as leis, e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais nesse local."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "subtitle": "Saiba como coletamos, usamos e protegemos suas informações",
+    "description": "Política de Privacidade para o Designer de Fonte Papyrus",
+    "ogTitle": "Política de Privacidade - Designer de Fonte Papyrus",
+    "ogDescription": "Política de Privacidade para o Designer de Fonte Papyrus",
+    "twitterTitle": "Política de Privacidade - Designer de Fonte Papyrus",
+    "twitterDescription": "Política de Privacidade para o Designer de Fonte Papyrus",
+    "sections": {
+      "collection": {
+        "title": "1. Informações que Coletamos",
+        "description": "Coletamos informações que você fornece diretamente a nós, incluindo quando você:",
+        "items": [
+          "Cria uma conta",
+          "Baixa nossas fontes",
+          "Entra em contato conosco para suporte",
+          "Assina nossa newsletter"
+        ]
+      },
+      "usage": {
+        "title": "2. Como Usamos Suas Informações",
+        "description": "Usamos as informações que coletamos para:",
+        "items": [
+          "Fornecer e manter nossos serviços",
+          "Processar suas transações",
+          "Enviar avisos técnicos e mensagens de suporte",
+          "Comunicar com você sobre produtos, serviços e eventos",
+          "Monitorar e analisar tendências e uso"
+        ]
+      },
+      "sharing": {
+        "title": "3. Compartilhamento de Informações",
+        "description": "Não compartilhamos suas informações pessoais com terceiros, exceto conforme descrito nesta política de privacidade. Podemos compartilhar suas informações com:",
+        "items": [
+          "Provedores de serviços que realizam serviços em nosso nome",
+          "Consultores profissionais",
+          "Autoridades policiais quando exigido por lei"
+        ]
+      },
+      "security": {
+        "title": "4. Segurança de Dados",
+        "content": "Implementamos medidas técnicas e organizacionais apropriadas para proteger suas informações pessoais contra processamento não autorizado ou ilegal, perda acidental, destruição ou dano."
+      },
+      "rights": {
+        "title": "5. Seus Direitos",
+        "description": "Você tem o direito de:",
+        "items": [
+          "Acessar suas informações pessoais",
+          "Corrigir informações imprecisas",
+          "Solicitar a exclusão de suas informações",
+          "Opor-se ao processamento de suas informações",
+          "Retirar o consentimento"
+        ]
+      },
+      "cookies": {
+        "title": "6. Cookies",
+        "content": "Usamos cookies e tecnologias de rastreamento similares para monitorar a atividade em nosso site e guardar certas informações. Você pode instruir seu navegador a recusar todos os cookies ou a indicar quando um cookie está sendo enviado."
+      },
+      "changes": {
+        "title": "7. Alterações nesta Política",
+        "content": "Podemos atualizar nossa Política de Privacidade de tempos em tempos. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página e atualizando a data de 'Última Atualização'."
+      },
+      "contact": {
+        "title": "8. Entre em Contato",
+        "content": "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail contact@papyrusfont.com."
+      }
+    }
+  }
+}

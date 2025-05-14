@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "examples": "Beispiele",
+    "faq": "FAQ",
+    "changeLanguage": "Sprache ändern"
+  },
+  "hero": {
+    "papyrus": {
+      "title": "Papyrus Schriftdesigner",
+      "subtitle": "Erstellen Sie wunderschöne Textdesigns mit der ikonischen Papyrus-Schrift"
+    },
+    "comic-sans": {
+      "title": "Comic Sans Schriftdesigner",
+      "subtitle": "Erstellen Sie wunderschöne Textdesigns mit der ikonischen Comic Sans-Schrift"
+    }
+  },
+  "designer": {
+    "inputPlaceholder": "Geben Sie Ihren Text hier ein...",
+    "fontColor": "Schriftfarbe",
+    "fontSize": "Schriftgröße",
+    "backgroundColor": "Hintergrundfarbe",
+    "advancedOptions": "Erweiterte Optionen",
+    "shadowColor": "Schattenfarbe",
+    "shadowBlur": "Schattenunschärfe",
+    "outlineColor": "Konturfarbe",
+    "outlineWidth": "Konturbreite",
+    "saveAsPng": "Als PNG speichern",
+    "transparentBackground": "Transparenter Hintergrund",
+    "textAlign": "Textausrichtung",
+    "left": "Links",
+    "center": "Zentriert",
+    "right": "Rechts"
+  },
+  "examples": {
+    "title": "Inspirierende Beispiele",
+    "subtitle": {
+      "papyrus": "Sehen Sie, was Sie mit der Papyrus-Schrift erstellen können",
+      "comic-sans": "Sehen Sie, was Sie mit der Comic Sans-Schrift erstellen können"
+    },
+    "examples": {
+      "papyrus": [
+        {
+          "lable": "Elegante Einladungen",
+          "title": "Elegante Einladungen",
+          "description": "Perfekt für die Erstellung eleganter Einladungen für besondere Anlässe"
+        },
+        {
+          "lable": "Künstlerische Zitate",
+          "title": "Künstlerische Zitate",
+          "description": "Zeigen Sie Ihre Lieblingszitate mit einem künstlerischen Touch"
+        },
+        {
+          "lable": "Kreative Überschriften",
+          "title": "Kreative Überschriften",
+          "description": "Gestalten Sie beeindruckende Überschriften für Ihre Website oder Ihren Blog"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Bildungseinrichtungen",
+          "title": "Bildungseinrichtungen",
+          "description": "Wird häufig in Schulen und Bildungsressourcen verwendet, insbesondere in der Grundschulbildung und Sonderpädagogik, aufgrund ihrer hohen Lesbarkeit und freundlichen Erscheinung, die Anfängern und Schülern mit Legasthenie hilft, sich leichter mit Text auseinanderzusetzen."
+        },
+        {
+          "lable": "Informelle Kommunikation",
+          "title": "Informelle Kommunikation",
+          "description": "Geeignet für Kinderbücher, Familiennachrichten, lockere Veranstaltungsplakate und Gemeinschaftsankündigungen, schafft eine entspannte, zugängliche Atmosphäre und reduziert die Förmlichkeit der Kommunikation."
+        },
+        {
+          "lable": "Barrierefreiheitsanwendungen",
+          "title": "Barrierefreiheitsanwendungen",
+          "description": "Dient als Hilfsmittel für Menschen mit Legasthenie, da ihr einzigartiges Glyphdesign und die klare Buchstabenunterscheidung dazu beitragen, das Leseverständnis zu verbessern, empfohlen von einigen Bildungsexperten für Sonderpädagogische Materialien."
+        },
+        {
+          "lable": "Kreative und humorvolle Ausdrucksweise",
+          "title": "Kreative und humorvolle Ausdrucksweise",
+          "description": "Funktioniert in der Internetkultur als visuelles Element, das Ironie oder Humor ausdrückt, häufig zu finden in Memes, lockeren Blogs und selbstironischen Designs, die ihren umstrittenen Status nutzen, um bestimmte Emotionen zu vermitteln."
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": {
+      "papyrus": "Papyrus-Schrift FAQ",  
+      "comic-sans": "Comic Sans-Schrift FAQ"
+    },
+    "subtitle": {
+      "papyrus": "Alles, was Sie über die Verwendung unseres Papyrus-Schriftdesigners wissen müssen",
+      "comic-sans": "Alles, was Sie über die Verwendung unseres Comic Sans-Schriftdesigners wissen müssen"
+    },
+    "questions": {
+      "papyrus": [
+        {
+          "question": "Was ist die Papyrus-Schrift?",
+          "answer": "Papyrus ist eine markante dekorative Schriftart, die 1982 von Chris Costello entworfen wurde. Sie zeichnet sich durch ein raues, handgezeichnetes Erscheinungsbild aus, das den antiken Schreibstil auf Papyrusrollen nachahmt."
+        },
+        {
+          "question": "Wer hat die Papyrus-Schrift erstellt?",
+          "answer": "Papyrus wurde von Chris Costello, einem Grafikdesigner, Illustrator und Webdesigner, geschaffen, als er 23 Jahre alt war und gerade das College abgeschlossen hatte. Er verbrachte sechs Monate damit, die Schrift mit einem Kalligraphiestift und strukturiertem Papier von Hand zu zeichnen."
+        },
+        {
+          "question": "Was war die Inspiration hinter der Papyrus-Schrift?",
+          "answer": "Costello wurde durch das Studium der Bibel inspiriert und wollte eine Schrift schaffen, die darstellen sollte, wie englische Texte ausgesehen hätten, wenn sie vor 2.000 Jahren im Nahen Osten auf Papyrus geschrieben worden wären."
+        },
+        {
+          "question": "Kann ich diese Designs kommerziell nutzen?",
+          "answer": "Die Designs, die Sie mit unserem Tool erstellen, können Sie frei verwenden. Beachten Sie jedoch, dass die Papyrus-Schrift selbst Lizenzbeschränkungen für die kommerzielle Nutzung haben kann. Überprüfen Sie immer die Schriftlizenz, bevor Sie sie in kommerziellen Projekten verwenden."
+        },
+        {
+          "question": "Welches Bildformat verwendet die Exportfunktion?",
+          "answer": "Unser Tool exportiert Ihre Designs als PNG (Portable Network Graphics)-Dateien, die hochwertige Bilder mit Transparenzunterstützung bieten."
+        },
+        {
+          "question": "Gibt es eine Begrenzung für die Textmenge, die ich gestalten kann?",
+          "answer": "Es gibt keine strikte Zeichenbegrenzung, aber sehr lange Texte können die Leistung des Designers beeinträchtigen und passen möglicherweise nicht gut in den Export. Für beste Ergebnisse gestalten Sie kürzere Textsegmente."
+        },
+        {
+          "question": "Was sind die charakteristischen Merkmale der Papyrus-Schrift?",
+          "answer": "Papyrus hat mehrere markante Merkmale, darunter raue Kanten, unregelmäßige Kurven und hohe horizontale Striche in den Großbuchstaben. Sie verbindet effektiv die Eleganz traditioneller römischer Buchstabenformen mit einem handgefertigten kalligrafischen Aussehen."
+        },
+        {
+          "question": "Ist die Papyrus-Schrift auf meinem Computer verfügbar?",
+          "answer": "Ja, Papyrus ist in vielen Microsoft-Programmen für Windows enthalten, einschließlich Microsoft Office. Sie ist auch in macOS seit Version 10.3 Panther (veröffentlicht im Jahr 2003) enthalten."
+        },
+        {
+          "question": "Was sind einige gängige Verwendungen der Papyrus-Schrift?",
+          "answer": "Papyrus wird oft für elegante Einladungen, künstlerische Zitate, kreative Überschriften und dekorativen Text verwendet. Es ist jedoch wichtig zu beachten, dass die Schrift einige Kritik für ihre Überverwendung im Grafikdesign erhalten hat."
+        },
+        {
+          "question": "Was sind die besten Praktiken für die Verwendung der Papyrus-Schrift?",
+          "answer": "Für beste Ergebnisse verwenden Sie Papyrus sparsam und gezielt. Sie eignet sich gut für dekorative Elemente, kurze Textsegmente und wenn Sie eine antike oder mystische Stimmung hervorrufen möchten. Vermeiden Sie die Verwendung für lange Absätze oder Fließtext."
+        },
+        {
+          "question": "Kann ich die Papyrus-Schrift in diesem Designer modifizieren?",
+          "answer": "Ja, unser Designer ermöglicht es Ihnen, verschiedene Aspekte des Textes anzupassen, einschließlich Schriftfarbe, Größe, Hintergrundfarbe, Schatteneffekte und Kontureneigenschaften. Die grundlegenden Zeichenformen von Papyrus bleiben jedoch unverändert."
+        },
+        {
+          "question": "Was macht die Papyrus-Schrift im Vergleich zu anderen dekorativen Schriften einzigartig?",
+          "answer": "Papyrus zeichnet sich durch ihre einzigartige Kombination aus antikem Schreibstil mit moderner Lesbarkeit aus. Ihre rauen Kanten und unregelmäßigen Kurven verleihen ihr ein unverwechselbares handgefertigtes Aussehen bei gleichzeitiger Beibehaltung der Lesbarkeit, was sie von anderen rein dekorativen Schriften unterscheidet."
+        }
+      ],
+      "comic-sans": [
+        {
+          "question": "Was ist die Comic Sans-Schrift?",
+          "answer": "Comic Sans MS (gemeinhin als Comic Sans bezeichnet) ist eine serifenlose Schriftart, die von Vincent Connare entworfen und 1994 von der Microsoft Corporation veröffentlicht wurde. Sie ist als nicht verbundene Schrift konzipiert, die sich vom Lettering in Comics inspirieren lässt, um den informellen und cartoonhaften Ton von Sprechblasen nachzuahmen."
+        },
+        {
+          "question": "Wer hat die Comic Sans-Schrift erstellt?",
+          "answer": "Comic Sans wurde 1994 von Vincent Connare, einem Designer bei Microsoft, erstellt. Er entwarf sie speziell für Microsoft Bob, ein Softwareprogramm, das Zeichentrickfiguren mit Sprechblasen verwendete, die ursprünglich in Times New Roman gesetzt waren, was Connare für den Kontext als zu formell empfand."
+        },
+        {
+          "question": "Was war die Inspiration hinter der Comic Sans-Schrift?",
+          "answer": "Die Inspiration für Comic Sans kam von Comics, die Vincent Connare in seinem Büro hatte, insbesondere 'The Dark Knight Returns' (mit Lettering von John Costanza) und 'Watchmen' (mit Lettering von Dave Gibbons). Er wollte eine Schriftart schaffen, die dem lockeren, freundlichen Ton von Comic-Sprechblasen entsprach."
+        },
+        {
+          "question": "Warum ist die Comic Sans-Schrift so umstritten?",
+          "answer": "Comic Sans wurde aufgrund ihrer weitverbreiteten Verwendung in unangemessenen Kontexten umstritten. Obwohl sie für lockere, kinderfreundliche Anwendungen konzipiert wurde, tauchte sie in formellen oder ernsthaften Umgebungen auf (wie berufliche E-Mails, Warnschilder und offizielle Dokumente), was viele Designer und Typografen als Missbrauch des beabsichtigten Zwecks der Schrift betrachteten."
+        },
+        {
+          "question": "Ist die Comic Sans-Schrift gut für Menschen mit Legasthenie?",
+          "answer": "Viele Pädagogen und Spezialisten glauben, dass die Comic Sans-Schrift aufgrund ihrer hohen Lesbarkeit vorteilhaft für Menschen mit Legasthenie ist. Ihre charakteristischen Buchstabenformen, der größere Buchstabenabstand und die reduzierten Spiegelbildglyphen (wie 'b', 'd', 'p', 'q') erleichtern es Menschen mit Legasthenie, zwischen Zeichen zu unterscheiden."
+        },
+        {
+          "question": "Wann wurde die Comic Sans-Schrift erstmals veröffentlicht?",
+          "answer": "Die Comic Sans-Schrift wurde im Oktober 1994 erstellt, obwohl es für die Aufnahme in Microsoft Bob, ihre ursprünglich vorgesehene Anwendung, zu spät war. Sie wurde zuerst mit Microsoft 3D Movie Maker veröffentlicht und später mit dem Windows 95 Plus! Paket ausgeliefert."
+        },
+        {
+          "question": "Was sind die charakteristischen Merkmale der Comic Sans-Schrift?",
+          "answer": "Die Comic Sans-Schrift zeichnet sich durch abgerundete Kanten, unregelmäßige Formen, eingeschossige Kleinbuchstaben (wie 'a' und 'g'), Serifen am Großbuchstaben 'I', um ihn vom Kleinbuchstaben 'l' zu unterscheiden, leicht schwebende Grundlinien und größere Buchstabenabstände als traditionelle Schriftarten aus, die alle zu ihrem lockeren, handschriftlichen Erscheinungsbild beitragen."
+        },
+        {
+          "question": "Ist die Comic Sans-Schrift auf Computern vorinstalliert?",
+          "answer": "Ja, die Comic Sans-Schrift ist auf Windows- und macOS-Betriebssystemen vorinstalliert, was sie zu einer der weltweit am leichtesten zugänglichen Schriftarten macht. Sie ist jedoch nicht auf Android, iOS oder Linux vorinstalliert, obwohl sie für diese Plattformen manuell heruntergeladen werden kann."
+        },
+        {
+          "question": "Was ist Comic Sans Pro?",
+          "answer": "Comic Sans Pro ist eine aktualisierte Version der Comic Sans-Schrift, die 2011 von Terrance Weinzierl von Monotype Imaging erstellt wurde. Sie erweitert das ursprüngliche Design durch Hinzufügen von kursiven Varianten, Schwüngen, Kapitälchen, Ornamenten, Sprechblasen, Lautmalereien, Dingbats und anderen stilistischen Alternativen, während die grundlegenden Zeichendesigns beibehalten werden."
+        },
+        {
+          "question": "Welche sind angemessene Verwendungen für die Comic Sans-Schrift?",
+          "answer": "Die Comic Sans-Schrift ist am besten für lockere, freundliche und informelle Kontexte geeignet, insbesondere solche, die sich an Kinder oder Anfänger richten. Sie funktioniert gut in Bildungsmaterialien für junge Lernende, Kinderbüchern, lockerer Kommunikation, informellen Notizen und Materialien, die für Menschen mit Legasthenie konzipiert sind."
+        },
+        {
+          "question": "Was denkt der Schöpfer der Comic Sans-Schrift über die Kontroverse?",
+          "answer": "Vincent Connare hat erklärt, dass er von der Gegenreaktion gegen die Comic Sans-Schrift nicht beleidigt ist. Er ist stolz auf seine Kreation und erklärt, dass 'die Comic Sans-Schrift genau das tut, wofür sie in Auftrag gegeben wurde' und hat sie als 'den besten Witz, den ich je erzählt habe' bezeichnet. Er sagte auch: 'Wenn du sie liebst, weißt du nicht viel über Typografie, aber wenn du sie hasst, weißt du wirklich auch nicht viel über Typografie.'"
+        },
+        {
+          "question": "Gibt es Alternativen zur Comic Sans-Schrift?",
+          "answer": "Ja, es wurden mehrere Alternativen zur Comic Sans-Schrift erstellt, darunter Comic Neue (eine modernisierte Version von Craig Rozynski), Comic Parchment (ehemals Comic Papyrus, die Elemente der Comic Sans-Schrift und Papyrus kombiniert) und Comic Code (eine Version mit fester Breite von Tabular Type Foundry)."
+        },
+        {
+          "question": "Ist die Comic Sans-Schrift in der Populärkultur erschienen?",
+          "answer": "Ja, die Comic Sans-Schrift ist zu einem kulturellen Phänomen und Internet-Meme geworden. Sie erscheint im Videospiel Undertale als Sprechschrift für eine Figur namens Sans, wurde vom CERN zur Ankündigung der Higgs-Boson-Entdeckung verwendet (und später als Aprilscherz) und ist im Doge-Meme zu sehen. Google zeigt auch Suchergebnisse für 'Comic Sans' in der Comic Sans-Schriftart an."
+        },
+        {
+          "question": "Warum verwenden Lehrer häufig die Comic Sans-Schrift?",
+          "answer": "Laut einer Umfrage aus dem Jahr 2020 verwenden etwa 44% der Lehrer die Comic Sans-Schrift in ihren Unterrichtsmaterialien. Gründe dafür sind ihre hohe Lesbarkeit, ihre Eignung für Schüler mit Legasthenie, ihre Ähnlichkeit mit Handschriftmodellen (mit eingeschossigen 'a' und 'g'), die klare Unterscheidung zwischen ähnlichen Buchstaben und ihre Anziehungskraft auf Kinder."
+        },
+        {
+          "question": "Gibt es einen 'Comic Sans-Tag'?",
+          "answer": "Ja, in den Niederlanden haben die Radio-DJs Coen Swijnenberg und Sander Lantinga den Comic Sans-Tag eingeführt, der seit 2009 am ersten Freitag im Juli gefeiert wird. An diesem Tag ändern einige niederländische Unternehmen ihre Websites, um Comic Sans zu verwenden und die Schriftart zu feiern."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Papyrus Schriftdesigner. Alle Rechte vorbehalten.",
+    "languages": "Sprachen",
+    "quickLinks": "Schnelllinks",
+    "home": "Startseite",
+    "examples": "Beispiele",
+    "faq": "FAQ",
+    "description": "Erstellen Sie wunderschöne Textdesigns mit der ikonischen Papyrus-Schrift und passen Sie jeden Aspekt an Ihre kreative Vision an.",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzrichtlinie",
+    "comic-sans-font": "Comic Sans Schriftdesigner",
+    "papyrus-font": "Papyrus Schriftdesigner"
+  },
+  "Metadata": {
+    "papyrus": {
+      "title": "Papyrus Schriftdesigner - Erstellen Sie wunderschöne Textdesigns",
+      "description": "Erstellen Sie beeindruckende Textdesigns mit der ikonischen Papyrus-Schrift. Perfekt für Einladungen, Zitate und kreative Überschriften.",
+      "ogTitle": "Papyrus Schriftdesigner - Erstellen Sie wunderschöne Textdesigns",
+      "ogDescription": "Erstellen Sie beeindruckende Textdesigns mit der ikonischen Papyrus-Schrift. Perfekt für Einladungen, Zitate und kreative Überschriften.",
+      "twitterTitle": "Papyrus Schriftdesigner - Erstellen Sie wunderschöne Textdesigns",
+      "twitterDescription": "Erstellen Sie beeindruckende Textdesigns mit der ikonischen Papyrus-Schrift. Perfekt für Einladungen, Zitate und kreative Überschriften."
+    },
+    "comic-sans": {
+      "title": "Comic Sans Schriftdesigner - Erstellen Sie wunderschöne Textdesigns",
+      "description": "Erstellen Sie beeindruckende Textdesigns mit der ikonischen Comic Sans-Schrift. Perfekt für Einladungen, Zitate und kreative Überschriften.",
+      "ogTitle": "Comic Sans Schriftdesigner - Erstellen Sie wunderschöne Textdesigns",
+      "ogDescription": "Erstellen Sie beeindruckende Textdesigns mit der ikonischen Comic Sans-Schrift. Perfekt für Einladungen, Zitate und kreative Überschriften.",
+      "twitterTitle": "Comic Sans Schriftdesigner - Erstellen Sie wunderschöne Textdesigns",
+      "twitterDescription": "Erstellen Sie beeindruckende Textdesigns mit der ikonischen Comic Sans-Schrift. Perfekt für Einladungen, Zitate und kreative Überschriften."
+    }
+  },
+  "designPrinciples": {
+    "title": "Designprinzipien",
+    "subtitle": {
+      "papyrus": "Entdecken Sie die einzigartige Designphilosophie hinter der Papyrus-Schrift",
+      "comic-sans": "Entdecken Sie die einzigartige Designphilosophie hinter der Comic Sans-Schrift"
+    },
+    "principles": {
+      "papyrus": [
+        {
+          "lable": "Inspiration aus der biblischen Zeit",
+          "title": "Inspiration aus der biblischen Zeit",
+          "description": "Nachahmen des Schreibstils des Nahen Ostens während der biblischen Zeit, zeigt, wie englischer Text ausgesehen hätte, wenn er vor 2.000 Jahren auf Papyrus geschrieben worden wäre"
+        },
+        {
+          "lable": "Zeitlose Eleganz",
+          "title": "Zeitlose Eleganz",
+          "description": "Kombination der Eleganz traditioneller römischer Buchstabenformen mit dem handgefertigten Erscheinungsbild hochqualifizierter Kalligraphie"
+        },
+        {
+          "lable": "Kunst trifft Funktion",
+          "title": "Kunst trifft Funktion",
+          "description": "Beibehaltung ausgezeichneter Lesbarkeit bei gleichzeitiger Darstellung einer unverwechselbaren handgefertigten Textur"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Kontextuelle Informalität",
+          "title": "Kontextuelle Informalität",
+          "description": "Ursprünglich entwickelt, um eine passendere Schriftart für Sprechblasen von Zeichentrickfiguren in Microsoft Bob bereitzustellen, die das zu formelle Times New Roman ersetzte, um zur lockeren, freundlichen Atmosphäre der Software zu passen."
+        },
+        {
+          "lable": "Von Comics inspirierter visueller Ausdruck",
+          "title": "Von Comics inspirierter visueller Ausdruck",
+          "description": "Direkt inspiriert von den Schriftstilen bemerkenswerter Comics wie \"The Dark Knight Returns\" und \"Watchmen\", mit dem Ziel, die natürliche, ungezwungene Qualität handgeschriebener Texte in Comics nachzubilden."
+        },
+        {
+          "lable": "Lesbarkeit und Zugänglichkeit",
+          "title": "Lesbarkeit und Zugänglichkeit",
+          "description": " Speziell mit Blick auf die Lesbarkeit konzipiert, insbesondere für jüngere Benutzer und Anfänger, schafft eine nicht bedrohliche, nicht ernste visuelle Sprache, die die Barriere beim Lesen senkt."
+        },
+        {
+          "lable": "Funktionalität vor Ästhetik",
+          "title": "Funktionalität vor Ästhetik",
+          "description": "Designer Vincent Connare betonte den Nutzen gegenüber rein typografischer Ästhetik und glaubte, dass die Schrift ihre beabsichtigte Aufgabe erfolgreich erfüllte – einen freundlichen, verständlichen Kommunikationsstil zu schaffen, der für bestimmte Kontexte geeignet ist."
+        }
+      ]
+    }
+  },
+  "visualFeatures": {
+    "title": "Visuelle Merkmale",
+    "subtitle": {
+      "papyrus": "Entdecken Sie die einzigartigen visuellen Eigenschaften der Papyrus-Schrift",
+      "comic-sans": "Entdecken Sie die einzigartigen visuellen Eigenschaften der Comic Sans-Schrift"
+    },
+    "features": {
+      "papyrus": [
+        {
+          "lable": "Raue Kanten",
+          "title": "Raue Kanten",
+          "description": "Die Schriftkanten zeigen einen ungleichmäßigen Effekt, der die Textur von Handschrift auf Papyrus simuliert"
+        },
+        {
+          "lable": "Unregelmäßige Kurven",
+          "title": "Unregelmäßige Kurven",
+          "description": "Die geschwungenen Teile der Buchstaben sind nicht vollständig symmetrisch oder glatt, was das handschriftliche Gefühl verstärkt"
+        },
+        {
+          "lable": "Hohe horizontale Striche",
+          "title": "Hohe horizontale Striche",
+          "description": "Charakteristische hohe horizontale Striche in Großbuchstaben"
+        },
+        {
+          "lable": "Handgefertigtes Aussehen",
+          "title": "Handgefertigtes Aussehen",
+          "description": "Gesamteindruck einer hochqualifizierten Kalligraphie mit handgefertigter Anmutung"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Handschriftlicher Sans-Serif-Stil",
+          "title": "Handschriftlicher Sans-Serif-Stil",
+          "description": "Eine serifenlose Schrift, die das Lettering von Comics nachahmt, mit abgerundeten Konturen und unregelmäßigen Formen, die einen informellen, freundlichen visuellen Eindruck erzeugen."
+        },
+        {
+          "lable": "Charakteristische Buchstabenstruktur",
+          "title": "Charakteristische Buchstabenstruktur",
+          "description": "Verwendet eingeschossige Kleinbuchstaben (wie \"a\" und \"g\"), enthält Serifen am Großbuchstaben \"I\", um ihn vom Kleinbuchstaben \"l\" zu unterscheiden, und weist leicht schwebende Grundlinien auf, um das handschriftliche Gefühl zu verstärken."
+        },
+        {
+          "lable": "Großzügiger Buchstabenabstand",
+          "title": "Großzügiger Buchstabenabstand",
+          "description": "Bietet einen größeren Buchstabenabstand als traditionelle Schriftarten, verbessert die allgemeine Lesbarkeit und ist besonders für Lesematerialien für Kinder geeignet."
+        },
+        {
+          "lable": "Gut unterscheidbare Buchstabenformen",
+          "title": "Gut unterscheidbare Buchstabenformen",
+          "description": "Reduziert die Verwechslungsgefahr zwischen gespiegelten Buchstaben (wie \"b\", \"d\", \"p\", \"q\") durch einzigartig gestaltete Glyphen, die für Leser mit Legasthenie außergewöhnlich gut funktionieren."
+        }
+      ]
+    }
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen",
+    "subtitle": "Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie unseren Service nutzen",
+    "description": "Nutzungsbedingungen für Papyrus Schriftdesigner",
+    "ogTitle": "Nutzungsbedingungen - Papyrus Schriftdesigner",
+    "ogDescription": "Nutzungsbedingungen für Papyrus Schriftdesigner",
+    "twitterTitle": "Nutzungsbedingungen - Papyrus Schriftdesigner",
+    "twitterDescription": "Nutzungsbedingungen für Papyrus Schriftdesigner",
+    "sections": {
+      "acceptance": {
+        "title": "1. Annahme der Bedingungen",
+        "content": "Durch den Zugriff auf und die Nutzung von Papyrus Schriftdesigner erklären Sie sich mit diesen Nutzungsbedingungen einverstanden."
+      },
+      "license": {
+        "title": "2. Nutzungslizenz",
+        "content": "Die Erlaubnis wird erteilt, vorübergehend eine Kopie der Papyrus-Schrift nur für persönliche, nicht kommerzielle, vorübergehende Ansicht herunterzuladen."
+      },
+      "disclaimer": {
+        "title": "3. Haftungsausschluss",
+        "content": "Die Materialien auf Papyrus Schriftdesigner werden auf einer 'wie besehen' Basis bereitgestellt. Wir geben keine Garantien, weder ausdrücklich noch stillschweigend, und lehnen hiermit alle anderen Garantien ab, einschließlich, aber nicht beschränkt auf, stillschweigende Garantien oder Bedingungen der Marktgängigkeit, Eignung für einen bestimmten Zweck oder Nichtverletzung von geistigem Eigentum oder anderen Rechtsverletzungen."
+      },
+      "limitations": {
+        "title": "4. Einschränkungen",
+        "content": "In keinem Fall haften Papyrus Schriftdesigner oder seine Lieferanten für Schäden (einschließlich, aber nicht beschränkt auf Schäden durch Datenverlust oder Gewinnverlust oder aufgrund von Geschäftsunterbrechungen), die aus der Nutzung oder Unmöglichkeit der Nutzung der Materialien auf unserer Website entstehen."
+      },
+      "revisions": {
+        "title": "5. Revisionen und Fehler",
+        "content": "Die auf Papyrus Schriftdesigner erscheinenden Materialien könnten technische, typografische oder fotografische Fehler enthalten. Wir garantieren nicht, dass die Materialien auf unserer Website korrekt, vollständig oder aktuell sind."
+      },
+      "links": {
+        "title": "6. Links",
+        "content": "Wir haben nicht alle mit unserer Website verlinkten Seiten überprüft und sind nicht für den Inhalt solcher verlinkten Seiten verantwortlich."
+      },
+      "modifications": {
+        "title": "7. Änderungen",
+        "content": "Wir können diese Nutzungsbedingungen jederzeit ohne Vorankündigung überarbeiten. Durch die Nutzung dieser Website erklären Sie sich damit einverstanden, an die jeweils aktuelle Version dieser Nutzungsbedingungen gebunden zu sein."
+      },
+      "governing": {
+        "title": "8. Geltendes Recht",
+        "content": "Diese Allgemeinen Geschäftsbedingungen unterliegen den Gesetzen und werden in Übereinstimmung mit diesen ausgelegt, und Sie unterwerfen sich unwiderruflich der ausschließlichen Zuständigkeit der Gerichte an diesem Ort."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "subtitle": "Erfahren Sie, wie wir Ihre Informationen sammeln, verwenden und schützen",
+    "description": "Datenschutzrichtlinie für Papyrus Schriftdesigner",
+    "ogTitle": "Datenschutzrichtlinie - Papyrus Schriftdesigner",
+    "ogDescription": "Datenschutzrichtlinie für Papyrus Schriftdesigner",
+    "twitterTitle": "Datenschutzrichtlinie - Papyrus Schriftdesigner",
+    "twitterDescription": "Datenschutzrichtlinie für Papyrus Schriftdesigner",
+    "sections": {
+      "collection": {
+        "title": "1. Informationen, die wir sammeln",
+        "description": "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen, einschließlich wenn Sie:",
+        "items": [
+          "Ein Konto erstellen",
+          "Unsere Schriften herunterladen",
+          "Uns für Support kontaktieren",
+          "Unseren Newsletter abonnieren"
+        ]
+      },
+      "usage": {
+        "title": "2. Wie wir Ihre Informationen verwenden",
+        "description": "Wir verwenden die von uns gesammelten Informationen, um:",
+        "items": [
+          "Unsere Dienste bereitzustellen und zu pflegen",
+          "Ihre Transaktionen zu verarbeiten",
+          "Ihnen technische Hinweise und Support-Nachrichten zu senden",
+          "Mit Ihnen über Produkte, Dienstleistungen und Veranstaltungen zu kommunizieren",
+          "Trends und Nutzung zu überwachen und zu analysieren"
+        ]
+      },
+      "sharing": {
+        "title": "3. Informationsaustausch",
+        "description": "Wir geben Ihre persönlichen Daten nicht an Dritte weiter, außer wie in dieser Datenschutzrichtlinie beschrieben. Wir können Ihre Informationen teilen mit:",
+        "items": [
+          "Dienstleistern, die Leistungen in unserem Auftrag erbringen",
+          "Professionellen Beratern",
+          "Strafverfolgungsbehörden, wenn gesetzlich vorgeschrieben"
+        ]
+      },
+      "security": {
+        "title": "4. Datensicherheit",
+        "content": "Wir implementieren angemessene technische und organisatorische Maßnahmen, um Ihre persönlichen Daten vor unbefugter oder unrechtmäßiger Verarbeitung, versehentlichem Verlust, Zerstörung oder Beschädigung zu schützen."
+      },
+      "rights": {
+        "title": "5. Ihre Rechte",
+        "description": "Sie haben das Recht:",
+        "items": [
+          "Auf Ihre persönlichen Daten zuzugreifen",
+          "Ungenaue Informationen zu korrigieren",
+          "Die Löschung Ihrer Daten zu beantragen",
+          "Der Verarbeitung Ihrer Daten zu widersprechen",
+          "Die Einwilligung zu widerrufen"
+        ]
+      },
+      "cookies": {
+        "title": "6. Cookies",
+        "content": "Wir verwenden Cookies und ähnliche Tracking-Technologien, um Aktivitäten auf unserer Website zu verfolgen und bestimmte Informationen zu speichern. Sie können Ihren Browser anweisen, alle Cookies abzulehnen oder anzuzeigen, wann ein Cookie gesendet wird."
+      },
+      "changes": {
+        "title": "7. Änderungen an dieser Richtlinie",
+        "content": "Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum der 'Letzten Aktualisierung' aktualisieren."
+      },
+      "contact": {
+        "title": "8. Kontaktieren Sie uns",
+        "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter contact@papyrusfont.com."
+      }
+    }
+  }
+}

@@ -107,7 +107,7 @@ export default async function SvgCategoryPage({ params }: Props) {
             <div className="md:col-span-3">
               <div className="relative rounded-lg border bg-card">
                 {defaultSvgContent ? (
-                  <SvgConverter svgCode={defaultSvgContent} />
+                  <SvgConverter svgCodeParam={defaultSvgContent} />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <p className="text-muted-foreground">

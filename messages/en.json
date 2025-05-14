@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "home": "Home",
+    "examples": "Examples",
+    "faq": "FAQ",
+    "changeLanguage": "Change Language"
+  },
+  "hero": {
+    "papyrus": {
+      "title": "Papyrus Font Designer",
+      "subtitle": "Create beautiful text designs with the iconic Papyrus font"
+    },
+    "comic-sans": {
+      "title": "Comic Sans Font Designer",
+      "subtitle": "Create beautiful text designs with the iconic Comic Sans font"
+    }
+  },
+  "designer": {
+    "inputPlaceholder": "Enter your text here...",
+    "fontColor": "Font Color",
+    "fontSize": "Font Size",
+    "backgroundColor": "Background Color",
+    "advancedOptions": "Advanced Options",
+    "shadowColor": "Shadow Color",
+    "shadowBlur": "Shadow Blur",
+    "outlineColor": "Outline Color",
+    "outlineWidth": "Outline Width",
+    "saveAsPng": "Save as PNG",
+    "transparentBackground": "Transparent Background",
+    "textAlign": "Text Align",
+    "left": "Left",
+    "center": "Center",
+    "right": "Right"
+  },
+  "examples": {
+    "title": "Inspiring Examples",
+    "subtitle": {
+      "papyrus": "See what you can create with Papyrus font",
+      "comic-sans": "See what you can create with Comic Sans font"
+    },
+    "examples": {
+      "papyrus": [
+        {
+          "lable": "Elegant Invitations",
+          "title": "Elegant Invitations",
+          "description": "Perfect for creating elegant invitations for special occasions"
+        },
+        {
+          "lable": "Artistic Quotes",
+          "title": "Artistic Quotes",
+          "description": "Display your favorite quotes with an artistic touch"
+        },
+        {
+          "lable": "Creative Headers",
+          "title": "Creative Headers",
+          "description": "Design stunning headers for your website or blog"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Educational Settings",
+          "title": "Educational Settings",
+          "description": "Widely used in schools and educational resources, particularly in primary education and special education, due to its high legibility and friendly appearance, helping beginners and students with dyslexia engage more easily with text."
+        },
+        {
+          "lable": "Informal Communications",
+          "title": "Informal Communications",
+          "description": "Suitable for children's books, family notices, casual event posters, and community announcements, creating a relaxed, approachable atmosphere and reducing the formality of communications."
+        },
+        {
+          "lable": "Accessibility Applications",
+          "title": "Accessibility Applications",
+          "description": "Serves as a tool for assisting those with dyslexia, as its unique glyph design and clear letter differentiation help improve reading comprehension, recommended by some education experts for special education materials."
+        },
+        {
+          "lable": "Creative and Humorous Expression",
+          "title": "Creative and Humorous Expression",
+          "description": "Functions in internet culture as a visual element expressing irony or humor, commonly found in memes, casual blogs, and self-aware designs that leverage its controversial status to convey specific emotions."
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": {
+      "papyrus": "Papyrus Font FAQ",  
+      "comic-sans": "Comic Sans Font FAQ"
+    },
+    "subtitle": {
+      "papyrus": "Everything you need to know about using our Papyrus Font Designer",
+      "comic-sans": "Everything you need to know about using our Comic Sans Font Designer"
+    },
+    "questions": {
+      "papyrus": [
+        {
+          "question": "What is Papyrus font?",
+          "answer": "Papyrus is a distinctive decorative typeface designed by Chris Costello in 1982. It features a rough, hand-drawn appearance that mimics the ancient writing style found on papyrus scrolls."
+        },
+        {
+          "question": "Who created the Papyrus font?",
+          "answer": "Papyrus was created by Chris Costello, a graphic designer, illustrator, and web designer, when he was 23 years old and just out of college. He spent six months hand-drawing the font using a calligraphy pen and textured paper."
+        },
+        {
+          "question": "What was the inspiration behind Papyrus font?",
+          "answer": "Costello was inspired by studying the Bible and wanted to create a font that would represent what English language texts would have looked like if written on papyrus 2,000 years ago in the Middle East."
+        },
+        {
+          "question": "Can I use these designs commercially?",
+          "answer": "The designs you create with our tool are yours to use. However, please note that the Papyrus font itself may have license restrictions for commercial use. Always check the font license before using in commercial projects."
+        },
+        {
+          "question": "What image format does the export function use?",
+          "answer": "Our tool exports your designs as PNG (Portable Network Graphics) files, which provide high-quality images with transparency support."
+        },
+        {
+          "question": "Is there a limit to how much text I can design?",
+          "answer": "There's no strict character limit, but very long texts may affect the performance of the designer and might not fit well in the export. For best results, design shorter text segments."
+        },
+        {
+          "question": "What are the distinctive characteristics of Papyrus font?",
+          "answer": "Papyrus has several distinctive features including rough edges, irregular curves, and high horizontal strokes in the capitals. It effectively merges the elegance of traditional roman letterforms with a hand-crafted calligraphic look."
+        },
+        {
+          "question": "Is Papyrus font available on my computer?",
+          "answer": "Yes, Papyrus has been included in many Microsoft programs for Windows, including Microsoft Office. It's also included in macOS since version 10.3 Panther (released in 2003)."
+        },
+        {
+          "question": "What are some common uses of Papyrus font?",
+          "answer": "Papyrus is often used for elegant invitations, artistic quotes, creative headers, and decorative text. However, it's important to note that the font has gained some criticism for being overused in graphic design."
+        },
+        {
+          "question": "What are the best practices for using Papyrus font?",
+          "answer": "For best results, use Papyrus sparingly and purposefully. It works well for decorative elements, short text segments, and when you want to evoke an ancient or mystical feel. Avoid using it for long paragraphs or body text."
+        },
+        {
+          "question": "Can I modify the Papyrus font in this designer?",
+          "answer": "Yes, our designer allows you to customize various aspects of the text including font color, size, background color, shadow effects, and outline properties. However, the basic character shapes of Papyrus remain unchanged."
+        },
+        {
+          "question": "What makes Papyrus font unique compared to other decorative fonts?",
+          "answer": "Papyrus stands out for its unique combination of ancient writing style with modern readability. Its rough edges and irregular curves give it a distinctive hand-crafted appearance while maintaining legibility, making it different from other purely decorative fonts."
+        }
+      ],
+      "comic-sans": [
+        {
+          "question": "What is Comic Sans font?",
+          "answer": "Comic Sans MS (commonly referred to as Comic Sans) is a sans-serif typeface created and designed by Vincent Connare and released by Microsoft Corporation in 1994. It's designed as a non-connecting script that draws inspiration from comic book lettering to emulate the informal and cartoonish tone of speech bubbles."
+        },
+        {
+          "question": "Who created Comic Sans font?",
+          "answer": "Comic Sans was created by Vincent Connare, a designer at Microsoft, in 1994. He designed it specifically for Microsoft Bob, a software program that used cartoon characters with speech bubbles that were initially set in Times New Roman, which Connare felt was too formal for the context."
+        },
+        {
+          "question": "What was the inspiration behind Comic Sans font?",
+          "answer": "The inspiration for Comic Sans came from comic books that Vincent Connare had in his office, specifically 'The Dark Knight Returns' (lettered by John Costanza) and 'Watchmen' (lettered by Dave Gibbons). He wanted to create a typeface that matched the casual, friendly tone of cartoon speech bubbles."
+        },
+        {
+          "question": "Why is Comic Sans font so controversial?",
+          "answer": "Comic Sans became controversial due to its widespread use in inappropriate contexts. While designed for casual, child-friendly applications, it began appearing in formal or serious settings (like professional emails, warning signs, and official documents), which many designers and typographers considered misuse of the font's intended purpose."
+        },
+        {
+          "question": "Is Comic Sans font good for people with dyslexia?",
+          "answer": "Many educators and specialists believe Comic Sans font is beneficial for people with dyslexia due to its high legibility. Its distinctive letter shapes, wider letter spacing, and reduced mirror-image glyphs (like 'b', 'd', 'p', 'q') make it easier for people with dyslexia to distinguish between characters."
+        },
+        {
+          "question": "When was Comic Sans font first released?",
+          "answer": "Comic Sans font was created in October 1994, though it was too late for inclusion in Microsoft Bob, its originally intended application. It was first released with Microsoft 3D Movie Maker and later shipped with the Windows 95 Plus! Pack."
+        },
+        {
+          "question": "What are the distinctive features of Comic Sans font?",
+          "answer": "Comic Sans font features rounded edges, irregular shapes, single-story lowercase letters (like 'a' and 'g'), serifs on capital 'I' to distinguish it from lowercase 'l', slightly floating baselines, and wider letter spacing than traditional typefaces, all contributing to its casual, handwritten appearance."
+        },
+        {
+          "question": "Does Comic Sans font come pre-installed on computers?",
+          "answer": "Yes, Comic Sans font is pre-installed on Windows and macOS operating systems, making it one of the most accessible fonts worldwide. However, it's not pre-installed on Android, iOS, or Linux, though it can be manually downloaded for these platforms."
+        },
+        {
+          "question": "What is Comic Sans Pro?",
+          "answer": "Comic Sans Pro is an updated version of Comic Sans font created by Terrance Weinzierl from Monotype Imaging in 2011. It expands the original design by adding italic variants, swashes, small capitals, ornaments, speech bubbles, onomatopoeia, dingbats, and other stylistic alternatives while retaining the core character designs."
+        },
+        {
+          "question": "What are appropriate uses for Comic Sans font?",
+          "answer": "Comic Sans font is most appropriate for casual, friendly, and informal contexts, particularly those targeting children or beginners. It works well in educational materials for young learners, children's books, casual communications, informal notes, and materials designed for people with dyslexia."
+        },
+        {
+          "question": "What does the creator of Comic Sans font think about the controversy?",
+          "answer": "Vincent Connare has expressed that he isn't offended by the backlash against Comic Sans font. He's proud of his creation, stating that 'Comic Sans font does what it was commissioned to do' and has referred to it as 'the best joke I've ever told.' He also said, 'If you love it, you don't know much about typography, but if you hate it, you really don't know much about typography either.'"
+        },
+        {
+          "question": "Are there alternatives to Comic Sans font?",
+          "answer": "Yes, several alternatives to Comic Sans font have been created, including Comic Neue (a modernized version by Craig Rozynski), Comic Parchment (formerly Comic Papyrus, combining elements of Comic Sans font and Papyrus), and Comic Code (a monospaced version by Tabular Type Foundry)."
+        },
+        {
+          "question": "Has Comic Sans font appeared in popular culture?",
+          "answer": "Yes, Comic Sans font has become a cultural phenomenon and internet meme. It appears in the video game Undertale as the speech font for a character named Sans, was used by CERN to announce the Higgs boson discovery (and later as an April Fool's joke), and is featured in the Doge meme. Google also displays search results for 'Comic Sans' in the Comic Sans typeface."
+        },
+        {
+          "question": "Why do teachers often use Comic Sans font?",
+          "answer": "According to a 2020 survey, about 44% of teachers use Comic Sans font in their teaching resources. Reasons include its high legibility, suitability for dyslexic students, resemblance to handwriting models (with single-story 'a' and 'g'), clear distinction between similar letters, and appeal to children."
+        },
+        {
+          "question": "Is there a 'Comic Sans Day'?",
+          "answer": "Yes, in the Netherlands, radio DJs Coen Swijnenberg and Sander Lantinga established Comic Sans Day, celebrated on the first Friday of July since 2009. On this day, some Dutch companies change their websites to use Comic Sans in celebration of the typeface."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Papyrus Font Designer. All rights reserved.",
+    "languages": "Languages",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "examples": "Examples",
+    "faq": "FAQ",
+    "description": "Create beautiful text designs with the iconic Papyrus font and customize every aspect to match your creative vision.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "comic-sans-font": "Comic Sans Font Designer",
+    "papyrus-font": "Papyrus Font Designer"
+  },
+  "Metadata": {
+    "papyrus": {
+      "title": "Papyrus Font Designer - Create Beautiful Text Designs",
+      "description": "Create stunning text designs with the iconic Papyrus font. Perfect for invitations, quotes, and creative headers.",
+      "ogTitle": "Papyrus Font Designer - Create Beautiful Text Designs",
+      "ogDescription": "Create stunning text designs with the iconic Papyrus font. Perfect for invitations, quotes, and creative headers.",
+      "twitterTitle": "Papyrus Font Designer - Create Beautiful Text Designs",
+      "twitterDescription": "Create stunning text designs with the iconic Papyrus font. Perfect for invitations, quotes, and creative headers."
+    },
+    "comic-sans": {
+      "title": "Comic Sans Font Designer - Create Beautiful Text Designs",
+      "description": "Create stunning text designs with the iconic Comic Sans font. Perfect for invitations, quotes, and creative headers.",
+      "ogTitle": "Comic Sans Font Designer - Create Beautiful Text Designs",
+      "ogDescription": "Create stunning text designs with the iconic Comic Sans font. Perfect for invitations, quotes, and creative headers.",
+      "twitterTitle": "Comic Sans Font Designer - Create Beautiful Text Designs",
+      "twitterDescription": "Create stunning text designs with the iconic Comic Sans font. Perfect for invitations, quotes, and creative headers."
+    }
+  },
+  "designPrinciples": {
+    "title": "Design Principles",
+    "subtitle": {
+      "papyrus": "Explore the unique design philosophy behind Papyrus font",
+      "comic-sans": "Explore the unique design philosophy behind Comic Sans font"
+    },
+    "principles": {
+      "papyrus": [
+        {
+          "lable": "Biblical Era Inspiration",
+          "title": "Biblical Era Inspiration",
+          "description": "Mimicking the writing style of the Middle East during biblical times, showing how English text would have looked if written on papyrus 2,000 years ago"
+        },
+        {
+          "lable": "Timeless Elegance",
+          "title": "Timeless Elegance",
+          "description": "Combining the elegance of traditional Roman letterforms with the handcrafted appearance of high-skill calligraphy"
+        },
+        {
+          "lable": "Art Meets Function",
+          "title": "Art Meets Function",
+          "description": "Maintaining excellent readability while showcasing a distinctive handcrafted texture"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Contextual Informality",
+          "title": "Contextual Informality",
+          "description": "Originally designed to provide a more appropriate typeface for cartoon character speech bubbles in Microsoft Bob, replacing the overly formal Times New Roman to match the software's casual, friendly atmosphere."
+        },
+        {
+          "lable": "Comic-Inspired Visual Expression",
+          "title": "Comic-Inspired Visual Expression",
+          "description": "Directly inspired by the lettering styles of notable comics like \"The Dark Knight Returns\" and \"Watchmen,\" aiming to recreate the natural, casual quality of handwritten text in comic books."
+        },
+        {
+          "lable": "Legibility and Approachability",
+          "title": "Legibility and Approachability",
+          "description": " Specifically designed with readability in mind, particularly for younger users and beginners, creating a non-threatening, non-serious visual language that lowers the barrier to reading."
+        },
+        {
+          "lable": "Functionality Over Aesthetics",
+          "title": "Functionality Over Aesthetics",
+          "description": "Designer Vincent Connare emphasized utility over pure typographic aesthetics, believing the font successfully accomplished its intended task—creating a friendly, understandable communication style appropriate for specific contexts."
+        }
+      ]
+    }
+  },
+  "visualFeatures": {
+    "title": "Visual Features",
+    "subtitle": {
+      "papyrus": "Explore the unique visual characteristics of Papyrus font",
+      "comic-sans": "Explore the unique visual characteristics of Comic Sans font"
+    },
+    "features": {
+      "papyrus": [
+        {
+          "lable": "Rough Edges",
+          "title": "Rough Edges",
+          "description": "The font edges show an uneven effect, simulating the texture of handwriting on papyrus"
+        },
+        {
+          "lable": "Irregular Curves",
+          "title": "Irregular Curves",
+          "description": "The curved parts of letters are not completely symmetrical or smooth, enhancing the handwritten feel"
+        },
+        {
+          "lable": "High Horizontal Strokes",
+          "title": "High Horizontal Strokes",
+          "description": "Distinctive high horizontal strokes in capital letters"
+        },
+        {
+          "lable": "Handcrafted Look",
+          "title": "Handcrafted Look",
+          "description": "Overall appearance of high-skill calligraphy with a handcrafted feel"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Handwritten Sans-serif Style",
+          "title": "Handwritten Sans-serif Style",
+          "description": "An overall sans-serif typeface mimicking comic book lettering, featuring rounded contours and irregular shapes that create an informal, friendly visual impression."
+        },
+        {
+          "lable": "Distinctive Letter Structure",
+          "title": "Distinctive Letter Structure",
+          "description": "Uses single-story lowercase letters (like \"a\" and \"g\"), includes serifs on capital \"I\" to distinguish from lowercase \"l\", and features slightly floating baselines to enhance the handwritten feel."
+        },
+        {
+          "lable": "Generous Letter Spacing",
+          "title": "Generous Letter Spacing",
+          "description": "Features wider letter spacing than traditional typefaces, improving overall readability, particularly suitable for children's reading materials."
+        },
+        {
+          "lable": "Highly Distinguishable Letter Forms",
+          "title": "Highly Distinguishable Letter Forms",
+          "description": "Reduces confusion between mirrored letters (such as \"b\", \"d\", \"p\", \"q\"), with uniquely designed glyphs that perform exceptionally well for readers with dyslexia."
+        }
+      ]
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Please read these terms carefully before using our service",
+    "description": "Terms of Service for Papyrus Font Designer",
+    "ogTitle": "Terms of Service - Papyrus Font Designer",
+    "ogDescription": "Terms of Service for Papyrus Font Designer",
+    "twitterTitle": "Terms of Service - Papyrus Font Designer",
+    "twitterDescription": "Terms of Service for Papyrus Font Designer",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using Papyrus Font Designer, you agree to be bound by these Terms of Service."
+      },
+      "license": {
+        "title": "2. Use License",
+        "content": "Permission is granted to temporarily download one copy of Papyrus Font for personal, non-commercial transitory viewing only."
+      },
+      "disclaimer": {
+        "title": "3. Disclaimer",
+        "content": "The materials on Papyrus Font Designer are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
+      },
+      "limitations": {
+        "title": "4. Limitations",
+        "content": "In no event shall Papyrus Font Designer or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website."
+      },
+      "revisions": {
+        "title": "5. Revisions and Errata",
+        "content": "The materials appearing on Papyrus Font Designer could include technical, typographical, or photographic errors. We do not warrant that any of the materials on our website are accurate, complete or current."
+      },
+      "links": {
+        "title": "6. Links",
+        "content": "We have not reviewed all of the sites linked to our website and are not responsible for the contents of any such linked site."
+      },
+      "modifications": {
+        "title": "7. Modifications",
+        "content": "We may revise these terms of service at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service."
+      },
+      "governing": {
+        "title": "8. Governing Law",
+        "content": "These terms and conditions are governed by and construed in accordance with the laws and you irrevocably submit to the exclusive jurisdiction of the courts in that location."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Learn how we collect, use, and protect your information",
+    "description": "Privacy Policy for Papyrus Font Designer",
+    "ogTitle": "Privacy Policy - Papyrus Font Designer",
+    "ogDescription": "Privacy Policy for Papyrus Font Designer",
+    "twitterTitle": "Privacy Policy - Papyrus Font Designer",
+    "twitterDescription": "Privacy Policy for Papyrus Font Designer",
+    "sections": {
+      "collection": {
+        "title": "1. Information We Collect",
+        "description": "We collect information that you provide directly to us, including when you:",
+        "items": [
+          "Create an account",
+          "Download our fonts",
+          "Contact us for support",
+          "Subscribe to our newsletter"
+        ]
+      },
+      "usage": {
+        "title": "2. How We Use Your Information",
+        "description": "We use the information we collect to:",
+        "items": [
+          "Provide and maintain our services",
+          "Process your transactions",
+          "Send you technical notices and support messages",
+          "Communicate with you about products, services, and events",
+          "Monitor and analyze trends and usage"
+        ]
+      },
+      "sharing": {
+        "title": "3. Information Sharing",
+        "description": "We do not share your personal information with third parties except as described in this privacy policy. We may share your information with:",
+        "items": [
+          "Service providers who perform services on our behalf",
+          "Professional advisors",
+          "Law enforcement when required by law"
+        ]
+      },
+      "security": {
+        "title": "4. Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage."
+      },
+      "rights": {
+        "title": "5. Your Rights",
+        "description": "You have the right to:",
+        "items": [
+          "Access your personal information",
+          "Correct inaccurate information",
+          "Request deletion of your information",
+          "Object to processing of your information",
+          "Withdraw consent"
+        ]
+      },
+      "cookies": {
+        "title": "6. Cookies",
+        "content": "We use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent."
+      },
+      "changes": {
+        "title": "7. Changes to This Policy",
+        "content": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last Updated' date."
+      },
+      "contact": {
+        "title": "8. Contact Us",
+        "content": "If you have any questions about this Privacy Policy, please contact us at contact@papyrusfont.com."
+      }
+    }
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "home": "首页",
+    "examples": "示例",
+    "faq": "常见问题",
+    "changeLanguage": "切换语言"
+  },
+  "hero": {
+    "papyrus": {
+      "title": "莎草纸字体设计器",
+      "subtitle": "使用标志性的Papyrus字体创建精美的文字设计"
+    },
+    "comic-sans": {
+      "title": "Comic Sans字体设计器",
+      "subtitle": "使用标志性的Comic Sans字体创建精美的文字设计"
+    }
+  },
+  "designer": {
+    "inputPlaceholder": "在此输入您的文字...",
+    "fontColor": "字体颜色",
+    "fontSize": "字体大小",
+    "backgroundColor": "背景颜色",
+    "advancedOptions": "高级选项",
+    "shadowColor": "阴影颜色",
+    "shadowBlur": "阴影模糊",
+    "outlineColor": "轮廓颜色",
+    "outlineWidth": "轮廓宽度",
+    "saveAsPng": "保存为PNG",
+    "transparentBackground": "透明背景",
+    "textAlign": "文本对齐",
+    "left": "左对齐",
+    "center": "居中对齐",
+    "right": "右对齐"
+  },
+  "examples": {
+    "title": "灵感示例",
+    "subtitle": {
+      "papyrus": "看看您可以用Papyrus字体创造什么",
+      "comic-sans": "看看您可以用Comic Sans字体创造什么"
+    },
+    "examples": {
+      "papyrus": [
+        {
+          "lable": "Elegant Invitations",
+          "title": "优雅邀请函",
+          "description": "完美适合为特殊场合创建优雅的邀请函"
+        },
+        {
+          "lable": "Artistic Quotes",
+          "title": "艺术语录",
+          "description": "以艺术风格展示您喜爱的名言"
+        },
+        {
+          "lable": "Creative Headers",
+          "title": "创意标题",
+          "description": "为您的网站或博客设计精美的标题"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Educational Settings",
+          "title": "教育环境",
+          "description": "在学校和教育资源中广泛应用，特别是小学教育和特殊教育领域，因其高可读性和友好外观，帮助初学者和阅读障碍学生更轻松地接触文字。"
+        },
+        {
+          "lable": "Informal Communications",
+          "title": "非正式沟通",
+          "description": "适用于儿童书籍、家庭通知、休闲活动海报和社区公告等非正式场合，营造轻松、亲切的氛围，降低沟通中的严肃感。"
+        },
+        {
+          "lable": "Accessibility Applications",
+          "title": "辅助功能应用",
+          "description": "作为辅助阅读障碍者的工具，其独特字形设计和清晰的字母区分有助于提高阅读理解，被一些教育专家推荐用于特殊教育材料。"
+        },
+        {
+          "lable": "Creative and Humorous Expression",
+          "title": "创意与幽默表达",
+          "description": "在网络文化中作为一种表达讽刺或幽默的视觉元素，常见于网络梗图、非正式博客和具有自我意识的设计中，利用其争议性地位传达特定情感。"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": {
+      "papyrus": "Papyrus字体常见问题",
+      "comic-sans": "Comic Sans字体常见问题"
+    },
+    "subtitle": {
+      "papyrus": "关于使用我们的Papyrus字体设计器的所有须知",
+      "comic-sans": "关于使用我们的Comic Sans字体设计器的所有须知"
+    },
+    "questions": {
+      "papyrus": [
+        {
+          "question": "什么是Papyrus字体？",
+          "answer": "Papyrus是由Chris Costello在1982年设计的独特装饰性字体。它具有粗糙、手绘的外观，模仿了古代莎草纸卷轴上的书写风格。"
+        },
+        {
+          "question": "谁创造了Papyrus字体？",
+          "answer": "Papyrus是由Chris Costello创造的，他是一位平面设计师、插画师和网页设计师。他在23岁刚大学毕业时，花了六个月时间用书法笔和纹理纸手绘完成了这个字体。"
+        },
+        {
+          "question": "Papyrus字体的创作灵感是什么？",
+          "answer": "Costello在研究圣经时获得灵感，想要创造一个能够展现2000年前中东地区莎草纸上英文书写风格的字体。"
+        },
+        {
+          "question": "我可以将这些设计用于商业用途吗？",
+          "answer": "您使用我们的工具创建的设计归您所有。但请注意，Papyrus字体本身可能对商业使用有许可限制。在商业项目中使用前，请务必查看字体许可证。"
+        },
+        {
+          "question": "导出功能使用什么图像格式？",
+          "answer": "我们的工具将您的设计导出为PNG（便携式网络图形）文件，提供支持透明度的高质量图像。"
+        },
+        {
+          "question": "我可以设计的文字有长度限制吗？",
+          "answer": "没有严格的字符限制，但过长的文本可能会影响设计器的性能，并且可能在导出时无法很好地适应。为获得最佳效果，请设计较短的文本段落。"
+        },
+        {
+          "question": "Papyrus字体有什么独特特征？",
+          "answer": "Papyrus具有多个独特特征，包括粗糙的边缘、不规则的曲线和大写字母中较高的水平笔画。它巧妙地将传统罗马字母的优雅与手工书写的质感融为一体。"
+        },
+        {
+          "question": "我的电脑上是否已安装Papyrus字体？",
+          "answer": "是的，Papyrus已被包含在许多Windows的Microsoft程序中，包括Microsoft Office。自2003年发布的macOS 10.3 Panther版本起，它也已被包含在macOS系统中。"
+        },
+        {
+          "question": "Papyrus字体的常见用途有哪些？",
+          "answer": "Papyrus常用于优雅的邀请函、艺术语录、创意标题和装饰性文字。但需要注意的是，该字体因在平面设计中被过度使用而受到一些批评。"
+        },
+        {
+          "question": "使用Papyrus字体的最佳实践是什么？",
+          "answer": "为了获得最佳效果，建议谨慎且有目的地使用Papyrus。它适合用于装饰元素、短文本段落，以及想要营造古老或神秘感的场合。避免将其用于长段落或正文。"
+        },
+        {
+          "question": "我可以在这个设计器中修改Papyrus字体吗？",
+          "answer": "是的，我们的设计器允许您自定义文本的各个方面，包括字体颜色、大小、背景颜色、阴影效果和轮廓属性。但Papyrus的基本字符形状保持不变。"
+        },
+        {
+          "question": "与其他装饰性字体相比，Papyrus字体的独特之处是什么？",
+          "answer": "Papyrus的独特之处在于它将古代书写风格与现代可读性完美结合。其粗糙的边缘和不规则的曲线赋予它独特的手工制作外观，同时保持了良好的可读性，这使其区别于其他纯装饰性字体。"
+        }
+      ],
+      "comic-sans": [
+        {
+          "question": "什么是 Comic Sans 字体？",
+          "answer": "Comic Sans MS（通常简称为 Comic Sans）是一种无衬线字体，由文森特·康纳创建并由微软公司于 1994 年发布。它被设计为一种非连接的手写体，这种字体从漫画书字体中汲取灵感，以模仿对话气泡的非正式和卡通化语气。"
+        },
+        {
+          "question": "谁创造了 Comic Sans 字体？",
+          "answer": "Comic Sans 是由微软设计师文森特·康纳在 1994 年创造的。他专门为微软 Bob 软件设计了这种字体，该软件使用带有对话气泡的卡通角色，这些气泡最初使用了 Times New Roman 字体，康纳认为这种字体对于该情境来说太过正式。"
+        },
+        {
+          "question": "Comic Sans 字体的灵感来源是什么？",
+          "answer": "Comic Sans 字体的灵感来自于文森特·康纳办公室里的漫画书，特别是《黑暗骑士归来》（由约翰·科斯坦萨加字）和《守望者》（由戴夫·吉本斯加字）。他想创造一种与卡通对话气泡的休闲、友好语气相匹配的字体。"
+        },
+        {
+          "question": "为什么 Comic Sans 字体如此具有争议性？",
+          "answer": "Comic Sans 字体之所以具有争议性，是因为它被广泛用于不适当的场合。虽然它被设计用于休闲、儿童友好的应用程序，但它开始出现在正式或严肃的场合（如专业电子邮件、警告标志和官方文件），许多设计师和排版专家认为这是对该字体预期用途的误用。"
+        },
+        {
+          "question": "Comic Sans 字体对阅读障碍者有帮助吗？",
+          "answer": "许多教育工作者和专家认为 Comic Sans 字体对阅读障碍者有益，因为它具有很高的可读性。其独特的字母形状、更宽的字母间距和减少的镜像字形（如'b'、'd'、'p'、'q'）使阅读障碍者更容易区分字符。"
+        },
+        {
+          "question": "Comic Sans 字体最初是何时发布的？",
+          "answer": "Comic Sans 字体创建于 1994 年 10 月，但它完成得太晚，没能包含在其最初预期的应用程序 Microsoft Bob 中。它首次发布于 Microsoft 3D 电影制作器，后来随 Windows 95 Plus! 套件一同发布。"
+        },
+        {
+          "question": "Comic Sans 字体有哪些独特的特点？",
+          "answer": "Comic Sans 字体特点包括圆润的边缘、不规则的形状、单层设计的小写字母（如'a'和'g'）、大写'I'上的衬线以区别于小写'l'、略微浮动的基线，以及比传统字体更宽的字母间距，所有这些都有助于其休闲、手写的外观。"
+        },
+        {
+          "question": "Comic Sans 字体是否预装在电脑上？",
+          "answer": "是的，Comic Sans 字体预装在 Windows 和 macOS 操作系统上，使其成为全球最易获取的字体之一。然而，它并未预装在 Android、iOS 或 Linux 上，尽管可以为这些平台手动下载。"
+        },
+        {
+          "question": "什么是 Comic Sans Pro 字体？",
+          "answer": "Comic Sans Pro 是由 Monotype Imaging 公司的 Terrance Weinzierl 于 2011 年创建的 Comic Sans 的升级版本。它在保留核心字符设计的同时扩展了原始设计，增加了斜体变体、连字、小型大写字母、装饰、对话气泡、拟声词、图钉和其他风格化的替代方案。"
+        },
+        {
+          "question": "Comic Sans 字体适合用在哪些场合？",
+          "answer": "Comic Sans 字体最适合用于休闲、友好和非正式的场合，特别是针对儿童或初学者的场合。它适用于年轻学习者的教育材料、儿童书籍、休闲交流、非正式笔记，以及为阅读障碍者设计的材料。"
+        },
+        {
+          "question": "Comic Sans 字体的创造者对争议有何看法？",
+          "answer": "文森特·康纳表示他并不因对 Comic Sans 的负面反应而感到被冒犯。他为自己的创作感到自豪，声称'Comic Sans 确实做到了它被委托去做的事情'，并称其为'我讲过的最好的笑话'。他还说，'如果你喜欢它，你并不太了解排版，但如果你讨厌它，你真的也不太了解排版'。"
+        },
+        {
+          "question": "有没有 Comic Sans 字体的替代字体？",
+          "answer": "是的，已经创建了几种 Comic Sans 字体的替代字体，包括 Comic Neue（由 Craig Rozynski 创建的现代化版本）、Comic Parchment（前身为 Comic Papyrus，结合了 Comic Sans 和 Papyrus 的元素）和 Comic Code（由 Tabular Type Foundry 创建的等宽版本）。"
+        },
+        {
+          "question": "Comic Sans 字体是否出现在流行文化中？",
+          "answer": "是的，Comic Sans 已经成为一种文化现象和网络梗图。它出现在视频游戏《Undertale》中作为名为 Sans 的角色的对话字体，被 CERN 用来宣布希格斯玻色子的发现（后来作为愚人节玩笑），并在 Doge 梗图中使用。Google 还以 Comic Sans 字体显示'Comic Sans'的搜索结果。"
+        },
+        {
+          "question": "为什么教师经常使用 Comic Sans 字体？",
+          "answer": "根据 2020 年的一项调查，约 44% 的教师在教学资源中使用 Comic Sans 字体。原因包括其高可读性、适合阅读障碍学生、类似手写模型（带有单层设计的'a'和'g'）、清晰区分相似字母，以及对儿童的吸引力。"
+        },
+        {
+          "question": "有没有'Comic Sans 日'？",
+          "answer": "是的，在荷兰，电台 DJ 科恩·斯维宁伯格和桑德·兰廷加建立了 Comic Sans 日，自 2009 年以来在每年 7 月的第一个星期五庆祝。在这一天，一些荷兰公司会将其网站更改为使用 Comic Sans 字体来庆祝这种字体。"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Papyrus字体设计器。保留所有权利。",
+    "languages": "语言",
+    "quickLinks": "快速链接",
+    "home": "首页",
+    "examples": "示例",
+    "faq": "常见问题",
+    "description": "使用标志性的Papyrus字体创建精美的文字设计。完美适用于邀请函、语录和创意标题。",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "comic-sans-font": "Comic Sans 字体设计器",
+    "papyrus-font": "Papyrus 字体设计器"
+  },
+  "Metadata": {
+    "papyrus": {
+      "title": "Papyrus 字体设计器 - 创建精美的文字设计",
+      "description": "使用标志性的Papyrus字体创建精美的文字设计。完美适用于邀请函、语录和创意标题。",
+      "ogTitle": "Papyrus 字体设计器 - 创建精美的文字设计",
+      "ogDescription": "使用标志性的Papyrus字体创建精美的文字设计。完美适用于邀请函、语录和创意标题。",
+      "twitterTitle": "Papyrus 字体设计器 - 创建精美的文字设计",
+      "twitterDescription": "使用标志性的Papyrus字体创建精美的文字设计。完美适用于邀请函、语录和创意标题。"
+    },
+    "comic-sans": {
+      "title": "Comic Sans 字体设计器 - 创建精美的文字设计",
+      "description": "使用标志性的Comic Sans字体创建精美的文字设计。完美适用于儿童书籍、非正式沟通和创意标题。",
+      "ogTitle": "Comic Sans 字体设计器 - 创建精美的文字设计",
+      "ogDescription": "使用标志性的Comic Sans字体创建精美的文字设计。完美适用于儿童书籍、非正式沟通和创意标题。",
+      "twitterTitle": "Comic Sans 字体设计器 - 创建精美的文字设计",
+      "twitterDescription": "使用标志性的Comic Sans字体创建精美的文字设计。完美适用于儿童书籍、非正式沟通和创意标题。"
+    }
+  },
+  "designPrinciples": {
+    "title": "设计理念",
+    "subtitle": {
+      "papyrus": "探索 Papyrus 字体的独特设计理念",
+      "comic-sans": "探索 Comic Sans 字体的独特设计理念"
+    },
+    "principles": {
+      "papyrus": [
+        {
+          "lable": "Biblical Era Inspiration",
+          "title": "圣经时代的灵感",
+          "description": "模拟圣经时代中东地区的书写风格，展现英语文本如果在2000年前写在莎草纸上的样子"
+        },
+        {
+          "lable": "Timeless Elegance",
+          "title": "永恒的优雅",
+          "description": "结合传统罗马字母形式的优雅与高技巧书法的手工制作外观"
+        },
+        {
+          "lable": "Art Meets Function",
+          "title": "艺术与实用",
+          "description": "在保持良好可读性的同时，展现出独特的手工制作质感"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Contextual Informality",
+          "title": "贴合语境的非正式性",
+          "description": "最初设计为提供一个更合适的字体，用于微软Bob软件中的卡通角色对话气泡，取代过于正式的Times New Roman，以匹配软件的休闲、友好的氛围。"
+        },
+        {
+          "lable": "Comic-Inspired Visual Expression",
+          "title": "漫画风格的视觉表达",
+          "description": "直接从《黑暗骑士归来》和《守望者》等知名漫画的字体风格汲取灵感，旨在重现漫画书中手写文字的自然、随意特质。"
+        },
+        {
+          "lable": "Legibility and Approachability",
+          "title": "易读性与易接近性",
+          "description": "设计时特别考虑了易读性，尤其针对年轻用户和初学者，创造出一种不威胁、不严肃的视觉语言，降低阅读门槛。"
+        },
+        {
+          "lable": "Functionality Over Aesthetics",
+          "title": "功能性超越美学",
+          "description": "设计师 Vincent Connare 强调实用性高于纯粹的排版美学，认为字体成功地完成了其预期任务——创造亲切、易懂且适合特定场合的沟通方式。"
+        }
+      ]
+    }
+  },
+  "visualFeatures": {
+    "title": "视觉特征",
+    "subtitle": {
+      "papyrus": "探索 Papyrus 字体的独特视觉特点",
+      "comic-sans": "探索 Comic Sans 字体的独特视觉特点"
+    },
+    "features": {
+      "papyrus": [
+        {
+          "lable": "Rough Edges",
+          "title": "粗糙的边缘",
+          "description": "字体边缘呈现不平整的效果，模拟手工书写在莎草纸上的质感"
+        },
+        {
+          "lable": "Irregular Curves",
+          "title": "不规则的曲线",
+          "description": "字母的曲线部分不完全对称或平滑，增强手写感"
+        },
+        {
+          "lable": "High Horizontal Strokes",
+          "title": "高水平笔画",
+          "description": "在大写字母中有明显的高位水平笔画特征"
+        },
+        {
+          "lable": "Handcrafted Look",
+          "title": "手工制作感",
+          "description": "整体呈现出高技巧书法的手工制作外观"
+        }
+      ],
+      "comic-sans": [
+        {
+          "lable": "Handwritten Sans-serif Style",
+          "title": "手写风格的无衬线设计",
+          "description": "整体为无衬线字体，模仿漫画书中的手写字体，呈现圆润轮廓和不规则字形，营造非正式友好的视觉感受。"
+        },
+        {
+          "lable": "Distinctive Letter Structure",
+          "title": "独特的字母结构",
+          "description": "采用单层设计的小写字母（如\"a\"和\"g\"），大写\"I\"有衬线以区别于小写\"l\"，字母基线略有浮动，增强了字体的手写感。"
+        },
+        {
+          "lable": "Generous Letter Spacing",
+          "title": "宽松的字母间距",
+          "description": "比传统字体有更宽的字母间距，提高了整体可读性，特别适合儿童阅读材料。"
+        },
+        {
+          "lable": "Highly Distinguishable Letter Forms",
+          "title": "高辨识度的字母形态",
+          "description": "减少了容易混淆的镜像字母（如\"b\"、\"d\"、\"p\"、\"q\"），字形设计独特，使其在阅读障碍人群中表现出色。"
+        }
+      ]
+    }
+  },
+  "terms": {
+    "title": "服务条款",
+    "subtitle": "使用我们的服务前请仔细阅读这些条款",
+    "description": "Papyrus字体设计器服务条款",
+    "ogTitle": "服务条款 - Papyrus字体设计器",
+    "ogDescription": "Papyrus字体设计器服务条款",
+    "twitterTitle": "服务条款 - Papyrus字体设计器",
+    "twitterDescription": "Papyrus字体设计器服务条款",
+    "sections": {
+      "acceptance": {
+        "title": "1. 条款接受",
+        "content": "通过访问和使用Papyrus字体设计器，您同意受这些服务条款的约束。"
+      },
+      "license": {
+        "title": "2. 使用许可",
+        "content": "仅允许临时下载一份Papyrus字体用于个人、非商业性的临时查看。"
+      },
+      "disclaimer": {
+        "title": "3. 免责声明",
+        "content": "Papyrus字体设计器上的材料按\"原样\"提供。我们不提供任何明示或暗示的保证，并在此否认所有其他保证，包括但不限于对适销性、特定用途适用性或知识产权或其他权利侵犯的暗示保证或条件。"
+      },
+      "limitations": {
+        "title": "4. 限制",
+        "content": "在任何情况下，Papyrus字体设计器或其供应商均不对因使用或无法使用我们网站上的材料而导致的任何损害（包括但不限于数据或利润损失，或因业务中断造成的损失）负责。"
+      },
+      "revisions": {
+        "title": "5. 修订和勘误",
+        "content": "Papyrus字体设计器上出现的材料可能包含技术、排版或摄影错误。我们不保证我们网站上的任何材料都是准确、完整或最新的。"
+      },
+      "links": {
+        "title": "6. 链接",
+        "content": "我们尚未审查链接到我们网站的所有网站，不对任何此类链接网站的内容负责。"
+      },
+      "modifications": {
+        "title": "7. 修改",
+        "content": "我们可能随时修改这些服务条款，恕不另行通知。使用本网站即表示您同意受当时版本的服务条款约束。"
+      },
+      "governing": {
+        "title": "8. 适用法律",
+        "content": "这些条款和条件受法律管辖并按照法律解释，您不可撤销地服从该地区法院的专属管辖权。"
+      }
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "subtitle": "了解我们如何收集、使用和保护您的信息",
+    "description": "Papyrus字体设计器隐私政策",
+    "ogTitle": "隐私政策 - Papyrus字体设计器",
+    "ogDescription": "Papyrus字体设计器隐私政策",
+    "twitterTitle": "隐私政策 - Papyrus字体设计器",
+    "twitterDescription": "Papyrus字体设计器隐私政策",
+    "sections": {
+      "collection": {
+        "title": "1. 我们收集的信息",
+        "description": "我们收集您直接提供给我们的信息，包括当您：",
+        "items": [
+          "创建账户",
+          "下载我们的字体",
+          "联系客服支持",
+          "订阅我们的通讯"
+        ]
+      },
+      "usage": {
+        "title": "2. 我们如何使用您的信息",
+        "description": "我们使用收集的信息来：",
+        "items": [
+          "提供和维护我们的服务",
+          "处理您的交易",
+          "发送技术通知和支持消息",
+          "与您沟通产品、服务和活动",
+          "监控和分析趋势和使用情况"
+        ]
+      },
+      "sharing": {
+        "title": "3. 信息共享",
+        "description": "除本隐私政策中描述的情况外，我们不会与第三方共享您的个人信息。我们可能会与以下对象共享您的信息：",
+        "items": [
+          "代表我们提供服务的服务提供商",
+          "专业顾问",
+          "法律要求时的执法部门"
+        ]
+      },
+      "security": {
+        "title": "4. 数据安全",
+        "content": "我们实施适当的技术和组织措施，以保护您的个人信息免受未经授权或非法的处理、意外丢失、破坏或损坏。"
+      },
+      "rights": {
+        "title": "5. 您的权利",
+        "description": "您有权：",
+        "items": [
+          "访问您的个人信息",
+          "更正不准确的信息",
+          "请求删除您的信息",
+          "反对处理您的信息",
+          "撤回同意"
+        ]
+      },
+      "cookies": {
+        "title": "6. Cookie",
+        "content": "我们使用Cookie和类似的跟踪技术来跟踪我们网站上的活动并保存某些信息。您可以指示浏览器拒绝所有Cookie或在发送Cookie时提示。"
+      },
+      "changes": {
+        "title": "7. 政策变更",
+        "content": "我们可能会不时更新我们的隐私政策。我们将在本页面上发布新的隐私政策并更新\"最后更新\"日期来通知您任何变更。"
+      },
+      "contact": {
+        "title": "8. 联系我们",
+        "content": "如果您对本隐私政策有任何疑问，请通过contact@papyrusfont.com联系我们。"
+      }
+    }
+  }
+}

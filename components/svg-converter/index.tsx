@@ -10,14 +10,14 @@ import { GridBackground } from '@/components/grid-background';
 import html2canvas from 'html2canvas';
 import { beautifySVG } from '@/lib/utils';
 import ConversionControls from './ConversionControls';
+import { homeDefaultSvg } from '@/lib/default-svgs';
 
 interface SvgConverterProps {
-  svgCode: string;
-  onSvgCodeChange?: (code: string) => void;
+  svgCodeParam?: string;
   defaultFormat?: string;
 }
 
-export default function SvgConverter({ svgCode, onSvgCodeChange, defaultFormat = 'svg' }: SvgConverterProps) {
+export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: SvgConverterProps) {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [zoom, setZoom] = useState<number>(100);
   const [format, setFormat] = useState<string>(defaultFormat);
@@ -25,6 +25,7 @@ export default function SvgConverter({ svgCode, onSvgCodeChange, defaultFormat =
   const [dataUrl, setDataUrl] = useState<string>("");
   const [icoSize, setIcoSize] = useState<number>(16);
   const [fileName, setFileName] = useState<string>('');
+  const [svgCode, setSvgCode] = useState<string>(svgCodeParam || homeDefaultSvg);
   
   const { toast } = useToast();
 
@@ -64,11 +65,11 @@ export default function SvgConverter({ svgCode, onSvgCodeChange, defaultFormat =
   };
 
   const handleFormat = () => {
-    onSvgCodeChange?.(beautifySVG(svgCode));
+    setSvgCode(beautifySVG(svgCode));
   };
 
   const handleClear = () => {
-    onSvgCodeChange?.('');
+    setSvgCode('');
     toast({
       title: "Cleared",
       description: "SVG code has been cleared",
@@ -78,7 +79,7 @@ export default function SvgConverter({ svgCode, onSvgCodeChange, defaultFormat =
   const handlePaste = async () => {
     try {
       const text = await navigator.clipboard.readText();
-      onSvgCodeChange?.(text);
+      setSvgCode(text);
       toast({
         title: "Pasted from clipboard",
         description: "SVG code has been pasted from your clipboard",
@@ -352,7 +353,7 @@ export default function SvgConverter({ svgCode, onSvgCodeChange, defaultFormat =
           <div className="flex-1 min-h-0 border rounded-lg overflow-hidden shadow-md gradient-border">
             <CodeEditor 
               value={svgCode} 
-              onChange={onSvgCodeChange || (() => {})} 
+              onChange={setSvgCode} 
             />
           </div>
         </div>

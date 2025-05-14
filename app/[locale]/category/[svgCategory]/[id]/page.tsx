@@ -113,7 +113,7 @@ export default async function SvgPreviewPage({ params }: Props) {
             {/* SVG 预览区域 */}
             <div className="md:col-span-3">
               <div className="relative rounded-lg border bg-card">
-                <SvgConverter svgCode={svgContent}/>
+                <SvgConverter svgCodeParam={svgContent}/>
               </div>
             </div>
           </div>
