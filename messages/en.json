@@ -1,4 +1,20 @@
 {
+  "header": {
+    "siteName": "SVG Viewer",
+    "viewer": "Viewer",
+    "converter": "Converter",
+    "optimizer": "Optimizer",
+    "svgCollection": "SVG Collection",
+    "svgViewer": "SVG Viewer",
+    "svgConverter": "SVG Converter",
+    "svgOptimizer": "SVG Optimizer",
+    "svgToPng": "SVG to PNG Converter",
+    "helloKittySvg": "Hello Kitty SVGs",
+    "btcLogoSvg": "BTC Logo SVGs",
+    "japaneseCultureSvg": "Japanese Culture SVGs",
+    "flowerSvg": "Flower SVGs",
+    "butterflySvg": "Butterfly SVGs"
+  },
   "Metadata": {
     "title": "SVG Viewer - Free Online SVG Viewer and Converter",
     "description": "Free online SVG viewer and converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
