@@ -1,9 +1,9 @@
 
 import SvgConverter from '@/components/svg-converter';
-import ViewerFaq from '@/components/faq/viewer-faq';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { setRequestLocale } from 'next-intl/server';
+import FAQ from '@/components/faq/faq';
 
 export default async function Home({params: {locale}}: {params: {locale: string}}) {
   setRequestLocale(locale);
@@ -13,7 +13,9 @@ export default async function Home({params: {locale}}: {params: {locale: string}
       <Header />
       <main className="flex-1 flex flex-col overflow-hidden">
           <SvgConverter />
-          <ViewerFaq />
+          <FAQ
+              page="viewer"
+            />
       </main>
       <Footer />
     </div>
