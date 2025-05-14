@@ -2,7 +2,7 @@ import FAQ from '@/components/faq/faq';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
-import UseCases from '@/components/UseCases';
+import UseCases from '@/components/usecases';
 import { siteConfig } from '@/config/site';
 import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
