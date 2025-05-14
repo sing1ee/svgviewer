@@ -66,19 +66,33 @@ export default function BlogPage() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Header />
 
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main className="flex-1 container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Blog</h1>
-          <div className="grid gap-6">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Blog</h1>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              Learn about SVG files, optimization techniques, best practices, and more with our comprehensive blog articles and tutorials.
+            </p>
+          </div>
+          
+          <div className="grid gap-8">
             {posts.map(post => (
               <Link key={post.slug} href={`/blog/${post.slug}`} title={post.title}>
-                <Card className="hover:shadow-md transition-shadow">
-                  <CardHeader>
-                    <CardTitle>{post.title}</CardTitle>
-                    <CardDescription>{new Date(post.date).toLocaleDateString('zh-CN')}</CardDescription>
+                <Card className="group hover:shadow-md transition-all duration-300 border border-border/40 bg-card/50 backdrop-blur-sm">
+                  <CardHeader className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-xl md:text-2xl font-semibold text-foreground/90 group-hover:text-primary transition-colors duration-300">
+                        {post.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-foreground/60">
+                        {new Date(post.date).toLocaleDateString('zh-CN')}
+                      </CardDescription>
+                    </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{post.description}</p>
+                    <p className="text-foreground/70 leading-relaxed">
+                      {post.description}
+                    </p>
                   </CardContent>
                 </Card>
               </Link>
