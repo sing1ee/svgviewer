@@ -218,22 +218,12 @@
     "papyrus-font": "Papyrus Font Designer"
   },
   "Metadata": {
-    "papyrus": {
-      "title": "Papyrus Font Designer - Create Beautiful Text Designs",
-      "description": "Create stunning text designs with the iconic Papyrus font. Perfect for invitations, quotes, and creative headers.",
-      "ogTitle": "Papyrus Font Designer - Create Beautiful Text Designs",
-      "ogDescription": "Create stunning text designs with the iconic Papyrus font. Perfect for invitations, quotes, and creative headers.",
-      "twitterTitle": "Papyrus Font Designer - Create Beautiful Text Designs",
-      "twitterDescription": "Create stunning text designs with the iconic Papyrus font. Perfect for invitations, quotes, and creative headers."
-    },
-    "comic-sans": {
-      "title": "Comic Sans Font Designer - Create Beautiful Text Designs",
-      "description": "Create stunning text designs with the iconic Comic Sans font. Perfect for invitations, quotes, and creative headers.",
-      "ogTitle": "Comic Sans Font Designer - Create Beautiful Text Designs",
-      "ogDescription": "Create stunning text designs with the iconic Comic Sans font. Perfect for invitations, quotes, and creative headers.",
-      "twitterTitle": "Comic Sans Font Designer - Create Beautiful Text Designs",
-      "twitterDescription": "Create stunning text designs with the iconic Comic Sans font. Perfect for invitations, quotes, and creative headers."
-    }
+    "title": "SVG Viewer - Free Online SVG Viewer and Converter",
+    "description": "Free online SVG viewer and converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
+    "ogTitle": "SVG Viewer - Free Online SVG Viewer and Converter",
+    "ogDescription": "Free online SVG viewer and converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
+    "twitterTitle": "SVG Viewer - Free Online SVG Viewer and Converter",
+    "twitterDescription": "Free online SVG viewer and converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
   },
   "designPrinciples": {
     "title": "Design Principles",

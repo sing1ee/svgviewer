@@ -6,8 +6,9 @@ import { Toaster } from '@/components/ui/toaster';
 import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { siteConfig } from '@/config/site';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -20,50 +21,73 @@ const poppins = Poppins({
   variable: '--font-poppins'
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | SVG Viewer',
-    default: 'SVG Viewer - Free Online Tool to View and Convert SVG Files',
-  },
-  description: 'Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time.',
-  metadataBase: new URL('https://svgviewer.app'),
-  keywords: 'svg viewer, svg editor, svg optimizer, svg converter, svg code, svg online tool',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'SVG Viewer',
-  },
-  formatDetection: {
-    telephone: false,
-  },
-  openGraph: {
-    title: 'SVG Viewer - Free Online Tool to View and Convert SVG',
-    description: 'Free online SVG viewer tool to view, edit, optimize and convert SVG files. Our SVG viewer helps you visualize and manipulate SVG code in real-time.',
-    type: 'website',
-    url: 'https://svgviewer.app',
-    images: [
-      {
-        url: 'https://svgviewer.app/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'SVG Viewer',
-      }
-    ],
-  },
-  alternates: {
-    canonical: 'https://svgviewer.app',
-  },
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+
+  const title = t('title');
+  const description = t('description');
+  const ogTitle = t('ogTitle') || title;
+  const ogDescription = t('ogDescription') || description;
+  const twitterTitle = t('twitterTitle') || title;
+  const twitterDescription = t('twitterDescription') || description;
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title,
+    description,
+    icons: {
+      icon: siteConfig.favicon,
+    },
+    alternates: {
+      canonical: locale === 'en' ? '/' : `/${locale}`,
+      languages: {
+        'en': '/',
+        'zh': '/zh',
+        'zh-TW': '/zh-TW',
+        'ja': '/ja',
+        'ru': '/ru',
+        'pt': '/pt',
+        'es': '/es',
+        'ko': '/ko',
+        'ar': '/ar',
+        'hi': '/hi',
+        'fr': '/fr',
+        'de': '/de',
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+  };
+}
+
 
 export default async function RootLayout({
   children,
