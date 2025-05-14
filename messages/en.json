@@ -15,6 +15,14 @@
     "twitterTitle": "SVG to PNG Converter - Free Online Tool to Convert SVG to PNG",
     "twitterDescription": "Free online SVG to PNG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
   },
+  "Metadata-svg-optimizer": {
+    "title": "SVG Optimizer - Free Online Tool to Optimize SVG",
+    "description": "Free online SVG optimizer. Optimize SVG to reduce file size without compromising quality.",
+    "ogTitle": "SVG Optimizer - Free Online Tool to Optimize SVG",
+    "ogDescription": "Free online SVG optimizer. Optimize SVG to reduce file size without compromising quality.",
+    "twitterTitle": "SVG Optimizer - Free Online Tool to Optimize SVG",
+    "twitterDescription": "Free online SVG optimizer. Optimize SVG to reduce file size without compromising quality."
+  },
   "svgConverter": {
     "size": "Size",
     "formatSvg": "Format SVG",
@@ -174,6 +182,44 @@
           "answer": "Yes, our SVG to PNG converter is completely free to use with no limitations. You can convert as many SVG files to PNG as you need without any cost. The SVG to PNG converter processes your files directly in your browser, ensuring your data remains private and secure. There's no need to create an account or provide any personal information to use our SVG to PNG converter."
         }
       ]
+    },
+    "optimizer": {
+      "title": "SVG Optimizer FAQ",
+      "description": "Our SVG optimizer tool helps you reduce the file size of your SVG files without compromising quality. The SVG optimizer removes unnecessary data and optimizes the code structure for better performance.",
+      "questions": [
+        {
+          "question": "What is an SVG optimizer?",
+          "answer": "An SVG optimizer is a tool that reduces the file size of SVG (Scalable Vector Graphics) files while maintaining visual quality. Our SVG optimizer works by removing unnecessary metadata, optimizing path data, and cleaning up the SVG code structure. The SVG optimizer is essential for web performance as it can significantly reduce load times for pages containing SVG graphics."
+        },
+        {
+          "question": "How does this SVG optimizer work?",
+          "answer": "Our SVG optimizer uses advanced algorithms to analyze and optimize your SVG files. The SVG optimizer removes redundant information, simplifies path data, merges similar paths, and eliminates unnecessary attributes. The SVG optimizer also minifies the code by removing whitespace and comments. You can simply paste your SVG code or upload an SVG file, and our SVG optimizer will instantly process it to create a more efficient version."
+        },
+        {
+          "question": "Will the SVG optimizer affect the quality of my SVG?",
+          "answer": "No, our SVG optimizer is designed to maintain visual quality while reducing file size. The SVG optimizer only removes data that doesn't affect the appearance of your SVG. In some cases, the SVG optimizer might make minor adjustments to decimal precision or path data, but these changes are typically imperceptible to the human eye. You can always compare the original and optimized versions side by side in our preview panel."
+        },
+        {
+          "question": "How much can the SVG optimizer reduce file size?",
+          "answer": "The amount of file size reduction achieved by our SVG optimizer varies depending on the complexity and initial optimization of your SVG. For SVGs created by graphic design software, the SVG optimizer can often reduce file size by 30-70%. The SVG optimizer is particularly effective for SVGs with complex paths, redundant elements, or excessive precision. Our tool shows you the original and optimized file sizes so you can see exactly how much the SVG optimizer has reduced your file."
+        },
+        {
+          "question": "Is this SVG optimizer free to use?",
+          "answer": "Yes, our SVG optimizer is completely free to use. You can optimize as many SVG files as you want without any cost or limitations. The SVG optimizer processes your files directly in your browser, so there's no need to upload them to a server, ensuring your data remains private and secure."
+        },
+        {
+          "question": "Can I optimize multiple SVG files at once?",
+          "answer": "Currently, our SVG optimizer processes one file at a time. This allows you to review the optimization results and make any necessary adjustments before proceeding. For bulk optimization needs, you can optimize each SVG file individually and download them one by one. We're considering adding batch processing to the SVG optimizer in future updates."
+        },
+        {
+          "question": "Is the SVG optimizer safe for my files?",
+          "answer": "Yes, our SVG optimizer is completely safe. The SVG optimizer processes your files entirely in your browser, so your SVGs never leave your device. The original file remains unchanged, and the SVG optimizer creates an optimized copy that you can download if you're satisfied with the results. If you're concerned about potential issues, you can always compare the original and optimized versions in our preview panel before downloading."
+        },
+        {
+          "question": "Can I customize the optimization settings?",
+          "answer": "Our SVG optimizer currently uses a balanced approach that maximizes file size reduction while preserving visual quality. While we don't offer customizable settings at the moment, the SVG optimizer applies industry best practices for SVG optimization. We're considering adding advanced options to the SVG optimizer in future updates, allowing you to tailor the optimization process to your specific needs."
+        }
+      ]
     }
   },
   "features": {
@@ -216,6 +262,27 @@
         {
           "title": "Browser-based Processing",
           "description": "Convert your SVG files to PNG directly in your browser with no need to upload them to external servers."
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "SVG Optimizer Key Features",
+      "features": [
+        {
+          "title": "Path Optimization",
+          "description": "The SVG optimizer simplifies path data and reduces decimal precision without affecting visual quality."
+        },
+        {
+          "title": "Metadata Removal",
+          "description": "The SVG optimizer strips unnecessary metadata, comments, and hidden elements to reduce file size."
+        },
+        {
+          "title": "Real-time Comparison",
+          "description": "Compare original and optimized SVGs side by side to verify quality and see file size reduction."
+        },
+        {
+          "title": "Browser-based Processing",
+          "description": "The SVG optimizer works entirely in your browser, ensuring privacy and eliminating upload limits."
         }
       ]
     }

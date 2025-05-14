@@ -1,8 +1,76 @@
-import OptimizerFaq from '@/components/faq/optimizer-faq';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { siteConfig } from '@/config/site';
+import { Metadata } from 'next';
+import FAQ from '@/components/faq/faq';
+export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'Metadata-svg-optimizer' });
+
+
+  const title = t('title');
+  const description = t('description');
+  const ogTitle = t('ogTitle') || title;
+  const ogDescription = t('ogDescription') || description;
+  const twitterTitle = t('twitterTitle') || title;
+  const twitterDescription = t('twitterDescription') || description;
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title,
+    description,
+    icons: {
+      icon: siteConfig.favicon,
+    },
+    alternates: {
+      canonical: locale === 'en' ? '/svg-optimizer' : `/${locale}/svg-optimizer`,
+      languages: {
+        'en': '/svg-optimizer',
+        'zh': '/zh/svg-optimizer',
+        'zh-TW': '/zh-TW/svg-optimizer',
+        'ja': '/ja/svg-optimizer',
+        'ru': '/ru/svg-optimizer',
+        'pt': '/pt/svg-optimizer',
+        'es': '/es/svg-optimizer',
+        'ko': '/ko/svg-optimizer',
+        'ar': '/ar/svg-optimizer',
+        'hi': '/hi/svg-optimizer',
+        'fr': '/fr/svg-optimizer',
+        'de': '/de/svg-optimizer',
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+  };
+}
 
 export default function OptimizerPage({params: {locale}}: {params: {locale: string}}) {
   setRequestLocale(locale);
@@ -11,7 +79,7 @@ export default function OptimizerPage({params: {locale}}: {params: {locale: stri
       <Header />
       <main className="flex-1 flex flex-col overflow-hidden">
         <SvgConverter />
-        <OptimizerFaq />
+        <FAQ page="optimizer" />
       </main>
       <Footer />
     </div>
