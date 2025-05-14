@@ -1,51 +1,121 @@
 import Link from 'next/link'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import { getTranslations } from 'next-intl/server';
+import { siteConfig } from '@/config/site';
+import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
-export default function FreeSVGPage() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'Metadata-free-svg' });
+
+  const title = t('title');
+  const description = t('description');
+  const ogTitle = t('ogTitle') || title;
+  const ogDescription = t('ogDescription') || description;
+  const twitterTitle = t('twitterTitle') || title;
+  const twitterDescription = t('twitterDescription') || description;
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title,
+    description,
+    icons: {
+      icon: siteConfig.favicon,
+    },
+    alternates: {
+      canonical: locale === 'en' ? '/free-svg' : `/${locale}/free-svg`,
+      languages: {
+        'en': '/free-svg',
+        'zh': '/zh/free-svg',
+        'zh-TW': '/zh-TW/free-svg',
+        'ja': '/ja/free-svg',
+        'ru': '/ru/free-svg',
+        'pt': '/pt/free-svg',
+        'es': '/es/free-svg',
+        'ko': '/ko/free-svg',
+        'ar': '/ar/free-svg',
+        'hi': '/hi/free-svg',
+        'fr': '/fr/free-svg',
+        'de': '/de/free-svg',
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+  };
+}
+
+export default async function FreeSVGPage({params: {locale}}: {params: {locale: string}}) {
+  setRequestLocale(locale);
+  const t = await getTranslations("freeSvgCollections");
   const collections = [
     {
-      name: 'Japanese Culture',
+      name: t('collections.japaneseCulture.name'),
       path: '/category/japanese-culture',
-      description: 'A beautiful collection of free SVG icons representing Japanese culture, including traditional symbols, food, and landmarks.'
+      description: t('collections.japaneseCulture.description')
     },
     {
-      name: 'Bitcoin Logo',
+      name: t('collections.bitcoinLogo.name'),
       path: '/category/btc-logo',
-      description: 'A set of free SVG Bitcoin logos in various styles and formats, perfect for cryptocurrency projects.'
+      description: t('collections.bitcoinLogo.description')
     },
     {
-      name: 'Hello Kitty',
+      name: t('collections.helloKitty.name'),
       path: '/category/hello-kitty',
-      description: 'Cute and adorable free SVG Hello Kitty designs for your projects.'
+      description: t('collections.helloKitty.description')
     },
     {
-      name: 'Heart',
+      name: t('collections.heart.name'),
       path: '/category/heart',
-      description: 'A collection of free SVG heart designs in different styles and colors.'
+      description: t('collections.heart.description')
     },
     {
-      name: 'Flower',
+      name: t('collections.flower.name'),
       path: '/category/flower',
-      description: 'A collection of free SVG flower designs in different styles and colors.'
+      description: t('collections.flower.description')
     },
     {
-      name: 'Butterfly',
+      name: t('collections.butterfly.name'),
       path: '/category/butterfly',
-      description: 'A collection of free SVG butterfly designs in different styles and colors.'
+      description: t('collections.butterfly.description')
     }
   ]
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Header />
-      <main className="min-h-screen">
+      <main className="flex-1 flex flex-col overflow-hidden">
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold mb-8">Free SVG Collections</h1>
+          <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
           <p className="text-lg mb-6">
-            Welcome to our collection of free SVG resources! Here you'll find high-quality, 
-            free SVG files for your projects. All these free SVG collections are carefully 
-            curated and ready to use.
+            {t('welcome')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -57,39 +127,33 @@ export default function FreeSVGPage() {
                   href={collection.path}
                   className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
                 >
-                  View Free SVG Collection
+                  {t('viewCollection')}
                 </Link>
               </div>
             ))}
           </div>
 
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold mb-4">Why Choose Our Free SVG Collections?</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('whyChoose.title')}</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li>All our free SVG files are optimized for web use</li>
-              <li>Free SVG collections are regularly updated with new designs</li>
-              <li>High-quality free SVG files that scale perfectly</li>
-              <li>Free SVG resources for both personal and commercial use</li>
-              <li>Easy to download and implement free SVG icons</li>
+              {t.raw('whyChoose.reasons').map((reason: string, index: number) => (
+                <li key={index}>{reason}</li>
+              ))}
             </ul>
           </div>
 
           <div className="mt-12 bg-gray-100 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">How to Use Free SVG Files</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('howToUse.title')}</h2>
             <p className="mb-4">
-              Our free SVG collections are designed to be easy to use. Simply download the 
-              free SVG files you need and implement them in your projects. These free SVG 
-              resources are perfect for web design, mobile apps, and print materials.
+              {t('howToUse.description')}
             </p>
             <p>
-              Remember to check the license terms for each free SVG collection. While most 
-              of our free SVG files are available for commercial use, some may have specific 
-              requirements.
+              {t('howToUse.licenseNote')}
             </p>
           </div>
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 } 

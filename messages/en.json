@@ -5,6 +5,8 @@
     "converter": "Converter",
     "optimizer": "Optimizer",
     "svgCollection": "SVG Collection",
+    "freeSvgCollections": "Free SVG Collections",
+    "heartSvg": "Heart SVGs",
     "svgViewer": "SVG Viewer",
     "svgConverter": "SVG Converter",
     "svgOptimizer": "SVG Optimizer",
@@ -61,6 +63,14 @@
     "ogDescription": "Free online SVG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
     "twitterTitle": "SVG Converter - Free Online Tool to Convert SVG",
     "twitterDescription": "Free online SVG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
+  },
+  "Metadata-free-svg": {
+    "title": "Free SVG - Download Free SVGs for Your Projects",
+    "description": "Discover a collection of free SVGs for your projects. Download SVG files for logos, icons, and graphics. All free and ready to use.",
+    "ogTitle": "Free SVG - Download Free SVGs for Your Projects",
+    "ogDescription": "Discover a collection of free SVGs for your projects. Download SVG files for logos, icons, and graphics. All free and ready to use.",
+    "twitterTitle": "Free SVG - Download Free SVGs for Your Projects",
+    "twitterDescription": "Discover a collection of free SVGs for your projects. Download SVG files for logos, icons, and graphics. All free and ready to use."
   },
   "svgConverter": {
     "size": "Size",
@@ -384,5 +394,51 @@
         }
       ]
     }
+  },
+  "freeSvgCollections": {
+    "title": "Free SVG Collections",
+    "welcome": "Welcome to our collection of free SVG resources! Here you'll find high-quality, free SVG files for your projects. All these free SVG collections are carefully curated and ready to use.",
+    "collections": {
+      "japaneseCulture": {
+        "name": "Japanese Culture",
+        "description": "A beautiful collection of free SVG icons representing Japanese culture, including traditional symbols, food, and landmarks."
+      },
+      "bitcoinLogo": {
+        "name": "Bitcoin Logo",
+        "description": "A set of free SVG Bitcoin logos in various styles and formats, perfect for cryptocurrency projects."
+      },
+      "helloKitty": {
+        "name": "Hello Kitty",
+        "description": "Cute and adorable free SVG Hello Kitty designs for your projects."
+      },
+      "heart": {
+        "name": "Heart",
+        "description": "A collection of free SVG heart designs in different styles and colors."
+      },
+      "flower": {
+        "name": "Flower",
+        "description": "A collection of free SVG flower designs in different styles and colors."
+      },
+      "butterfly": {
+        "name": "Butterfly",
+        "description": "A collection of free SVG butterfly designs in different styles and colors."
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose Our Free SVG Collections?",
+      "reasons": [
+        "All our free SVG files are optimized for web use",
+        "Free SVG collections are regularly updated with new designs",
+        "High-quality free SVG files that scale perfectly",
+        "Free SVG resources for both personal and commercial use",
+        "Easy to download and implement free SVG icons"
+      ]
+    },
+    "howToUse": {
+      "title": "How to Use Free SVG Files",
+      "description": "Our free SVG collections are designed to be easy to use. Simply download the free SVG files you need and implement them in your projects. These free SVG resources are perfect for web design, mobile apps, and print materials.",
+      "licenseNote": "Remember to check the license terms for each free SVG collection. While most of our free SVG files are available for commercial use, some may have specific requirements."
+    },
+    "viewCollection": "View Free SVG Collection"
   }
 }
