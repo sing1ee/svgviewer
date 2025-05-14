@@ -67,18 +67,34 @@ export default function FaqSection({ category }: FaqSectionProps) {
   }
 
   return (
-    <div className="mt-12">
-      <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions about {titleCaseKeyword} SVGs</h2>
-      <Accordion type="single" collapsible className="w-full">
-        {faqs.map((faq, index) => (
-          <AccordionItem value={`item-${index}`} key={index}>
-            <AccordionTrigger>{faq.question}</AccordionTrigger>
-            <AccordionContent>
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+    <div className="mt-16">
+      <div className="bg-card/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-border/40">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+          Frequently Asked Questions about {titleCaseKeyword} SVGs
+        </h2>
+        <p className="mb-8 md:mb-12 text-center text-base md:text-lg max-w-3xl mx-auto text-foreground/70">
+          Find answers to common questions about {titleCaseKeyword} SVG files, their usage, and customization options.
+        </p>
+        
+        <div className="w-full max-w-4xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                value={`item-${index}`} 
+                key={index}
+                className="border-b border-border/40 last:border-0"
+              >
+                <AccordionTrigger className="text-base md:text-lg font-medium text-foreground/90 hover:text-primary transition-all duration-300">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
     </div>
   );
 } 

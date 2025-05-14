@@ -266,28 +266,28 @@ export default function ConversionControls({
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
       {OUTPUT_FORMATS.map((option) => {
         const isIco = option.value === 'ico';
         
         return (
           <div 
             key={option.value}
-            className="flex flex-col gap-3 p-4 rounded-lg border border-border"
+            className="flex flex-col gap-4 p-6 rounded-xl border border-border/40 bg-card/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
           >
             {/* Format Header */}
-            <div className="flex items-center justify-between">
-              <h3 className="font-medium">{option.label}</h3>
+            <div className="flex items-center justify-between border-b border-border/20 pb-3">
+              <h3 className="font-medium text-lg text-foreground/90">{option.label}</h3>
             </div>
 
             {/* Format Specific Controls */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               {isIco ? (
                 <Select 
                   value={icoSize.toString()} 
                   onValueChange={(value) => setIcoSize(Number(value))}
                 >
-                  <SelectTrigger className="h-8">
+                  <SelectTrigger className="h-10 bg-background/50 border-border/40">
                     <SelectValue placeholder="Select size" />
                   </SelectTrigger>
                   <SelectContent>
@@ -299,7 +299,7 @@ export default function ConversionControls({
                   </SelectContent>
                 </Select>
               ) : (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-3">
                   <Slider
                     value={[scale]}
                     min={0.5}
@@ -308,7 +308,7 @@ export default function ConversionControls({
                     onValueChange={(value) => setScale(value[0])}
                     className="flex-1"
                   />
-                  <span className="text-sm text-muted-foreground w-8">{scale}x</span>
+                  <span className="text-sm font-medium text-foreground/70 w-8">{scale}x</span>
                 </div>
               )}
 
@@ -318,18 +318,18 @@ export default function ConversionControls({
                   value={fileNames[option.value]}
                   onChange={(e) => handleFileNameChange(option.value, e.target.value)}
                   placeholder="Enter file name"
-                  className="h-8"
+                  className="h-10 bg-background/50 border-border/40"
                 />
-                <span className="text-sm text-muted-foreground whitespace-nowrap">.{option.value}</span>
+                <span className="text-sm font-medium text-foreground/70 whitespace-nowrap">.{option.value}</span>
               </div>
 
               {/* Download Button */}
               <Button
                 variant="default"
-                size="sm"
+                size="default"
                 onClick={() => handleDownload(option.value)}
                 disabled={disabled}
-                className="w-full h-8"
+                className="w-full h-10 bg-primary/90 hover:bg-primary transition-colors duration-200"
               >
                 <DownloadIcon className="h-4 w-4 mr-2" />
                 Download {option.label}

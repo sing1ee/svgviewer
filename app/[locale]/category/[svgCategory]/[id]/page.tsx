@@ -99,7 +99,6 @@ export default async function SvgPreviewPage({ params }: Props) {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">
       <Header />
       <main className="flex-1 flex flex-col overflow-hidden">
-        <div className="w-[90%] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* SVG 列表 */}
             <div className="md:col-span-1">
@@ -118,7 +117,6 @@ export default async function SvgPreviewPage({ params }: Props) {
             </div>
           </div>
           <FaqSection category={svgCategory} />
-        </div>
       </main>
       <Footer />
     </div>

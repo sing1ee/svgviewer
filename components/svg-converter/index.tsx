@@ -120,12 +120,6 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
 
   return (
     <div className="h-full flex flex-col">
-      <div className="bg-card p-4 rounded-lg shadow-sm gradient-border mb-4">
-        <ConversionControls
-          svgCode={svgCode}
-          disabled={!svgCode}
-        />
-      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
         <div className="flex flex-col h-full">
@@ -278,6 +272,10 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
           </div>
         </div>
       </div>
+      <ConversionControls
+          svgCode={svgCode}
+          disabled={!svgCode}
+        />
     </div>
   );
 } 
