@@ -7,6 +7,14 @@
     "twitterTitle": "SVG Viewer - Free Online SVG Viewer and Converter",
     "twitterDescription": "Free online SVG viewer and converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
   },
+  "Metadata-svg-to-png": {
+    "title": "SVG to PNG Converter - Free Online Tool to Convert SVG to PNG",
+    "description": "Free online SVG to PNG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
+    "ogTitle": "SVG to PNG Converter - Free Online Tool to Convert SVG to PNG",
+    "ogDescription": "Free online SVG to PNG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser.",
+    "twitterTitle": "SVG to PNG Converter - Free Online Tool to Convert SVG to PNG",
+    "twitterDescription": "Free online SVG to PNG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
+  },
   "svgConverter": {
     "size": "Size",
     "formatSvg": "Format SVG",
