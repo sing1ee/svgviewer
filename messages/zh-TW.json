@@ -39,5 +39,53 @@
     "ogDescription": "免費線上SVG檢視器和轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。",
     "twitterTitle": "SVG檢視器 - 免費線上SVG檢視器和轉換器",
     "twitterDescription": "免費線上SVG檢視器和轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。"
+  },
+  "Metadata-svg-to-png": {
+    "title": "SVG轉PNG轉換器 - 免費線上工具將SVG轉換為PNG",
+    "description": "免費線上SVG轉PNG轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。",
+    "ogTitle": "SVG轉PNG轉換器 - 免費線上工具將SVG轉換為PNG",
+    "ogDescription": "免費線上SVG轉PNG轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。",
+    "twitterTitle": "SVG轉PNG轉換器 - 免費線上工具將SVG轉換為PNG",
+    "twitterDescription": "免費線上SVG轉PNG轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。"
+  },
+  "Metadata-svg-optimizer": {
+    "title": "SVG優化器 - 免費線上工具優化SVG",
+    "description": "免費線上SVG優化器。優化SVG以減小檔案大小，同時不影響品質。",
+    "ogTitle": "SVG優化器 - 免費線上工具優化SVG",
+    "ogDescription": "免費線上SVG優化器。優化SVG以減小檔案大小，同時不影響品質。",
+    "twitterTitle": "SVG優化器 - 免費線上工具優化SVG",
+    "twitterDescription": "免費線上SVG優化器。優化SVG以減小檔案大小，同時不影響品質。"
+  },
+  "Metadata-svg-converter": {
+    "title": "SVG轉換器 - 免費線上工具轉換SVG",
+    "description": "免費線上SVG轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。",
+    "ogTitle": "SVG轉換器 - 免費線上工具轉換SVG",
+    "ogDescription": "免費線上SVG轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。",
+    "twitterTitle": "SVG轉換器 - 免費線上工具轉換SVG",
+    "twitterDescription": "免費線上SVG轉換器。將SVG轉換為PNG、JPEG、WEBP、ICO等格式。在瀏覽器中檢視SVG檔案。"
+  },
+  "Metadata-free-svg": {
+    "title": "免費SVG - 為您的專案下載免費SVG",
+    "description": "發現適合您專案的免費SVG集合。下載用於標誌、圖示和圖形的SVG檔案。全部免費且可直接使用。",
+    "ogTitle": "免費SVG - 為您的專案下載免費SVG",
+    "ogDescription": "發現適合您專案的免費SVG集合。下載用於標誌、圖示和圖形的SVG檔案。全部免費且可直接使用。",
+    "twitterTitle": "免費SVG - 為您的專案下載免費SVG",
+    "twitterDescription": "發現適合您專案的免費SVG集合。下載用於標誌、圖示和圖形的SVG檔案。全部免費且可直接使用。"
+  },
+  "Metadata-svg-category": {
+    "title": "SVG分類 - 為您的專案提供免費SVG",
+    "description": "發現適合您專案的免費SVG集合。下載用於標誌、圖示和圖形的SVG檔案。全部免費且可直接使用。",
+    "ogTitle": "SVG分類 - 為您的專案提供免費SVG",
+    "ogDescription": "發現適合您專案的免費SVG集合。下載用於標誌、圖示和圖形的SVG檔案。全部免費且可直接使用。",
+    "twitterTitle": "SVG分類 - 為您的專案提供免費SVG",
+    "twitterDescription": "發現適合您專案的免費SVG集合。下載用於標誌、圖示和圖形的SVG檔案。全部免費且可直接使用。"
+  },
+  "Metadata-blog": {
+    "title": "SVG檢視器部落格",
+    "description": "關於SVG和AI生成SVG的部落格",
+    "ogTitle": "SVG檢視器部落格",
+    "ogDescription": "關於SVG和AI生成SVG的部落格",
+    "twitterTitle": "SVG檢視器部落格",
+    "twitterDescription": "關於SVG和AI生成SVG的部落格"
   }
 }

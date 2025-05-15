@@ -39,5 +39,53 @@
     "ogDescription": "無料オンラインSVGビューアとコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
     "twitterTitle": "SVGビューア - 無料オンラインSVGビューア・コンバーター",
     "twitterDescription": "無料オンラインSVGビューアとコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。"
+  },
+  "Metadata-svg-to-png": {
+    "title": "SVGからPNGへのコンバーター - SVGをPNGに変換する無料オンラインツール",
+    "description": "無料オンラインSVGからPNGへのコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
+    "ogTitle": "SVGからPNGへのコンバーター - SVGをPNGに変換する無料オンラインツール",
+    "ogDescription": "無料オンラインSVGからPNGへのコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
+    "twitterTitle": "SVGからPNGへのコンバーター - SVGをPNGに変換する無料オンラインツール",
+    "twitterDescription": "無料オンラインSVGからPNGへのコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。"
+  },
+  "Metadata-svg-optimizer": {
+    "title": "SVG最適化ツール - SVGを最適化する無料オンラインツール",
+    "description": "無料オンラインSVG最適化ツール。品質を損なうことなくファイルサイズを削減するためにSVGを最適化。",
+    "ogTitle": "SVG最適化ツール - SVGを最適化する無料オンラインツール",
+    "ogDescription": "無料オンラインSVG最適化ツール。品質を損なうことなくファイルサイズを削減するためにSVGを最適化。",
+    "twitterTitle": "SVG最適化ツール - SVGを最適化する無料オンラインツール",
+    "twitterDescription": "無料オンラインSVG最適化ツール。品質を損なうことなくファイルサイズを削減するためにSVGを最適化。"
+  },
+  "Metadata-svg-converter": {
+    "title": "SVGコンバーター - SVGを変換する無料オンラインツール",
+    "description": "無料オンラインSVGコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
+    "ogTitle": "SVGコンバーター - SVGを変換する無料オンラインツール",
+    "ogDescription": "無料オンラインSVGコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
+    "twitterTitle": "SVGコンバーター - SVGを変換する無料オンラインツール",
+    "twitterDescription": "無料オンラインSVGコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。"
+  },
+  "Metadata-free-svg": {
+    "title": "無料SVG - プロジェクト用の無料SVGをダウンロード",
+    "description": "プロジェクト用の無料SVGコレクションを発見。ロゴ、アイコン、グラフィック用のSVGファイルをダウンロード。すべて無料ですぐに使用可能。",
+    "ogTitle": "無料SVG - プロジェクト用の無料SVGをダウンロード",
+    "ogDescription": "プロジェクト用の無料SVGコレクションを発見。ロゴ、アイコン、グラフィック用のSVGファイルをダウンロード。すべて無料ですぐに使用可能。",
+    "twitterTitle": "無料SVG - プロジェクト用の無料SVGをダウンロード",
+    "twitterDescription": "プロジェクト用の無料SVGコレクションを発見。ロゴ、アイコン、グラフィック用のSVGファイルをダウンロード。すべて無料ですぐに使用可能。"
+  },
+  "Metadata-svg-category": {
+    "title": "SVGカテゴリ - プロジェクト用の無料SVG",
+    "description": "プロジェクト用の無料SVGコレクションを発見。ロゴ、アイコン、グラフィック用のSVGファイルをダウンロード。すべて無料ですぐに使用可能。",
+    "ogTitle": "SVGカテゴリ - プロジェクト用の無料SVG",
+    "ogDescription": "プロジェクト用の無料SVGコレクションを発見。ロゴ、アイコン、グラフィック用のSVGファイルをダウンロード。すべて無料ですぐに使用可能。",
+    "twitterTitle": "SVGカテゴリ - プロジェクト用の無料SVG",
+    "twitterDescription": "プロジェクト用の無料SVGコレクションを発見。ロゴ、アイコン、グラフィック用のSVGファイルをダウンロード。すべて無料ですぐに使用可能。"
+  },
+  "Metadata-blog": {
+    "title": "SVGビューアブログ",
+    "description": "SVGとAIで生成されたSVGに関するブログ",
+    "ogTitle": "SVGビューアブログ",
+    "ogDescription": "SVGとAIで生成されたSVGに関するブログ",
+    "twitterTitle": "SVGビューアブログ",
+    "twitterDescription": "SVGとAIで生成されたSVGに関するブログ"
   }
 }

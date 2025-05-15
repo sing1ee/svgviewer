@@ -39,5 +39,53 @@
     "ogDescription": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
     "twitterTitle": "SVG查看器 - 免费在线SVG查看器和转换器",
     "twitterDescription": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。"
+  },
+  "Metadata-svg-to-png": {
+    "title": "SVG转PNG转换器 - 免费在线工具将SVG转换为PNG",
+    "description": "免费在线SVG转PNG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
+    "ogTitle": "SVG转PNG转换器 - 免费在线工具将SVG转换为PNG",
+    "ogDescription": "免费在线SVG转PNG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
+    "twitterTitle": "SVG转PNG转换器 - 免费在线工具将SVG转换为PNG",
+    "twitterDescription": "免费在线SVG转PNG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。"
+  },
+  "Metadata-svg-optimizer": {
+    "title": "SVG优化器 - 免费在线工具优化SVG",
+    "description": "免费在线SVG优化器。优化SVG以减小文件大小，同时不影响质量。",
+    "ogTitle": "SVG优化器 - 免费在线工具优化SVG",
+    "ogDescription": "免费在线SVG优化器。优化SVG以减小文件大小，同时不影响质量。",
+    "twitterTitle": "SVG优化器 - 免费在线工具优化SVG",
+    "twitterDescription": "免费在线SVG优化器。优化SVG以减小文件大小，同时不影响质量。"
+  },
+  "Metadata-svg-converter": {
+    "title": "SVG转换器 - 免费在线工具转换SVG",
+    "description": "免费在线SVG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
+    "ogTitle": "SVG转换器 - 免费在线工具转换SVG",
+    "ogDescription": "免费在线SVG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
+    "twitterTitle": "SVG转换器 - 免费在线工具转换SVG",
+    "twitterDescription": "免费在线SVG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。"
+  },
+  "Metadata-free-svg": {
+    "title": "免费SVG - 为您的项目下载免费SVG",
+    "description": "发现适合您项目的免费SVG集合。下载用于徽标、图标和图形的SVG文件。全部免费且可直接使用。",
+    "ogTitle": "免费SVG - 为您的项目下载免费SVG",
+    "ogDescription": "发现适合您项目的免费SVG集合。下载用于徽标、图标和图形的SVG文件。全部免费且可直接使用。",
+    "twitterTitle": "免费SVG - 为您的项目下载免费SVG",
+    "twitterDescription": "发现适合您项目的免费SVG集合。下载用于徽标、图标和图形的SVG文件。全部免费且可直接使用。"
+  },
+  "Metadata-svg-category": {
+    "title": "SVG分类 - 为您的项目提供免费SVG",
+    "description": "发现适合您项目的免费SVG集合。下载用于徽标、图标和图形的SVG文件。全部免费且可直接使用。",
+    "ogTitle": "SVG分类 - 为您的项目提供免费SVG",
+    "ogDescription": "发现适合您项目的免费SVG集合。下载用于徽标、图标和图形的SVG文件。全部免费且可直接使用。",
+    "twitterTitle": "SVG分类 - 为您的项目提供免费SVG",
+    "twitterDescription": "发现适合您项目的免费SVG集合。下载用于徽标、图标和图形的SVG文件。全部免费且可直接使用。"
+  },
+  "Metadata-blog": {
+    "title": "SVG查看器博客",
+    "description": "关于SVG和AI生成SVG的博客",
+    "ogTitle": "SVG查看器博客",
+    "ogDescription": "关于SVG和AI生成SVG的博客",
+    "twitterTitle": "SVG查看器博客",
+    "twitterDescription": "关于SVG和AI生成SVG的博客"
   }
 }

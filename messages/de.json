@@ -39,5 +39,53 @@
     "ogDescription": "Kostenloser Online-SVG-Betrachter und -Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
     "twitterTitle": "SVG-Betrachter - Kostenloser Online-SVG-Betrachter und -Konverter",
     "twitterDescription": "Kostenloser Online-SVG-Betrachter und -Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser."
+  },
+  "Metadata-svg-to-png": {
+    "title": "SVG zu PNG Konverter - Kostenloses Online-Tool zum Konvertieren von SVG zu PNG",
+    "description": "Kostenloser Online-SVG-zu-PNG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
+    "ogTitle": "SVG zu PNG Konverter - Kostenloses Online-Tool zum Konvertieren von SVG zu PNG",
+    "ogDescription": "Kostenloser Online-SVG-zu-PNG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
+    "twitterTitle": "SVG zu PNG Konverter - Kostenloses Online-Tool zum Konvertieren von SVG zu PNG",
+    "twitterDescription": "Kostenloser Online-SVG-zu-PNG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser."
+  },
+  "Metadata-svg-optimizer": {
+    "title": "SVG-Optimierer - Kostenloses Online-Tool zur Optimierung von SVG",
+    "description": "Kostenloser Online-SVG-Optimierer. Optimieren Sie SVG, um die Dateigröße zu reduzieren, ohne die Qualität zu beeinträchtigen.",
+    "ogTitle": "SVG-Optimierer - Kostenloses Online-Tool zur Optimierung von SVG",
+    "ogDescription": "Kostenloser Online-SVG-Optimierer. Optimieren Sie SVG, um die Dateigröße zu reduzieren, ohne die Qualität zu beeinträchtigen.",
+    "twitterTitle": "SVG-Optimierer - Kostenloses Online-Tool zur Optimierung von SVG",
+    "twitterDescription": "Kostenloser Online-SVG-Optimierer. Optimieren Sie SVG, um die Dateigröße zu reduzieren, ohne die Qualität zu beeinträchtigen."
+  },
+  "Metadata-svg-converter": {
+    "title": "SVG-Konverter - Kostenloses Online-Tool zum Konvertieren von SVG",
+    "description": "Kostenloser Online-SVG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
+    "ogTitle": "SVG-Konverter - Kostenloses Online-Tool zum Konvertieren von SVG",
+    "ogDescription": "Kostenloser Online-SVG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
+    "twitterTitle": "SVG-Konverter - Kostenloses Online-Tool zum Konvertieren von SVG",
+    "twitterDescription": "Kostenloser Online-SVG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser."
+  },
+  "Metadata-free-svg": {
+    "title": "Kostenlose SVG - Laden Sie kostenlose SVGs für Ihre Projekte herunter",
+    "description": "Entdecken Sie eine Sammlung kostenloser SVGs für Ihre Projekte. Laden Sie SVG-Dateien für Logos, Icons und Grafiken herunter. Alle kostenlos und sofort einsatzbereit.",
+    "ogTitle": "Kostenlose SVG - Laden Sie kostenlose SVGs für Ihre Projekte herunter",
+    "ogDescription": "Entdecken Sie eine Sammlung kostenloser SVGs für Ihre Projekte. Laden Sie SVG-Dateien für Logos, Icons und Grafiken herunter. Alle kostenlos und sofort einsatzbereit.",
+    "twitterTitle": "Kostenlose SVG - Laden Sie kostenlose SVGs für Ihre Projekte herunter",
+    "twitterDescription": "Entdecken Sie eine Sammlung kostenloser SVGs für Ihre Projekte. Laden Sie SVG-Dateien für Logos, Icons und Grafiken herunter. Alle kostenlos und sofort einsatzbereit."
+  },
+  "Metadata-svg-category": {
+    "title": "SVG-Kategorie - Kostenlose SVGs für Ihre Projekte",
+    "description": "Entdecken Sie eine Sammlung kostenloser SVGs für Ihre Projekte. Laden Sie SVG-Dateien für Logos, Icons und Grafiken herunter. Alle kostenlos und sofort einsatzbereit.",
+    "ogTitle": "SVG-Kategorie - Kostenlose SVGs für Ihre Projekte",
+    "ogDescription": "Entdecken Sie eine Sammlung kostenloser SVGs für Ihre Projekte. Laden Sie SVG-Dateien für Logos, Icons und Grafiken herunter. Alle kostenlos und sofort einsatzbereit.",
+    "twitterTitle": "SVG-Kategorie - Kostenlose SVGs für Ihre Projekte",
+    "twitterDescription": "Entdecken Sie eine Sammlung kostenloser SVGs für Ihre Projekte. Laden Sie SVG-Dateien für Logos, Icons und Grafiken herunter. Alle kostenlos und sofort einsatzbereit."
+  },
+  "Metadata-blog": {
+    "title": "SVG-Betrachter Blog",
+    "description": "Blog über SVG und KI-generierte SVGs",
+    "ogTitle": "SVG-Betrachter Blog",
+    "ogDescription": "Blog über SVG und KI-generierte SVGs",
+    "twitterTitle": "SVG-Betrachter Blog",
+    "twitterDescription": "Blog über SVG und KI-generierte SVGs"
   }
 }

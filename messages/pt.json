@@ -39,5 +39,53 @@
     "ogDescription": "Visualizador e conversor SVG online gratuito. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador.",
     "twitterTitle": "Visualizador SVG - Visualizador e Conversor SVG Online Gratuito",
     "twitterDescription": "Visualizador e conversor SVG online gratuito. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador."
+  },
+  "Metadata-svg-to-png": {
+    "title": "Conversor de SVG para PNG - Ferramenta Online Gratuita para Converter SVG em PNG",
+    "description": "Conversor online gratuito de SVG para PNG. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador.",
+    "ogTitle": "Conversor de SVG para PNG - Ferramenta Online Gratuita para Converter SVG em PNG",
+    "ogDescription": "Conversor online gratuito de SVG para PNG. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador.",
+    "twitterTitle": "Conversor de SVG para PNG - Ferramenta Online Gratuita para Converter SVG em PNG",
+    "twitterDescription": "Conversor online gratuito de SVG para PNG. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador."
+  },
+  "Metadata-svg-optimizer": {
+    "title": "Otimizador SVG - Ferramenta Online Gratuita para Otimizar SVG",
+    "description": "Otimizador SVG online gratuito. Otimize SVG para reduzir o tamanho do arquivo sem comprometer a qualidade.",
+    "ogTitle": "Otimizador SVG - Ferramenta Online Gratuita para Otimizar SVG",
+    "ogDescription": "Otimizador SVG online gratuito. Otimize SVG para reduzir o tamanho do arquivo sem comprometer a qualidade.",
+    "twitterTitle": "Otimizador SVG - Ferramenta Online Gratuita para Otimizar SVG",
+    "twitterDescription": "Otimizador SVG online gratuito. Otimize SVG para reduzir o tamanho do arquivo sem comprometer a qualidade."
+  },
+  "Metadata-svg-converter": {
+    "title": "Conversor SVG - Ferramenta Online Gratuita para Converter SVG",
+    "description": "Conversor SVG online gratuito. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador.",
+    "ogTitle": "Conversor SVG - Ferramenta Online Gratuita para Converter SVG",
+    "ogDescription": "Conversor SVG online gratuito. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador.",
+    "twitterTitle": "Conversor SVG - Ferramenta Online Gratuita para Converter SVG",
+    "twitterDescription": "Conversor SVG online gratuito. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador."
+  },
+  "Metadata-free-svg": {
+    "title": "SVG Gratuito - Baixe SVGs Gratuitos para Seus Projetos",
+    "description": "Descubra uma coleção de SVGs gratuitos para seus projetos. Baixe arquivos SVG para logotipos, ícones e gráficos. Todos gratuitos e prontos para usar.",
+    "ogTitle": "SVG Gratuito - Baixe SVGs Gratuitos para Seus Projetos",
+    "ogDescription": "Descubra uma coleção de SVGs gratuitos para seus projetos. Baixe arquivos SVG para logotipos, ícones e gráficos. Todos gratuitos e prontos para usar.",
+    "twitterTitle": "SVG Gratuito - Baixe SVGs Gratuitos para Seus Projetos",
+    "twitterDescription": "Descubra uma coleção de SVGs gratuitos para seus projetos. Baixe arquivos SVG para logotipos, ícones e gráficos. Todos gratuitos e prontos para usar."
+  },
+  "Metadata-svg-category": {
+    "title": "Categoria SVG - SVGs Gratuitos para Seus Projetos",
+    "description": "Descubra uma coleção de SVGs gratuitos para seus projetos. Baixe arquivos SVG para logotipos, ícones e gráficos. Todos gratuitos e prontos para usar.",
+    "ogTitle": "Categoria SVG - SVGs Gratuitos para Seus Projetos",
+    "ogDescription": "Descubra uma coleção de SVGs gratuitos para seus projetos. Baixe arquivos SVG para logotipos, ícones e gráficos. Todos gratuitos e prontos para usar.",
+    "twitterTitle": "Categoria SVG - SVGs Gratuitos para Seus Projetos",
+    "twitterDescription": "Descubra uma coleção de SVGs gratuitos para seus projetos. Baixe arquivos SVG para logotipos, ícones e gráficos. Todos gratuitos e prontos para usar."
+  },
+  "Metadata-blog": {
+    "title": "Blog do Visualizador SVG",
+    "description": "Blog sobre SVG e SVGs gerados por IA",
+    "ogTitle": "Blog do Visualizador SVG",
+    "ogDescription": "Blog sobre SVG e SVGs gerados por IA",
+    "twitterTitle": "Blog do Visualizador SVG",
+    "twitterDescription": "Blog sobre SVG e SVGs gerados por IA"
   }
 }
