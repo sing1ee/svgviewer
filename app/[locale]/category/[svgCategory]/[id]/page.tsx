@@ -6,7 +6,6 @@ import SvgList from '@/components/svg-list';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
-import FaqSection from '@/components/faq-section';
 
 interface Props {
   params: {
@@ -116,7 +115,6 @@ export default async function SvgPreviewPage({ params }: Props) {
               </div>
             </div>
           </div>
-          <FaqSection category={svgCategory} />
       </main>
       <Footer />
     </div>

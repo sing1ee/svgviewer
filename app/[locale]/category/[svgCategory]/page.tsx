@@ -6,7 +6,6 @@ import SvgList from '@/components/svg-list';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
-import FaqSection from '@/components/faq-section';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 
@@ -157,7 +156,6 @@ export default async function SvgCategoryPage({ params: { locale, svgCategory } 
               </div>
             </div>
           </div>
-          <FaqSection category={svgCategory} />
       </main>
       <Footer />
     </div>
