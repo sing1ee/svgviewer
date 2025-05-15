@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "日本文化SVG",
     "flowerSvg": "花のSVG",
     "butterflySvg": "蝶のSVG"
+  },
+  "footer": {
+    "siteName": "SVGビューア",
+    "copyright": "SVGビューア。全著作権所有。",
+    "viewer": "ビューア",
+    "converter": "コンバーター",
+    "optimizer": "最適化ツール",
+    "freeSvgCollections": "無料SVGコレクション",
+    "blog": "ブログ",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "friends": "パートナー",
+    "navigation": "ナビゲーション",
+    "languages": "言語",
+    "legal": "法的情報"
+  },
+  "Metadata": {
+    "title": "SVGビューア - 無料オンラインSVGビューア・コンバーター",
+    "description": "無料オンラインSVGビューアとコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
+    "ogTitle": "SVGビューア - 無料オンラインSVGビューア・コンバーター",
+    "ogDescription": "無料オンラインSVGビューアとコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",
+    "twitterTitle": "SVGビューア - 無料オンラインSVGビューア・コンバーター",
+    "twitterDescription": "無料オンラインSVGビューアとコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。"
   }
 }

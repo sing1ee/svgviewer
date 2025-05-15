@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "जापानी संस्कृति SVG",
     "flowerSvg": "फूल SVG",
     "butterflySvg": "तितली SVG"
+  },
+  "footer": {
+    "siteName": "SVG व्यूअर",
+    "copyright": "SVG व्यूअर। सर्वाधिकार सुरक्षित।",
+    "viewer": "व्यूअर",
+    "converter": "कन्वर्टर",
+    "optimizer": "ऑप्टिमाइज़र",
+    "freeSvgCollections": "मुफ्त SVG संग्रह",
+    "blog": "ब्लॉग",
+    "privacy": "गोपनीयता",
+    "terms": "शर्तें",
+    "friends": "मित्र",
+    "navigation": "नेविगेशन",
+    "languages": "भाषाएँ",
+    "legal": "कानूनी"
+  },
+  "Metadata": {
+    "title": "SVG व्यूअर - मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर",
+    "description": "मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर। SVG को PNG, JPEG, WEBP, ICO और अन्य में बदलें। अपने ब्राउज़र में SVG फ़ाइलें देखें।",
+    "ogTitle": "SVG व्यूअर - मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर",
+    "ogDescription": "मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर। SVG को PNG, JPEG, WEBP, ICO और अन्य में बदलें। अपने ब्राउज़र में SVG फ़ाइलें देखें।",
+    "twitterTitle": "SVG व्यूअर - मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर",
+    "twitterDescription": "मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर। SVG को PNG, JPEG, WEBP, ICO और अन्य में बदलें। अपने ब्राउज़र में SVG फ़ाइलें देखें।"
   }
 }

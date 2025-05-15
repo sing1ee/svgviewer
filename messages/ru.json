@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "SVGs Culture Japonaise",
     "flowerSvg": "SVGs de Fleurs",
     "butterflySvg": "SVGs de Papillons"
+  },
+  "footer": {
+    "siteName": "SVG Просмотрщик",
+    "copyright": "SVG Просмотрщик. Все права защищены.",
+    "viewer": "Просмотрщик",
+    "converter": "Конвертер",
+    "optimizer": "Оптимизатор",
+    "freeSvgCollections": "Бесплатные коллекции SVG",
+    "blog": "Блог",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия",
+    "friends": "Партнеры",
+    "navigation": "Навигация",
+    "languages": "Языки",
+    "legal": "Правовая информация"
+  },
+  "Metadata": {
+    "title": "SVG Просмотрщик - Бесплатный онлайн просмотрщик и конвертер SVG",
+    "description": "Бесплатный онлайн просмотрщик и конвертер SVG. Конвертируйте SVG в PNG, JPEG, WEBP, ICO и другие форматы. Просматривайте SVG файлы в вашем браузере.",
+    "ogTitle": "SVG Просмотрщик - Бесплатный онлайн просмотрщик и конвертер SVG",
+    "ogDescription": "Бесплатный онлайн просмотрщик и конвертер SVG. Конвертируйте SVG в PNG, JPEG, WEBP, ICO и другие форматы. Просматривайте SVG файлы в вашем браузере.",
+    "twitterTitle": "SVG Просмотрщик - Бесплатный онлайн просмотрщик и конвертер SVG",
+    "twitterDescription": "Бесплатный онлайн просмотрщик и конвертер SVG. Конвертируйте SVG в PNG, JPEG, WEBP, ICO и другие форматы. Просматривайте SVG файлы в вашем браузере."
   }
 }

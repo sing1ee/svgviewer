@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "SVGs da Cultura Japonesa",
     "flowerSvg": "SVGs de Flores",
     "butterflySvg": "SVGs de Borboletas"
+  },
+  "footer": {
+    "siteName": "Visor SVG",
+    "copyright": "Visor SVG. Todos los derechos reservados.",
+    "viewer": "Visor",
+    "converter": "Convertidor",
+    "optimizer": "Optimizador",
+    "freeSvgCollections": "Colecciones SVG Gratuitas",
+    "blog": "Blog",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "friends": "Amigos",
+    "navigation": "Navegación",
+    "languages": "Idiomas",
+    "legal": "Legal"
+  },
+  "Metadata": {
+    "title": "Visor SVG - Visor y Convertidor SVG Online Gratuito",
+    "description": "Visor y convertidor SVG online gratuito. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en tu navegador.",
+    "ogTitle": "Visor SVG - Visor y Convertidor SVG Online Gratuito",
+    "ogDescription": "Visor y convertidor SVG online gratuito. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en tu navegador.",
+    "twitterTitle": "Visor SVG - Visor y Convertidor SVG Online Gratuito",
+    "twitterDescription": "Visor y convertidor SVG online gratuito. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en tu navegador."
   }
 }

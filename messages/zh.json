@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "日本文化SVG",
     "flowerSvg": "花朵SVG",
     "butterflySvg": "蝴蝶SVG"
+  },
+  "footer": {
+    "siteName": "SVG查看器",
+    "copyright": "SVG查看器。保留所有权利。",
+    "viewer": "查看器",
+    "converter": "转换器",
+    "optimizer": "优化器",
+    "freeSvgCollections": "免费SVG集合",
+    "blog": "博客",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "friends": "友情链接",
+    "navigation": "导航",
+    "languages": "语言",
+    "legal": "法律信息"
+  },
+  "Metadata": {
+    "title": "SVG查看器 - 免费在线SVG查看器和转换器",
+    "description": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
+    "ogTitle": "SVG查看器 - 免费在线SVG查看器和转换器",
+    "ogDescription": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",
+    "twitterTitle": "SVG查看器 - 免费在线SVG查看器和转换器",
+    "twitterDescription": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。"
   }
 }

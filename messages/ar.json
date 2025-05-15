@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "صور SVG للثقافة اليابانية",
     "flowerSvg": "صور SVG للزهور",
     "butterflySvg": "صور SVG للفراشات"
+  },
+  "footer": {
+    "siteName": "عارض SVG",
+    "copyright": "عارض SVG. جميع الحقوق محفوظة.",
+    "viewer": "العارض",
+    "converter": "المحول",
+    "optimizer": "المحسن",
+    "freeSvgCollections": "مجموعات SVG المجانية",
+    "blog": "المدونة",
+    "privacy": "الخصوصية",
+    "terms": "الشروط",
+    "friends": "الأصدقاء",
+    "navigation": "التنقل",
+    "languages": "اللغات",
+    "legal": "القانونية"
+  },
+  "Metadata": {
+    "title": "عارض SVG - عارض ومحول SVG مجاني عبر الإنترنت",
+    "description": "عارض ومحول SVG مجاني عبر الإنترنت. حول SVG إلى PNG وJPEG وWEBP وICO والمزيد. اعرض ملفات SVG في متصفحك.",
+    "ogTitle": "عارض SVG - عارض ومحول SVG مجاني عبر الإنترنت",
+    "ogDescription": "عارض ومحول SVG مجاني عبر الإنترنت. حول SVG إلى PNG وJPEG وWEBP وICO والمزيد. اعرض ملفات SVG في متصفحك.",
+    "twitterTitle": "عارض SVG - عارض ومحول SVG مجاني عبر الإنترنت",
+    "twitterDescription": "عارض ومحول SVG مجاني عبر الإنترنت. حول SVG إلى PNG وJPEG وWEBP وICO والمزيد. اعرض ملفات SVG في متصفحك."
   }
 }

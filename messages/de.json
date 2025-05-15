@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "Japanische Kultur-SVGs",
     "flowerSvg": "Blumen-SVGs",
     "butterflySvg": "Schmetterling-SVGs"
+  },
+  "footer": {
+    "siteName": "SVG-Betrachter",
+    "copyright": "SVG-Betrachter. Alle Rechte vorbehalten.",
+    "viewer": "Betrachter",
+    "converter": "Konverter",
+    "optimizer": "Optimierer",
+    "freeSvgCollections": "Kostenlose SVG-Sammlungen",
+    "blog": "Blog",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "friends": "Partner",
+    "navigation": "Navigation",
+    "languages": "Sprachen",
+    "legal": "Rechtliches"
+  },
+  "Metadata": {
+    "title": "SVG-Betrachter - Kostenloser Online-SVG-Betrachter und -Konverter",
+    "description": "Kostenloser Online-SVG-Betrachter und -Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
+    "ogTitle": "SVG-Betrachter - Kostenloser Online-SVG-Betrachter und -Konverter",
+    "ogDescription": "Kostenloser Online-SVG-Betrachter und -Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",
+    "twitterTitle": "SVG-Betrachter - Kostenloser Online-SVG-Betrachter und -Konverter",
+    "twitterDescription": "Kostenloser Online-SVG-Betrachter und -Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser."
   }
 }

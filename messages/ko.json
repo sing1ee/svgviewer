@@ -16,5 +16,28 @@
     "japaneseCultureSvg": "일본 문화 SVG",
     "flowerSvg": "꽃 SVG",
     "butterflySvg": "나비 SVG"
+  },
+  "footer": {
+    "siteName": "SVG 뷰어",
+    "copyright": "SVG 뷰어. 모든 권리 보유.",
+    "viewer": "뷰어",
+    "converter": "변환기",
+    "optimizer": "최적화 도구",
+    "freeSvgCollections": "무료 SVG 컬렉션",
+    "blog": "블로그",
+    "privacy": "개인정보 보호",
+    "terms": "이용약관",
+    "friends": "파트너",
+    "navigation": "탐색",
+    "languages": "언어",
+    "legal": "법적 고지"
+  },
+  "Metadata": {
+    "title": "SVG 뷰어 - 무료 온라인 SVG 뷰어 및 변환기",
+    "description": "무료 온라인 SVG 뷰어 및 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환. 브라우저에서 SVG 파일을 확인하세요.",
+    "ogTitle": "SVG 뷰어 - 무료 온라인 SVG 뷰어 및 변환기",
+    "ogDescription": "무료 온라인 SVG 뷰어 및 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환. 브라우저에서 SVG 파일을 확인하세요.",
+    "twitterTitle": "SVG 뷰어 - 무료 온라인 SVG 뷰어 및 변환기",
+    "twitterDescription": "무료 온라인 SVG 뷰어 및 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환. 브라우저에서 SVG 파일을 확인하세요."
   }
 }
