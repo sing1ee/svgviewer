@@ -92,7 +92,20 @@
     "copy": "Copy",
     "paste": "Paste",
     "downloadSvg": "Download SVG",
-    "uploadSvg": "Upload SVG"
+    "uploadSvg": "Upload SVG",
+    "preview": "Preview",
+    "svgCode": "SVG Code",
+    "conversionFailed": "Conversion failed",
+    "conversionFailedDescription": "Failed to convert to target format",
+    "icoDownloaded": "ICO downloaded",
+    "icoDownloadedDescription": "SVG has been converted to ICO format and downloaded",
+    "imageDownloaded": "Image Downloaded",
+    "imageDownloadedDescription": "SVG has been converted to {format} and downloaded",
+    "enterFileName": "Enter file name",
+    "selectSize": "Select size",
+    "download": "Download {format}",
+    "svgDownloaded": "SVG Downloaded",
+    "svgDownloadedDescription": "SVG has been downloaded successfully"
   },
   "svgToPngUseCases": {
     "title": "SVG to PNG Converter Use Cases",
@@ -443,5 +456,9 @@
   },
   "svgCategory": {
     "selectSvg": "Select an SVG from the list to preview"
+  },
+  "codeEditor": {
+    "mobileEditHint": "Tap to edit • Use keyboard for precise control",
+    "placeholder": "Enter SVG code..."
   }
 }

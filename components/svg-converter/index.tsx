@@ -124,7 +124,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-xl font-semibold">SVG Code</h2>
+            <h2 className="text-xl font-semibold">{t('svgCode')}</h2>
             <div className="flex items-center gap-1">
               <TooltipProvider>
                 <Tooltip>
@@ -259,7 +259,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
 
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-xl font-semibold">Preview</h2>
+            <h2 className="text-xl font-semibold">{t('preview')}</h2>
             <div className="flex items-center gap-2 text-sm">
               <span className="text-muted-foreground">{t('size')}: {originalSize} bytes</span>
             </div>

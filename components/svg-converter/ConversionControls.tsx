@@ -6,6 +6,7 @@ import { DownloadIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import html2canvas from 'html2canvas';
+import { useTranslations } from 'next-intl';
 
 interface ConversionControlsProps {
   svgCode: string;
@@ -32,6 +33,7 @@ export default function ConversionControls({
   svgCode,
   disabled
 }: ConversionControlsProps) {
+  const t = useTranslations('svgConverter');
   const { toast } = useToast();
   const [scale, setScale] = useState(1);
   const [icoSize, setIcoSize] = useState(16);
@@ -112,8 +114,8 @@ export default function ConversionControls({
     } catch (error) {
       console.error('Error converting SVG:', error);
       toast({
-        title: "Conversion failed",
-        description: "Failed to convert to target format",
+        title: t('conversionFailed'),
+        description: t('conversionFailedDescription'),
         variant: "destructive",
       });
       return null;
@@ -132,8 +134,8 @@ export default function ConversionControls({
       document.body.removeChild(a);
       
       toast({
-        title: "SVG Downloaded",
-        description: "SVG has been downloaded successfully",
+        title: t('svgDownloaded'),
+        description: t('svgDownloadedDescription'),
       });
       return;
     }
@@ -238,14 +240,14 @@ export default function ConversionControls({
         URL.revokeObjectURL(url);
         
         toast({
-          title: "ico downloaded",
-          description: "SVG has been converted to ICO format and downloaded",
+          title: t('icoDownloaded'),
+          description: t('icoDownloadedDescription'),
         });
       } catch (error) {
         console.error("ICO format conversion failed:", error);
         toast({
-          title: "Conversion failed",
-          description: "Failed to convert to ICO format",
+          title: t('conversionFailed'),
+          description: t('conversionFailedDescription'),
           variant: "destructive",
         });
       }
@@ -260,8 +262,8 @@ export default function ConversionControls({
     document.body.removeChild(a);
     
     toast({
-      title: "Image Downloaded",
-      description: `SVG has been converted to ${format.toUpperCase()} and downloaded`,
+      title: t('imageDownloaded'),
+      description: t('imageDownloadedDescription', { format: format.toUpperCase() }),
     });
   };
 
@@ -288,7 +290,7 @@ export default function ConversionControls({
                   onValueChange={(value) => setIcoSize(Number(value))}
                 >
                   <SelectTrigger className="h-10 bg-background/50 border-border/40">
-                    <SelectValue placeholder="Select size" />
+                    <SelectValue placeholder={t('selectSize')} />
                   </SelectTrigger>
                   <SelectContent>
                     {ICO_SIZES.map((size) => (
@@ -317,7 +319,7 @@ export default function ConversionControls({
                 <Input
                   value={fileNames[option.value]}
                   onChange={(e) => handleFileNameChange(option.value, e.target.value)}
-                  placeholder="Enter file name"
+                  placeholder={t('enterFileName')}
                   className="h-10 bg-background/50 border-border/40"
                 />
                 <span className="text-sm font-medium text-foreground/70 whitespace-nowrap">.{option.value}</span>
@@ -332,7 +334,7 @@ export default function ConversionControls({
                 className="w-full h-10 bg-primary/90 hover:bg-primary transition-colors duration-200"
               >
                 <DownloadIcon className="h-4 w-4 mr-2" />
-                Download {option.label}
+                {t('download', { format: option.label })}
               </Button>
             </div>
           </div>

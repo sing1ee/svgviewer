@@ -5,6 +5,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { xml } from '@codemirror/lang-xml';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { EditorView } from '@codemirror/view';
+import { useTranslations } from 'next-intl';
 
 interface CodeEditorProps {
   value: string;
@@ -14,6 +15,7 @@ interface CodeEditorProps {
 
 export default function CodeEditor({ value, onChange, readOnly = false }: CodeEditorProps) {
   const [isMobile, setIsMobile] = useState(false);
+  const t = useTranslations('codeEditor');
 
   // 检测是否为移动设备
   useEffect(() => {
@@ -103,14 +105,14 @@ export default function CodeEditor({ value, onChange, readOnly = false }: CodeEd
           crosshairCursor: false, // 禁用十字光标，在移动设备上可能会干扰
           highlightActiveLineGutter: true,
         }}
-        placeholder="Enter SVG code..."
+        placeholder={t('placeholder')}
         className="h-full w-full overflow-auto"
       />
       
       {/* 移动设备上的编辑提示 */}
       {isMobile && (
         <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white text-xs p-2 text-center pointer-events-none opacity-70">
-          Tap to edit • Use keyboard for precise control
+          {t('mobileEditHint')}
         </div>
       )}
     </div>
