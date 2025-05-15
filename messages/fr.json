@@ -133,6 +133,67 @@
     "fullscreen": "Plein écran",
     "closeFullscreen": "Fermer l'aperçu plein écran",
     "svgParsingError": "Erreur d'analyse SVG"
+  },
+  "svgToPngUseCases": {
+    "title": "Cas d'utilisation du convertisseur SVG en PNG",
+    "description": "Notre convertisseur SVG en PNG est un outil polyvalent qui vous aide à transformer des graphiques vectoriels en images PNG de haute qualité pour diverses applications. Voici quelques cas d'utilisation courants où la conversion de SVG en PNG s'avère inestimable.",
+    "cases": [
+      {
+        "title": "Graphiques pour les réseaux sociaux",
+        "description": "Convertissez vos logos et graphiques SVG en PNG pour une utilisation sur les plateformes de médias sociaux. Notre convertisseur SVG en PNG garantit que vos actifs de marque paraissent nets et professionnels sur tous les réseaux sociaux.",
+        "items": [
+          "Photos de profil et images de couverture",
+          "Graphiques et bannières pour publications",
+          "Contenu pour stories et reels"
+        ]
+      },
+      {
+        "title": "Ressources pour sites web",
+        "description": "Utilisez notre convertisseur SVG en PNG pour créer des éléments de site web qui maintiennent leur qualité sur tous les appareils. Parfait pour créer des favicons, des images hero et d'autres graphiques web.",
+        "items": [
+          "Favicons et icônes de site",
+          "Images de section hero",
+          "Motifs d'arrière-plan"
+        ]
+      },
+      {
+        "title": "Images Open Graph",
+        "description": "Créez des images Open Graph parfaites pour le partage social en utilisant notre convertisseur SVG en PNG. Assurez-vous que votre contenu paraît excellent lorsqu'il est partagé sur des plateformes comme Twitter, Facebook et LinkedIn.",
+        "items": [
+          "Aperçus d'articles de blog",
+          "Cartes de partage de produits",
+          "Miniatures d'articles"
+        ]
+      },
+      {
+        "title": "Matériels imprimés",
+        "description": "Convertissez vos designs SVG en fichiers PNG haute résolution pour les matériels imprimés. Notre convertisseur SVG en PNG maintient la qualité pour les cartes de visite, les brochures et autres matériels imprimés.",
+        "items": [
+          "Cartes de visite et en-têtes",
+          "Brochures et dépliants",
+          "Affiches et bannières"
+        ]
+      },
+      {
+        "title": "Développement d'applications",
+        "description": "Utilisez notre convertisseur SVG en PNG pour créer des icônes d'application et des éléments d'interface utilisateur. Parfait pour les applications mobiles et de bureau qui nécessitent des graphiques de haute qualité.",
+        "items": [
+          "Icônes d'applications et écrans de démarrage",
+          "Éléments d'interface utilisateur et boutons",
+          "Graphiques in-app"
+        ]
+      },
+      {
+        "title": "Email marketing",
+        "description": "Convertissez vos graphiques SVG en PNG pour les campagnes d'email. Notre convertisseur SVG en PNG garantit que vos emails paraissent excellents sur tous les clients de messagerie et appareils.",
+        "items": [
+          "En-têtes et pieds de page d'email",
+          "Graphiques pour newsletters",
+          "Images de présentation de produits"
+        ]
+      }
+    ],
+    "footerDescription": "Notre convertisseur SVG en PNG est votre outil de prédilection pour tous ces cas d'utilisation et bien plus encore. Que vous soyez designer, développeur ou spécialiste du marketing, la conversion de SVG en PNG n'a jamais été aussi facile."
   }
 
 }
