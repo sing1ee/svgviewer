@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { AlertCircle, X, Maximize2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface SvgPreviewProps {
   svgCode: string;
@@ -9,6 +10,7 @@ interface SvgPreviewProps {
 }
 
 export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
+  const t = useTranslations('svgConverter');
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
@@ -130,15 +132,15 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
       
       {/* Mobile instructions tooltip */}
       <div className="absolute bottom-4 left-4 right-4 md:hidden bg-black/70 text-white text-xs p-2 rounded-md backdrop-blur-sm text-center pointer-events-none opacity-70">
-        Drag to move • Double tap to reset position
+        {t('mobileInstructions')}
       </div>
       
       {/* fullscreen button */}
       <button
         className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors z-10"
         onClick={handleToggleFullscreen}
-        aria-label="Fullscreen"
-        title="Fullscreen"
+        aria-label={t('fullscreen')}
+        title={t('fullscreen')}
       >
         <Maximize2 className="h-5 w-5" />
       </button>
@@ -147,7 +149,7 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
         <div className="absolute inset-0 flex items-center justify-center bg-background/90 backdrop-blur-sm">
           <div className="bg-destructive/10 border border-destructive text-destructive p-6 rounded-lg max-w-md text-center">
             <AlertCircle className="h-8 w-8 mx-auto mb-2" />
-            <p className="font-bold text-lg mb-1">SVG Parsing Error</p>
+            <p className="font-bold text-lg mb-1">{t('svgParsingError')}</p>
             <p className="text-sm">{error}</p>
           </div>
         </div>
@@ -165,7 +167,7 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
             <button 
               className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
               onClick={handleToggleFullscreen}
-              aria-label="Close fullscreen preview"
+              aria-label={t('closeFullscreen')}
             >
               <X className="h-5 w-5" />
             </button>
@@ -199,7 +201,7 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
             
             {/* Mobile instructions tooltip in fullscreen */}
             <div className="absolute bottom-4 left-4 right-4 md:hidden bg-black/70 text-white text-xs p-2 rounded-md backdrop-blur-sm text-center pointer-events-none opacity-70">
-              Drag to move • Double tap to reset position
+              {t('mobileInstructions')}
             </div>
           </div>
         </div>

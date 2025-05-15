@@ -72,6 +72,21 @@
     "twitterTitle": "Free SVG - Download Free SVGs for Your Projects",
     "twitterDescription": "Discover a collection of free SVGs for your projects. Download SVG files for logos, icons, and graphics. All free and ready to use."
   },
+  "Metadata-blog": {
+    "title": "SVG Viewer Blog",
+    "description": "Blog about SVG and AI generated SVGs",
+    "ogTitle": "SVG Viewer Blog",
+    "ogDescription": "Blog about SVG and AI generated SVGs",
+    "twitterTitle": "SVG Viewer Blog",
+    "twitterDescription": "Blog about SVG and AI generated SVGs"
+  },
+  "blog": { 
+    "title": "SVG Viewer Blog",
+    "description": "Blog about SVG and AI generated SVGs",
+    "readMore": "Read more",
+    "home": "Home",
+    "blog": "Blog"
+  },
   "svgConverter": {
     "size": "Size",
     "formatSvg": "Format SVG",
@@ -105,7 +120,11 @@
     "selectSize": "Select size",
     "download": "Download {format}",
     "svgDownloaded": "SVG Downloaded",
-    "svgDownloadedDescription": "SVG has been downloaded successfully"
+    "svgDownloadedDescription": "SVG has been downloaded successfully",
+    "mobileInstructions": "Drag to move • Double tap to reset position",
+    "fullscreen": "Fullscreen",
+    "closeFullscreen": "Close fullscreen preview",
+    "svgParsingError": "SVG Parsing Error"
   },
   "svgToPngUseCases": {
     "title": "SVG to PNG Converter Use Cases",

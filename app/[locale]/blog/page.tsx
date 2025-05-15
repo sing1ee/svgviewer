@@ -1,33 +1,81 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
+import { siteConfig } from '@/config/site';
 
-export const metadata: Metadata = {
-  title: 'SVG Blog - Tutorials on SVG',
-  description: 'Learn about SVG files, optimization techniques, best practices, and more with our comprehensive blog articles and tutorials.',
-  keywords: 'svg blog, svg tutorials, svg articles, vector graphics tips, svg coding, svg design',
-  openGraph: {
-    title: 'SVG Blog - Articles and Tutorials on SVG',
-    description: 'Learn about SVG files, optimization techniques, best practices, and more with our comprehensive blog articles and tutorials.',
-    url: 'https://svgviewer.app/blog',
-    images: [
-      {
-        url: 'https://svgviewer.app/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'SVG Blog',
-      }
-    ],
-  },
-  alternates: {
-    canonical: 'https://svgviewer.app/blog',
-  },
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'Metadata-blog' });
+
+  const title = t('title');
+  const description = t('description');
+  const ogTitle = t('ogTitle') || title;
+  const ogDescription = t('ogDescription') || description;
+  const twitterTitle = t('twitterTitle') || title;
+  const twitterDescription = t('twitterDescription') || description;
+
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title,
+    description,
+    icons: {
+      icon: siteConfig.favicon,
+    },
+    alternates: {
+      canonical: locale === 'en' ? '/blog' : `/${locale}/blog`,
+      languages: {
+        'en': '/blog',
+        'zh': '/zh/blog',
+        'zh-TW': '/zh-TW/blog',
+        'ja': '/ja/blog',
+        'ru': '/ru/blog',
+        'pt': '/pt/blog',
+        'es': '/es/blog',
+        'ko': '/ko/blog',
+        'ar': '/ar/blog',
+        'hi': '/hi/blog',
+        'fr': '/fr/blog',
+        'de': '/de/blog',
+      },
+    },
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      locale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: twitterTitle,
+      description: twitterDescription,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
+    },
+  };
+}
+
 
 interface Post {
   slug: string;
@@ -59,7 +107,9 @@ function getPosts(): Post[] {
   return posts;
 }
 
-export default function BlogPage() {
+export default async function BlogPage({params: {locale}}: {params: {locale: string}}) {
+  setRequestLocale(locale);
+  const t = await getTranslations('blog');
   const posts = getPosts();
 
   return (
@@ -70,16 +120,16 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-              Blog
+              {t('title')}
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Learn about SVG files, optimization techniques, best practices, and more with our comprehensive blog articles and tutorials.
+              {t('description')}
             </p>
           </div>
           
           <div className="grid gap-8">
             {posts.map(post => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} title={post.title}>
+              <Link key={post.slug} href={`/blog/${post.slug}`} locale={locale} title={post.title}>
                 <Card className="group hover:shadow-md transition-all duration-300 border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
                   <CardHeader className="space-y-2 p-6">
                     <div className="flex items-center justify-between">
@@ -96,7 +146,7 @@ export default function BlogPage() {
                       {post.description}
                     </p>
                     <div className="mt-4 flex items-center text-sm text-primary/80 group-hover:text-primary transition-colors duration-300">
-                      Read more
+                      {t('readMore')}
                       <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>

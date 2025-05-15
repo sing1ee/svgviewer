@@ -9,8 +9,9 @@ import {
   SheetContent,
   SheetTrigger,
 } from './ui/sheet';
-
+import { useTranslations } from 'next-intl';
 export function MobileNav() {
+  const t = useTranslations('header');
   const pathname = usePathname();
 
   return (
@@ -27,21 +28,21 @@ export function MobileNav() {
             title='SVGViewer'
             className={`text-sm font-medium transition-colors ${pathname === '/' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
-            Viewer
+            {t('viewer')}
           </Link>
           <Link 
             href="/svg-optimizer" 
             title='SVG Optimizer'
             className={`text-sm font-medium transition-colors ${pathname === '/svg-optimizer' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
-            Optimizer
+            {t('optimizer')}
           </Link>
           <Link 
             href="/svg-converter" 
             title='SVG Converter'
             className={`text-sm font-medium transition-colors ${pathname === '/svg-converter' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
-            Converter
+            {t('converter')}
           </Link>
         </nav>
       </SheetContent>
