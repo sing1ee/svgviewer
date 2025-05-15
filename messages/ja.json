@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - オンライン SVG 表示と編集",
-    "description": "オンライン SVG 表示と編集。SVG を PNG、JPEG、WEBP、ICO などに変換します。ブラウザーで SVG ファイルを表示します。",
-    "ogTitle": "SVG Viewer - オンライン SVG 表示と編集",
-    "ogDescription": "オンライン SVG 表示と編集。SVG を PNG、JPEG、WEBP、ICO などに変換します。ブラウザーで SVG ファイルを表示します。",
-    "twitterTitle": "SVG Viewer - オンライン SVG 表示と編集",
-    "twitterDescription": "オンライン SVG 表示と編集。SVG を PNG、JPEG、WEBP、ICO などに変換します。ブラウザーで SVG ファイルを表示します。"
-  },
-  "svgConverter": {
-    "size": "サイズ",
-    "formatSvg": "SVG フォーマット",
-    "optimizeSvg": "SVG 最適化",
-    "clear": "クリア",
-    "copiedToClipboard": "クリップボードにコピーされました",
-    "copiedToClipboardDescription": "SVG コードがクリップボードにコピーされました",
-    "formattedSvg": "SVG フォーマットされました",
-    "formattedSvgDescription": "SVG コードがフォーマットされました",
-    "optimizedSvg": "SVG 最適化されました",
-    "optimizedSvgDescription": "SVG コードが最適化されました",
-    "uploaded": "SVG アップロードされました",
-    "uploadedDescription": "SVG ファイルが正常にアップロードされました",
-    "downloaded": "SVG ダウンロードされました",
-    "downloadedDescription": "SVG ファイルが正常にダウンロードされました",
-    "pasteFailed": "スペースが失敗しました",
-    "pasteFailedDescription": "クリップボードから読み込む際にエラーが発生しました", 
-    "copy": "コピー",
-    "paste": "ペースト",
-    "downloadSvg": "SVG ダウンロード",
-    "uploadSvg": "SVG アップロード"
+  "header": {
+    "siteName": "SVGビューア",
+    "viewer": "ビューア",
+    "converter": "コンバーター",
+    "optimizer": "最適化ツール",
+    "svgCollection": "SVGコレクション",
+    "freeSvgCollections": "無料SVGコレクション",
+    "heartSvg": "ハートのSVG",
+    "svgViewer": "SVGビューア",
+    "svgConverter": "SVGコンバーター",
+    "svgOptimizer": "SVG最適化ツール",
+    "svgToPng": "SVGからPNGへのコンバーター",
+    "helloKittySvg": "ハローキティSVG",
+    "btcLogoSvg": "ビットコインロゴSVG",
+    "japaneseCultureSvg": "日本文化SVG",
+    "flowerSvg": "花のSVG",
+    "butterflySvg": "蝶のSVG"
   }
 }

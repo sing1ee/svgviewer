@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - 온라인 SVG 뷰어 및 변환기",
-    "description": "온라인 SVG 뷰어 및 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환합니다. 브라우저에서 SVG 파일을 볼 수 있습니다.",
-    "ogTitle": "SVG Viewer - 온라인 SVG 뷰어 및 변환기",
-    "ogDescription": "온라인 SVG 뷰어 및 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환합니다. 브라우저에서 SVG 파일을 볼 수 있습니다.",
-    "twitterTitle": "SVG Viewer - 온라인 SVG 뷰어 및 변환기",
-    "twitterDescription": "온라인 SVG 뷰어 및 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환합니다. 브라우저에서 SVG 파일을 볼 수 있습니다."
-  },
-  "svgConverter": {
-    "size": "크기",
-    "formatSvg": "SVG 형식",
-    "optimizeSvg": "SVG 최적화",
-    "clear": "지우기",
-    "copiedToClipboard": "클립보드에 복사되었습니다",
-    "copiedToClipboardDescription": "SVG 코드가 클립보드에 복사되었습니다",
-    "formattedSvg": "SVG 형식화되었습니다",
-    "formattedSvgDescription": "SVG 코드가 형식화되었습니다",
-    "optimizedSvg": "SVG 최적화되었습니다",
-    "optimizedSvgDescription": "SVG 코드가 최적화되었습니다",
-    "uploaded": "SVG 업로드되었습니다",
-    "uploadedDescription": "SVG 파일이 성공적으로 업로드되었습니다",
-    "downloaded": "SVG 다운로드되었습니다",
-    "downloadedDescription": "SVG 파일이 성공적으로 다운로드되었습니다",
-    "pasteFailed": "붙여넣기 실패",
-    "pasteFailedDescription": "클립보드에서 읽을 때 오류가 발생했습니다", 
-    "copy": "복사",
-    "paste": "붙여넣기",
-    "downloadSvg": "SVG 다운로드",
-    "uploadSvg": "SVG 업로드"
+  "header": {
+    "siteName": "SVG 뷰어",
+    "viewer": "뷰어",
+    "converter": "변환기",
+    "optimizer": "최적화 도구",
+    "svgCollection": "SVG 컬렉션",
+    "freeSvgCollections": "무료 SVG 컬렉션",
+    "heartSvg": "하트 SVG",
+    "svgViewer": "SVG 뷰어",
+    "svgConverter": "SVG 변환기",
+    "svgOptimizer": "SVG 최적화 도구",
+    "svgToPng": "SVG에서 PNG로 변환기",
+    "helloKittySvg": "헬로 키티 SVG",
+    "btcLogoSvg": "비트코인 로고 SVG",
+    "japaneseCultureSvg": "일본 문화 SVG",
+    "flowerSvg": "꽃 SVG",
+    "butterflySvg": "나비 SVG"
   }
 }

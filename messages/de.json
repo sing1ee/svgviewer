@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - Online SVG Viewer und Konverter",
-    "description": "Online SVG Viewer und Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Anzeigen Sie SVG-Dateien im Browser.",
-    "ogTitle": "SVG Viewer - Online SVG Viewer und Konverter",
-    "ogDescription": "Online SVG Viewer und Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Anzeigen Sie SVG-Dateien im Browser.",
-    "twitterTitle": "SVG Viewer - Online SVG Viewer und Konverter",
-    "twitterDescription": "Online SVG Viewer und Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Anzeigen Sie SVG-Dateien im Browser."
-  },
-  "svgConverter": {
-    "size": "Größe",
-    "formatSvg": "SVG formatieren",
-    "optimizeSvg": "SVG optimieren",
-    "clear": "Löschen",
-    "copiedToClipboard": "In die Zwischenablage kopiert",
-    "copiedToClipboardDescription": "SVG-Code wurde in die Zwischenablage kopiert",
-    "formattedSvg": "SVG formatiert",
-    "formattedSvgDescription": "SVG-Code wurde formatiert",
-    "optimizedSvg": "SVG optimiert",
-    "optimizedSvgDescription": "SVG-Code wurde optimiert",
-    "uploaded": "SVG hochgeladen",
-    "uploadedDescription": "SVG-Datei wurde erfolgreich hochgeladen",
-    "downloaded": "SVG heruntergeladen",
-    "downloadedDescription": "SVG wurde erfolgreich heruntergeladen",
-    "pasteFailed": "Einfügen fehlgeschlagen",
-    "pasteFailedDescription": "Fehler beim Lesen aus der Zwischenablage",
-    "copy": "Kopieren",
-    "paste": "Einfügen",
-    "downloadSvg": "SVG herunterladen",
-    "uploadSvg": "SVG hochladen"
+  "header": {
+    "siteName": "SVG-Betrachter",
+    "viewer": "Betrachter",
+    "converter": "Konverter",
+    "optimizer": "Optimierer",
+    "svgCollection": "SVG-Sammlung",
+    "freeSvgCollections": "Kostenlose SVG-Sammlungen",
+    "heartSvg": "Herz-SVGs",
+    "svgViewer": "SVG-Betrachter",
+    "svgConverter": "SVG-Konverter",
+    "svgOptimizer": "SVG-Optimierer",
+    "svgToPng": "SVG-zu-PNG-Konverter",
+    "helloKittySvg": "Hello Kitty SVGs",
+    "btcLogoSvg": "BTC-Logo-SVGs",
+    "japaneseCultureSvg": "Japanische Kultur-SVGs",
+    "flowerSvg": "Blumen-SVGs",
+    "butterflySvg": "Schmetterling-SVGs"
   }
 }

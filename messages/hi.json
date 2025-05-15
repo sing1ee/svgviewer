@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - ऑनलाइन SVG देखने और बदलने का व्यक्ति",
-    "description": "ऑनलाइन SVG देखने और बदलने का व्यक्ति। SVG को PNG, JPEG, WEBP, ICO और अधिक में बदलें। आपके ब्राउज़र में SVG फ़ाइलें देखें।",
-    "ogTitle": "SVG Viewer - ऑनलाइन SVG देखने और बदलने का व्यक्ति",
-    "ogDescription": "ऑनलाइन SVG देखने और बदलने का व्यक्ति। SVG को PNG, JPEG, WEBP, ICO और अधिक में बदलें। आपके ब्राउज़र में SVG फ़ाइलें देखें।",
-    "twitterTitle": "SVG Viewer - ऑनलाइन SVG देखने और बदलने का व्यक्ति",
-    "twitterDescription": "ऑनलाइन SVG देखने और बदलने का व्यक्ति। SVG को PNG, JPEG, WEBP, ICO और अधिक में बदलें। आपके ब्राउज़र में SVG फ़ाइलें देखें।"
-  },
-  "svgConverter": {
-    "size": "आकार",
-    "formatSvg": "SVG स्वरूप",
-    "optimizeSvg": "SVG सुधारें",
-    "clear": "साफ़ करें",
-    "copiedToClipboard": "क्लिपबोर्ड में प्रतिलिपि बनाई गई",
-    "copiedToClipboardDescription": "SVG कोड क्लिपबोर्ड में प्रतिलिपि बनाई गई",
-    "formattedSvg": "SVG स्वरूपित",
-    "formattedSvgDescription": "SVG कोड स्वरूपित है",
-    "optimizedSvg": "SVG सुधारें",
-    "optimizedSvgDescription": "SVG कोड सुधारें",
-    "uploaded": "SVG अपलोड है",
-    "uploadedDescription": "SVG फ़ाइल सफलतापूर्वक अपलोड है",
-    "downloaded": "SVG डाउनलोड है",
-    "downloadedDescription": "SVG फ़ाइल सफलतापूर्वक डाउनलोड है",
-    "pasteFailed": "स्पेस फेल है",
-    "pasteFailedDescription": "क्लिपबोर्ड से पढ़ने में विफल हो गई",
-    "copy": "कॉपी",
-    "paste": "पेस्ट",
-    "downloadSvg": "SVG डाउनलोड करें",
-    "uploadSvg": "SVG अपलोड करें"
-  } 
+  "header": {
+    "siteName": "SVG व्यूअर",
+    "viewer": "व्यूअर",
+    "converter": "कन्वर्टर",
+    "optimizer": "ऑप्टिमाइज़र",
+    "svgCollection": "SVG संग्रह",
+    "freeSvgCollections": "मुफ्त SVG संग्रह",
+    "heartSvg": "दिल के SVG",
+    "svgViewer": "SVG व्यूअर",
+    "svgConverter": "SVG कन्वर्टर",
+    "svgOptimizer": "SVG ऑप्टिमाइज़र",
+    "svgToPng": "SVG से PNG कन्वर्टर",
+    "helloKittySvg": "हैलो किट्टी SVG",
+    "btcLogoSvg": "बीटीसी लोगो SVG",
+    "japaneseCultureSvg": "जापानी संस्कृति SVG",
+    "flowerSvg": "फूल SVG",
+    "butterflySvg": "तितली SVG"
+  }
 }

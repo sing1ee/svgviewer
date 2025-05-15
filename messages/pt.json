@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - Visor y Editor SVG en línea",
-    "description": "Visor y Editor SVG en línea. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en el navegador.",
-    "ogTitle": "SVG Viewer - Visor y Editor SVG en línea",
-    "ogDescription": "Visor y Editor SVG en línea. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en el navegador.",
-    "twitterTitle": "SVG Viewer - Visor y Editor SVG en línea",
-    "twitterDescription": "Visor y Editor SVG en línea. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en el navegador."
-  },
-  "svgConverter": {
-    "size": "Tamaño",
-    "formatSvg": "Formatear SVG",
-    "optimizeSvg": "Optimizar SVG",
-    "clear": "Limpiar",
-    "copiedToClipboard": "Copiado al portapapeles",
-    "copiedToClipboardDescription": "El código SVG ha sido copiado al portapapeles",
-    "formattedSvg": "SVG formateado",
-    "formattedSvgDescription": "El código SVG ha sido formateado",
-    "optimizedSvg": "SVG optimizado",
-    "optimizedSvgDescription": "El código SVG ha sido optimizado",
-    "uploaded": "SVG subido",
-    "uploadedDescription": "El archivo SVG se ha subido correctamente",
-    "downloaded": "SVG descargado",
-    "downloadedDescription": "El archivo SVG se ha descargado correctamente",
-    "pasteFailed": "Error al pegar",
-    "pasteFailedDescription": "Se produjo un error al leer desde el portapapeles",
-    "copy": "Copiar",
-    "paste": "Pegar",
-    "downloadSvg": "Descargar SVG",
-    "uploadSvg": "Subir SVG"
+  "header": {
+    "siteName": "Visualizador SVG",
+    "viewer": "Visualizador",
+    "converter": "Conversor",
+    "optimizer": "Otimizador",
+    "svgCollection": "Coleção SVG",
+    "freeSvgCollections": "Coleções SVG Gratuitas",
+    "heartSvg": "SVGs de Coração",
+    "svgViewer": "Visualizador SVG",
+    "svgConverter": "Conversor SVG",
+    "svgOptimizer": "Otimizador SVG",
+    "svgToPng": "Conversor de SVG para PNG",
+    "helloKittySvg": "SVGs da Hello Kitty",
+    "btcLogoSvg": "SVGs do Logo BTC",
+    "japaneseCultureSvg": "SVGs da Cultura Japonesa",
+    "flowerSvg": "SVGs de Flores",
+    "butterflySvg": "SVGs de Borboletas"
   }
 }

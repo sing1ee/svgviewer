@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - Онлайн просмотр и редактирование SVG",
-    "description": "Онлайн просмотр и редактирование SVG. Конвертация SVG в PNG, JPEG, WEBP, ICO и другие форматы. Просмотр SVG файлов в браузере.",
-    "ogTitle": "SVG Viewer - Онлайн просмотр и редактирование SVG",
-    "ogDescription": "Онлайн просмотр и редактирование SVG. Конвертация SVG в PNG, JPEG, WEBP, ICO и другие форматы. Просмотр SVG файлов в браузере.",
-    "twitterTitle": "SVG Viewer - Онлайн просмотр и редактирование SVG",
-    "twitterDescription": "Онлайн просмотр и редактирование SVG. Конвертация SVG в PNG, JPEG, WEBP, ICO и другие форматы. Просмотр SVG файлов в браузере."
-  },
-  "svgConverter": {
-    "size": "Размер",
-    "formatSvg": "Форматировать SVG",
-    "optimizeSvg": "Оптимизировать SVG",
-    "clear": "Очистить",
-    "copiedToClipboard": "Скопировано в буфер обмена",
-    "copiedToClipboardDescription": "SVG код скопирован в буфер обмена",
-    "formattedSvg": "SVG отформатирован",
-    "formattedSvgDescription": "SVG код был отформатирован",
-    "optimizedSvg": "SVG оптимизирован",
-    "optimizedSvgDescription": "SVG код был оптимизирован",
-    "uploaded": "SVG загружен",
-    "uploadedDescription": "SVG файл успешно загружен",
-    "downloaded": "SVG скачан",
-    "downloadedDescription": "SVG файл успешно скачан",
-    "pasteFailed": "Ошибка вставки",
-    "pasteFailedDescription": "Произошла ошибка при чтении из буфера обмена",
-    "copy": "Копировать",
-    "paste": "Вставить",
-    "downloadSvg": "Скачать SVG",
-    "uploadSvg": "Загрузить SVG"
+  "header": {
+    "siteName": "Visionneuse SVG",
+    "viewer": "Visionneuse",
+    "converter": "Convertisseur",
+    "optimizer": "Optimiseur",
+    "svgCollection": "Collection SVG",
+    "freeSvgCollections": "Collections SVG Gratuites",
+    "heartSvg": "SVGs de Cœur",
+    "svgViewer": "Visionneuse SVG",
+    "svgConverter": "Convertisseur SVG",
+    "svgOptimizer": "Optimiseur SVG",
+    "svgToPng": "Convertisseur SVG en PNG",
+    "helloKittySvg": "SVGs Hello Kitty",
+    "btcLogoSvg": "SVGs Logo BTC",
+    "japaneseCultureSvg": "SVGs Culture Japonaise",
+    "flowerSvg": "SVGs de Fleurs",
+    "butterflySvg": "SVGs de Papillons"
   }
 }

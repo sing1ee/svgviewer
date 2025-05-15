@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - 在线SVG查看器和转换器",
-    "description": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等。在浏览器中查看SVG文件。",
-    "ogTitle": "SVG Viewer - 在线SVG查看器和转换器",
-    "ogDescription": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等。在浏览器中查看SVG文件。",
-    "twitterTitle": "SVG Viewer - 在线SVG查看器和转换器",
-    "twitterDescription": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等。在浏览器中查看SVG文件。"
-  },
-  "svgConverter": {
-    "size": "大小",
-    "formatSvg": "格式化SVG",
-    "optimizeSvg": "优化SVG",
-    "clear": "清除",
-    "copiedToClipboard": "已复制到剪贴板",
-    "copiedToClipboardDescription": "SVG代码已复制到剪贴板",
-    "formattedSvg": "SVG已格式化",
-    "formattedSvgDescription": "SVG代码已格式化",
-    "optimizedSvg": "SVG已优化",
-    "optimizedSvgDescription": "SVG代码已优化",
-    "uploaded": "SVG已上传",
-    "uploadedDescription": "SVG文件已上传成功",
-    "downloaded": "SVG已下载",
-    "downloadedDescription": "SVG已下载成功",
-    "pasteFailed": "粘贴失败",
-    "pasteFailedDescription": "无法从剪贴板读取",
-    "copy": "复制",
-    "paste": "粘贴",
-    "downloadSvg": "下载SVG",
-    "uploadSvg": "上传SVG"
+  "header": {
+    "siteName": "SVG查看器",
+    "viewer": "查看器",
+    "converter": "转换器",
+    "optimizer": "优化器",
+    "svgCollection": "SVG集合",
+    "freeSvgCollections": "免费SVG集合",
+    "heartSvg": "心形SVG",
+    "svgViewer": "SVG查看器",
+    "svgConverter": "SVG转换器",
+    "svgOptimizer": "SVG优化器",
+    "svgToPng": "SVG转PNG转换器",
+    "helloKittySvg": "Hello Kitty SVG",
+    "btcLogoSvg": "比特币标志SVG",
+    "japaneseCultureSvg": "日本文化SVG",
+    "flowerSvg": "花朵SVG",
+    "butterflySvg": "蝴蝶SVG"
   }
 }

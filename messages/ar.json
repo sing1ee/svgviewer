@@ -1,32 +1,20 @@
 {
-  "Metadata": {
-    "title": "SVG Viewer - مشاهدة SVG عبر الإنترنت وتحويلها",
-    "description": "مشاهدة SVG عبر الإنترنت وتحويلها. تحويل SVG إلى PNG, JPEG, WEBP, ICO, وأكثر. عرض ملفات SVG في المتصفح.",
-    "ogTitle": "SVG Viewer - مشاهدة SVG عبر الإنترنت وتحويلها",
-    "ogDescription": "مشاهدة SVG عبر الإنترنت وتحويلها. تحويل SVG إلى PNG, JPEG, WEBP, ICO, وأكثر. عرض ملفات SVG في المتصفح.",
-    "twitterTitle": "SVG Viewer - مشاهدة SVG عبر الإنترنت وتحويلها",
-    "twitterDescription": "مشاهدة SVG عبر الإنترنت وتحويلها. تحويل SVG إلى PNG, JPEG, WEBP, ICO, وأكثر. عرض ملفات SVG في المتصفح."
-  },
-  "svgConverter": {
-    "size": "الحجم",
-    "formatSvg": "تنسيق SVG",
-    "optimizeSvg": "تحسين SVG",
-    "clear": "مسح",
-    "copiedToClipboard": "تم النسخ إلى الحافظة",
-    "copiedToClipboardDescription": "تم نسخ SVG إلى الحافظة",
-    "formattedSvg": "تم تنسيق SVG",
-    "formattedSvgDescription": "تم تنسيق SVG",
-    "optimizedSvg": "تم تحسين SVG",
-    "optimizedSvgDescription": "تم تحسين SVG",
-    "uploaded": "تم الرفع",
-    "uploadedDescription": "تم رفع SVG بنجاح",
-    "downloaded": "تم التحميل",
-    "downloadedDescription": "تم تحميل SVG بنجاح",
-    "pasteFailed": "فشل اللصق",
-    "pasteFailedDescription": "فشل قراءة من الحافظة",
-    "copy": "نسخ",
-    "paste": "لصق",
-    "downloadSvg": "تحميل SVG",
-    "uploadSvg": "رفع SVG"
+  "header": {
+    "siteName": "عارض SVG",
+    "viewer": "العارض",
+    "converter": "المحول",
+    "optimizer": "المحسن",
+    "svgCollection": "مجموعة SVG",
+    "freeSvgCollections": "مجموعات SVG المجانية",
+    "heartSvg": "صور SVG للقلوب",
+    "svgViewer": "عارض SVG",
+    "svgConverter": "محول SVG",
+    "svgOptimizer": "محسن SVG",
+    "svgToPng": "محول SVG إلى PNG",
+    "helloKittySvg": "صور SVG لهيلو كيتي",
+    "btcLogoSvg": "صور SVG لشعار بيتكوين",
+    "japaneseCultureSvg": "صور SVG للثقافة اليابانية",
+    "flowerSvg": "صور SVG للزهور",
+    "butterflySvg": "صور SVG للفراشات"
   }
 }
