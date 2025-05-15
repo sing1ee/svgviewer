@@ -194,6 +194,160 @@
       }
     ],
     "footerDescription": "Nuestro conversor de SVG a PNG es tu herramienta ideal para todos estos casos de uso y más. Ya seas diseñador, desarrollador o profesional de marketing, convertir SVG a PNG nunca ha sido tan fácil."
+  },
+  "faq": {
+    "viewer": {
+      "title": "Preguntas frecuentes sobre el Visor de SVG",
+      "description": "Nuestra herramienta de visualización SVG está diseñada para permitirte trabajar eficientemente con archivos SVG. El visor SVG te permite visualizar, editar y optimizar gráficos SVG en tiempo real.",
+      "questions": [
+        {
+          "question": "¿Qué es un visor SVG?",
+          "answer": "Un visor SVG es una herramienta que te permite abrir, ver e interactuar con archivos SVG (Gráficos Vectoriales Escalables). Nuestro visor SVG en línea ofrece una forma conveniente de visualizar código SVG sin necesidad de instalar software. Usando nuestro visor SVG, puedes ver cómo se ve tu SVG, editar el código y optimizarlo para un mejor rendimiento."
+        },
+        {
+          "question": "¿Cómo usar este visor SVG?",
+          "answer": "Usar nuestro visor SVG es sencillo: pega tu código SVG en el editor o sube un archivo SVG. El visor SVG renderizará instantáneamente el gráfico en el panel de vista previa. Puedes editar el código en tiempo real y ver los cambios inmediatamente en la vista previa del visor SVG. Ajusta el tamaño del lienzo y el nivel de zoom para ver mejor tu SVG."
+        },
+        {
+          "question": "¿Puedo editar archivos SVG con este visor?",
+          "answer": "Sí, nuestro visor SVG incluye un editor de código que te permite modificar directamente el código SVG. A medida que escribes, el visor SVG actualiza la vista previa en tiempo real. Esto hace que nuestro visor SVG sea ideal para editar y ajustar rápidamente tus archivos SVG sin necesidad de software especializado de diseño gráfico."
+        },
+        {
+          "question": "¿Este visor SVG es gratuito?",
+          "answer": "Sí, nuestro visor SVG es completamente gratuito. Puedes usar el visor SVG para abrir, ver, editar y descargar archivos SVG sin costo alguno. El visor SVG funciona directamente en tu navegador, por lo que no necesitas descargar ni instalar ningún software."
+        },
+        {
+          "question": "¿Puedo optimizar archivos SVG con este visor?",
+          "answer": "Nuestro visor SVG principal se enfoca en la visualización y edición, pero también ofrecemos una herramienta de optimización SVG que funciona en conjunto con el visor SVG. El optimizador puede reducir el tamaño del archivo SVG mientras mantiene la calidad visual. El visor SVG muestra los tamaños de archivo originales y optimizados para que puedas ver la diferencia."
+        },
+        {
+          "question": "¿Cómo maneja el visor SVG los archivos grandes?",
+          "answer": "Nuestro visor SVG está diseñado para manejar eficientemente archivos SVG de varios tamaños. Sin embargo, los SVG muy complejos con miles de elementos pueden afectar el rendimiento. El visor SVG proporciona controles de zoom y tamaño de lienzo para ayudarte a trabajar con SVG de cualquier tamaño."
+        },
+        {
+          "question": "¿Puedo convertir SVG a otros formatos con este visor?",
+          "answer": "Mientras que el visor SVG principal se enfoca en visualizar y editar SVG, también ofrecemos una herramienta complementaria de conversión SVG. Desde el visor SVG, puedes navegar fácilmente a nuestro convertidor para transformar tus archivos SVG a formatos como PNG, JPG o PDF después de previsualizarlos en el visor SVG."
+        },
+        {
+          "question": "¿Cómo ayuda este visor SVG con el código SVG generado por IA?",
+          "answer": "Con el surgimiento de asistentes de IA como ChatGPT, Claude y DeepSeek, cada vez más usuarios están generando código SVG a través de IA. Nuestro visor SVG es una herramienta complementaria perfecta para SVG generados por IA, permitiéndote visualizar, refinar y optimizar instantáneamente el código generado por IA. El visor SVG ayuda a cerrar la brecha entre la generación por IA y los gráficos listos para producción al proporcionar retroalimentación en tiempo real sobre cómo se renderiza realmente el SVG, ayudándote a identificar y corregir cualquier problema en el código generado por IA. A medida que la IA continúa evolucionando en la generación de gráficos vectoriales más complejos, nuestro visor SVG sigue siendo una herramienta esencial para trabajar eficazmente con estas salidas de IA."
+        }
+      ]
+    },
+    "svgToPng": {
+      "title": "Preguntas frecuentes sobre el Convertidor de SVG a PNG",
+      "description": "Nuestra herramienta de conversión de SVG a PNG te permite transformar archivos SVG en imágenes PNG de alta calidad. El convertidor de SVG a PNG mantiene la mejor calidad posible al convertir gráficos vectoriales a formato raster.",
+      "questions": [
+        {
+          "question": "¿Qué es la conversión de SVG a PNG?",
+          "answer": "La conversión de SVG a PNG es el proceso de transformar archivos de Gráficos Vectoriales Escalables (SVG) al formato de Gráficos de Red Portátiles (PNG). Nuestro convertidor de SVG a PNG funciona renderizando los gráficos vectoriales y capturando el resultado como una imagen PNG de alta calidad. El convertidor de SVG a PNG es esencial cuando necesitas usar gráficos vectoriales en entornos que no admiten el formato SVG, como ciertas plataformas de redes sociales, aplicaciones antiguas, o cuando se requiere un formato raster específico."
+        },
+        {
+          "question": "¿Cómo funciona este convertidor de SVG a PNG?",
+          "answer": "Nuestro convertidor de SVG a PNG renderiza tu archivo SVG en el navegador y luego captura la salida como una imagen PNG. El convertidor de SVG a PNG te permite establecer un factor de escala para controlar la resolución de la imagen convertida. Simplemente pega tu código SVG o sube un archivo SVG, y nuestro convertidor de SVG a PNG generará un PNG de alta calidad listo para descargar."
+        },
+        {
+          "question": "¿Por qué necesito convertir SVG a PNG?",
+          "answer": "Convertir SVG a PNG es útil en muchos escenarios. PNG admite transparencia como SVG, pero también funciona en entornos donde SVG no es compatible. Nuestro convertidor de SVG a PNG crea imágenes PNG transparentes de alta calidad que preservan la nitidez de tu SVG original. La conversión de SVG a PNG es ideal para usar gráficos vectoriales en aplicaciones, sitios web o plataformas que no admiten el formato SVG pero sí admiten PNG. Además, PNG es ampliamente compatible con todos los dispositivos y navegadores."
+        },
+        {
+          "question": "¿Perderé calidad al convertir SVG a PNG?",
+          "answer": "A diferencia de SVG, PNG tiene una resolución fija. Nuestro convertidor de SVG a PNG te permite establecer un factor de escala para asegurar que tu imagen convertida tenga suficiente resolución para tus necesidades. Para gráficos web, nuestra configuración predeterminada da excelentes resultados. Para impresión o pantallas grandes, puedes aumentar el factor de escala para crear una salida de mayor resolución. Aunque los SVG vectoriales pueden escalarse indefinidamente sin pérdida de calidad, nuestro convertidor de SVG a PNG genera versiones PNG de la más alta calidad posible."
+        },
+        {
+          "question": "¿Puedo personalizar la salida PNG?",
+          "answer": "Sí, nuestro convertidor de SVG a PNG te permite personalizar varios aspectos de la salida. Puedes ajustar la resolución, establecer un color de fondo y controlar la configuración de transparencia. El convertidor de SVG a PNG te da control total sobre la imagen PNG final para satisfacer tus necesidades específicas."
+        },
+        {
+          "question": "¿La conversión de SVG a PNG es sin pérdida?",
+          "answer": "Aunque PNG es un formato sin pérdida, la conversión de SVG a PNG implica rasterización, lo que significa que la información vectorial se convierte en píxeles. La calidad de la conversión de SVG a PNG depende de la resolución que elijas. Nuestro convertidor de SVG a PNG utiliza renderizado de alta calidad para asegurar los mejores resultados posibles."
+        },
+        {
+          "question": "¿Cuáles son las mejores prácticas para la conversión de SVG a PNG?",
+          "answer": "Para resultados óptimos de conversión de SVG a PNG, asegúrate de que tus archivos SVG estén bien formateados, elige una resolución apropiada para tus necesidades y considera el tamaño de visualización objetivo al establecer el tamaño de salida. Nuestro convertidor de SVG a PNG proporciona orientación y herramientas para ayudarte a lograr los mejores resultados."
+        },
+        {
+          "question": "¿Este convertidor de SVG a PNG es gratuito?",
+          "answer": "Sí, nuestro convertidor de SVG a PNG es completamente gratuito para usar sin limitaciones. Puedes convertir tantos archivos SVG a PNG como desees sin costo alguno. El convertidor de SVG a PNG procesa tus archivos directamente en tu navegador, asegurando que tus datos permanezcan privados y seguros. No necesitas crear una cuenta ni proporcionar información personal para usar nuestro convertidor de SVG a PNG."
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "Preguntas frecuentes sobre el Optimizador SVG",
+      "description": "Nuestra herramienta de optimización SVG te ayuda a reducir el tamaño de tus archivos SVG sin comprometer la calidad. El optimizador SVG elimina datos innecesarios y optimiza la estructura del código para mejorar el rendimiento.",
+      "questions": [
+        {
+          "question": "¿Qué es un optimizador SVG?",
+          "answer": "Un optimizador SVG es una herramienta que reduce el tamaño de los archivos SVG (Gráficos Vectoriales Escalables) mientras mantiene la calidad visual. Nuestro optimizador SVG funciona eliminando metadatos innecesarios, optimizando datos de ruta y limpiando la estructura del código SVG. El optimizador SVG es esencial para el rendimiento web, ya que puede reducir significativamente los tiempos de carga de páginas con gráficos SVG."
+        },
+        {
+          "question": "¿Cómo funciona este optimizador SVG?",
+          "answer": "Nuestro optimizador SVG utiliza algoritmos avanzados para analizar y optimizar tus archivos SVG. El optimizador SVG elimina información redundante, simplifica datos de ruta, fusiona rutas similares y elimina atributos innecesarios. El optimizador SVG también minifica el código eliminando espacios y comentarios. Simplemente pega tu código SVG o sube un archivo SVG, y nuestro optimizador SVG lo procesará instantáneamente para crear una versión más eficiente."
+        },
+        {
+          "question": "¿El optimizador SVG afectará la calidad de mi SVG?",
+          "answer": "No, nuestro optimizador SVG está diseñado para reducir el tamaño del archivo mientras mantiene la calidad visual. El optimizador SVG solo elimina datos que no afectan la apariencia de tu SVG. En algunos casos, el optimizador SVG puede hacer ajustes menores a la precisión decimal o datos de ruta, pero estos cambios generalmente son imperceptibles a simple vista. Siempre puedes comparar las versiones original y optimizada lado a lado en nuestro panel de vista previa."
+        },
+        {
+          "question": "¿Cuánta reducción de tamaño de archivo puede lograr el optimizador SVG?",
+          "answer": "La reducción de tamaño de archivo lograda por nuestro optimizador SVG depende de la complejidad de tu SVG y su optimización inicial. Para SVG creados por software de diseño gráfico, el optimizador SVG a menudo puede reducir el tamaño del archivo entre un 30-70%. El optimizador SVG es particularmente efectivo para SVG con rutas complejas, elementos redundantes o precisión excesiva. Nuestra herramienta muestra los tamaños de archivo original y optimizado para que puedas ver exactamente cuánto ha reducido el optimizador SVG tu archivo."
+        },
+        {
+          "question": "¿Este optimizador SVG es gratuito?",
+          "answer": "Sí, nuestro optimizador SVG es completamente gratuito para usar. Puedes optimizar tantos archivos SVG como desees sin costo o limitación. El optimizador SVG procesa tus archivos directamente en tu navegador, por lo que no hay necesidad de subirlos a un servidor, asegurando la privacidad y seguridad de tus datos."
+        },
+        {
+          "question": "¿Puedo optimizar múltiples archivos SVG a la vez?",
+          "answer": "Actualmente, nuestro optimizador SVG procesa un archivo a la vez. Esto te permite revisar los resultados de la optimización y hacer los ajustes necesarios antes de continuar. Para necesidades de optimización en masa, puedes optimizar cada archivo SVG individualmente y descargarlos uno por uno. Estamos considerando agregar procesamiento por lotes al optimizador SVG en futuras actualizaciones."
+        },
+        {
+          "question": "¿El optimizador SVG es seguro para mis archivos?",
+          "answer": "Sí, nuestro optimizador SVG es completamente seguro. El optimizador SVG procesa los archivos completamente en tu navegador, por lo que tu SVG nunca deja tu dispositivo. El archivo original permanece intacto, y el optimizador SVG crea una copia optimizada que puedes descargar si estás satisfecho con los resultados. Si te preocupan posibles problemas, siempre puedes comparar las versiones original y optimizada en nuestro panel de vista previa antes de descargar."
+        },
+        {
+          "question": "¿Puedo personalizar la configuración de optimización?",
+          "answer": "Nuestro optimizador SVG actualmente utiliza un enfoque equilibrado que maximiza la reducción del tamaño del archivo mientras mantiene la calidad visual. Actualmente no ofrecemos configuraciones personalizables, pero el optimizador SVG aplica las mejores prácticas de la industria para la optimización SVG. Estamos considerando agregar opciones avanzadas al optimizador SVG en futuras actualizaciones que te permitirán ajustar el proceso de optimización para tus necesidades específicas."
+        }
+      ]
+    },
+    "converter": {
+      "title": "Preguntas frecuentes sobre el Convertidor SVG",
+      "description": "Nuestra herramienta de conversión SVG te permite transformar archivos SVG en varios formatos de imagen, incluyendo PNG, JPEG, WebP e ICO. El convertidor SVG mantiene alta calidad al convertir gráficos vectoriales a imágenes raster.",
+      "questions": [
+        {
+          "question": "¿Qué es un convertidor SVG?",
+          "answer": "Un convertidor SVG es una herramienta que transforma archivos SVG (Gráficos Vectoriales Escalables) en formatos de imagen raster como PNG, JPEG, WebP o ICO. Nuestro convertidor SVG funciona renderizando los gráficos vectoriales y capturando el resultado como una imagen de mapa de bits. El convertidor SVG es esencial cuando necesitas usar gráficos vectoriales en entornos que no admiten el formato SVG, como ciertas plataformas de redes sociales, aplicaciones antiguas, o cuando se requiere un formato raster específico."
+        },
+        {
+          "question": "¿Cómo funciona este convertidor SVG?",
+          "answer": "Nuestro convertidor SVG renderiza tu archivo SVG en el navegador y luego captura la salida como una imagen raster. El convertidor SVG te permite elegir entre diferentes formatos de salida (PNG, JPEG, WebP, ICO) y establecer un factor de escala para controlar la resolución de la imagen convertida. Simplemente pega tu código SVG o sube un archivo SVG, elige tu formato y configuración deseados, y nuestro convertidor SVG generará una imagen de alta calidad lista para descargar."
+        },
+        {
+          "question": "¿Por qué necesito convertir SVG a PNG?",
+          "answer": "Convertir SVG a PNG es útil en muchos escenarios. PNG admite transparencia como SVG, pero también funciona en entornos donde SVG no es compatible. Nuestro convertidor de SVG a PNG crea imágenes PNG transparentes de alta calidad que preservan la nitidez de tu SVG original. La conversión de SVG a PNG es ideal para usar gráficos vectoriales en aplicaciones, sitios web o plataformas que no admiten el formato SVG pero sí admiten PNG. Además, PNG es ampliamente compatible con todos los dispositivos y navegadores."
+        },
+        {
+          "question": "¿Cuándo debería convertir SVG a JPEG?",
+          "answer": "Convertir SVG a JPEG es ideal cuando el tamaño del archivo es una prioridad y la imagen no necesita transparencia. Nuestro convertidor de SVG a JPEG produce archivos más pequeños que PNG, perfectos para imágenes web donde la velocidad de carga es importante. La conversión de SVG a JPEG también es útil cuando necesitas usar gráficos vectoriales en sistemas que solo aceptan formato JPEG, como ciertos sistemas de gestión de contenido, plataformas de correo electrónico, o al crear material impreso donde no se necesita transparencia."
+        },
+        {
+          "question": "¿Cuáles son las ventajas de convertir SVG a WebP?",
+          "answer": "WebP ofrece lo mejor de ambos mundos: tamaños de archivo más pequeños que PNG mientras admite transparencia como PNG. Nuestro convertidor de SVG a WebP crea imágenes que se cargan más rápido en sitios web mientras mantienen alta calidad. La conversión de SVG a WebP es ideal para proyectos web modernos donde el rendimiento es importante. WebP es compatible con todos los navegadores principales y ofrece excelente compresión, lo que lo convierte en una excelente opción para gráficos web convertidos desde SVG."
+        },
+        {
+          "question": "¿Por qué convertir SVG a ICO?",
+          "answer": "Los archivos ICO se utilizan principalmente para favicons de sitios web e iconos de aplicaciones Windows. Nuestro convertidor de SVG a ICO te permite transformar logos o iconos vectoriales al formato ICO necesario para estos usos específicos. La conversión de SVG a ICO asegura consistencia de marca en todos los puntos de contacto. Los archivos ICO creados por nuestro convertidor funcionan bien incluso a tamaños pequeños, manteniendo nitidez y reconocibilidad."
+        },
+        {
+          "question": "¿Perderé calidad al convertir SVG a formatos raster?",
+          "answer": "A diferencia de SVG, los formatos raster como PNG, JPEG, WebP e ICO tienen una resolución fija. Nuestro convertidor SVG te permite establecer un factor de escala para asegurar que tu imagen convertida tenga suficiente resolución para tus necesidades. Para gráficos web, nuestra configuración predeterminada da excelentes resultados. Para impresión o pantallas grandes, puedes aumentar el factor de escala para crear una salida de mayor resolución. Aunque los SVG vectoriales pueden escalarse indefinidamente sin pérdida de calidad, nuestro convertidor genera versiones raster de la más alta calidad posible."
+        },
+        {
+          "question": "¿Este convertidor SVG es gratuito?",
+          "answer": "Sí, nuestro convertidor SVG es completamente gratuito para usar sin limitaciones. Puedes convertir tantos archivos SVG a formatos PNG, JPEG, WebP o ICO como desees sin costo alguno. El convertidor SVG procesa tus archivos directamente en tu navegador, asegurando que tus datos permanezcan privados y seguros. No necesitas crear una cuenta ni proporcionar información personal para usar nuestro convertidor SVG."
+        }
+      ]
+    }
   }
 
 }
