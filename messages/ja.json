@@ -33,6 +33,9 @@
     "legal": "法的情報",
     "svgToPng": "SVGからPNGへのコンバーター"
   },
+  "navigation": {
+    "changeLanguage": "言語を変更"
+  },
   "Metadata": {
     "title": "SVGビューア - 無料オンラインSVGビューア・コンバーター",
     "description": "無料オンラインSVGビューアとコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。",

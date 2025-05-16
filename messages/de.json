@@ -33,6 +33,9 @@
     "legal": "Rechtliches",
     "svgToPng": "SVG zu PNG Konverter"
   },
+  "navigation": {
+    "changeLanguage": "Sprache ändern"
+  },
   "Metadata": {
     "title": "SVG-Betrachter - Kostenloser Online-SVG-Betrachter und -Konverter",
     "description": "Kostenloser Online-SVG-Betrachter und -Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser.",

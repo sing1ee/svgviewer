@@ -33,6 +33,9 @@
     "legal": "Mentions légales",
     "svgToPng": "Convertisseur SVG en PNG"
   },
+  "navigation": {
+    "changeLanguage": "Changer de langue"
+  },
   "Metadata": {
     "title": "Visionneuse SVG - Visionneuse et Convertisseur SVG en ligne Gratuit",
     "description": "Visionneuse et convertisseur SVG en ligne gratuit. Convertissez SVG en PNG, JPEG, WEBP, ICO et plus. Visualisez des fichiers SVG dans votre navigateur.",

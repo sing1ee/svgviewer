@@ -33,6 +33,9 @@
     "legal": "القانونية",
     "svgToPng": "محول SVG إلى PNG"
   },
+  "navigation": {
+    "changeLanguage": "تغيير اللغة"
+  },
   "Metadata": {
     "title": "عارض SVG - عارض ومحول SVG مجاني عبر الإنترنت",
     "description": "عارض ومحول SVG مجاني عبر الإنترنت. حول SVG إلى PNG وJPEG وWEBP وICO والمزيد. اعرض ملفات SVG في متصفحك.",

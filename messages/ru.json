@@ -32,6 +32,9 @@
     "languages": "Языки",
     "legal": "Правовая информация",
     "svgToPng": "Конвертер SVG в PNG"
+  },    
+  "navigation": {
+    "changeLanguage": "Сменить язык"
   },
   "Metadata": {
     "title": "SVG Просмотрщик - Бесплатный онлайн просмотрщик и конвертер SVG",

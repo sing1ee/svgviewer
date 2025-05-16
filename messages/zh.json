@@ -33,6 +33,9 @@
     "legal": "法律信息",
     "svgToPng": "SVG转PNG转换器"
   },
+  "navigation": {
+    "changeLanguage": "更改语言"
+  },
   "Metadata": {
     "title": "SVG查看器 - 免费在线SVG查看器和转换器",
     "description": "免费在线SVG查看器和转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。",

@@ -33,6 +33,9 @@
     "legal": "कानूनी",
     "svgToPng": "SVG से PNG कन्वर्टर"
   },
+  "navigation": {
+    "changeLanguage": "भाषा बदलें"
+  },
   "Metadata": {
     "title": "SVG व्यूअर - मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर",
     "description": "मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर। SVG को PNG, JPEG, WEBP, ICO और अन्य में बदलें। अपने ब्राउज़र में SVG फ़ाइलें देखें।",

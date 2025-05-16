@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
@@ -82,37 +82,37 @@ export default async function Footer() {
                   <Link href="/en" locale="en" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     English
                   </Link>
-                  <Link href="/zh" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     中文
                   </Link>
-                  <Link href="/zh-TW" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     繁體中文
                   </Link>
-                  <Link href="/ja" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     日本語
                   </Link>
-                  <Link href="/ru" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     русский
                   </Link>
-                  <Link href="/pt" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     português
                   </Link>
-                  <Link href="/es" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     español
                   </Link>
-                  <Link href="/ko" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     한국어
                   </Link>
-                  <Link href="/ar" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     العربية
                   </Link>
-                  <Link href="/hi" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     हिंदी
                   </Link>
-                  <Link href="/fr" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     français
                   </Link>
-                  <Link href="/de" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                  <Link href="/" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
                     deutsch
                   </Link>
                 </div>
