@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import { MobileNav } from "./mobile-nav";
 import Image from "next/image";
 import LocaleSwitcher from "./locale-switcher";
