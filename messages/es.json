@@ -434,6 +434,59 @@
         }
       ]
     }
+  },
+  "freeSvgCollections": {
+    "title": "Colecciones SVG Gratuitas",
+    "welcome": "¡Bienvenido a nuestra colección de recursos SVG gratuitos! Aquí encontrarás archivos SVG gratuitos de alta calidad para tus proyectos. Todas estas colecciones SVG gratuitas están cuidadosamente seleccionadas y listas para usar.",
+    "collections": {
+      "japaneseCulture": {
+        "name": "Cultura Japonesa",
+        "description": "Una hermosa colección de iconos SVG gratuitos que representan la cultura japonesa, incluyendo símbolos tradicionales, comida y monumentos."
+      },
+      "bitcoinLogo": {
+        "name": "Logo de Bitcoin",
+        "description": "Un conjunto de logos SVG gratuitos de Bitcoin en varios estilos y formatos, perfectos para proyectos de criptomonedas."
+      },
+      "helloKitty": {
+        "name": "Hello Kitty",
+        "description": "Diseños SVG gratuitos lindos y adorables de Hello Kitty para tus proyectos."
+      },
+      "heart": {
+        "name": "Corazón",
+        "description": "Una colección de diseños SVG gratuitos de corazones en diferentes estilos y colores."
+      },
+      "flower": {
+        "name": "Flor",
+        "description": "Una colección de diseños SVG gratuitos de flores en diferentes estilos y colores."
+      },
+      "butterfly": {
+        "name": "Mariposa",
+        "description": "Una colección de diseños SVG gratuitos de mariposas en diferentes estilos y colores."
+      }
+    },
+    "whyChoose": {
+      "title": "¿Por Qué Elegir Nuestras Colecciones SVG Gratuitas?",
+      "reasons": [
+        "Todos nuestros archivos SVG gratuitos están optimizados para uso web",
+        "Las colecciones SVG gratuitas se actualizan regularmente con nuevos diseños",
+        "Archivos SVG gratuitos de alta calidad que escalan perfectamente",
+        "Recursos SVG gratuitos para uso personal y comercial",
+        "Iconos SVG gratuitos fáciles de descargar e implementar"
+      ]
+    },
+    "howToUse": {
+      "title": "Cómo Usar Archivos SVG Gratuitos",
+      "description": "Nuestras colecciones SVG gratuitas están diseñadas para ser fáciles de usar. Simplemente descarga los archivos SVG gratuitos que necesites e impleméntalos en tus proyectos. Estos recursos SVG gratuitos son perfectos para diseño web, aplicaciones móviles y materiales impresos.",
+      "licenseNote": "Recuerda verificar los términos de licencia para cada colección SVG gratuita. Aunque la mayoría de nuestros archivos SVG gratuitos están disponibles para uso comercial, algunos pueden tener requisitos específicos."
+    },
+    "viewCollection": "Ver Colección SVG Gratuita"
+  },
+  "svgCategory": {
+    "selectSvg": "Selecciona un SVG de la lista para previsualizar"
+  },
+  "codeEditor": {
+    "mobileEditHint": "Toca para editar • Usa el teclado para un control preciso",
+    "placeholder": "Introduce código SVG..."
   }
 
 }

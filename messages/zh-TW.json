@@ -435,5 +435,58 @@
         }
       ]
     }
+  },
+  "freeSvgCollections": {
+    "title": "免費SVG集合",
+    "welcome": "歡迎來到我們的免費SVG資源集合！在這裡，您可以找到高質量的免費SVG文件用於您的項目。所有這些免費SVG集合都經過精心策劃，隨時可供使用。",
+    "collections": {
+      "japaneseCulture": {
+        "name": "日本文化",
+        "description": "一個精美的免費SVG圖標集合，代表日本文化，包括傳統符號、食物和地標。"
+      },
+      "bitcoinLogo": {
+        "name": "比特幣標誌",
+        "description": "一套各種風格和格式的免費SVG比特幣標誌，非常適合加密貨幣項目。"
+      },
+      "helloKitty": {
+        "name": "Hello Kitty",
+        "description": "可愛迷人的免費SVG Hello Kitty設計，適用於您的項目。"
+      },
+      "heart": {
+        "name": "心形",
+        "description": "一系列不同風格和顏色的免費SVG心形設計。"
+      },
+      "flower": {
+        "name": "花朵",
+        "description": "一系列不同風格和顏色的免費SVG花朵設計。"
+      },
+      "butterfly": {
+        "name": "蝴蝶",
+        "description": "一系列不同風格和顏色的免費SVG蝴蝶設計。"
+      }
+    },
+    "whyChoose": {
+      "title": "為什麼選擇我們的免費SVG集合？",
+      "reasons": [
+        "我們所有的免費SVG文件都針對網絡使用進行了優化",
+        "免費SVG集合會定期更新新設計",
+        "高質量的免費SVG文件，可完美縮放",
+        "適用於個人和商業用途的免費SVG資源",
+        "易於下載和實施的免費SVG圖標"
+      ]
+    },
+    "howToUse": {
+      "title": "如何使用免費SVG文件",
+      "description": "我們的免費SVG集合設計得易於使用。只需下載您需要的免費SVG文件並將其應用到您的項目中。這些免費SVG資源非常適合網頁設計、移動應用和印刷材料。",
+      "licenseNote": "請記得查看每個免費SVG集合的許可條款。雖然我們的大多數免費SVG文件可用於商業用途，但有些可能有特定要求。"
+    },
+    "viewCollection": "查看免費SVG集合"
+  },
+  "svgCategory": {
+    "selectSvg": "從列表中選擇一個SVG進行預覽"
+  },
+  "codeEditor": {
+    "mobileEditHint": "點擊編輯 • 使用鍵盤進行精確控制",
+    "placeholder": "輸入SVG代碼..."
   }
 }

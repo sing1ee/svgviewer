@@ -434,6 +434,59 @@
         }
       ]
     }
+  },
+  "freeSvgCollections": {
+    "title": "무료 SVG 컬렉션",
+    "welcome": "무료 SVG 리소스 컬렉션에 오신 것을 환영합니다! 여기에서 프로젝트를 위한 고품질의 무료 SVG 파일을 찾을 수 있습니다. 이 모든 무료 SVG 컬렉션은 신중하게 선별되었으며 바로 사용할 수 있습니다.",
+    "collections": {
+      "japaneseCulture": {
+        "name": "일본 문화",
+        "description": "전통적인 상징, 음식 및 랜드마크를 포함한 일본 문화를 대표하는 아름다운 무료 SVG 아이콘 컬렉션입니다."
+      },
+      "bitcoinLogo": {
+        "name": "비트코인 로고",
+        "description": "암호화폐 프로젝트에 완벽한 다양한 스타일과 형식의 무료 SVG 비트코인 로고 세트입니다."
+      },
+      "helloKitty": {
+        "name": "헬로 키티",
+        "description": "프로젝트를 위한 귀엽고 사랑스러운 무료 SVG 헬로 키티 디자인입니다."
+      },
+      "heart": {
+        "name": "하트",
+        "description": "다양한 스타일과 색상의 무료 SVG 하트 디자인 컬렉션입니다."
+      },
+      "flower": {
+        "name": "꽃",
+        "description": "다양한 스타일과 색상의 무료 SVG 꽃 디자인 컬렉션입니다."
+      },
+      "butterfly": {
+        "name": "나비",
+        "description": "다양한 스타일과 색상의 무료 SVG 나비 디자인 컬렉션입니다."
+      }
+    },
+    "whyChoose": {
+      "title": "왜 우리의 무료 SVG 컬렉션을 선택해야 할까요?",
+      "reasons": [
+        "모든 무료 SVG 파일은 웹 사용을 위해 최적화되어 있습니다",
+        "무료 SVG 컬렉션은 새로운 디자인으로 정기적으로 업데이트됩니다",
+        "완벽하게 확장되는 고품질 무료 SVG 파일",
+        "개인 및 상업적 사용을 위한 무료 SVG 리소스",
+        "다운로드 및 구현이 쉬운 무료 SVG 아이콘"
+      ]
+    },
+    "howToUse": {
+      "title": "무료 SVG 파일 사용 방법",
+      "description": "우리의 무료 SVG 컬렉션은 사용하기 쉽게 설계되었습니다. 필요한 무료 SVG 파일을 다운로드하여 프로젝트에 구현하기만 하면 됩니다. 이러한 무료 SVG 리소스는 웹 디자인, 모바일 앱 및 인쇄 자료에 완벽합니다.",
+      "licenseNote": "각 무료 SVG 컬렉션의 라이센스 조건을 확인하는 것을 잊지 마세요. 대부분의 무료 SVG 파일은 상업적 사용이 가능하지만, 일부는 특정 요구 사항이 있을 수 있습니다."
+    },
+    "viewCollection": "무료 SVG 컬렉션 보기"
+  },
+  "svgCategory": {
+    "selectSvg": "미리 보기할 SVG를 목록에서 선택하세요"
+  },
+  "codeEditor": {
+    "mobileEditHint": "편집하려면 탭하세요 • 정확한 제어를 위해 키보드 사용",
+    "placeholder": "SVG 코드 입력..."
   }
   
 }
