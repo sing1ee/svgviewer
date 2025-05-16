@@ -30,7 +30,11 @@
     "friends": "Friends",
     "navigation": "Navigation",
     "languages": "Languages",
-    "legal": "Legal"
+    "legal": "Legal",
+    "svgToPng": "SVG to PNG Converter"
+  },
+  "navigation": {
+    "changeLanguage": "Change Language"
   },
   "Metadata": {
     "title": "SVG Viewer - Free Online SVG Viewer and Converter",

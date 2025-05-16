@@ -30,7 +30,8 @@
     "friends": "파트너",
     "navigation": "탐색",
     "languages": "언어",
-    "legal": "법적 고지"
+    "legal": "법적 고지",
+    "svgToPng": "SVG에서 PNG로 변환기"
   },
   "Metadata": {
     "title": "SVG 뷰어 - 무료 온라인 SVG 뷰어 및 변환기",
