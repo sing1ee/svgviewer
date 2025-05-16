@@ -348,6 +348,92 @@
         }
       ]
     }
+  },
+  "features": {
+    "viewer": {
+      "title": "Características Principales del Visor SVG",
+      "features": [
+        {
+          "title": "Visor SVG en Tiempo Real",
+          "description": "Vea los cambios de su SVG instantáneamente con nuestro visor responsivo que se actualiza mientras escribe."
+        },
+        {
+          "title": "Resaltado de Código",
+          "description": "Edite su SVG con resaltado de sintaxis que facilita la comprensión y modificación del código."
+        },
+        {
+          "title": "Importación/Exportación de Archivos",
+          "description": "Cargue archivos SVG existentes y descargue sus SVGs editados con solo un clic."
+        },
+        {
+          "title": "Controles de Zoom",
+          "description": "Acerque y aleje para examinar detalles u obtener una vista más amplia de sus gráficos SVG."
+        }
+      ]
+    },
+    "svgToPng": {
+      "title": "Características Principales del Convertidor SVG a PNG",
+      "features": [
+        {
+          "title": "Salida de Alta Calidad",
+          "description": "Nuestro convertidor SVG a PNG produce imágenes PNG de alta calidad que mantienen la claridad y el detalle de sus archivos SVG originales."
+        },
+        {
+          "title": "Resolución Ajustable",
+          "description": "Controle la calidad y el tamaño de sus imágenes PNG convertidas con factores de escala personalizables en nuestro convertidor SVG a PNG."
+        },
+        {
+          "title": "Soporte de Transparencia",
+          "description": "Mantenga la transparencia en sus conversiones PNG para uso versátil en varios contextos con nuestro convertidor SVG a PNG."
+        },
+        {
+          "title": "Procesamiento en el Navegador",
+          "description": "Convierta sus archivos SVG a PNG directamente en su navegador sin necesidad de cargarlos a servidores externos."
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "Características Principales del Optimizador SVG",
+      "features": [
+        {
+          "title": "Optimización de Rutas",
+          "description": "El optimizador SVG simplifica los datos de ruta y reduce la precisión decimal sin afectar la calidad visual."
+        },
+        {
+          "title": "Eliminación de Metadatos",
+          "description": "El optimizador SVG elimina metadatos innecesarios, comentarios y elementos ocultos para reducir el tamaño del archivo."
+        },
+        {
+          "title": "Comparación en Tiempo Real",
+          "description": "Compare SVGs originales y optimizados lado a lado para verificar la calidad y ver la reducción del tamaño del archivo."
+        },
+        {
+          "title": "Procesamiento en el Navegador",
+          "description": "El optimizador SVG funciona completamente en su navegador, garantizando privacidad y eliminando límites de carga."
+        }
+      ]
+    },
+    "converter": {
+      "title": "Características Principales del Convertidor SVG",
+      "features": [
+        {
+          "title": "Múltiples Formatos de Salida",
+          "description": "Convierta sus archivos SVG a formatos PNG, JPEG, WebP o ICO según sus necesidades específicas."
+        },
+        {
+          "title": "Resolución Ajustable",
+          "description": "Controle la calidad y el tamaño de sus imágenes convertidas con factores de escala personalizables."
+        },
+        {
+          "title": "Soporte de Transparencia",
+          "description": "Mantenga la transparencia en sus conversiones PNG y WebP para uso versátil en varios contextos."
+        },
+        {
+          "title": "Procesamiento en el Navegador",
+          "description": "Convierta sus archivos SVG directamente en su navegador sin necesidad de cargarlos a servidores externos."
+        }
+      ]
+    }
   }
 
 }

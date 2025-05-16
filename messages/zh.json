@@ -349,5 +349,91 @@
         }
       ]
     }
+  },
+  "features": {
+    "viewer": {
+      "title": "SVG查看器主要功能",
+      "features": [
+        {
+          "title": "实时SVG查看器",
+          "description": "通过我们的响应式SVG查看器，随着您的输入即时查看SVG变化。"
+        },
+        {
+          "title": "代码高亮",
+          "description": "使用语法高亮编辑您的SVG，使代码更容易理解和修改。"
+        },
+        {
+          "title": "文件导入/导出",
+          "description": "只需一键即可上传现有SVG文件并下载您编辑过的SVG。"
+        },
+        {
+          "title": "缩放控制",
+          "description": "放大和缩小以检查细节或获取SVG图形的更广阔视图。"
+        }
+      ]
+    },
+    "svgToPng": {
+      "title": "SVG转PNG转换器主要功能",
+      "features": [
+        {
+          "title": "高质量输出",
+          "description": "我们的SVG转PNG转换器生成高质量的PNG图像，保持原始SVG文件的清晰度和细节。"
+        },
+        {
+          "title": "可调整分辨率",
+          "description": "通过我们SVG转PNG转换器中的可自定义比例因子，控制转换后PNG图像的质量和大小。"
+        },
+        {
+          "title": "透明度支持",
+          "description": "在PNG转换中保持透明度，以便在各种环境中灵活使用我们的SVG转PNG转换器。"
+        },
+        {
+          "title": "浏览器端处理",
+          "description": "直接在浏览器中将SVG文件转换为PNG，无需上传到外部服务器。"
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "SVG优化器主要功能",
+      "features": [
+        {
+          "title": "路径优化",
+          "description": "SVG优化器简化路径数据并减少小数精度，而不影响视觉质量。"
+        },
+        {
+          "title": "元数据移除",
+          "description": "SVG优化器去除不必要的元数据、注释和隐藏元素，以减少文件大小。"
+        },
+        {
+          "title": "实时比较",
+          "description": "并排比较原始和优化后的SVG，以验证质量并查看文件大小减少情况。"
+        },
+        {
+          "title": "浏览器端处理",
+          "description": "SVG优化器完全在您的浏览器中工作，确保隐私并消除上传限制。"
+        }
+      ]
+    },
+    "converter": {
+      "title": "SVG转换器主要功能",
+      "features": [
+        {
+          "title": "多种输出格式",
+          "description": "根据您的特定需求，将SVG文件转换为PNG、JPEG、WebP或ICO格式。"
+        },
+        {
+          "title": "可调整分辨率",
+          "description": "通过可自定义的比例因子控制转换图像的质量和大小。"
+        },
+        {
+          "title": "透明度支持",
+          "description": "在PNG和WebP转换中保持透明度，以便在各种环境中灵活使用。"
+        },
+        {
+          "title": "浏览器端处理",
+          "description": "直接在浏览器中转换SVG文件，无需上传到外部服务器。"
+        }
+      ]
+    }
   }
 }

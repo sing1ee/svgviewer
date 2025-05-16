@@ -348,6 +348,91 @@
         }
       ]
     }
+  },
+  "features": {
+    "viewer": {
+      "title": "Fonctionnalités principales de la visionneuse SVG",
+      "features": [
+        {
+          "title": "Visionneuse SVG en temps réel",
+          "description": "Visualisez instantanément vos modifications SVG avec notre visionneuse réactive qui se met à jour au fur et à mesure que vous tapez."
+        },
+        {
+          "title": "Coloration syntaxique",
+          "description": "Éditez votre SVG avec une coloration syntaxique qui facilite la compréhension et la modification du code."
+        },
+        {
+          "title": "Importation/exportation de fichiers",
+          "description": "Téléchargez des fichiers SVG existants et téléchargez vos SVG modifiés en un seul clic."
+        },
+        {
+          "title": "Contrôles de zoom",
+          "description": "Zoomez et dézoomez pour examiner les détails ou obtenir une vue plus large de vos graphiques SVG."
+        }
+      ]
+    },
+    "svgToPng": {
+      "title": "Fonctionnalités principales du convertisseur SVG en PNG",
+      "features": [
+        {
+          "title": "Sortie de haute qualité",
+          "description": "Notre convertisseur SVG en PNG produit des images PNG de haute qualité qui conservent la clarté et les détails de vos fichiers SVG originaux."
+        },
+        {
+          "title": "Résolution ajustable",
+          "description": "Contrôlez la qualité et la taille de vos images PNG converties avec des facteurs d'échelle personnalisables dans notre convertisseur SVG en PNG."
+        },
+        {
+          "title": "Prise en charge de la transparence",
+          "description": "Conservez la transparence dans vos conversions PNG pour une utilisation polyvalente dans divers contextes avec notre convertisseur SVG en PNG."
+        },
+        {
+          "title": "Traitement dans le navigateur",
+          "description": "Convertissez vos fichiers SVG en PNG directement dans votre navigateur sans avoir à les télécharger sur des serveurs externes."
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "Fonctionnalités principales de l'optimiseur SVG",
+      "features": [
+        {
+          "title": "Optimisation des chemins",
+          "description": "L'optimiseur SVG simplifie les données de chemin et réduit la précision décimale sans affecter la qualité visuelle."
+        },
+        {
+          "title": "Suppression des métadonnées",
+          "description": "L'optimiseur SVG supprime les métadonnées inutiles, les commentaires et les éléments cachés pour réduire la taille du fichier."
+        },
+        {
+          "title": "Comparaison en temps réel",
+          "description": "Comparez les SVG originaux et optimisés côte à côte pour vérifier la qualité et voir la réduction de la taille du fichier."
+        },
+        {
+          "title": "Traitement dans le navigateur",
+          "description": "L'optimiseur SVG fonctionne entièrement dans votre navigateur, garantissant la confidentialité et éliminant les limites de téléchargement."
+        }
+      ]
+    },
+    "converter": {
+      "title": "Fonctionnalités principales du convertisseur SVG",
+      "features": [
+        {
+          "title": "Formats de sortie multiples",
+          "description": "Convertissez vos fichiers SVG en formats PNG, JPEG, WebP ou ICO selon vos besoins spécifiques."
+        },
+        {
+          "title": "Résolution ajustable",
+          "description": "Contrôlez la qualité et la taille de vos images converties avec des facteurs d'échelle personnalisables."
+        },
+        {
+          "title": "Prise en charge de la transparence",
+          "description": "Conservez la transparence dans vos conversions PNG et WebP pour une utilisation polyvalente dans divers contextes."
+        },
+        {
+          "title": "Traitement dans le navigateur",
+          "description": "Convertissez vos fichiers SVG directement dans votre navigateur sans avoir à les télécharger sur des serveurs externes."
+        }
+      ]
+    }
   }
-
 }

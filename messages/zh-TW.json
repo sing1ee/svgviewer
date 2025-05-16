@@ -348,5 +348,92 @@
         }
       ]
     }
+  },
+
+  "features": {
+    "viewer": {
+      "title": "SVG檢視器主要功能",
+      "features": [
+        {
+          "title": "即時SVG檢視器",
+          "description": "透過我們的響應式SVG檢視器，隨著您的輸入即時查看SVG變化。"
+        },
+        {
+          "title": "程式碼高亮",
+          "description": "使用語法高亮編輯您的SVG，使程式碼更容易理解和修改。"
+        },
+        {
+          "title": "檔案匯入/匯出",
+          "description": "只需一鍵即可上傳現有SVG檔案並下載您編輯過的SVG。"
+        },
+        {
+          "title": "縮放控制",
+          "description": "放大和縮小以檢查細節或獲取SVG圖形的更廣闊視圖。"
+        }
+      ]
+    },
+    "svgToPng": {
+      "title": "SVG轉PNG轉換器主要功能",
+      "features": [
+        {
+          "title": "高品質輸出",
+          "description": "我們的SVG轉PNG轉換器生成高品質的PNG圖像，保持原始SVG檔案的清晰度和細節。"
+        },
+        {
+          "title": "可調整解析度",
+          "description": "透過我們SVG轉PNG轉換器中的可自定義比例因子，控制轉換後PNG圖像的品質和大小。"
+        },
+        {
+          "title": "透明度支援",
+          "description": "在PNG轉換中保持透明度，以便在各種環境中靈活使用我們的SVG轉PNG轉換器。"
+        },
+        {
+          "title": "瀏覽器端處理",
+          "description": "直接在瀏覽器中將SVG檔案轉換為PNG，無需上傳到外部伺服器。"
+        }
+      ]
+    },
+    "optimizer": {
+      "title": "SVG最佳化器主要功能",
+      "features": [
+        {
+          "title": "路徑最佳化",
+          "description": "SVG最佳化器簡化路徑數據並減少小數精度，而不影響視覺品質。"
+        },
+        {
+          "title": "元數據移除",
+          "description": "SVG最佳化器去除不必要的元數據、註釋和隱藏元素，以減少檔案大小。"
+        },
+        {
+          "title": "即時比較",
+          "description": "並排比較原始和最佳化後的SVG，以驗證品質並查看檔案大小減少情況。"
+        },
+        {
+          "title": "瀏覽器端處理",
+          "description": "SVG最佳化器完全在您的瀏覽器中工作，確保隱私並消除上傳限制。"
+        }
+      ]
+    },
+    "converter": {
+      "title": "SVG轉換器主要功能",
+      "features": [
+        {
+          "title": "多種輸出格式",
+          "description": "根據您的特定需求，將SVG檔案轉換為PNG、JPEG、WebP或ICO格式。"
+        },
+        {
+          "title": "可調整解析度",
+          "description": "透過可自定義的比例因子控制轉換圖像的品質和大小。"
+        },
+        {
+          "title": "透明度支援",
+          "description": "在PNG和WebP轉換中保持透明度，以便在各種環境中靈活使用。"
+        },
+        {
+          "title": "瀏覽器端處理",
+          "description": "直接在瀏覽器中轉換SVG檔案，無需上傳到外部伺服器。"
+        }
+      ]
+    }
   }
 }
