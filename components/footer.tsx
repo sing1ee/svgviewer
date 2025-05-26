@@ -152,6 +152,21 @@ export default async function Footer() {
                       A2AProtocol.ai
                     </a>
                   </li>
+                  <li>
+                    <a 
+                      href="https://fazier.com" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      <img 
+                        src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=featured&theme=light" 
+                        width={250} 
+                        alt="Fazier badge" 
+                        className="mt-2"
+                      />
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
