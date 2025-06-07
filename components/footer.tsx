@@ -154,6 +154,36 @@ export default async function Footer() {
                   </li>
                   <li>
                     <a 
+                      href="https://veo3.directory/" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      Veo3 Directory
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://iammusicfont.com/" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      I am Music Font
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://papyrusfont.com/" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      Papyrus Font
+                    </a>
+                  </li>
+                  <li>
+                    <a 
                       href="https://fazier.com" 
                       target="_blank" 
                       rel="dofollow" 
