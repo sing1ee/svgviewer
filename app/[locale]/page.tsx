@@ -5,6 +5,9 @@ import Header from '@/components/header';
 import { setRequestLocale } from 'next-intl/server';
 import FAQ from '@/components/faq';
 
+export const revalidate = 60;
+export const dynamic = "force-static";
+
 export default async function Home(props: {params: Promise<{locale: string}>}) {
   const params = await props.params;
 

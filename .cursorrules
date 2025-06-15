@@ -1,5 +1,9 @@
 # 通用要求
 - 页面内容使用英文
+- Next.js > 15
+- 使用 bun 构建
+- 使用 cloudflare worker 部署
+
 # Git Commit Message Guidelines
 
 ## Commit Message Format

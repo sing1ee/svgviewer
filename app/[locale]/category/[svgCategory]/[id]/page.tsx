@@ -7,6 +7,9 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 
+export const revalidate = 60;
+export const dynamic = "force-static";
+
 interface Props {
   params: Promise<{
     svgCategory: string;

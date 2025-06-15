@@ -38,3 +38,13 @@ package-lock.json
 .env
 
 .cursorrules
+
+Makefile
+.wrangler
+wrangler.toml
+supabase
+
+# OpenNext
+/.open-next
+
+.dev.vars*

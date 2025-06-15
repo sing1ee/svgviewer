@@ -6,6 +6,10 @@ import { siteConfig } from '@/config/site';
 import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+
+export const revalidate = 60;
+export const dynamic = "force-static";
+
 export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
   const params = await props.params;
 

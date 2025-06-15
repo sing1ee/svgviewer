@@ -9,6 +9,9 @@ import SvgConverter from '@/components/svg-converter';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 
+export const revalidate = 60;
+export const dynamic = "force-static";
+
 interface Props {
   params: Promise<{
     locale: string;
