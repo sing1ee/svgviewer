@@ -1,6 +1,5 @@
 import '../globals.css';
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import Script from 'next/script';
@@ -13,13 +12,6 @@ import { siteConfig } from '@/config/site';
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins'
-});
 
 export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
   const params = await props.params;
@@ -124,7 +116,7 @@ export default async function RootLayout(
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -152,7 +144,7 @@ export default async function RootLayout(
           gtag('config', 'G-DVMP8MGHFZ');
         `}
       </Script>
-      <body className={`${inter.className} safe-bottom`}>
+      <body className={`safe-bottom`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="light">
             {children}
