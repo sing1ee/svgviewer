@@ -8,8 +8,6 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 import { getSvgFiles as fetchSvgFiles, getSvgContent } from '@/lib/r2-client';
 
-export const revalidate = 60;
-export const dynamic = "force-static";
 
 interface Props {
   params: Promise<{
@@ -159,5 +157,3 @@ export default async function SvgCategoryPage(props: Props) {
     </div>
   );
 } 
-
-export const runtime = 'edge';

@@ -6,9 +6,6 @@ import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
 import FAQ from '@/components/faq';
 
-export const revalidate = 60;
-export const dynamic = "force-static";
-
 export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
   const params = await props.params;
 
@@ -101,5 +98,3 @@ export default async function OptimizerPage(props: {params: Promise<{locale: str
     </div>
   );
 }
-
-export const runtime = 'edge';

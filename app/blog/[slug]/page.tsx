@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
@@ -25,13 +24,9 @@ export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const fileNames = fs.readdirSync(postsDirectory);
 
-  // 为每个语言生成静态参数
-  return routing.locales.flatMap(locale => 
-    fileNames.map((fileName) => ({
-      slug: fileName.replace(/\.md$/, ''),
-      locale,
-    }))
-  );
+  return fileNames.map(fileName => ({
+    slug: fileName.replace(/\.md$/, ''),
+  }));
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -174,4 +169,4 @@ export default async function BlogPost(props: Props) {
   } catch (error) {
     notFound();
   }
-} 
+}

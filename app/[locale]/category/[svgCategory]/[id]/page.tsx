@@ -6,9 +6,6 @@ import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 import { getSvgFiles as fetchSvgFiles, getSvgContent as fetchSvgContent } from '@/lib/r2-client';
 
-export const revalidate = 60;
-export const dynamic = "force-static";
-
 interface Props {
   params: Promise<{
     svgCategory: string;
@@ -95,5 +92,3 @@ export default async function SvgPreviewPage(props: Props) {
     </div>
   );
 }   
-
-export const runtime = 'edge';

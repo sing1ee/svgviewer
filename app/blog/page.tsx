@@ -174,6 +174,4 @@ export default async function BlogPage(props: {params: Promise<{locale: string}>
       <Footer />
     </div>
   );
-} 
-
-export const runtime = 'edge';
+}

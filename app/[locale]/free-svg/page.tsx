@@ -169,5 +169,3 @@ export default async function FreeSVGPage(props: {params: Promise<{locale: strin
     </div>
   )
 }     
-
-export const runtime = 'edge';
