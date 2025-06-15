@@ -95,4 +95,6 @@ export default function ConverterPage() {
       <Footer />
     </div>
   );
-}
+} 
+
+export const runtime = 'edge';

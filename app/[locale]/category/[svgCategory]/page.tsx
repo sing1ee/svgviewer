@@ -178,3 +178,5 @@ export default async function SvgCategoryPage(props: Props) {
     </div>
   );
 } 
+
+export const runtime = 'edge';

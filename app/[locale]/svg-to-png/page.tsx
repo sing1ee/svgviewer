@@ -104,3 +104,5 @@ export default async function SvgToPNGPage(props: {params: Promise<{locale: stri
     </div>
   );
 } 
+
+export const runtime = 'edge';

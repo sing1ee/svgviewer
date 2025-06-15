@@ -101,3 +101,5 @@ export default async function OptimizerPage(props: {params: Promise<{locale: str
     </div>
   );
 }
+
+export const runtime = 'edge';

@@ -124,4 +124,6 @@ export default async function SvgPreviewPage(props: Props) {
       <Footer />
     </div>
   );
-} 
+}   
+
+export const runtime = 'edge';
