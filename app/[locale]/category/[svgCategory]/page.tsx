@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
 import SvgList from '@/components/svg-list';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
+import { getSvgFiles as fetchSvgFiles, getSvgContent } from '@/lib/r2-client';
 
 export const revalidate = 60;
 export const dynamic = "force-static";
@@ -19,33 +18,15 @@ interface Props {
   }>;
 }
 
-// 获取所有 SVG 文件
-async function getSvgFiles(category: string) {
-  const svgDir = path.join(process.cwd(), 'public', 'svgs', category);
-  try {
-    const files = await fs.promises.readdir(svgDir);
-    return files
-      .filter(file => file.endsWith('.svg'))
-      .map(file => ({
-        id: file.replace('.svg', ''),
-        name: file,
-        path: `/svgs/${category}/${file}`
-      }));
-  } catch (error) {
-    return [];
-  }
-}
-
 // 获取默认 SVG 内容
 async function getDefaultSvgContent(category: string) {
-  const svgFiles = await getSvgFiles(category);
+  const svgFiles = await fetchSvgFiles(category);
   if (svgFiles.length === 0) return null;
   
   const firstSvg = svgFiles[0];
-  const svgPath = path.join(process.cwd(), 'public', firstSvg.path);
   
   try {
-    const content = await fs.promises.readFile(svgPath, 'utf-8');
+    const content = await getSvgContent(category, firstSvg.id);
     return content;
   } catch (error) {
     return null;
@@ -135,7 +116,7 @@ export default async function SvgCategoryPage(props: Props) {
 
   setRequestLocale(locale);
   const t = await getTranslations("svgCategory");
-  const svgFiles = await getSvgFiles(svgCategory);
+  const svgFiles = await fetchSvgFiles(svgCategory);
   const defaultSvgContent = await getDefaultSvgContent(svgCategory);
   if (svgFiles.length === 0) {
     notFound();

@@ -1,6 +1,7 @@
 import {Link} from "@/i18n/navigation";
 import { cn } from '@/lib/utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { getSvgPublicUrl } from "@/lib/r2-client";
 
 interface SvgFile {
   id: string;
@@ -28,7 +29,7 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
             {svgFiles.map((file) => {
               const isActive = currentId === file.id;
               const href = `/category/${category}/${file.id}`;
-
+              const svgUrl = getSvgPublicUrl(file.path);
               return (
                 <div
                   key={file.id}
@@ -40,7 +41,7 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
                   <Link href={href} className="w-full" title={`${category} SVG: ${file.name}`}>
                     <div className="aspect-square w-full rounded-md bg-muted flex items-center justify-center p-1">
                       <img
-                        src={file.path}
+                        src={svgUrl}
                         alt={`${category} SVG`}
                         className="max-w-full max-h-full object-contain"
                       />

@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
 import SvgList from '@/components/svg-list';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
+import { getSvgFiles as fetchSvgFiles, getSvgContent as fetchSvgContent } from '@/lib/r2-client';
 
 export const revalidate = 60;
 export const dynamic = "force-static";
@@ -17,36 +16,7 @@ interface Props {
   }>;
 }
 
-// 获取所有 SVG 文件
-async function getSvgFiles(category: string) {
-  const svgDir = path.join(process.cwd(), 'public', 'svgs', category);
-  console.log(svgDir);
-  
-  try {
-    const files = await fs.promises.readdir(svgDir);
-    return files
-      .filter(file => file.endsWith('.svg'))
-      .map(file => ({
-        id: file.replace('.svg', ''),
-        name: file,
-        path: `/svgs/${category}/${file}`
-      }));
-  } catch (error) {
-    return [];
-  }
-}
-
-// 获取单个 SVG 文件内容
-async function getSvgContent(category: string, id: string) {
-  const svgPath = path.join(process.cwd(), 'public', 'svgs', category, `${id}.svg`);
-  console.log(svgPath);
-  try {
-    const content = await fs.promises.readFile(svgPath, 'utf-8');
-    return content;
-  } catch (error) {
-    return null;
-  }
-}
+// 这些函数现在由 R2 客户端提供
 
 // 生成元数据
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -92,8 +62,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 export default async function SvgPreviewPage(props: Props) {
   const params = await props.params;
   const { svgCategory, id } = params;
-  const svgFiles = await getSvgFiles(svgCategory);
-  const svgContent = await getSvgContent(svgCategory, id);
+  const svgFiles = await fetchSvgFiles(svgCategory);
+  const svgContent = await fetchSvgContent(svgCategory, id);
 
   if (!svgContent || svgFiles.length === 0) {
     notFound();

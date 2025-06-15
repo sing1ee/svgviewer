@@ -127,4 +127,30 @@ R2:   svgs/japanese-culture/sakura.svg
 上传后的文件可以通过以下 URL 访问：
 ```
 https://your-domain.com/svgs/japanese-culture/sakura.svg
+```
+
+## 页面集成
+
+项目已经集成了 R2 客户端，页面会自动从 R2 获取 SVG 文件：
+
+### 自动功能
+- ✅ **分类页面**: 自动从 R2 获取指定分类下的所有 SVG 文件
+- ✅ **文件预览**: 直接从 R2 获取 SVG 文件内容进行预览
+- ✅ **智能缓存**: 支持边缘运行时和缓存优化
+- ✅ **错误处理**: 自动处理文件不存在等错误情况
+
+### 文件访问方式
+1. **公开 URL**: 如果配置了 `R2_PUBLIC_URL`，直接通过公开 URL 访问
+2. **API 路由**: 如果没有公开 URL，通过 `/api/svg?key=...` 路由访问
+
+### 环境配置
+页面功能需要在 `next.config.js` 中配置环境变量，已自动处理：
+```javascript
+env: {
+  R2_ENDPOINT: process.env.R2_ENDPOINT,
+  R2_ACCESS_KEY_ID: process.env.R2_ACCESS_KEY_ID,
+  R2_SECRET_ACCESS_KEY: process.env.R2_SECRET_ACCESS_KEY,
+  R2_BUCKET_NAME: process.env.R2_BUCKET_NAME,
+  R2_PUBLIC_URL: process.env.R2_PUBLIC_URL,
+}
 ``` 
