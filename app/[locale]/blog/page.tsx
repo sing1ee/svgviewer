@@ -10,7 +10,13 @@ import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata-blog' });
 
   const title = t('title');
@@ -107,7 +113,13 @@ function getPosts(): Post[] {
   return posts;
 }
 
-export default async function BlogPage({params: {locale}}: {params: {locale: string}}) {
+export default async function BlogPage(props: {params: Promise<{locale: string}>}) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   setRequestLocale(locale);
   const t = await getTranslations('blog');
   const posts = getPosts();

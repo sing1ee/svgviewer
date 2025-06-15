@@ -21,7 +21,13 @@ const poppins = Poppins({
   variable: '--font-poppins'
 });
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
 
@@ -89,13 +95,22 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
+export default async function RootLayout(
+  props: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
+  const {
+    children
+  } = props;
+
   // 验证语言参数
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
@@ -107,7 +122,7 @@ export default async function RootLayout({
     console.error('Failed to load messages:', error);
     messages = {};
   }
-  
+
   return (
     <html lang={locale} suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <head>

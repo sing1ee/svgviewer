@@ -8,7 +8,13 @@ import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata-svg-to-png' });
 
 
@@ -75,7 +81,13 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-export default function SvgToPNGPage({params: {locale}}: {params: {locale: string}}) {
+export default async function SvgToPNGPage(props: {params: Promise<{locale: string}>}) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   setRequestLocale(locale);
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background to-background/80">

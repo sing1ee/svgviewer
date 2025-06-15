@@ -6,7 +6,13 @@ import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: 'en' | 'zh' } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata-free-svg' });
 
   const title = t('title');
@@ -72,7 +78,13 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   };
 }
 
-export default async function FreeSVGPage({params: {locale}}: {params: {locale: string}}) {
+export default async function FreeSVGPage(props: {params: Promise<{locale: string}>}) {
+  const params = await props.params;
+
+  const {
+    locale
+  } = params;
+
   setRequestLocale(locale);
   const t = await getTranslations("freeSvgCollections");
   const collections = [

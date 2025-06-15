@@ -8,10 +8,10 @@ import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 
 interface Props {
-  params: {
+  params: Promise<{
     svgCategory: string;
     id: string;
-  };
+  }>;
 }
 
 // 获取所有 SVG 文件
@@ -46,7 +46,8 @@ async function getSvgContent(category: string, id: string) {
 }
 
 // 生成元数据
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const { svgCategory, id } = params;
 
   const title = `${svgCategory} SVG: ${id}`;
@@ -85,7 +86,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function SvgPreviewPage({ params }: Props) {
+export default async function SvgPreviewPage(props: Props) {
+  const params = await props.params;
   const { svgCategory, id } = params;
   const svgFiles = await getSvgFiles(svgCategory);
   const svgContent = await getSvgContent(svgCategory, id);

@@ -15,10 +15,10 @@ import Footer from '@/components/footer';
 import { siteConfig } from '@/config/site';
 
 interface Props {
-  params: {
+  params: Promise<{
     locale: string;
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -34,7 +34,14 @@ export async function generateStaticParams() {
   );
 }
 
-export async function generateMetadata({ params: { locale, slug } }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata-blog' });
 
   const title = t('title');
@@ -100,7 +107,14 @@ export async function generateMetadata({ params: { locale, slug } }: Props): Pro
   };
 }
 
-export default async function BlogPost({ params: { locale, slug } }: Props) {
+export default async function BlogPost(props: Props) {
+  const params = await props.params;
+
+  const {
+    locale,
+    slug
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'blog' });
   setRequestLocale(locale);
   const postsDirectory = path.join(process.cwd(), 'posts');

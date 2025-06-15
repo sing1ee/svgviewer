@@ -10,10 +10,10 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 
 interface Props {
-  params: {
+  params: Promise<{
     locale: string;
     svgCategory: string;
-  };
+  }>;
 }
 
 // 获取所有 SVG 文件
@@ -49,7 +49,14 @@ async function getDefaultSvgContent(category: string) {
   }
 }
 
-export async function generateMetadata({ params: { locale, svgCategory } }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    locale,
+    svgCategory
+  } = params;
+
   const t = await getTranslations({ locale, namespace: 'Metadata-svg-category' });
 
   const title = t('title');
@@ -115,7 +122,14 @@ export async function generateMetadata({ params: { locale, svgCategory } }: Prop
   };
 }
 
-export default async function SvgCategoryPage({ params: { locale, svgCategory } }: Props) {
+export default async function SvgCategoryPage(props: Props) {
+  const params = await props.params;
+
+  const {
+    locale,
+    svgCategory
+  } = params;
+
   setRequestLocale(locale);
   const t = await getTranslations("svgCategory");
   const svgFiles = await getSvgFiles(svgCategory);
