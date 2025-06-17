@@ -7,7 +7,7 @@ export default async function Footer() {
   return (
     <footer className="border-t border-border/40 py-12 bg-card/50 backdrop-blur-md">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
             {/* Logo and Copyright */}
             <div className="flex flex-col items-center md:items-start gap-4">
               <div className="flex items-center gap-2">
@@ -78,46 +78,72 @@ export default async function Footer() {
               {/* Languages */}
               <div className="w-full">
                 <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('languages')}</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  <Link href="/en" locale="en" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    English
-                  </Link>
-                  <Link href="/" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    中文
-                  </Link>
-                  <Link href="/" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    繁體中文
-                  </Link>
-                  <Link href="/" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    日本語
-                  </Link>
-                  <Link href="/" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    русский
-                  </Link>
-                  <Link href="/" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    português
-                  </Link>
-                  <Link href="/" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    español
-                  </Link>
-                  <Link href="/" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    한국어
-                  </Link>
-                  <Link href="/" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    العربية
-                  </Link>
-                  <Link href="/" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    हिंदी
-                  </Link>
-                  <Link href="/" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    français
-                  </Link>
-                  <Link href="/" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                    deutsch
-                  </Link>
-                </div>
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <Link href="/en" locale="en" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      English
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      中文
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      繁體中文
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      日本語
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      русский
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      português
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      español
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      한국어
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      العربية
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      हिंदी
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      français
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      deutsch
+                    </Link>
+                  </li>
+                </ul>
               </div>
+            </div>
 
+            <div className="flex flex-col items-center md:items-start gap-6">
               {/* Friends Links */}
               <div className="w-full">
                 <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('friends')}</h3>
@@ -149,7 +175,7 @@ export default async function Footer() {
                       rel="dofollow" 
                       className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
                     >
-                      A2AProtocol.ai
+                      A2A
                     </a>
                   </li>
                   <li>
@@ -180,6 +206,26 @@ export default async function Footer() {
                       className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
                     >
                       Papyrus Font
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://randomlettergenerator.app/" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      Random Letter Generator
+                    </a>
+                  </li>
+                  <li>
+                    <a 
+                      href="https://deepwiki.directory/" 
+                      target="_blank" 
+                      rel="dofollow" 
+                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                    >
+                      deepwiki Directory
                     </a>
                   </li>
                   <li>
