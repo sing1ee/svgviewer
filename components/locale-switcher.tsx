@@ -2,7 +2,7 @@
 
 import { useParams, useSearchParams } from 'next/navigation';
 import { Locale, useLocale } from 'next-intl';
-import { useTransition } from 'react';
+import { useTransition, Suspense } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
@@ -30,7 +30,7 @@ const localesMap = {
   "de": "deutsch",
 }
 
-export default function LocaleSwitcher() {
+function LocaleSwitcherContent() {
   const t = useTranslations('navigation');
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -93,5 +93,23 @@ export default function LocaleSwitcher() {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
+  );
+}
+
+export default function LocaleSwitcher() {
+  return (
+    <Suspense fallback={
+      <Button
+        variant="ghost"
+        size="icon"
+        className="h-9 w-9 rounded-full hover:bg-accent/50 transition-colors opacity-50"
+        disabled
+      >
+        <Globe className="h-[1.25rem] w-[1.25rem] text-muted-foreground" />
+        <span className="sr-only">Loading...</span>
+      </Button>
+    }>
+      <LocaleSwitcherContent />
+    </Suspense>
   );
 }
