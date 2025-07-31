@@ -114,6 +114,8 @@
     "uploadedDescription": "تم رفع ملف SVG بنجاح",
     "downloaded": "تم تنزيل SVG",
     "downloadedDescription": "تم تنزيل SVG بنجاح",
+    "pastedFromClipboard": "لصق من الحافظة",
+    "pastedFromClipboardDescription": "تم لصق كود SVG من الحافظة",
     "pasteFailed": "فشل اللصق",
     "pasteFailedDescription": "فشل في القراءة من الحافظة",
     "copy": "نسخ",

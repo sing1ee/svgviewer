@@ -114,6 +114,8 @@
     "uploadedDescription": "El archivo SVG ha sido subido exitosamente",
     "downloaded": "SVG descargado",
     "downloadedDescription": "El SVG ha sido descargado exitosamente",
+    "pastedFromClipboard": "Pegado desde el portapapeles",
+    "pastedFromClipboardDescription": "El código SVG ha sido pegado desde el portapapeles",
     "pasteFailed": "Error al pegar",
     "pasteFailedDescription": "No se pudo leer del portapapeles",
     "copy": "Copiar",

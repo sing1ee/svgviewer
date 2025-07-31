@@ -114,6 +114,8 @@
     "uploadedDescription": "Le fichier SVG a été téléchargé avec succès",
     "downloaded": "SVG téléchargé",
     "downloadedDescription": "Le SVG a été téléchargé avec succès",
+    "pastedFromClipboard": "Collé depuis le presse-papiers",
+    "pastedFromClipboardDescription": "Le code SVG a été collé depuis le presse-papiers",
     "pasteFailed": "Échec du collage",
     "pasteFailedDescription": "Impossible de lire depuis le presse-papiers",
     "copy": "Copier",

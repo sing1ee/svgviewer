@@ -114,6 +114,8 @@
     "uploadedDescription": "SVG檔案已成功上傳",
     "downloaded": "SVG已下載",
     "downloadedDescription": "SVG已成功下載",
+    "pastedFromClipboard": "已從剪貼簿貼上",
+    "pastedFromClipboardDescription": "SVG程式碼已從剪貼簿貼上",
     "pasteFailed": "貼上失敗",
     "pasteFailedDescription": "無法從剪貼簿讀取",
     "copy": "複製",

@@ -114,6 +114,8 @@
     "uploadedDescription": "SVG файл был успешно загружен",
     "downloaded": "SVG скачан",
     "downloadedDescription": "SVG был успешно скачан",
+    "pastedFromClipboard": "Вставлено из буфера обмена",
+    "pastedFromClipboardDescription": "SVG код был вставлен из буфера обмена",
     "pasteFailed": "Вставка не удалась",
     "pasteFailedDescription": "Не удалось прочитать из буфера обмена",
     "copy": "Копировать",

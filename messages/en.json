@@ -114,6 +114,8 @@
     "uploadedDescription": "SVG file has been uploaded successfully",
     "downloaded": "SVG Downloaded",
     "downloadedDescription": "SVG has been downloaded successfully",
+    "pastedFromClipboard": "Pasted from clipboard",
+    "pastedFromClipboardDescription": "SVG code has been pasted from clipboard",
     "pasteFailed": "Paste failed",
     "pasteFailedDescription": "Failed to read from clipboard",
     "copy": "Copy",

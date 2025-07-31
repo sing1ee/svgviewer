@@ -114,6 +114,8 @@
     "uploadedDescription": "SVG फ़ाइल सफलतापूर्वक अपलोड की गई है",
     "downloaded": "SVG डाउनलोड किया गया",
     "downloadedDescription": "SVG सफलतापूर्वक डाउनलोड किया गया है",
+    "pastedFromClipboard": "क्लिपबोर्ड से पेस्ट किया गया",
+    "pastedFromClipboardDescription": "SVG कोड क्लिपबोर्ड से पेस्ट किया गया है",
     "pasteFailed": "पेस्ट विफल",
     "pasteFailedDescription": "क्लिपबोर्ड से पढ़ने में विफल",
     "copy": "कॉपी करें",

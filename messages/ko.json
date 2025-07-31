@@ -114,6 +114,8 @@
     "uploadedDescription": "SVG 파일이 성공적으로 업로드되었습니다",
     "downloaded": "SVG 다운로드됨",
     "downloadedDescription": "SVG가 성공적으로 다운로드되었습니다",
+    "pastedFromClipboard": "클립보드에서 붙여넣음",
+    "pastedFromClipboardDescription": "SVG 코드가 클립보드에서 붙여넣어졌습니다",
     "pasteFailed": "붙여넣기 실패",
     "pasteFailedDescription": "클립보드에서 읽기에 실패했습니다",
     "copy": "복사",

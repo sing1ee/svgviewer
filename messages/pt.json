@@ -114,6 +114,8 @@
     "uploadedDescription": "O arquivo SVG foi carregado com sucesso",
     "downloaded": "SVG baixado",
     "downloadedDescription": "O SVG foi baixado com sucesso",
+    "pastedFromClipboard": "Colado da área de transferência",
+    "pastedFromClipboardDescription": "O código SVG foi colado da área de transferência",
     "pasteFailed": "Falha ao colar",
     "pasteFailedDescription": "Falha ao ler da área de transferência",
     "copy": "Copiar",

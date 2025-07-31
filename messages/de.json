@@ -114,6 +114,8 @@
     "uploadedDescription": "SVG-Datei wurde erfolgreich hochgeladen",
     "downloaded": "SVG heruntergeladen",
     "downloadedDescription": "SVG wurde erfolgreich heruntergeladen",
+    "pastedFromClipboard": "Aus der Zwischenablage eingefügt",
+    "pastedFromClipboardDescription": "SVG-Code wurde aus der Zwischenablage eingefügt",
     "pasteFailed": "Einfügen fehlgeschlagen",
     "pasteFailedDescription": "Lesen aus der Zwischenablage fehlgeschlagen",
     "copy": "Kopieren",

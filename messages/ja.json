@@ -114,6 +114,8 @@
     "uploadedDescription": "SVGファイルが正常にアップロードされました",
     "downloaded": "SVGがダウンロードされました",
     "downloadedDescription": "SVGが正常にダウンロードされました",
+    "pastedFromClipboard": "クリップボードから貼り付け",
+    "pastedFromClipboardDescription": "SVGコードがクリップボードから貼り付けられました",
     "pasteFailed": "貼り付けに失敗しました",
     "pasteFailedDescription": "クリップボードから読み取れませんでした",
     "copy": "コピー",
