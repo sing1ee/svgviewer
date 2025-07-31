@@ -52,6 +52,14 @@
     "twitterTitle": "Convertisseur SVG en PNG - Outil en ligne gratuit pour convertir SVG en PNG",
     "twitterDescription": "Convertisseur en ligne gratuit de SVG en PNG. Convertissez SVG en PNG, JPEG, WEBP, ICO et plus. Visualisez des fichiers SVG dans votre navigateur."
   },
+  "Metadata-share": {
+    "title": "Partager SVG - Visionneuse SVG",
+    "description": "Visualiser et éditer des fichiers SVG partagés en ligne. Visionneuse et convertisseur SVG gratuit.",
+    "ogTitle": "Partager SVG - Visionneuse SVG",
+    "ogDescription": "Visualiser et éditer des fichiers SVG partagés en ligne. Visionneuse et convertisseur SVG gratuit.",
+    "twitterTitle": "Partager SVG - Visionneuse SVG",
+    "twitterDescription": "Visualiser et éditer des fichiers SVG partagés en ligne. Visionneuse et convertisseur SVG gratuit."
+  },
   "Metadata-svg-optimizer": {
     "title": "Optimiseur SVG - Outil en ligne gratuit pour optimiser SVG",
     "description": "Optimiseur SVG en ligne gratuit. Optimisez SVG pour réduire la taille des fichiers sans compromettre la qualité.",
@@ -138,7 +146,11 @@
     "mobileInstructions": "Faites glisser pour déplacer • Double-tapez pour réinitialiser la position",
     "fullscreen": "Plein écran",
     "closeFullscreen": "Fermer l'aperçu plein écran",
-    "svgParsingError": "Erreur d'analyse SVG"
+    "svgParsingError": "Erreur d'analyse SVG",
+    "share": "Partager",
+    "shareLink": "Lien de partage",
+    "shareLinkCopied": "Lien de partage copié",
+    "shareLinkCopiedDescription": "Le lien de partage a été copié dans le presse-papiers. Vous pouvez maintenant partager le SVG avec d'autres !"
   },
   "svgToPngUseCases": {
     "title": "Cas d'utilisation du convertisseur SVG en PNG",

@@ -52,6 +52,14 @@
     "twitterTitle": "SVG转PNG转换器 - 免费在线工具将SVG转换为PNG",
     "twitterDescription": "免费在线SVG转PNG转换器。将SVG转换为PNG、JPEG、WEBP、ICO等格式。在浏览器中查看SVG文件。"
   },
+  "Metadata-share": {
+    "title": "共享SVG - SVG查看器",
+    "description": "在线查看和编辑共享的SVG文件。免费SVG查看器和转换器。",
+    "ogTitle": "共享SVG - SVG查看器",
+    "ogDescription": "在线查看和编辑共享的SVG文件。免费SVG查看器和转换器。",
+    "twitterTitle": "共享SVG - SVG查看器",
+    "twitterDescription": "在线查看和编辑共享的SVG文件。免费SVG查看器和转换器。"
+  },
   "Metadata-svg-optimizer": {
     "title": "SVG优化器 - 免费在线工具优化SVG",
     "description": "免费在线SVG优化器。优化SVG以减小文件大小，同时不影响质量。",
@@ -139,7 +147,11 @@
     "mobileInstructions": "拖动移动 • 双击重置位置",
     "fullscreen": "全屏",
     "closeFullscreen": "关闭全屏预览",
-    "svgParsingError": "SVG解析错误"
+    "svgParsingError": "SVG解析错误",
+    "share": "分享",
+    "shareLink": "分享链接",
+    "shareLinkCopied": "分享链接已复制",
+    "shareLinkCopiedDescription": "分享链接已复制到剪贴板。您现在可以与他人分享您的SVG了！"
   },
   "svgToPngUseCases": {
     "title": "SVG 转 PNG 转换器用例",

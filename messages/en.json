@@ -52,6 +52,14 @@
     "twitterTitle": "SVG to PNG Converter - Free Online Tool to Convert SVG to PNG",
     "twitterDescription": "Free online SVG to PNG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
   },
+  "Metadata-share": {
+    "title": "Shared SVG - SVG Viewer",
+    "description": "View and edit shared SVG files online. Free SVG viewer and converter.",
+    "ogTitle": "Shared SVG - SVG Viewer",
+    "ogDescription": "View and edit shared SVG files online. Free SVG viewer and converter.",
+    "twitterTitle": "Shared SVG - SVG Viewer",
+    "twitterDescription": "View and edit shared SVG files online. Free SVG viewer and converter."
+  },
   "Metadata-svg-optimizer": {
     "title": "SVG Optimizer - Free Online Tool to Optimize SVG",
     "description": "Free online SVG optimizer. Optimize SVG to reduce file size without compromising quality.",
@@ -138,7 +146,11 @@
     "mobileInstructions": "Drag to move • Double tap to reset position",
     "fullscreen": "Fullscreen",
     "closeFullscreen": "Close fullscreen preview",
-    "svgParsingError": "SVG Parsing Error"
+    "svgParsingError": "SVG Parsing Error",
+    "share": "Share",
+    "shareLink": "Share Link",
+    "shareLinkCopied": "Share link copied",
+    "shareLinkCopiedDescription": "Share link has been copied to clipboard. You can now share your SVG with others!"
   },
   "svgToPngUseCases": {
     "title": "SVG to PNG Converter Use Cases",
