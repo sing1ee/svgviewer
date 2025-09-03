@@ -3,6 +3,7 @@ import path from 'path';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import matter from 'gray-matter';
+import postsIndex from '@/posts/index.json';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
@@ -21,11 +22,9 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'posts');
-  const fileNames = fs.readdirSync(postsDirectory);
-
-  return fileNames.map(fileName => ({
-    slug: fileName.replace(/\.md$/, ''),
+  // 使用索引文件生成静态参数，性能更好
+  return postsIndex.posts.map(post => ({
+    slug: post.slug,
   }));
 }
 
@@ -37,14 +36,26 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     slug
   } = params;
 
+  // 从索引文件中获取博客信息
+  const post = postsIndex.posts.find(p => p.slug === slug);
+  
+  if (!post) {
+    // 如果找不到博客文章，返回默认元数据
+    const t = await getTranslations({ locale, namespace: 'Metadata-blog' });
+    return {
+      title: t('title'),
+      description: t('description'),
+    };
+  }
+
   const t = await getTranslations({ locale, namespace: 'Metadata-blog' });
 
-  const title = t('title');
-  const description = t('description');
+  const title = post.title;
+  const description = post.description;
   const ogTitle = t('ogTitle') || title;
-  const ogDescription = t('ogDescription') || description;
+  const ogDescription = description;
   const twitterTitle = t('twitterTitle') || title;
-  const twitterDescription = t('twitterDescription') || description;
+  const twitterDescription = description;
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -112,6 +123,13 @@ export default async function BlogPost(props: Props) {
 
   const t = await getTranslations({ locale, namespace: 'blog' });
   setRequestLocale(locale);
+
+  // 首先检查博客是否存在于索引中
+  const post = postsIndex.posts.find(p => p.slug === slug);
+  if (!post) {
+    notFound();
+  }
+
   const postsDirectory = path.join(process.cwd(), 'posts');
   const fullPath = path.join(postsDirectory, `${slug}.md`);
 

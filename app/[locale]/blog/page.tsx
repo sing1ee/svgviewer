@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { Link } from '@/i18n/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Header from '@/components/header';
@@ -9,6 +6,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
+import { getAllPosts, type BlogPost } from '@/lib/blog';
 
 export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
   const params = await props.params;
@@ -83,34 +81,14 @@ export async function generateMetadata(props: { params: Promise<{ locale: 'en' |
 }
 
 
-interface Post {
-  slug: string;
-  title: string;
-  date: string;
-  description: string;
-}
-
-function getPosts(): Post[] {
-  const postsDirectory = path.join(process.cwd(), 'posts');
-  const fileNames = fs.readdirSync(postsDirectory);
-  const posts = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => {
-      const slug = fileName.replace(/\.md$/, '').toLowerCase();
-      const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        description: data.description,
-      };
-    })
-    .sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()));
-
-  return posts;
+function getPosts(): BlogPost[] {
+  try {
+    // 使用统一的工具函数获取博客列表
+    return getAllPosts();
+  } catch (error) {
+    console.error('❌ 读取博客索引数据时出错:', error);
+    return [];
+  }
 }
 
 export default async function BlogPage(props: {params: Promise<{locale: string}>}) {
