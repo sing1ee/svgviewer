@@ -97,6 +97,35 @@ This indexing system provides several advantages:
 - **Better Tree Shaking**: Only the required data is included in the final bundle
 - **Scalability**: Performance remains consistent as the number of blog posts grows
 
+## Blog Utility Functions
+
+The `lib/blog.ts` file provides utility functions for working with blog data:
+
+```typescript
+import { 
+  getAllPosts, 
+  getPostBySlug, 
+  getAllPostSlugs,
+  getLatestPosts,
+  searchPosts 
+} from '@/lib/blog';
+
+// Get all blog posts
+const posts = getAllPosts();
+
+// Get a specific post by slug
+const post = getPostBySlug('welcome');
+
+// Get all slugs for static generation
+const slugs = getAllPostSlugs();
+
+// Get latest 5 posts
+const latest = getLatestPosts(5);
+
+// Search posts by keyword
+const results = searchPosts('SVG');
+```
+
 ## Workflow Integration
 
 Consider adding the index generation to your deployment pipeline:

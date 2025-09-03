@@ -3,7 +3,7 @@ import path from 'path';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import matter from 'gray-matter';
-import postsIndex from '@/posts/index.json';
+import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
@@ -22,9 +22,9 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  // 使用索引文件生成静态参数，性能更好
-  return postsIndex.posts.map(post => ({
-    slug: post.slug,
+  // 使用工具函数生成静态参数，性能更好
+  return getAllPostSlugs().map(slug => ({
+    slug,
   }));
 }
 
@@ -37,7 +37,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   } = params;
 
   // 从索引文件中获取博客信息
-  const post = postsIndex.posts.find(p => p.slug === slug);
+  const post = getPostBySlug(slug);
   
   if (!post) {
     // 如果找不到博客文章，返回默认元数据
@@ -125,7 +125,7 @@ export default async function BlogPost(props: Props) {
   setRequestLocale(locale);
 
   // 首先检查博客是否存在于索引中
-  const post = postsIndex.posts.find(p => p.slug === slug);
+  const post = getPostBySlug(slug);
   if (!post) {
     notFound();
   }
