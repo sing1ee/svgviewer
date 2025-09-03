@@ -8,6 +8,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 import { getSvgFiles as fetchSvgFiles, getSvgContent } from '@/lib/r2-client';
 
+export const runtime = 'edge';
+
 
 interface Props {
   params: Promise<{

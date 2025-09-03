@@ -8,6 +8,8 @@ import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
+export const runtime = 'edge';
+
 export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
   const params = await props.params;
 
