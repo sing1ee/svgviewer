@@ -1,6 +1,6 @@
 1. build
 ```shell
-npx @cloudflare/next-on-pages
+npx @cloudflare/next-on-pages@1
 ```
 2. run
 ```shell
