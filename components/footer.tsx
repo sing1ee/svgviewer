@@ -1,6 +1,7 @@
 import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import links from '@/data/links.json';
 
 export default async function Footer() {
   const t = await getTranslations('footer');
@@ -17,6 +18,19 @@ export default async function Footer() {
               <div className="text-sm text-foreground/70">
                 © {new Date().getFullYear()} {t('copyright')}
               </div>
+              <a 
+                href="https://fazier.com" 
+                target="_blank" 
+                rel="dofollow" 
+                className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+              >
+                <img 
+                  src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light" 
+                  width={120} 
+                  alt="Fazier badge" 
+                  className="mt-2"
+                />
+              </a>
             </div>
 
             {/* Navigation Links */}
@@ -142,109 +156,24 @@ export default async function Footer() {
                 </ul>
               </div>
             </div>
-
-            <div className="flex flex-col items-center md:items-start gap-6">
-              {/* Friends Links */}
-              <div className="w-full">
-                <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('friends')}</h3>
-                <ul className="flex flex-col gap-2">
-                  <li>
-                    <a 
-                      href="https://qwq32.com/" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      QwQ AI
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://deepbolt.xyz" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      DeepBolt
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://a2aprotocol.ai" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      A2A
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://veo3.directory/" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      Veo3 Directory
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://iammusicfont.com/" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      I am Music Font
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://papyrusfont.com/" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      Papyrus Font
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://randomlettergenerator.app/" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      Random Letter Generator
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://deepwiki.directory/" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      deepwiki Directory
-                    </a>
-                  </li>
-                  <li>
-                    <a 
-                      href="https://fazier.com" 
-                      target="_blank" 
-                      rel="dofollow" 
-                      className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
-                    >
-                      <img 
-                        src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light" 
-                        width={120} 
-                        alt="Fazier badge" 
-                        className="mt-2"
-                      />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          </div>
+          <div className="border-slate-700/50">
+            <h3 className="font-semibold mb-4">
+              Friendly Links
+            </h3>
+            <div className="flex flex-wrap gap-3 text-slate-400">
+              {links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
+                  title={link.name}
+                >
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>
