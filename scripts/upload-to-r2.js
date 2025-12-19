@@ -46,10 +46,10 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
 }
 
 // 上传单个文件
-async function uploadFile(localFilePath, remoteKey) {
+async function uploadFile(localFilePath, remoteKey, contentType = null) {
   try {
     const fileContent = fs.readFileSync(localFilePath);
-    const mimeType = getMimeType(localFilePath);
+    const mimeType = contentType || getMimeType(localFilePath);
     
     const uploadParams = {
       Bucket: bucketName,
@@ -57,6 +57,28 @@ async function uploadFile(localFilePath, remoteKey) {
       Body: fileContent,
       ContentType: mimeType,
       CacheControl: 'public, max-age=31536000', // 缓存一年
+    };
+
+    const command = new PutObjectCommand(uploadParams);
+    await s3Client.send(command);
+    
+    console.log(`✅ 上传成功: ${remoteKey}`);
+    return true;
+  } catch (error) {
+    console.error(`❌ 上传失败 ${remoteKey}:`, error.message);
+    return false;
+  }
+}
+
+// 上传 JSON 内容
+async function uploadJsonContent(jsonContent, remoteKey) {
+  try {
+    const uploadParams = {
+      Bucket: bucketName,
+      Key: remoteKey,
+      Body: JSON.stringify(jsonContent, null, 2),
+      ContentType: 'application/json',
+      CacheControl: 'public, max-age=3600', // 缓存1小时
     };
 
     const command = new PutObjectCommand(uploadParams);
@@ -116,15 +138,32 @@ async function uploadSvgFiles(skipExisting = true) {
   let skippedCount = 0;
   let failedCount = 0;
 
+  // 按分类组织文件
+  const filesByCategory = {};
+
   for (const localFilePath of svgFiles) {
     // 生成远程存储的 key（相对路径）
     const relativePath = path.relative(localSvgDir, localFilePath);
     const remoteKey = `svgs/${relativePath.replace(/\\/g, '/')}`; // 确保使用正斜杠
 
+    // 提取分类名称（第一个目录名）
+    const pathParts = relativePath.split(path.sep);
+    const category = pathParts[0];
+
+    // 初始化分类数组
+    if (!filesByCategory[category]) {
+      filesByCategory[category] = [];
+    }
+
     // 检查文件是否已存在
     if (skipExisting && await fileExistsInR2(remoteKey)) {
       console.log(`⏭️  跳过已存在: ${remoteKey}`);
       skippedCount++;
+      // 即使跳过上传，也要记录文件名用于生成 index.json
+      const fileName = path.basename(relativePath);
+      if (!filesByCategory[category].includes(fileName)) {
+        filesByCategory[category].push(fileName);
+      }
       continue;
     }
 
@@ -132,6 +171,11 @@ async function uploadSvgFiles(skipExisting = true) {
     const success = await uploadFile(localFilePath, remoteKey);
     if (success) {
       uploadedCount++;
+      // 记录文件名用于生成 index.json
+      const fileName = path.basename(relativePath);
+      if (!filesByCategory[category].includes(fileName)) {
+        filesByCategory[category].push(fileName);
+      }
     } else {
       failedCount++;
     }
@@ -141,15 +185,60 @@ async function uploadSvgFiles(skipExisting = true) {
   }
 
   console.log('─'.repeat(50));
-  console.log('📈 上传统计:');
+  console.log('📈 SVG 文件上传统计:');
   console.log(`✅ 成功上传: ${uploadedCount} 个文件`);
   console.log(`⏭️  跳过文件: ${skippedCount} 个文件`);
   console.log(`❌ 上传失败: ${failedCount} 个文件`);
   console.log(`📊 总计文件: ${svgFiles.length} 个文件`);
+
+  // 生成并上传每个分类的 index.json
+  console.log('─'.repeat(50));
+  console.log('📝 开始生成并上传 index.json 文件...');
+  
+  let indexUploadedCount = 0;
+  let indexFailedCount = 0;
+  const categories = Object.keys(filesByCategory).sort();
+
+  for (const category of categories) {
+    const fileNames = filesByCategory[category]
+      .filter(fileName => fileName.endsWith('.svg'))
+      .sort();
+    
+    const indexKey = `svgs/${category}/${category}_index.json`;
+    
+    const success = await uploadJsonContent(fileNames, indexKey);
+    if (success) {
+      indexUploadedCount++;
+    } else {
+      indexFailedCount++;
+    }
+    
+    // 添加小延迟
+    await new Promise(resolve => setTimeout(resolve, 100));
+  }
+
+  // 生成并上传总的分类列表 index.json
+  if (categories.length > 0) {
+    const categoriesIndexKey = 'svgs/svgs_index.json';
+    const success = await uploadJsonContent(categories, categoriesIndexKey);
+    if (success) {
+      indexUploadedCount++;
+      console.log(`✅ 上传分类列表索引: ${categoriesIndexKey}`);
+    } else {
+      indexFailedCount++;
+    }
+  }
+
+  console.log('─'.repeat(50));
+  console.log('📈 Index.json 上传统计:');
+  console.log(`✅ 成功上传: ${indexUploadedCount} 个索引文件`);
+  console.log(`❌ 上传失败: ${indexFailedCount} 个索引文件`);
+  console.log(`📊 分类数量: ${categories.length} 个`);
   
   if (process.env.R2_PUBLIC_URL) {
     console.log('─'.repeat(50));
     console.log(`🌐 文件访问示例: ${process.env.R2_PUBLIC_URL}/svgs/japanese-culture/sakura.svg`);
+    console.log(`🌐 索引文件示例: ${process.env.R2_PUBLIC_URL}/svgs/japanese-culture/japanese-culture_index.json`);
   }
 }
 
