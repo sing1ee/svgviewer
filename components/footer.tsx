@@ -1,10 +1,29 @@
 import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import links from '@/data/links.json';
+import localLinks from '@/data/links.json';
+
+type LinkItem = {
+  name: string;
+  url: string;
+};
 
 export default async function Footer() {
   const t = await getTranslations('footer');
+
+  let links: LinkItem[] = localLinks as LinkItem[];
+  try {
+    const response = await fetch('https://img.veo3.directory/0000-backlinks/links.json');
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        links = data as LinkItem[];
+      }
+    }
+  } catch {
+    // ignore errors, just don't render friendly links
+  }
+
   return (
     <footer className="border-t border-border/40 py-12 bg-card/50 backdrop-blur-md">
         <div className="container mx-auto px-6">
