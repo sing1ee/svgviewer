@@ -154,7 +154,7 @@ export default async function BlogPost(props: Props) {
             {/* Article Content */}
             <article className="prose prose-zinc dark:prose-invert max-w-4xl mx-auto">
               <div className="bg-card/50 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-sm border border-border/40">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                   {data.title}
                 </h1>
                 <div className="text-foreground/60 mb-8 text-sm">

@@ -15,7 +15,8 @@
     "btcLogoSvg": "SVGs do Logo BTC",
     "japaneseCultureSvg": "SVGs da Cultura Japonesa",
     "flowerSvg": "SVGs de Flores",
-    "butterflySvg": "SVGs de Borboletas"
+    "butterflySvg": "SVGs de Borboletas",
+    "blog": "Blog"
   },
   "footer": {
     "siteName": "Visualizador SVG",
@@ -34,7 +35,8 @@
     "svgToPng": "Conversor de SVG para PNG"
   },
   "navigation": {
-    "changeLanguage": "Mudar idioma"
+    "changeLanguage": "Mudar idioma",
+    "toggleTheme": "Alternar tema"
   },
   "Metadata": {
     "title": "Visualizador SVG - Visualizador e Conversor SVG Online Gratuito",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "Toque para editar • Use o teclado para controle preciso",
     "placeholder": "Digite o código SVG..."
+  },
+  "hero": {
+    "title": "Visualize, Edite e Converta Arquivos SVG Online",
+    "subtitle": "Visualizador SVG online gratuito com pré-visualização em tempo real, edição de código, otimização e conversão para PNG, JPEG, WEBP e ICO. Sem cadastro.",
+    "ctaViewer": "Abrir visualizador SVG",
+    "ctaCollections": "Explorar SVGs grátis",
+    "collectionsTitle": "Coleções de SVG grátis",
+    "featuresTitle": "Tudo que você precisa para SVG"
   }
 }

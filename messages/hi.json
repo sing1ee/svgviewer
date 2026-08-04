@@ -15,7 +15,8 @@
     "btcLogoSvg": "बीटीसी लोगो SVG",
     "japaneseCultureSvg": "जापानी संस्कृति SVG",
     "flowerSvg": "फूल SVG",
-    "butterflySvg": "तितली SVG"
+    "butterflySvg": "तितली SVG",
+    "blog": "ब्लॉग"
   },
   "footer": {
     "siteName": "SVG व्यूअर",
@@ -34,7 +35,8 @@
     "svgToPng": "SVG से PNG कन्वर्टर"
   },
   "navigation": {
-    "changeLanguage": "भाषा बदलें"
+    "changeLanguage": "भाषा बदलें",
+    "toggleTheme": "थीम बदलें"
   },
   "Metadata": {
     "title": "SVG व्यूअर - मुफ्त ऑनलाइन SVG व्यूअर और कन्वर्टर",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "संपादित करने के लिए टैप करें • सटीक नियंत्रण के लिए कीबोर्ड का उपयोग करें",
     "placeholder": "SVG कोड दर्ज करें..."
+  },
+  "hero": {
+    "title": "SVG फ़ाइलें ऑनलाइन देखें, संपादित करें और बदलें",
+    "subtitle": "मुफ्त ऑनलाइन SVG व्यूअर: रीयल-टाइम प्रीव्यू, कोड एडिटिंग, ऑप्टिमाइज़ेशन और PNG, JPEG, WEBP, ICO में कनवर्शन। बिना रजिस्ट्रेशन के।",
+    "ctaViewer": "SVG व्यूअर खोलें",
+    "ctaCollections": "मुफ्त SVG ब्राउज़ करें",
+    "collectionsTitle": "मुफ्त SVG संग्रह",
+    "featuresTitle": "SVG के लिए सब कुछ"
   }
 }

@@ -15,7 +15,8 @@
     "btcLogoSvg": "ビットコインロゴSVG",
     "japaneseCultureSvg": "日本文化SVG",
     "flowerSvg": "花のSVG",
-    "butterflySvg": "蝶のSVG"
+    "butterflySvg": "蝶のSVG",
+    "blog": "ブログ"
   },
   "footer": {
     "siteName": "SVGビューア",
@@ -34,7 +35,8 @@
     "svgToPng": "SVGからPNGへのコンバーター"
   },
   "navigation": {
-    "changeLanguage": "言語を変更"
+    "changeLanguage": "言語を変更",
+    "toggleTheme": "テーマ切替"
   },
   "Metadata": {
     "title": "SVGビューア - 無料オンラインSVGビューア・コンバーター",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "タップして編集 • 正確な制御にはキーボードを使用",
     "placeholder": "SVGコードを入力..."
+  },
+  "hero": {
+    "title": "SVG ファイルをオンラインで表示・編集・変換",
+    "subtitle": "無料のオンライン SVG ビューアー：リアルタイムプレビュー、コード編集、最適化、PNG・JPEG・WEBP・ICO への変換に対応。登録不要です。",
+    "ctaViewer": "SVG ビューアーを開く",
+    "ctaCollections": "無料 SVG を見る",
+    "collectionsTitle": "無料 SVG コレクション",
+    "featuresTitle": "SVG に必要なすべて"
   }
 }

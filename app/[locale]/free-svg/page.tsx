@@ -122,12 +122,12 @@ export default async function FreeSVGPage(props: {params: Promise<{locale: strin
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {collections.map((collection) => (
-              <div key={collection.path} className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <h2 className="text-2xl font-semibold mb-3">{collection.name}</h2>
-                <p className="text-gray-600 mb-4">{collection.description}</p>
-                <Link 
+              <div key={collection.path} className="rounded-xl border border-border/40 bg-card p-6 shadow-sm hover:-translate-y-0.5 hover:shadow-md hover:border-primary/40 transition-all duration-200">
+                <h2 className="text-2xl font-semibold mb-3 text-foreground">{collection.name}</h2>
+                <p className="text-foreground/70 mb-4">{collection.description}</p>
+                <Link
                   href={collection.path}
-                  className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+                  className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md shadow-sm hover:bg-primary/90 transition-colors"
                 >
                   {t('viewCollection')}
                 </Link>

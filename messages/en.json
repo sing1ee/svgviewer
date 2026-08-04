@@ -15,7 +15,8 @@
     "btcLogoSvg": "BTC Logo SVGs",
     "japaneseCultureSvg": "Japanese Culture SVGs",
     "flowerSvg": "Flower SVGs",
-    "butterflySvg": "Butterfly SVGs"
+    "butterflySvg": "Butterfly SVGs",
+    "blog": "Blog"
   },
   "footer": {
     "siteName": "SVG Viewer",
@@ -34,7 +35,8 @@
     "svgToPng": "SVG to PNG Converter"
   },
   "navigation": {
-    "changeLanguage": "Change Language"
+    "changeLanguage": "Change Language",
+    "toggleTheme": "Toggle theme"
   },
   "Metadata": {
     "title": "SVG Viewer - Free Online SVG Viewer and Converter",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "Tap to edit • Use keyboard for precise control",
     "placeholder": "Enter SVG code..."
+  },
+  "hero": {
+    "title": "View, Edit & Convert SVG Files Online",
+    "subtitle": "Free online SVG viewer with real-time preview, code editing, optimization, and conversion to PNG, JPEG, WEBP, and ICO. No sign-up required.",
+    "ctaViewer": "Open SVG Viewer",
+    "ctaCollections": "Browse Free SVGs",
+    "collectionsTitle": "Free SVG Collections",
+    "featuresTitle": "Everything You Need for SVG"
   }
 }

@@ -8,10 +8,10 @@ interface GridBackgroundProps {
   patternOpacity?: number;
 }
 
-export function GridBackground({ 
-  size = 20, 
-  color = "#e5e7eb", 
-  backgroundColor = "white",
+export function GridBackground({
+  size = 20,
+  color,
+  backgroundColor,
   className = "",
   patternOpacity = 0.8
 }: GridBackgroundProps) {
@@ -32,7 +32,7 @@ export function GridBackground({
           <path
             d={`M ${size / 2} 0 L 0 0 0 ${size / 2}`}
             fill="none"
-            stroke={color}
+            style={{ stroke: color ?? "hsl(var(--grid-line))" }}
             strokeWidth="0.5"
             opacity={patternOpacity / 2}
           />
@@ -47,7 +47,7 @@ export function GridBackground({
           <path
             d={`M ${size} 0 L 0 0 0 ${size}`}
             fill="none"
-            stroke={color}
+            style={{ stroke: color ?? "hsl(var(--grid-line))" }}
             strokeWidth="1"
             opacity={patternOpacity}
           />
@@ -57,7 +57,11 @@ export function GridBackground({
           <stop offset="100%" stopColor="rgba(0,0,0,0.03)" />
         </radialGradient>
       </defs>
-      <rect width="100%" height="100%" fill={backgroundColor} />
+      <rect
+        width="100%"
+        height="100%"
+        fill={backgroundColor ?? "hsl(var(--grid-bg))"}
+      />
       <rect width="100%" height="100%" fill="url(#grid)" />
       <rect width="100%" height="100%" fill="url(#vignette)" />
     </svg>

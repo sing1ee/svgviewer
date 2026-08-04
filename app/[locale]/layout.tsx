@@ -1,5 +1,6 @@
 import '../globals.css';
 import type { Metadata } from 'next';
+import { Inter, Poppins } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import Script from 'next/script';
@@ -8,6 +9,20 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { siteConfig } from '@/config/site';
+
+// 自托管字体（构建期内联，无外部请求）；Poppins 无 variable 字重，按需加载
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -144,7 +159,7 @@ export default async function RootLayout(
           gtag('config', 'G-DVMP8MGHFZ');
         `}
       </Script>
-      <body className={`safe-bottom`}>
+      <body className={`${inter.variable} ${poppins.variable} font-sans safe-bottom`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="light">
             {children}

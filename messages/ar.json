@@ -15,7 +15,8 @@
     "btcLogoSvg": "صور SVG لشعار بيتكوين",
     "japaneseCultureSvg": "صور SVG للثقافة اليابانية",
     "flowerSvg": "صور SVG للزهور",
-    "butterflySvg": "صور SVG للفراشات"
+    "butterflySvg": "صور SVG للفراشات",
+    "blog": "المدونة"
   },
   "footer": {
     "siteName": "عارض SVG",
@@ -34,7 +35,8 @@
     "svgToPng": "محول SVG إلى PNG"
   },
   "navigation": {
-    "changeLanguage": "تغيير اللغة"
+    "changeLanguage": "تغيير اللغة",
+    "toggleTheme": "تبديل السمة"
   },
   "Metadata": {
     "title": "عارض SVG - عارض ومحول SVG مجاني عبر الإنترنت",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "انقر للتحرير • استخدم لوحة المفاتيح للتحكم الدقيق",
     "placeholder": "أدخل كود SVG..."
+  },
+  "hero": {
+    "title": "عرض وتحرير وتحويل ملفات SVG عبر الإنترنت",
+    "subtitle": "عارض SVG مجاني عبر الإنترنت مع معاينة فورية، وتحرير الكود، والتحسين، والتحويل إلى PNG وJPEG وWEBP وICO. بدون تسجيل.",
+    "ctaViewer": "فتح عارض SVG",
+    "ctaCollections": "تصفح SVGs المجانية",
+    "collectionsTitle": "مجموعات SVG المجانية",
+    "featuresTitle": "كل ما تحتاجه لـ SVG"
   }
 }

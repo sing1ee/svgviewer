@@ -35,7 +35,7 @@ export default async function Footer() {
   return (
     <footer className="border-t border-border/40 py-12 bg-card/50 backdrop-blur-md">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Logo and Copyright */}
             <div className="flex flex-col items-center md:items-start gap-4">
               <div className="flex items-center gap-2">
@@ -114,21 +114,18 @@ export default async function Footer() {
               </ul>
             </div>
 
-            {/* Languages and Friends Links */}
-            <div className="flex flex-col items-center md:items-start gap-6">
-              {/* Languages */}
-              <div className="w-full">
-                <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('languages')}</h3>
-                <ul className="flex flex-col gap-2">
-                  {locales.map(({ code, label }) => (
-                    <li key={code}>
-                      <Link href="/" locale={code} className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Languages */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <h3 className="font-medium text-sm text-foreground/90">{t('languages')}</h3>
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+                {locales.map(({ code, label }) => (
+                  <li key={code}>
+                    <Link href="/" locale={code} className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className="border-t border-border/40 pt-6">

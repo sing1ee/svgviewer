@@ -15,7 +15,8 @@
     "btcLogoSvg": "BTC-Logo-SVGs",
     "japaneseCultureSvg": "Japanische Kultur-SVGs",
     "flowerSvg": "Blumen-SVGs",
-    "butterflySvg": "Schmetterling-SVGs"
+    "butterflySvg": "Schmetterling-SVGs",
+    "blog": "Blog"
   },
   "footer": {
     "siteName": "SVG-Betrachter",
@@ -34,7 +35,8 @@
     "svgToPng": "SVG zu PNG Konverter"
   },
   "navigation": {
-    "changeLanguage": "Sprache ändern"
+    "changeLanguage": "Sprache ändern",
+    "toggleTheme": "Design wechseln"
   },
   "Metadata": {
     "title": "SVG-Betrachter - Kostenloser Online-SVG-Betrachter und -Konverter",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "Tippen zum Bearbeiten • Verwenden Sie die Tastatur für präzise Kontrolle",
     "placeholder": "SVG-Code eingeben..."
+  },
+  "hero": {
+    "title": "SVG-Dateien online anzeigen, bearbeiten und konvertieren",
+    "subtitle": "Kostenloser Online-SVG-Viewer mit Live-Vorschau, Code-Editor, Optimierung und Konvertierung in PNG, JPEG, WEBP und ICO. Ohne Anmeldung.",
+    "ctaViewer": "SVG-Viewer öffnen",
+    "ctaCollections": "Kostenlose SVGs entdecken",
+    "collectionsTitle": "Kostenlose SVG-Sammlungen",
+    "featuresTitle": "Alles, was Sie für SVG brauchen"
   }
 }

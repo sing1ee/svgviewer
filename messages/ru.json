@@ -15,7 +15,8 @@
     "btcLogoSvg": "SVGs Logo BTC",
     "japaneseCultureSvg": "SVGs Culture Japonaise",
     "flowerSvg": "SVGs de Fleurs",
-    "butterflySvg": "SVGs de Papillons"
+    "butterflySvg": "SVGs de Papillons",
+    "blog": "Блог"
   },
   "footer": {
     "siteName": "SVG Просмотрщик",
@@ -34,7 +35,8 @@
     "svgToPng": "Конвертер SVG в PNG"
   },
   "navigation": {
-    "changeLanguage": "Сменить язык"
+    "changeLanguage": "Сменить язык",
+    "toggleTheme": "Переключить тему"
   },
   "Metadata": {
     "title": "SVG Просмотрщик - Бесплатный онлайн просмотрщик и конвертер SVG",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "Нажмите для редактирования • Используйте клавиатуру для точного контроля",
     "placeholder": "Введите SVG код..."
+  },
+  "hero": {
+    "title": "Просмотр, редактирование и конвертация SVG-файлов онлайн",
+    "subtitle": "Бесплатный онлайн-просмотрщик SVG с предпросмотром в реальном времени, редактированием кода, оптимизацией и конвертацией в PNG, JPEG, WEBP и ICO. Без регистрации.",
+    "ctaViewer": "Открыть просмотрщик SVG",
+    "ctaCollections": "Смотреть бесплатные SVG",
+    "collectionsTitle": "Бесплатные коллекции SVG",
+    "featuresTitle": "Всё для работы со SVG"
   }
 }

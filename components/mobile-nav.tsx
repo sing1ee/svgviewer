@@ -1,8 +1,7 @@
 "use client";
 
 import { Menu } from 'lucide-react';
-import {Link} from "@/i18n/navigation";
-import { usePathname } from 'next/navigation';
+import {Link, usePathname} from "@/i18n/navigation";
 import { Button } from './ui/button';
 import {
   Sheet,
@@ -37,12 +36,33 @@ export function MobileNav() {
           >
             {t('optimizer')}
           </Link>
-          <Link 
-            href="/svg-converter" 
+          <Link
+            href="/svg-converter"
             title='SVG Converter'
             className={`text-sm font-medium transition-colors ${pathname === '/svg-converter' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
           >
             {t('converter')}
+          </Link>
+          <Link
+            href="/svg-to-png"
+            title='SVG to PNG'
+            className={`text-sm font-medium transition-colors ${pathname === '/svg-to-png' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
+          >
+            {t('svgToPng')}
+          </Link>
+          <Link
+            href="/free-svg"
+            title={t('freeSvgCollections')}
+            className={`text-sm font-medium transition-colors ${pathname === '/free-svg' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
+          >
+            {t('freeSvgCollections')}
+          </Link>
+          <Link
+            href="/blog"
+            title={t('blog')}
+            className={`text-sm font-medium transition-colors ${pathname === '/blog' ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
+          >
+            {t('blog')}
           </Link>
         </nav>
       </SheetContent>

@@ -15,7 +15,8 @@
     "btcLogoSvg": "比特币标志SVG",
     "japaneseCultureSvg": "日本文化SVG",
     "flowerSvg": "花朵SVG",
-    "butterflySvg": "蝴蝶SVG"
+    "butterflySvg": "蝴蝶SVG",
+    "blog": "博客"
   },
   "footer": {
     "siteName": "SVG查看器",
@@ -34,7 +35,8 @@
     "svgToPng": "SVG转PNG转换器"
   },
   "navigation": {
-    "changeLanguage": "更改语言"
+    "changeLanguage": "更改语言",
+    "toggleTheme": "切换主题"
   },
   "Metadata": {
     "title": "SVG查看器 - 免费在线SVG查看器和转换器",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "点击编辑 • 使用键盘进行精确控制",
     "placeholder": "输入SVG代码..."
+  },
+  "hero": {
+    "title": "在线查看、编辑与转换 SVG 文件",
+    "subtitle": "免费的在线 SVG 查看器：实时预览、代码编辑、优化，支持导出 PNG、JPEG、WEBP 和 ICO，无需注册。",
+    "ctaViewer": "打开 SVG 查看器",
+    "ctaCollections": "浏览免费 SVG",
+    "collectionsTitle": "免费 SVG 合集",
+    "featuresTitle": "一站式 SVG 工具"
   }
 }

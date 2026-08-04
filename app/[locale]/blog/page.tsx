@@ -99,7 +99,7 @@ export default async function BlogPage(props: {params: Promise<{locale: string}>
       <main className="flex-1 container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               {t('title')}
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">

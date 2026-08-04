@@ -12,52 +12,90 @@ interface SvgPreviewProps {
 export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
   const t = useTranslations('svgConverter');
   const containerRef = useRef<HTMLDivElement>(null);
+  const svgElementRef = useRef<HTMLElement | null>(null);
+  const fullscreenContainerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
 
+  // 仅在 SVG 源码变化时解析并挂载，避免拖动/缩放时重复解析（大 SVG 拖动会卡顿）
   useEffect(() => {
     if (!containerRef.current) return;
-    
+
     // Clear previous content and errors
     containerRef.current.innerHTML = '';
     setError(null);
-    
+    svgElementRef.current = null;
+
+    if (!svgCode) return;
+
     try {
       // Parse SVG code
       const parser = new DOMParser();
       const svgDoc = parser.parseFromString(svgCode, 'image/svg+xml');
-      
+
       // Check for parsing errors
       const parserError = svgDoc.querySelector('parsererror');
       if (parserError) {
         setError(parserError.textContent || 'SVG parsing error');
         return;
       }
-      
+
       // Get the SVG element
       const svgElement = svgDoc.documentElement;
-      
+
       // Apply zoom and smooth transitions
-      svgElement.style.transform = `scale(${zoom / 100}) translate(${position.x}px, ${position.y}px)`;
       svgElement.style.transformOrigin = 'center';
       svgElement.style.transition = 'transform 0.2s ease-out';
-      
+
       // Add drop shadow for better visibility
       svgElement.style.filter = 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))';
-      
+
       // 确保SVG元素可以正确显示，不会被容器限制
       svgElement.style.maxWidth = 'none';
       svgElement.style.maxHeight = 'none';
-      
+
       // Append to container
       containerRef.current.appendChild(svgElement);
+      svgElementRef.current = svgElement;
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Unknown error');
     }
-  }, [svgCode, zoom, position]);
+  }, [svgCode]);
+
+  // 拖动/缩放只更新 transform，不重新解析
+  useEffect(() => {
+    const el = svgElementRef.current;
+    if (el) {
+      el.style.transform = `scale(${zoom / 100}) translate(${position.x}px, ${position.y}px)`;
+    }
+  }, [zoom, position, svgCode]);
+
+  // 全屏预览：同样用 DOMParser 解析（避免 dangerouslySetInnerHTML），transform 放在包裹层
+  useEffect(() => {
+    if (!isFullscreen) return;
+    const container = fullscreenContainerRef.current;
+    if (!container) return;
+
+    container.innerHTML = '';
+    if (!svgCode) return;
+
+    try {
+      const parser = new DOMParser();
+      const svgDoc = parser.parseFromString(svgCode, 'image/svg+xml');
+      if (svgDoc.querySelector('parsererror')) return; // 主预览已展示错误
+
+      const svgElement = svgDoc.documentElement;
+      // 确保SVG元素可以正确显示，不会被容器限制
+      svgElement.style.maxWidth = 'none';
+      svgElement.style.maxHeight = 'none';
+      container.appendChild(svgElement);
+    } catch {
+      // 主预览已展示错误
+    }
+  }, [isFullscreen, svgCode]);
 
   const handleToggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
@@ -85,9 +123,9 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length === 1) {
       setIsDragging(true);
-      setStartPos({ 
-        x: e.touches[0].clientX - position.x, 
-        y: e.touches[0].clientY - position.y 
+      setStartPos({
+        x: e.touches[0].clientX - position.x,
+        y: e.touches[0].clientY - position.y
       });
     }
   };
@@ -112,10 +150,10 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div 
-        ref={containerRef} 
+      <div
+        ref={containerRef}
         className={`w-full h-full overflow-auto p-4 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-        style={{ 
+        style={{
           display: 'block', // 改为block布局，避免flex布局对滚动条的影响
           position: 'relative',
           touchAction: 'none' // Disable browser handling of all panning and zooming gestures
@@ -129,12 +167,12 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
         onTouchEnd={handleTouchEnd}
         onDoubleClick={handleDoubleClick}
       ></div>
-      
+
       {/* Mobile instructions tooltip */}
       <div className="absolute bottom-4 left-4 right-4 md:hidden bg-black/70 text-white text-xs p-2 rounded-md backdrop-blur-sm text-center pointer-events-none opacity-70">
         {t('mobileInstructions')}
       </div>
-      
+
       {/* fullscreen button */}
       <button
         className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors z-10"
@@ -144,7 +182,7 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
       >
         <Maximize2 className="h-5 w-5" />
       </button>
-      
+
       {error && (
         <div className="absolute inset-0 flex items-center justify-center bg-background/90 backdrop-blur-sm">
           <div className="bg-destructive/10 border border-destructive text-destructive p-6 rounded-lg max-w-md text-center">
@@ -156,23 +194,23 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
       )}
 
       {isFullscreen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
           onClick={handleToggleFullscreen}
         >
-          <div 
+          <div
             className="relative bg-white dark:bg-gray-900 rounded-lg w-full h-full max-w-[90vw] max-h-[90vh] overflow-auto p-6"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
+            <button
               className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
               onClick={handleToggleFullscreen}
               aria-label={t('closeFullscreen')}
             >
               <X className="h-5 w-5" />
             </button>
-            
-            <div 
+
+            <div
               className={`w-full h-full flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
@@ -184,21 +222,18 @@ export default function SvgPreview({ svgCode, zoom = 100 }: SvgPreviewProps) {
               onDoubleClick={handleDoubleClick}
               style={{ touchAction: 'none' }}
             >
-              {svgCode && (
-                <div 
-                  dangerouslySetInnerHTML={{ 
-                    __html: svgCode 
-                  }} 
-                  style={{ 
-                    transform: `scale(${zoom / 100}) translate(${position.x}px, ${position.y}px)`,
-                    transformOrigin: 'center',
-                    transition: 'transform 0.2s ease-out',
-                    filter: 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))'
-                  }}
-                />
-              )}
+              <div
+                ref={fullscreenContainerRef}
+                className="w-full h-full flex items-center justify-center"
+                style={{
+                  transform: `scale(${zoom / 100}) translate(${position.x}px, ${position.y}px)`,
+                  transformOrigin: 'center',
+                  transition: 'transform 0.2s ease-out',
+                  filter: 'drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))'
+                }}
+              />
             </div>
-            
+
             {/* Mobile instructions tooltip in fullscreen */}
             <div className="absolute bottom-4 left-4 right-4 md:hidden bg-black/70 text-white text-xs p-2 rounded-md backdrop-blur-sm text-center pointer-events-none opacity-70">
               {t('mobileInstructions')}

@@ -15,7 +15,8 @@
     "btcLogoSvg": "비트코인 로고 SVG",
     "japaneseCultureSvg": "일본 문화 SVG",
     "flowerSvg": "꽃 SVG",
-    "butterflySvg": "나비 SVG"
+    "butterflySvg": "나비 SVG",
+    "blog": "블로그"
   },
   "footer": {
     "siteName": "SVG 뷰어",
@@ -34,7 +35,8 @@
     "svgToPng": "SVG에서 PNG로 변환기"
   },
   "navigation": {
-    "changeLanguage": "언어 변경"
+    "changeLanguage": "언어 변경",
+    "toggleTheme": "테마 전환"
   },
   "Metadata": {
     "title": "SVG 뷰어 - 무료 온라인 SVG 뷰어 및 변환기",
@@ -493,5 +495,13 @@
   "codeEditor": {
     "mobileEditHint": "편집하려면 탭하세요 • 정확한 제어를 위해 키보드 사용",
     "placeholder": "SVG 코드 입력..."
+  },
+  "hero": {
+    "title": "SVG 파일을 온라인에서 보고, 편집하고, 변환하세요",
+    "subtitle": "실시간 미리보기, 코드 편집, 최적화, PNG·JPEG·WEBP·ICO 변환을 지원하는 무료 온라인 SVG 뷰어. 회원가입 없이 이용 가능.",
+    "ctaViewer": "SVG 뷰어 열기",
+    "ctaCollections": "무료 SVG 둘러보기",
+    "collectionsTitle": "무료 SVG 컬렉션",
+    "featuresTitle": "SVG에 필요한 모든 것"
   }
 }
