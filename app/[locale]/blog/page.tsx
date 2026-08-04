@@ -9,8 +9,6 @@ import { siteConfig } from '@/config/site';
 import { localeAlternates } from '@/i18n/locales';
 import { getAllPosts, type BlogPost } from '@/lib/blog';
 
-export const runtime = 'edge';
-
 export async function generateMetadata(props: { params: Promise<{ locale: 'en' | 'zh' }> }): Promise<Metadata> {
   const params = await props.params;
 

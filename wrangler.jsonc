@@ -1,0 +1,18 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "svgviewer",
+	// Set this to today's date
+	"compatibility_date": "2026-08-04",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"vars": {
+		// R2 桶公开访问 URL（服务端组件用它 fetch SVG）；与本地 .env 保持一致
+		"R2_PUBLIC_URL": "https://svgs.svgviewer.app"
+	}
+}

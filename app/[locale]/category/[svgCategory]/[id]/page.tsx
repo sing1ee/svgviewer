@@ -9,8 +9,6 @@ import { setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 import { localeAlternates } from '@/i18n/locales';
 
-export const runtime = 'edge';
-
 interface Props {
   params: Promise<{
     locale: string;

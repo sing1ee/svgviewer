@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "svgviewer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "upload-svgs": "node scripts/upload-to-r2.js",
     "upload-svgs-force": "node scripts/upload-to-r2.js --force",
     "upload-svgs-advanced": "node scripts/upload-to-r2-advanced.js",
@@ -24,7 +27,7 @@
     "@codemirror/view": "^6.36.3",
     "@hookform/resolvers": "^3.9.0",
     "@next/swc-wasm-nodejs": "15.3.3",
-    "@opennextjs/cloudflare": "^1.14.6",
+    "@opennextjs/cloudflare": "^1.20.2",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
@@ -97,7 +100,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@types/prismjs": "^1.26.5",
-    "wrangler": "^4.56.0"
+    "wrangler": "^4.118.0"
   },
   "overrides": {
     "@types/react": "19.1.8",
