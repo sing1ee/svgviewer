@@ -52,14 +52,6 @@
     "twitterTitle": "SVG to PNG Converter - Free Online Tool to Convert SVG to PNG",
     "twitterDescription": "Free online SVG to PNG converter. Convert SVG to PNG, JPEG, WEBP, ICO, and more. View SVG files in your browser."
   },
-  "Metadata-share": {
-    "title": "Shared SVG - SVG Viewer",
-    "description": "View and edit shared SVG files online. Free SVG viewer and converter.",
-    "ogTitle": "Shared SVG - SVG Viewer",
-    "ogDescription": "View and edit shared SVG files online. Free SVG viewer and converter.",
-    "twitterTitle": "Shared SVG - SVG Viewer",
-    "twitterDescription": "View and edit shared SVG files online. Free SVG viewer and converter."
-  },
   "Metadata-svg-optimizer": {
     "title": "SVG Optimizer - Free Online Tool to Optimize SVG",
     "description": "Free online SVG optimizer. Optimize SVG to reduce file size without compromising quality.",
@@ -100,7 +92,7 @@
     "twitterTitle": "SVG Viewer Blog",
     "twitterDescription": "Blog about SVG and AI generated SVGs"
   },
-  "blog": { 
+  "blog": {
     "title": "SVG Viewer Blog",
     "description": "Blog about SVG and AI generated SVGs",
     "readMore": "Read more",
@@ -146,11 +138,7 @@
     "mobileInstructions": "Drag to move • Double tap to reset position",
     "fullscreen": "Fullscreen",
     "closeFullscreen": "Close fullscreen preview",
-    "svgParsingError": "SVG Parsing Error",
-    "share": "Share",
-    "shareLink": "Share Link",
-    "shareLinkCopied": "Share link copied",
-    "shareLinkCopiedDescription": "Share link has been copied to clipboard. You can now share your SVG with others!"
+    "svgParsingError": "SVG Parsing Error"
   },
   "svgToPngUseCases": {
     "title": "SVG to PNG Converter Use Cases",
@@ -215,43 +203,43 @@
   },
   "faq": {
     "viewer": {
-        "title": "SVG Viewer FAQ",
-        "description": "Our SVG viewer tool is designed to help you work with SVG files efficiently. The SVG viewer allows you to visualize, edit, and optimize your SVG graphics in real-time.",
-        "questions": [
-          {
-            "question": "What is an SVG viewer?",
-            "answer": "An SVG viewer is a tool that allows you to open, view, and interact with SVG (Scalable Vector Graphics) files. Our online SVG viewer provides a convenient way to visualize SVG code without installing any software. With our SVG viewer, you can see how your SVG looks, edit the code, and optimize it for better performance."
-          },
-          {
-            "question": "How do I use this SVG viewer?",
-            "answer": "Using our SVG viewer is simple: paste your SVG code into the editor or upload an SVG file. The SVG viewer will instantly render the graphic in the preview panel. You can edit the code in real-time and see the changes immediately in the SVG viewer preview. Adjust the canvas size and zoom level to get a better view of your SVG."
-          },
-          {
-            "question": "Can I edit SVG files with this SVG viewer?",
-            "answer": "Yes, our SVG viewer includes a code editor that allows you to modify the SVG code directly. As you type, the SVG viewer updates the preview in real-time. This makes our SVG viewer perfect for quick edits and adjustments to your SVG files without needing specialized graphic design software."
-          },
-          {
-            "question": "Is this SVG viewer free to use?",
-            "answer": "Yes, our SVG viewer is completely free to use. You can use the SVG viewer to open, view, edit, and download SVG files without any cost. The SVG viewer works directly in your browser, so there's no need to download or install any software."
-          },
-          {
-            "question": "Can I optimize SVG files with this SVG viewer?",
-            "answer": "While our main SVG viewer focuses on viewing and editing, we also offer an SVG optimizer tool that works alongside the SVG viewer. The optimizer can reduce the file size of your SVG while maintaining visual quality. The SVG viewer shows you both the original and optimized file sizes so you can see the difference."
-          },
-          {
-            "question": "How does the SVG viewer handle large files?",
-            "answer": "Our SVG viewer is designed to handle SVG files of various sizes efficiently. However, very complex SVGs with thousands of elements might affect performance. The SVG viewer provides zoom and canvas size controls to help you work with SVGs of any dimension."
-          },
-          {
-            "question": "Can I convert SVGs to other formats with this SVG viewer?",
-            "answer": "While the primary SVG viewer focuses on viewing and editing SVGs, we offer a companion SVG converter tool. From the SVG viewer, you can easily navigate to our converter to transform your SVG files into formats like PNG, JPG, or PDF after previewing them in the SVG viewer."
-          },
-          {
-            "question": "How can this SVG viewer help with AI-generated SVG code?",
-            "answer": "With the rise of AI assistants like ChatGPT, Claude, and DeepSeek, more users are generating SVG code through AI. Our SVG viewer is the perfect companion tool for AI-generated SVGs, allowing you to instantly visualize, refine, and optimize code produced by AI. The SVG viewer helps bridge the gap between AI generation and production-ready graphics by providing real-time feedback on how the SVG actually renders, helping you spot and fix any issues in the AI-generated code. As AI continues to evolve in generating more complex vector graphics, our SVG viewer remains an essential tool for working with these AI outputs effectively."
-          }
-        ]
-      },
+      "title": "SVG Viewer FAQ",
+      "description": "Our SVG viewer tool is designed to help you work with SVG files efficiently. The SVG viewer allows you to visualize, edit, and optimize your SVG graphics in real-time.",
+      "questions": [
+        {
+          "question": "What is an SVG viewer?",
+          "answer": "An SVG viewer is a tool that allows you to open, view, and interact with SVG (Scalable Vector Graphics) files. Our online SVG viewer provides a convenient way to visualize SVG code without installing any software. With our SVG viewer, you can see how your SVG looks, edit the code, and optimize it for better performance."
+        },
+        {
+          "question": "How do I use this SVG viewer?",
+          "answer": "Using our SVG viewer is simple: paste your SVG code into the editor or upload an SVG file. The SVG viewer will instantly render the graphic in the preview panel. You can edit the code in real-time and see the changes immediately in the SVG viewer preview. Adjust the canvas size and zoom level to get a better view of your SVG."
+        },
+        {
+          "question": "Can I edit SVG files with this SVG viewer?",
+          "answer": "Yes, our SVG viewer includes a code editor that allows you to modify the SVG code directly. As you type, the SVG viewer updates the preview in real-time. This makes our SVG viewer perfect for quick edits and adjustments to your SVG files without needing specialized graphic design software."
+        },
+        {
+          "question": "Is this SVG viewer free to use?",
+          "answer": "Yes, our SVG viewer is completely free to use. You can use the SVG viewer to open, view, edit, and download SVG files without any cost. The SVG viewer works directly in your browser, so there's no need to download or install any software."
+        },
+        {
+          "question": "Can I optimize SVG files with this SVG viewer?",
+          "answer": "While our main SVG viewer focuses on viewing and editing, we also offer an SVG optimizer tool that works alongside the SVG viewer. The optimizer can reduce the file size of your SVG while maintaining visual quality. The SVG viewer shows you both the original and optimized file sizes so you can see the difference."
+        },
+        {
+          "question": "How does the SVG viewer handle large files?",
+          "answer": "Our SVG viewer is designed to handle SVG files of various sizes efficiently. However, very complex SVGs with thousands of elements might affect performance. The SVG viewer provides zoom and canvas size controls to help you work with SVGs of any dimension."
+        },
+        {
+          "question": "Can I convert SVGs to other formats with this SVG viewer?",
+          "answer": "While the primary SVG viewer focuses on viewing and editing SVGs, we offer a companion SVG converter tool. From the SVG viewer, you can easily navigate to our converter to transform your SVG files into formats like PNG, JPG, or PDF after previewing them in the SVG viewer."
+        },
+        {
+          "question": "How can this SVG viewer help with AI-generated SVG code?",
+          "answer": "With the rise of AI assistants like ChatGPT, Claude, and DeepSeek, more users are generating SVG code through AI. Our SVG viewer is the perfect companion tool for AI-generated SVGs, allowing you to instantly visualize, refine, and optimize code produced by AI. The SVG viewer helps bridge the gap between AI generation and production-ready graphics by providing real-time feedback on how the SVG actually renders, helping you spot and fix any issues in the AI-generated code. As AI continues to evolve in generating more complex vector graphics, our SVG viewer remains an essential tool for working with these AI outputs effectively."
+        }
+      ]
+    },
     "svgToPng": {
       "title": "SVG to PNG Converter FAQ",
       "description": "Our SVG to PNG converter tool allows you to transform SVG files into high-quality PNG images. The SVG to PNG converter maintains the highest possible quality while converting vector graphics to raster format.",

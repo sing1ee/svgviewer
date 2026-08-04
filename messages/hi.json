@@ -52,14 +52,6 @@
     "twitterTitle": "SVG से PNG कन्वर्टर - SVG को PNG में बदलने का मुफ्त ऑनलाइन टूल",
     "twitterDescription": "मुफ्त ऑनलाइन SVG से PNG कन्वर्टर। SVG को PNG, JPEG, WEBP, ICO और अधिक में बदलें। अपने ब्राउज़र में SVG फ़ाइलें देखें।"
   },
-  "Metadata-share": {
-    "title": "SVG साझा करें - SVG व्यूअर",
-    "description": "साझा की गई SVG फ़ाइलों को ऑनलाइन देखें और संपादित करें। मुफ्त SVG व्यूअर और कन्वर्टर।",
-    "ogTitle": "SVG साझा करें - SVG व्यूअर",
-    "ogDescription": "साझा की गई SVG फ़ाइलों को ऑनलाइन देखें और संपादित करें। मुफ्त SVG व्यूअर और कन्वर्टर।",
-    "twitterTitle": "SVG साझा करें - SVG व्यूअर",
-    "twitterDescription": "साझा की गई SVG फ़ाइलों को ऑनलाइन देखें और संपादित करें। मुफ्त SVG व्यूअर और कन्वर्टर।"
-  },
   "Metadata-svg-optimizer": {
     "title": "SVG ऑप्टिमाइज़र - SVG को अनुकूलित करने का मुफ्त ऑनलाइन टूल",
     "description": "मुफ्त ऑनलाइन SVG ऑप्टिमाइज़र। गुणवत्ता से समझौता किए बिना फ़ाइल के आकार को कम करने के लिए SVG को अनुकूलित करें।",
@@ -100,7 +92,7 @@
     "twitterTitle": "SVG व्यूअर ब्लॉग",
     "twitterDescription": "SVG और AI द्वारा निर्मित SVG के बारे में ब्लॉग"
   },
-  "blog": { 
+  "blog": {
     "title": "SVG व्यूअर ब्लॉग",
     "description": "SVG और AI द्वारा निर्मित SVG के बारे में ब्लॉग",
     "readMore": "और पढ़ें",
@@ -146,11 +138,7 @@
     "mobileInstructions": "खींचकर ले जाएँ • स्थिति रीसेट करने के लिए डबल टैप करें",
     "fullscreen": "पूर्ण स्क्रीन",
     "closeFullscreen": "पूर्ण स्क्रीन पूर्वावलोकन बंद करें",
-    "svgParsingError": "SVG पार्सिंग त्रुटि",
-    "share": "साझा करें",
-    "shareLink": "साझा करने की लिंक",
-    "shareLinkCopied": "साझा करने की लिंक कॉपी की गई",
-    "shareLinkCopiedDescription": "साझा करने की लिंक क्लिपबोर्ड में कॉपी की गई है। अब आप SVG को दूसरों के साथ साझा कर सकते हैं!"
+    "svgParsingError": "SVG पार्सिंग त्रुटि"
   },
   "svgToPngUseCases": {
     "title": "SVG से PNG कन्वर्टर के उपयोग के मामले",

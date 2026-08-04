@@ -52,14 +52,6 @@
     "twitterTitle": "SVG zu PNG Konverter - Kostenloses Online-Tool zum Konvertieren von SVG zu PNG",
     "twitterDescription": "Kostenloser Online-SVG-zu-PNG-Konverter. Konvertieren Sie SVG in PNG, JPEG, WEBP, ICO und mehr. Betrachten Sie SVG-Dateien in Ihrem Browser."
   },
-  "Metadata-share": {
-    "title": "SVG teilen - SVG-Viewer",
-    "description": "Geteilte SVG-Dateien online anzeigen und bearbeiten. Kostenloser SVG-Viewer und -Konverter.",
-    "ogTitle": "SVG teilen - SVG-Viewer",
-    "ogDescription": "Geteilte SVG-Dateien online anzeigen und bearbeiten. Kostenloser SVG-Viewer und -Konverter.",
-    "twitterTitle": "SVG teilen - SVG-Viewer",
-    "twitterDescription": "Geteilte SVG-Dateien online anzeigen und bearbeiten. Kostenloser SVG-Viewer und -Konverter."
-  },
   "Metadata-svg-optimizer": {
     "title": "SVG-Optimierer - Kostenloses Online-Tool zur Optimierung von SVG",
     "description": "Kostenloser Online-SVG-Optimierer. Optimieren Sie SVG, um die Dateigröße zu reduzieren, ohne die Qualität zu beeinträchtigen.",
@@ -100,7 +92,7 @@
     "twitterTitle": "SVG-Betrachter Blog",
     "twitterDescription": "Blog über SVG und KI-generierte SVGs"
   },
-  "blog": { 
+  "blog": {
     "title": "SVG-Betrachter Blog",
     "description": "Blog über SVG und KI-generierte SVGs",
     "readMore": "Weiterlesen",
@@ -146,11 +138,7 @@
     "mobileInstructions": "Zum Bewegen ziehen • Doppeltippen zum Zurücksetzen der Position",
     "fullscreen": "Vollbild",
     "closeFullscreen": "Vollbildvorschau schließen",
-    "svgParsingError": "SVG-Parsing-Fehler",
-    "share": "Teilen",
-    "shareLink": "Link teilen",
-    "shareLinkCopied": "Link zum Teilen kopiert",
-    "shareLinkCopiedDescription": "Der Link zum Teilen wurde in die Zwischenablage kopiert. Sie können das SVG jetzt mit anderen teilen!"
+    "svgParsingError": "SVG-Parsing-Fehler"
   },
   "svgToPngUseCases": {
     "title": "Anwendungsfälle für den SVG-zu-PNG-Konverter",

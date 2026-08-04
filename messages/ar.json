@@ -52,14 +52,6 @@
     "twitterTitle": "محول SVG إلى PNG - أداة مجانية عبر الإنترنت لتحويل SVG إلى PNG",
     "twitterDescription": "محول مجاني عبر الإنترنت من SVG إلى PNG. حول SVG إلى PNG وJPEG وWEBP وICO والمزيد. اعرض ملفات SVG في متصفحك."
   },
-  "Metadata-share": {
-    "title": "مشاركة SVG - عارض SVG",
-    "description": "اعرض وحرر ملفات SVG المشتركة عبر الإنترنت. عارض ومحول SVG مجاني.",
-    "ogTitle": "مشاركة SVG - عارض SVG",
-    "ogDescription": "اعرض وحرر ملفات SVG المشتركة عبر الإنترنت. عارض ومحول SVG مجاني.",
-    "twitterTitle": "مشاركة SVG - عارض SVG",
-    "twitterDescription": "اعرض وحرر ملفات SVG المشتركة عبر الإنترنت. عارض ومحول SVG مجاني."
-  },
   "Metadata-svg-optimizer": {
     "title": "محسن SVG - أداة مجانية عبر الإنترنت لتحسين SVG",
     "description": "محسن SVG مجاني عبر الإنترنت. حسن ملفات SVG لتقليل حجم الملف دون المساس بالجودة.",
@@ -100,7 +92,7 @@
     "twitterTitle": "مدونة عارض SVG",
     "twitterDescription": "مدونة حول SVG وملفات SVG المنشأة بواسطة الذكاء الاصطناعي"
   },
-  "blog": { 
+  "blog": {
     "title": "مدونة عارض SVG",
     "description": "مدونة حول SVG وملفات SVG المنشأة بواسطة الذكاء الاصطناعي",
     "readMore": "قراءة المزيد",
@@ -146,11 +138,7 @@
     "mobileInstructions": "اسحب للتحريك • انقر مرتين لإعادة ضبط الموضع",
     "fullscreen": "ملء الشاشة",
     "closeFullscreen": "إغلاق معاينة ملء الشاشة",
-    "svgParsingError": "خطأ في تحليل SVG",
-    "share": "مشاركة",
-    "shareLink": "رابط المشاركة",
-    "shareLinkCopied": "تم نسخ رابط المشاركة",
-    "shareLinkCopiedDescription": "تم نسخ رابط المشاركة إلى الحافظة. يمكنك الآن مشاركة SVG مع الآخرين!"
+    "svgParsingError": "خطأ في تحليل SVG"
   },
   "svgToPngUseCases": {
     "title": "حالات استخدام محول SVG إلى PNG",

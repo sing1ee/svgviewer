@@ -3,6 +3,7 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import SvgConverter from '@/components/svg-converter';
 import { siteConfig } from '@/config/site';
+import { localeAlternates } from '@/i18n/locales';
 import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
@@ -34,20 +35,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: 'en' |
     },
     alternates: {
       canonical: locale === 'en' ? '/svg-converter' : `/${locale}/svg-converter`,
-      languages: {
-        'en': '/svg-converter',
-        'zh': '/zh/svg-converter',
-        'zh-TW': '/zh-TW/svg-converter',
-        'ja': '/ja/svg-converter',
-        'ru': '/ru/svg-converter',
-        'pt': '/pt/svg-converter',
-        'es': '/es/svg-converter',
-        'ko': '/ko/svg-converter',
-        'ar': '/ar/svg-converter',
-        'hi': '/hi/svg-converter',
-        'fr': '/fr/svg-converter',
-        'de': '/de/svg-converter',
-      },
+      languages: localeAlternates('/svg-converter'),
     },
     openGraph: {
       title: ogTitle,
@@ -87,7 +75,7 @@ export default function ConverterPage() {
       <Header />
 
       <main className="flex-1 flex flex-col overflow-hidden">
-        <SvgConverter svgCodeParam={homeDefaultSvg} defaultFormat="svg" />
+        <SvgConverter svgCodeParam={homeDefaultSvg} />
         <FAQ page="converter" />
       </main>
 

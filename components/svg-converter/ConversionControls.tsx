@@ -60,7 +60,8 @@ export default function ConversionControls({
     try {
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = svgCode;
-      tempDiv.style.position = 'absolute';
+      tempDiv.style.position = 'fixed';
+      tempDiv.style.top = '0';
       tempDiv.style.left = '-9999px';
       document.body.appendChild(tempDiv);
 
@@ -77,27 +78,30 @@ export default function ConversionControls({
         if (viewBox) {
           const [minX, minY, width, height] = viewBox.split(' ').map(Number);
           svgWidth = width;
-          svgHeight = height; 
+          svgHeight = height;
         }
       }
       svgElement.setAttribute('width', svgWidth.toString());
       svgElement.setAttribute('height', svgHeight.toString());
-      
+
       let outputWidth = svgWidth * scale;
       let outputHeight = svgHeight * scale;
-      
+
       if (format === 'ico') {
         outputWidth = icoSize;
         outputHeight = icoSize;
       }
-      if (format === 'ico' && icoSize < svgWidth && icoSize < svgHeight) {
-        svgElement.setAttribute('width', icoSize.toString());
-        svgElement.setAttribute('height', icoSize.toString());
-      }
 
+      // 让 SVG 渲染尺寸与输出窗口一致，避免缩放后内容被裁剪
+      svgElement.setAttribute('width', outputWidth.toString());
+      svgElement.setAttribute('height', outputHeight.toString());
+
+      // x/y 将裁剪窗口偏移到离屏元素的位置（left: -9999px），否则会截出空白
       const canvas = await html2canvas(tempDiv, {
         width: outputWidth,
         height: outputHeight,
+        x: -9999,
+        y: 0,
         scale: 2,
         useCORS: true,
         backgroundColor: null,

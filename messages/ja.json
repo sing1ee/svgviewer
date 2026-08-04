@@ -52,14 +52,6 @@
     "twitterTitle": "SVGからPNGへのコンバーター - SVGをPNGに変換する無料オンラインツール",
     "twitterDescription": "無料オンラインSVGからPNGへのコンバーター。SVGをPNG、JPEG、WEBP、ICOなどに変換。ブラウザでSVGファイルを表示。"
   },
-  "Metadata-share": {
-    "title": "共有SVG - SVGビューア",
-    "description": "共有されたSVGファイルをオンラインで表示・編集。無料SVGビューア・コンバーター。",
-    "ogTitle": "共有SVG - SVGビューア",
-    "ogDescription": "共有されたSVGファイルをオンラインで表示・編集。無料SVGビューア・コンバーター。",
-    "twitterTitle": "共有SVG - SVGビューア",
-    "twitterDescription": "共有されたSVGファイルをオンラインで表示・編集。無料SVGビューア・コンバーター。"
-  },
   "Metadata-svg-optimizer": {
     "title": "SVG最適化ツール - SVGを最適化する無料オンラインツール",
     "description": "無料オンラインSVG最適化ツール。品質を損なうことなくファイルサイズを削減するためにSVGを最適化。",
@@ -100,7 +92,7 @@
     "twitterTitle": "SVGビューアブログ",
     "twitterDescription": "SVGとAIで生成されたSVGに関するブログ"
   },
-  "blog": { 
+  "blog": {
     "title": "SVGビューアブログ",
     "description": "SVGとAIで生成されたSVGに関するブログ",
     "readMore": "続きを読む",
@@ -146,11 +138,7 @@
     "mobileInstructions": "ドラッグして移動 • ダブルタップで位置をリセット",
     "fullscreen": "全画面表示",
     "closeFullscreen": "全画面プレビューを閉じる",
-    "svgParsingError": "SVG解析エラー",
-    "share": "共有",
-    "shareLink": "共有リンク",
-    "shareLinkCopied": "共有リンクがコピーされました",
-    "shareLinkCopiedDescription": "共有リンクがクリップボードにコピーされました。SVGを他の人と共有できます！"
+    "svgParsingError": "SVG解析エラー"
   },
   "svgToPngUseCases": {
     "title": "SVGからPNGへの変換ツールのユースケース",

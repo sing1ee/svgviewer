@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
+import { localeAlternates } from '@/i18n/locales';
 
 export const runtime = 'edge';
 
@@ -33,20 +34,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: 'en' |
     },
     alternates: {
       canonical: locale === 'en' ? '/free-svg' : `/${locale}/free-svg`,
-      languages: {
-        'en': '/free-svg',
-        'zh': '/zh/free-svg',
-        'zh-TW': '/zh-TW/free-svg',
-        'ja': '/ja/free-svg',
-        'ru': '/ru/free-svg',
-        'pt': '/pt/free-svg',
-        'es': '/es/free-svg',
-        'ko': '/ko/free-svg',
-        'ar': '/ar/free-svg',
-        'hi': '/hi/free-svg',
-        'fr': '/fr/free-svg',
-        'de': '/de/free-svg',
-      },
+      languages: localeAlternates('/free-svg'),
     },
     openGraph: {
       title: ogTitle,

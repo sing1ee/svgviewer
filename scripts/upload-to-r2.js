@@ -92,22 +92,31 @@ async function uploadJsonContent(jsonContent, remoteKey) {
   }
 }
 
-// 检查远程文件是否存在
-async function fileExistsInR2(key) {
-  try {
+// 分页获取桶内所有现有文件 key（一次性拉取，避免逐文件查询）
+async function listAllExistingKeys() {
+  const keys = new Set();
+  let continuationToken;
+  do {
     const listParams = {
       Bucket: bucketName,
-      Prefix: key,
-      MaxKeys: 1,
+      Prefix: 'svgs/',
+      MaxKeys: 1000,
     };
-    
+    if (continuationToken) {
+      listParams.ContinuationToken = continuationToken;
+    }
+
     const command = new ListObjectsV2Command(listParams);
     const response = await s3Client.send(command);
-    
-    return response.Contents && response.Contents.some(obj => obj.Key === key);
-  } catch (error) {
-    return false;
-  }
+
+    if (response.Contents) {
+      response.Contents.forEach(obj => {
+        if (obj.Key) keys.add(obj.Key);
+      });
+    }
+    continuationToken = response.NextContinuationToken;
+  } while (continuationToken);
+  return keys;
 }
 
 // 主上传函数
@@ -134,6 +143,12 @@ async function uploadSvgFiles(skipExisting = true) {
 
   console.log(`📊 找到 ${svgFiles.length} 个 SVG 文件`);
 
+  // 一次性获取桶内已有 key，避免对每个文件单独发起查询
+  const existingKeys = skipExisting ? await listAllExistingKeys() : new Set();
+  if (skipExisting) {
+    console.log(`🔍 桶内已有 ${existingKeys.size} 个文件，将跳过已存在的`);
+  }
+
   let uploadedCount = 0;
   let skippedCount = 0;
   let failedCount = 0;
@@ -156,7 +171,7 @@ async function uploadSvgFiles(skipExisting = true) {
     }
 
     // 检查文件是否已存在
-    if (skipExisting && await fileExistsInR2(remoteKey)) {
+    if (skipExisting && existingKeys.has(remoteKey)) {
       console.log(`⏭️  跳过已存在: ${remoteKey}`);
       skippedCount++;
       // 即使跳过上传，也要记录文件名用于生成 index.json
@@ -247,7 +262,7 @@ const args = process.argv.slice(2);
 const forceUpload = args.includes('--force') || args.includes('-f');
 
 // 检查环境变量
-if (!process.env.R2_ACCOUNT_ID || !process.env.R2_ACCESS_KEY_ID || !process.env.R2_SECRET_ACCESS_KEY || !process.env.R2_BUCKET_NAME) {
+if (!process.env.R2_ACCOUNT_ID || !process.env.R2_ACCESS_KEY_ID || !process.env.R2_SECRET_ACCESS_KEY || !process.env.R2_BUCKET_NAME || !process.env.R2_ENDPOINT) {
   console.error('❌ 请先配置环境变量在 .env.r2 文件中:');
   console.error('   R2_ACCOUNT_ID');
   console.error('   R2_ACCESS_KEY_ID');

@@ -23,7 +23,7 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
           {category.charAt(0).toUpperCase() + category.slice(1)} SVGs
         </h1>
       </div>
-      <ScrollArea className="h-[1000px]">
+      <ScrollArea className="max-h-[70vh]">
         <div className="p-4">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {svgFiles.map((file) => {
@@ -42,7 +42,8 @@ export default function SvgList({ category, svgFiles, currentId }: SvgListProps)
                     <div className="aspect-square w-full rounded-md bg-muted flex items-center justify-center p-1">
                       <img
                         src={svgUrl}
-                        alt={`${category} SVG`}
+                        alt={`${category} SVG: ${file.name}`}
+                        loading="lazy"
                         className="max-w-full max-h-full object-contain"
                       />
                     </div>

@@ -52,14 +52,6 @@
     "twitterTitle": "SVG에서 PNG 변환기 - SVG를 PNG로 변환하는 무료 온라인 도구",
     "twitterDescription": "무료 온라인 SVG에서 PNG 변환기. SVG를 PNG, JPEG, WEBP, ICO 등으로 변환. 브라우저에서 SVG 파일을 확인하세요."
   },
-  "Metadata-share": {
-    "title": "SVG 공유 - SVG 뷰어",
-    "description": "공유된 SVG 파일을 온라인에서 보고 편집하세요. 무료 SVG 뷰어 및 변환기.",
-    "ogTitle": "SVG 공유 - SVG 뷰어",
-    "ogDescription": "공유된 SVG 파일을 온라인에서 보고 편집하세요. 무료 SVG 뷰어 및 변환기.",
-    "twitterTitle": "SVG 공유 - SVG 뷰어",
-    "twitterDescription": "공유된 SVG 파일을 온라인에서 보고 편집하세요. 무료 SVG 뷰어 및 변환기."
-  },
   "Metadata-svg-optimizer": {
     "title": "SVG 최적화 도구 - SVG를 최적화하는 무료 온라인 도구",
     "description": "무료 온라인 SVG 최적화 도구. 품질을 손상시키지 않으면서 파일 크기를 줄이기 위해 SVG를 최적화합니다.",
@@ -100,7 +92,7 @@
     "twitterTitle": "SVG 뷰어 블로그",
     "twitterDescription": "SVG 및 AI 생성 SVG에 관한 블로그"
   },
-  "blog": { 
+  "blog": {
     "title": "SVG 뷰어 블로그",
     "description": "SVG 및 AI 생성 SVG에 관한 블로그",
     "readMore": "더 읽기",
@@ -146,11 +138,7 @@
     "mobileInstructions": "드래그하여 이동 • 두 번 탭하여 위치 재설정",
     "fullscreen": "전체 화면",
     "closeFullscreen": "전체 화면 미리보기 닫기",
-    "svgParsingError": "SVG 구문 분석 오류",
-    "share": "공유",
-    "shareLink": "공유 링크",
-    "shareLinkCopied": "공유 링크 복사됨",
-    "shareLinkCopiedDescription": "공유 링크가 클립보드에 복사되었습니다. 이제 다른 사람들과 SVG를 공유할 수 있습니다!"
+    "svgParsingError": "SVG 구문 분석 오류"
   },
   "svgToPngUseCases": {
     "title": "SVG에서 PNG로 변환기 사용 사례",
@@ -506,5 +494,4 @@
     "mobileEditHint": "편집하려면 탭하세요 • 정확한 제어를 위해 키보드 사용",
     "placeholder": "SVG 코드 입력..."
   }
-  
 }

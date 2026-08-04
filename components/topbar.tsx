@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 
 interface TopbarConfig {
-  version: number;
   bgColor?: string;
   gradientStart?: string;
   gradientEnd?: string;
@@ -12,22 +11,28 @@ interface TopbarConfig {
   link?: string;
   buttonText?: string;
   buttonBgColor?: string;
-  countdownEndTime?: string | null;
   clickReportUrl?: string;
+}
+
+const TOPBAR_CONFIG_URL = 'https://img.veo3.directory/0000-topbar/config.json';
+
+// 只允许 http(s) 链接，防止注入 javascript: 等危险协议
+function isSafeUrl(url: string): boolean {
+  return /^https?:\/\//i.test(url);
 }
 
 export default function Topbar() {
   const [config, setConfig] = useState<TopbarConfig | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchConfig = async () => {
       try {
-        const response = await fetch('https://img.veo3.directory/0000-topbar/config.json');
+        const response = await fetch(TOPBAR_CONFIG_URL);
         if (response.ok) {
           const data: TopbarConfig = await response.json();
-          setConfig(data);
-          setIsVisible(true);
+          if (data.text) {
+            setConfig(data);
+          }
         }
       } catch (error) {
         console.error('Failed to fetch topbar config:', error);
@@ -49,8 +54,7 @@ export default function Topbar() {
     }
   };
 
-
-  if (!config || !isVisible || !config.text) {
+  if (!config) {
     return null;
   }
 
@@ -62,6 +66,8 @@ export default function Topbar() {
         backgroundColor: config.bgColor || '#6366f1',
       };
 
+  const safeLink = config.link && isSafeUrl(config.link) ? config.link : null;
+
   return (
     <div
       className="w-full py-2 px-4 text-center text-base font-bold"
@@ -71,9 +77,9 @@ export default function Topbar() {
       }}
     >
       <div className="container mx-auto flex items-center justify-center gap-3 flex-wrap">
-        {config.link && (
+        {safeLink ? (
           <a
-            href={config.link}
+            href={safeLink}
             onClick={handleClick}
             target="_blank"
             rel="noopener noreferrer"
@@ -92,6 +98,8 @@ export default function Topbar() {
               </span>
             )}
           </a>
+        ) : (
+          <span>{config.text}</span>
         )}
       </div>
     </div>

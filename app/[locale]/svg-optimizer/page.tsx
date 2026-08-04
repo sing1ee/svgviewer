@@ -3,6 +3,7 @@ import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
+import { localeAlternates } from '@/i18n/locales';
 import { Metadata } from 'next';
 import FAQ from '@/components/faq';
 
@@ -34,20 +35,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: 'en' |
     },
     alternates: {
       canonical: locale === 'en' ? '/svg-optimizer' : `/${locale}/svg-optimizer`,
-      languages: {
-        'en': '/svg-optimizer',
-        'zh': '/zh/svg-optimizer',
-        'zh-TW': '/zh-TW/svg-optimizer',
-        'ja': '/ja/svg-optimizer',
-        'ru': '/ru/svg-optimizer',
-        'pt': '/pt/svg-optimizer',
-        'es': '/es/svg-optimizer',
-        'ko': '/ko/svg-optimizer',
-        'ar': '/ar/svg-optimizer',
-        'hi': '/hi/svg-optimizer',
-        'fr': '/fr/svg-optimizer',
-        'de': '/de/svg-optimizer',
-      },
+      languages: localeAlternates('/svg-optimizer'),
     },
     openGraph: {
       title: ogTitle,

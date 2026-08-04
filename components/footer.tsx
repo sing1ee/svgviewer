@@ -2,18 +2,26 @@ import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import localLinks from '@/data/links.json';
+import { locales } from '@/i18n/locales';
 
 type LinkItem = {
   name: string;
   url: string;
 };
 
+// 只允许 http(s) 链接，防止远程配置被注入 javascript: 等危险协议
+function isSafeUrl(url: string): boolean {
+  return /^https?:\/\//i.test(url);
+}
+
 export default async function Footer() {
   const t = await getTranslations('footer');
 
   let links: LinkItem[] = localLinks as LinkItem[];
   try {
-    const response = await fetch('https://img.veo3.directory/0000-backlinks/links.json');
+    const response = await fetch('https://img.veo3.directory/0000-backlinks/links.json', {
+      next: { revalidate: 3600 }, // 缓存 1 小时，避免每个请求都打到远程
+    });
     if (response.ok) {
       const data = await response.json();
       if (Array.isArray(data)) {
@@ -37,10 +45,10 @@ export default async function Footer() {
               <div className="text-sm text-foreground/70">
                 © {new Date().getFullYear()} {t('copyright')}
               </div>
-              <a 
-                href="https://fazier.com" 
-                target="_blank" 
-                rel="dofollow" 
+              <a
+                href="https://fazier.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-foreground/70 hover:text-primary transition-all duration-300"
               >
                 <img 
@@ -112,78 +120,27 @@ export default async function Footer() {
               <div className="w-full">
                 <h3 className="font-medium text-sm text-foreground/90 mb-3">{t('languages')}</h3>
                 <ul className="flex flex-col gap-2">
-                  <li>
-                    <Link href="/en" locale="en" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      English
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="zh" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      中文
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="zh-TW" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      繁體中文
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="ja" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      日本語
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="ru" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      русский
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="pt" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      português
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="es" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      español
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="ko" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      한국어
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="ar" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      العربية
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="hi" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      हिंदी
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="fr" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      français
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" locale="de" className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
-                      deutsch
-                    </Link>
-                  </li>
+                  {locales.map(({ code, label }) => (
+                    <li key={code}>
+                      <Link href="/" locale={code} className="text-sm text-foreground/70 hover:text-primary transition-all duration-300">
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
-          <div className="border-slate-700/50">
+          <div className="border-t border-border/40 pt-6">
             <h3 className="font-semibold mb-4">
-              Friendly Links
+              {t('friends')}
             </h3>
             <div className="flex flex-wrap gap-3 text-slate-400">
-              {links.map((link, index) => (
+              {links
+                .filter(link => isSafeUrl(link.url))
+                .map(link => (
                 <a
-                  key={index}
+                  key={link.url}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"

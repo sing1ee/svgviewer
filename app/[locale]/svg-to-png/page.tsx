@@ -4,6 +4,7 @@ import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 import UseCases from '@/components/usecases';
 import { siteConfig } from '@/config/site';
+import { localeAlternates } from '@/i18n/locales';
 import { homeDefaultSvg } from '@/lib/default-svgs';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -36,20 +37,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: 'en' |
     },
     alternates: {
       canonical: locale === 'en' ? '/svg-to-png' : `/${locale}/svg-to-png`,
-      languages: {
-        'en': '/svg-to-png',
-        'zh': '/zh/svg-to-png',
-        'zh-TW': '/zh-TW/svg-to-png',
-        'ja': '/ja/svg-to-png',
-        'ru': '/ru/svg-to-png',
-        'pt': '/pt/svg-to-png',
-        'es': '/es/svg-to-png',
-        'ko': '/ko/svg-to-png',
-        'ar': '/ar/svg-to-png',
-        'hi': '/hi/svg-to-png',
-        'fr': '/fr/svg-to-png',
-        'de': '/de/svg-to-png',
-      },
+      languages: localeAlternates('/svg-to-png'),
     },
     openGraph: {
       title: ogTitle,

@@ -13,6 +13,7 @@ import { Metadata } from 'next';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { siteConfig } from '@/config/site';
+import { localeAlternates } from '@/i18n/locales';
 
 interface Props {
   params: Promise<{
@@ -65,21 +66,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       icon: siteConfig.favicon,
     },
     alternates: {
-      canonical: locale === 'en' ? '/blog/${slug}' : `/${locale}/blog/${slug}`,
-      languages: {
-        'en': `/blog/${slug}`,
-        'zh': `/zh/blog/${slug}`,
-        'zh-TW': `/zh-TW/blog/${slug}`,
-        'ja': `/ja/blog/${slug}`,
-        'ru': `/ru/blog/${slug}`,
-        'pt': `/pt/blog/${slug}`,
-        'es': `/es/blog/${slug}`,
-        'ko': `/ko/blog/${slug}`,
-        'ar': `/ar/blog/${slug}`,
-        'hi': `/hi/blog/${slug}`,
-        'fr': `/fr/blog/${slug}`,
-        'de': `/de/blog/${slug}`,
-      },
+      canonical: locale === 'en' ? `/blog/${slug}` : `/${locale}/blog/${slug}`,
+      languages: localeAlternates(`/blog/${slug}`),
     },
     openGraph: {
       title: ogTitle,

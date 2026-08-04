@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { CopyIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon, DownloadIcon, UploadIcon, SparklesIcon, ShareIcon } from 'lucide-react';
+import { CopyIcon, XIcon, ClipboardPasteIcon, AlignJustifyIcon, DownloadIcon, UploadIcon, SparklesIcon } from 'lucide-react';
 import CodeEditor from '@/components/code-editor';
 import SvgPreview from '@/components/svg-preview';
 import { GridBackground } from '@/components/grid-background';
@@ -18,19 +18,15 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation';
-import { routing } from '@/i18n/routing';
 interface SvgConverterProps {
   svgCodeParam?: string;
-  defaultFormat?: string;
 }
 
-export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: SvgConverterProps) {
+export default function SvgConverter({ svgCodeParam }: SvgConverterProps) {
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [svgCode, setSvgCode] = useState<string>(svgCodeParam || homeDefaultSvg);
   const t = useTranslations('svgConverter');
   const { toast } = useToast();
-  const pathname = usePathname();
 
   useEffect(() => {
     if (svgCode) {
@@ -38,12 +34,20 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
     }
   }, [svgCode]);
 
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text);
-    toast({
-      title: t('copiedToClipboard'),
-      description: t('copiedToClipboardDescription'),
-    });
+  const handleCopy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast({
+        title: t('copiedToClipboard'),
+        description: t('copiedToClipboardDescription'),
+      });
+    } catch (error) {
+      toast({
+        title: t('pasteFailed'),
+        description: t('pasteFailedDescription'),
+        variant: "destructive",
+      });
+    }
   };
 
   const handleFormat = () => {
@@ -121,52 +125,6 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
     });
   };
 
-  const handleShare = () => {
-    if (!svgCode) return;
-    
-    try {
-      // 将SVG代码转换为base64编码
-      const encodedSvg = btoa(encodeURIComponent(svgCode));
-      // 构建分享链接
-      const baseUrl = window.location.origin;
-      const pathSegments = pathname.split('/').filter(Boolean);
-      const firstSegment = pathSegments[0];
-      
-      // 检查第一个路径段是否为有效的 locale
-      const isValidLocale = routing.locales.includes(firstSegment as any);
-      const currentLocale = isValidLocale ? firstSegment : null;
-      
-      // 检查当前是否已经在 share 页面
-      const isOnSharePage = pathSegments.includes('share');
-      
-      let shareUrl;
-      if (isOnSharePage) {
-        // 如果已经在 share 页面，直接更新 URL 参数
-        shareUrl = `${baseUrl}${pathname.split('?')[0]}?code=${encodedSvg}`;
-      } else {
-        // 如果不在 share 页面，构建新的 share URL
-        shareUrl = currentLocale && currentLocale !== 'en'
-          ? `${baseUrl}/${currentLocale}/share?code=${encodedSvg}`
-          : `${baseUrl}/share?code=${encodedSvg}`;
-      }
-      
-      // 复制链接到剪贴板
-      navigator.clipboard.writeText(shareUrl);
-      
-      toast({
-        title: t('shareLinkCopied'),
-        description: t('shareLinkCopiedDescription'),
-      });
-    } catch (error) {
-      console.error('Failed to create share link:', error);
-      toast({
-        title: t('pasteFailed'),
-        description: t('pasteFailedDescription'),
-        variant: "destructive",
-      });
-    }
-   };
-
   return (
     <div className="h-full flex flex-col">
 
@@ -182,6 +140,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                       variant="ghost"
                       size="sm"
                       onClick={handleFormat}
+                      aria-label={t('formatSvg')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <AlignJustifyIcon className="h-3.5 w-3.5" />
@@ -198,6 +157,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                       variant="ghost"
                       size="sm"
                       onClick={handleOptimize}
+                      aria-label={t('optimizeSvg')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <SparklesIcon className="h-3.5 w-3.5" />
@@ -214,6 +174,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                       variant="ghost"
                       size="sm"
                       onClick={handleClear}
+                      aria-label={t('clear')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <XIcon className="h-3.5 w-3.5" />
@@ -230,6 +191,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                       variant="ghost"
                       size="sm"
                       onClick={() => handleCopy(svgCode)}
+                      aria-label={t('copy')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <CopyIcon className="h-3.5 w-3.5" />
@@ -246,6 +208,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                       variant="ghost"
                       size="sm"
                       onClick={handlePaste}
+                      aria-label={t('paste')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <ClipboardPasteIcon className="h-3.5 w-3.5" />
@@ -262,6 +225,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                       variant="ghost"
                       size="sm"
                       onClick={handleDownloadSvg}
+                      aria-label={t('downloadSvg')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <DownloadIcon className="h-3.5 w-3.5" />
@@ -277,6 +241,7 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
                     <Button
                       variant="ghost"
                       size="sm"
+                      aria-label={t('uploadSvg')}
                       className="hover:bg-primary/10 h-7 px-2"
                     >
                       <label htmlFor="svg-upload" className="cursor-pointer">
@@ -311,24 +276,6 @@ export default function SvgConverter({ defaultFormat = 'svg', svgCodeParam }: Sv
             <h2 className="text-xl font-semibold">{t('preview')}</h2>
             <div className="flex items-center gap-2 text-sm">
               <span className="text-muted-foreground">{t('size')}: {originalSize} bytes</span>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={handleShare}
-                      disabled={!svgCode}
-                      className="hover:bg-primary/10 h-7 px-2"
-                    >
-                      <ShareIcon className="h-3.5 w-3.5" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{t('share')}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
             </div>
           </div>
           <div className="flex-1 min-h-0 border rounded-lg overflow-hidden relative flex items-center justify-center shadow-md gradient-border bg-white dark:bg-black">

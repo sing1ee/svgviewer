@@ -6,6 +6,7 @@ import Footer from '@/components/footer';
 import SvgConverter from '@/components/svg-converter';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
+import { localeAlternates } from '@/i18n/locales';
 import { getSvgFiles as fetchSvgFiles, getSvgContent } from '@/lib/r2-client';
 
 export const runtime = 'edge';
@@ -16,21 +17,6 @@ interface Props {
     locale: string;
     svgCategory: string;
   }>;
-}
-
-// 获取默认 SVG 内容
-async function getDefaultSvgContent(category: string) {
-  const svgFiles = await fetchSvgFiles(category);
-  if (svgFiles.length === 0) return null;
-  
-  const firstSvg = svgFiles[0];
-  
-  try {
-    const content = await getSvgContent(category, firstSvg.id);
-    return content;
-  } catch (error) {
-    return null;
-  }
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -59,20 +45,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     },
     alternates: {
       canonical: locale === 'en' ? `/category/${svgCategory}` : `/${locale}/category/${svgCategory}`,
-      languages: {
-        'en': `/category/${svgCategory}`,
-        'zh': `/zh/category/${svgCategory}`,
-        'zh-TW': `/zh-TW/category/${svgCategory}`,
-        'ja': `/ja/category/${svgCategory}`,
-        'ru': `/ru/category/${svgCategory}`,
-        'pt': `/pt/category/${svgCategory}`,
-        'es': `/es/category/${svgCategory}`,
-        'ko': `/ko/category/${svgCategory}`,
-        'ar': `/ar/category/${svgCategory}`,
-        'hi': `/hi/category/${svgCategory}`,
-        'fr': `/fr/category/${svgCategory}`,
-        'de': `/de/category/${svgCategory}`,
-      },
+      languages: localeAlternates(`/category/${svgCategory}`),
     },
     openGraph: {
       title: ogTitle,
@@ -117,7 +90,10 @@ export default async function SvgCategoryPage(props: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("svgCategory");
   const svgFiles = await fetchSvgFiles(svgCategory);
-  const defaultSvgContent = await getDefaultSvgContent(svgCategory);
+  // 默认展示第一个 SVG（复用已获取的 index，避免重复请求）
+  const defaultSvgContent = svgFiles[0]
+    ? await getSvgContent(svgCategory, svgFiles[0].id)
+    : null;
   if (svgFiles.length === 0) {
     notFound();
   }

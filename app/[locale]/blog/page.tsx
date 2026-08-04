@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/config/site';
+import { localeAlternates } from '@/i18n/locales';
 import { getAllPosts, type BlogPost } from '@/lib/blog';
 
 export const runtime = 'edge';
@@ -35,20 +36,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: 'en' |
     },
     alternates: {
       canonical: locale === 'en' ? '/blog' : `/${locale}/blog`,
-      languages: {
-        'en': '/blog',
-        'zh': '/zh/blog',
-        'zh-TW': '/zh-TW/blog',
-        'ja': '/ja/blog',
-        'ru': '/ru/blog',
-        'pt': '/pt/blog',
-        'es': '/es/blog',
-        'ko': '/ko/blog',
-        'ar': '/ar/blog',
-        'hi': '/hi/blog',
-        'fr': '/fr/blog',
-        'de': '/de/blog',
-      },
+      languages: localeAlternates('/blog'),
     },
     openGraph: {
       title: ogTitle,

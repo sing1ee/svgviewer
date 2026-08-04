@@ -52,14 +52,6 @@
     "twitterTitle": "Conversor de SVG para PNG - Ferramenta Online Gratuita para Converter SVG em PNG",
     "twitterDescription": "Conversor online gratuito de SVG para PNG. Converta SVG para PNG, JPEG, WEBP, ICO e mais. Visualize arquivos SVG no seu navegador."
   },
-  "Metadata-share": {
-    "title": "Compartilhar SVG - Visualizador SVG",
-    "description": "Visualize e edite arquivos SVG compartilhados online. Visualizador e conversor SVG gratuito.",
-    "ogTitle": "Compartilhar SVG - Visualizador SVG",
-    "ogDescription": "Visualize e edite arquivos SVG compartilhados online. Visualizador e conversor SVG gratuito.",
-    "twitterTitle": "Compartilhar SVG - Visualizador SVG",
-    "twitterDescription": "Visualize e edite arquivos SVG compartilhados online. Visualizador e conversor SVG gratuito."
-  },
   "Metadata-svg-optimizer": {
     "title": "Otimizador SVG - Ferramenta Online Gratuita para Otimizar SVG",
     "description": "Otimizador SVG online gratuito. Otimize SVG para reduzir o tamanho do arquivo sem comprometer a qualidade.",
@@ -100,7 +92,7 @@
     "twitterTitle": "Blog do Visualizador SVG",
     "twitterDescription": "Blog sobre SVG e SVGs gerados por IA"
   },
-  "blog": { 
+  "blog": {
     "title": "Blog do Visualizador SVG",
     "description": "Blog sobre SVG e SVGs gerados por IA",
     "readMore": "Leia mais",
@@ -146,11 +138,7 @@
     "mobileInstructions": "Arraste para mover • Toque duplo para redefinir posição",
     "fullscreen": "Tela cheia",
     "closeFullscreen": "Fechar visualização em tela cheia",
-    "svgParsingError": "Erro de análise SVG",
-    "share": "Compartilhar",
-    "shareLink": "Link de compartilhamento",
-    "shareLinkCopied": "Link de compartilhamento copiado",
-    "shareLinkCopiedDescription": "O link de compartilhamento foi copiado para a área de transferência. Agora você pode compartilhar o SVG com outros!"
+    "svgParsingError": "Erro de análise SVG"
   },
   "svgToPngUseCases": {
     "title": "Casos de Uso do Conversor SVG para PNG",

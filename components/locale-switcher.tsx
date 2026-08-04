@@ -14,21 +14,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
-
-const localesMap = {
-  "en": "English",
-  "zh": "中文",
-  "zh-TW": "繁體中文",
-  "ja": "日本語",
-  "ru": "русский",
-  "pt": "português",
-  "es": "español",
-  "ko": "한국어",
-  "ar": "العربية",
-  "hi": "हिंदी",
-  "fr": "français",
-  "de": "deutsch",
-}
+import { locales } from '@/i18n/locales';
 
 function LocaleSwitcherContent() {
   const t = useTranslations('navigation');
@@ -77,19 +63,19 @@ function LocaleSwitcherContent() {
         align="end"
         className="w-32 bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg"
       >
-        {Object.entries(localesMap).map(([locale, name]) => (
+        {locales.map(({ code, label }) => (
           <DropdownMenuItem
-            key={locale}
-            onClick={() => onSelectChange(locale as Locale)}
+            key={code}
+            onClick={() => onSelectChange(code as Locale)}
             className={cn(
               "cursor-pointer px-3 py-2 text-sm",
-              currentLocale === locale
+              currentLocale === code
                 ? "bg-accent text-accent-foreground"
                 : "text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
             )}
           >
-            {name}
-          </DropdownMenuItem> 
+            {label}
+          </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>

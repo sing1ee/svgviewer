@@ -6,9 +6,8 @@ function getR2PublicUrl(): string {
   if (!process.env.R2_PUBLIC_URL) {
     throw new Error('R2_PUBLIC_URL environment variable is not set');
   }
-  // Ensure URL ends with /
-  const url = process.env.R2_PUBLIC_URL;
-  return url.endsWith('/') ? url.slice(0, -1) : url;
+  // Remove all trailing slashes so callers can join paths safely
+  return process.env.R2_PUBLIC_URL.replace(/\/+$/, '');
 }
 
 export interface SvgFile {
@@ -23,7 +22,8 @@ export interface SvgFile {
 export async function getSvgFiles(category: string): Promise<SvgFile[]> {
   try {
     const publicUrl = getR2PublicUrl();
-    const indexUrl = `${publicUrl}/svgs/${category}/${category}_index.json`;
+    const safeCategory = encodeURIComponent(category);
+    const indexUrl = `${publicUrl}/svgs/${safeCategory}/${safeCategory}_index.json`;
     
     const response = await fetch(indexUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
@@ -69,8 +69,8 @@ export async function getSvgFiles(category: string): Promise<SvgFile[]> {
 export async function getSvgContent(category: string, id: string): Promise<string | null> {
   try {
     const publicUrl = getR2PublicUrl();
-    const svgUrl = `${publicUrl}/svgs/${category}/${id}.svg`;
-    
+    const svgUrl = `${publicUrl}/svgs/${encodeURIComponent(category)}/${encodeURIComponent(id)}.svg`;
+
     const response = await fetch(svgUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
     });
@@ -93,29 +93,7 @@ export async function getSvgContent(category: string, id: string): Promise<strin
 
 // 获取 SVG 文件的公开 URL
 export function getSvgPublicUrl(key: string): string {
-  if (process.env.R2_PUBLIC_URL) {
-    return `${process.env.R2_PUBLIC_URL}${key}`;
-  }
-  
-  // 如果没有公开URL，返回一个占位符
-  return `/api/svg?key=${encodeURIComponent(key)}`;
-}
-
-// 检查 SVG 文件是否存在
-export async function svgExists(category: string, id: string): Promise<boolean> {
-  try {
-    const publicUrl = getR2PublicUrl();
-    const svgUrl = `${publicUrl}/svgs/${category}/${id}.svg`;
-    
-    const response = await fetch(svgUrl, {
-      method: 'HEAD',
-      next: { revalidate: 3600 }, // Cache for 1 hour
-    });
-    
-    return response.ok;
-  } catch (error) {
-    return false;
-  }
+  return `${getR2PublicUrl()}${key}`;
 }
 
 // 获取 SVG 分类列表

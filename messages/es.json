@@ -52,14 +52,6 @@
     "twitterTitle": "Convertidor de SVG a PNG - Herramienta en línea gratuita para convertir SVG a PNG",
     "twitterDescription": "Convertidor en línea gratuito de SVG a PNG. Convierte SVG a PNG, JPEG, WEBP, ICO y más. Visualiza archivos SVG en tu navegador."
   },
-  "Metadata-share": {
-    "title": "Compartir SVG - Visor SVG",
-    "description": "Ver y editar archivos SVG compartidos en línea. Visor y convertidor SVG gratuito.",
-    "ogTitle": "Compartir SVG - Visor SVG",
-    "ogDescription": "Ver y editar archivos SVG compartidos en línea. Visor y convertidor SVG gratuito.",
-    "twitterTitle": "Compartir SVG - Visor SVG",
-    "twitterDescription": "Ver y editar archivos SVG compartidos en línea. Visor y convertidor SVG gratuito."
-  },
   "Metadata-svg-optimizer": {
     "title": "Optimizador SVG - Herramienta en línea gratuita para optimizar SVG",
     "description": "Optimizador SVG en línea gratuito. Optimiza SVG para reducir el tamaño del archivo sin comprometer la calidad.",
@@ -100,7 +92,7 @@
     "twitterTitle": "Blog del Visor SVG",
     "twitterDescription": "Blog sobre SVG y SVGs generados por IA"
   },
-  "blog": { 
+  "blog": {
     "title": "Blog del Visor SVG",
     "description": "Blog sobre SVG y SVGs generados por IA",
     "readMore": "Leer más",
@@ -146,11 +138,7 @@
     "mobileInstructions": "Arrastra para mover • Doble toque para resetear posición",
     "fullscreen": "Pantalla completa",
     "closeFullscreen": "Cerrar vista previa a pantalla completa",
-    "svgParsingError": "Error al analizar SVG",
-    "share": "Compartir",
-    "shareLink": "Enlace para compartir",
-    "shareLinkCopied": "Enlace para compartir copiado",
-    "shareLinkCopiedDescription": "El enlace para compartir ha sido copiado al portapapeles. ¡Ahora puedes compartir el SVG con otros!"
+    "svgParsingError": "Error al analizar SVG"
   },
   "svgToPngUseCases": {
     "title": "Casos de Uso del Conversor SVG a PNG",
@@ -506,5 +494,4 @@
     "mobileEditHint": "Toca para editar • Usa el teclado para un control preciso",
     "placeholder": "Introduce código SVG..."
   }
-
 }
